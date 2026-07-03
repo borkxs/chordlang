@@ -1,0 +1,73 @@
+import { describe, it, expect } from "vitest";
+import { normalize } from "./index";
+
+describe("normalize — the five stress chords", () => {
+  it("Cmaj7 -> major-seventh with △ display", () => {
+    const c = normalize("Cmaj7");
+    expect(c.root).toEqual({ letter: "C", accidental: 0 });
+    expect(c.factors).toEqual([
+      { degree: 1, semitones: 0 },
+      { degree: 3, semitones: 4 },
+      { degree: 5, semitones: 7 },
+      { degree: 7, semitones: 11 },
+    ]);
+    expect(c.render.display).toBe("C△7");
+    expect(c.render.harte).toBe("C:maj7");
+    expect(c.render.musicxmlKind).toBe("major-seventh");
+    expect(c.underspecified).toBe(false);
+  });
+
+  it("F#m7b5 and F#ø7 normalize IDENTICALLY (the tonal/music21 disagreement)", () => {
+    const a = normalize("F#m7b5");
+    const b = normalize("F#ø7");
+    expect(a.factors).toEqual(b.factors);
+    expect(a.render.harte).toBe("F#:hdim7");
+    expect(b.render.harte).toBe("F#:hdim7");
+    expect(a.render.display).toBe("F♯ø7");
+    expect(a.render.musicxmlKind).toBe("half-diminished");
+    expect(a.factors).toEqual([
+      { degree: 1, semitones: 0 },
+      { degree: 3, semitones: 3 },
+      { degree: 5, semitones: 6 },
+      { degree: 7, semitones: 10 },
+    ]);
+  });
+
+  it("C7alt -> underspecified, does NOT fabricate a voicing", () => {
+    const c = normalize("C7alt");
+    expect(c.underspecified).toBe(true);
+    expect(c.underspecToken).toBe("alt");
+    expect(c.altPool).toEqual(["b9", "#9", "#11", "b13"]);
+    // only the certain dominant core survives
+    expect(c.factors).toEqual([
+      { degree: 1, semitones: 0 },
+      { degree: 3, semitones: 4 },
+      { degree: 7, semitones: 10 },
+    ]);
+    expect(c.render.display).toBe("C7alt");
+    expect(c.render.musicxmlKind).toBe("dominant");
+  });
+
+  it("C/E -> bassRole inversion; C/D -> bassRole added", () => {
+    const inv = normalize("C/E");
+    expect(inv.bass).toEqual({ letter: "E", accidental: 0 });
+    expect(inv.bassRole).toBe("inversion");
+    const add = normalize("C/D");
+    expect(add.bass).toEqual({ letter: "D", accidental: 0 });
+    expect(add.bassRole).toBe("added");
+  });
+
+  it("C6/9 -> sixth-added-ninth, /9 is NOT a bass note", () => {
+    const c = normalize("C6/9");
+    expect(c.bass).toBeNull();
+    expect(c.factors).toContainEqual({ degree: 6, semitones: 9 });
+    expect(c.factors).toContainEqual({ degree: 9, semitones: 14 });
+    expect(c.render.display).toBe("C6/9");
+  });
+
+  it("dialect folds: C-7, CΔ7, C^7 all resolve", () => {
+    expect(normalize("C-7").render.harte).toBe("C:min7");
+    expect(normalize("CΔ7").render.harte).toBe("C:maj7");
+    expect(normalize("C^7").render.harte).toBe("C:maj7");
+  });
+});

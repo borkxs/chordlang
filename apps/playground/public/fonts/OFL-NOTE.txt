@@ -1,0 +1,3 @@
+ChordProof.ttf is the chordfont proof build. Glyph outlines derived from
+Petaluma (Steinberg), SIL Open Font License. TODO: wire to the real chordfont
+repo build artifact instead of this snapshot copy.

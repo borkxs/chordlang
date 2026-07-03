@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "ChordFont";
+  src: url("/fonts/ChordProof.ttf") format("truetype");
+}
+
+:root {
+  --paper: #fbf8f1;
+  --ink: #1a1815;
+  --slate: #22262b;
+  --slate-deep: #1a1d21;
+  --brass: #a8823c;
+  --smoke: #8a8f96;
+  --rule: #d9d2c3;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: var(--slate-deep);
+  color: #e8e6e1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  display: flex; align-items: baseline; gap: 1rem;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1px solid #2e333a;
+}
+.wordmark { font-weight: 700; letter-spacing: 0.02em; }
+.tagline { color: var(--smoke); font-size: 0.8rem; }
+.examples { margin-left: auto; display: flex; gap: 0.5rem; }
+.chip {
+  background: none; border: 1px solid #3a4048; color: #cfd3d9;
+  border-radius: 999px; padding: 0.2rem 0.8rem; font-size: 0.78rem;
+  cursor: pointer;
+}
+.chip:hover, .chip:focus-visible { border-color: var(--brass); color: var(--brass); outline: none; }
+
+.split { flex: 1; display: grid; grid-template-columns: minmax(320px, 42%) 1fr; min-height: 0; }
+@media (max-width: 760px) { .split { grid-template-columns: 1fr; grid-template-rows: 40% 1fr; } }
+
+.pane { display: flex; flex-direction: column; min-height: 0; }
+.pane-label {
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--smoke); padding: 0.6rem 1.2rem 0.2rem;
+}
+.pane-source { border-right: 1px solid #2e333a; background: var(--slate); }
+textarea {
+  flex: 1; resize: none; border: 0; outline: 0;
+  background: transparent; color: #e8e6e1;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.95rem; line-height: 1.7; padding: 0.6rem 1.2rem 1.2rem;
+}
+
+.pane-out { background: var(--slate-deep); }
+.tabs { display: flex; gap: 0.25rem; padding: 0.6rem 1.2rem 0; }
+.tab {
+  background: none; border: 0; color: var(--smoke); cursor: pointer;
+  font-size: 0.78rem; padding: 0.3rem 0.7rem; border-radius: 6px 6px 0 0;
+}
+.tab.active { color: var(--brass); border-bottom: 2px solid var(--brass); }
+.view { display: none; flex: 1; overflow: auto; padding: 1.2rem; min-height: 0; }
+.view.active { display: block; }
+.json {
+  font-family: ui-monospace, Menlo, monospace; font-size: 0.78rem;
+  color: #b9c0c9; white-space: pre;
+}
+.status { padding: 0.4rem 1.2rem; font-size: 0.78rem; border-top: 1px solid #2e333a; }
+.status.ok { color: #7fae8b; }
+.status.warn { color: var(--brass); }
+.status.err { color: #c96f5e; }
+
+/* ------- the signature: the fake-book page ------- */
+.page {
+  background: var(--paper); color: var(--ink);
+  max-width: 720px; margin: 0 auto;
+  padding: 2.4rem 2.6rem 3rem;
+  border-radius: 3px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+.chordlang-title {
+  font-size: 1.5rem; font-weight: 800; letter-spacing: 0.01em;
+  border-bottom: 2.5px solid var(--ink); padding-bottom: 0.35rem; margin-bottom: 0.3rem;
+}
+.chordlang-meta { font-size: 0.75rem; color: #6f6a5e; margin-bottom: 1.4rem; }
+.chordlang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.chordlang-section {
+  grid-column: 1 / -1;
+  font-weight: 800; font-size: 0.85rem;
+  border: 2px solid var(--ink); width: 1.7rem; height: 1.7rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 1rem 0 0.4rem;
+}
+.chordlang-bar {
+  border-left: 1.5px solid var(--ink);
+  padding: 0.7rem 0.5rem 0.9rem 0.75rem;
+  display: flex; gap: 0.6rem; align-items: baseline;
+  min-height: 3.2rem;
+}
+.chordlang-grid > .chordlang-bar:nth-of-type(4n) { border-right: 1.5px solid var(--ink); }
+.chordlang-symbol {
+  font-family: "ChordFont", ui-sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
+  font-size: 1.6rem; line-height: 1;
+}
+.chordlang-symbol.chordlang-error {
+  font-family: ui-monospace, monospace; font-size: 0.9rem;
+  color: #b3402a; text-decoration: underline wavy;
+}
+.chordlang-repeat { font-family: "ChordFont", sans-serif; font-size: 1.6rem; color: #6f6a5e; }
+.chordlang-hold { min-width: 0.8rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .chip { transition: border-color 120ms, color 120ms; }
+}

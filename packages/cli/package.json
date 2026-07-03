@@ -1,0 +1,22 @@
+{
+  "name": "@chordlang/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "chordlang": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo 'no tests yet'",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@chordlang/chord": "workspace:*",
+    "@chordlang/parse": "workspace:*",
+    "@chordlang/render": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "typescript": "^5.6.0"
+  }
+}

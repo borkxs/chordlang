@@ -1,0 +1,7 @@
+{ "name": "@chordlang/playground", "version": "0.1.0", "type": "module", "private": true,
+  "scripts": { "dev": "vite", "build": "vite build", "test": "echo 'playground: no tests'" },
+  "dependencies": {
+    "@chordlang/chord": "workspace:*",
+    "@chordlang/parse": "workspace:*",
+    "@chordlang/render": "workspace:*" },
+  "devDependencies": { "vite": "^5.4.0", "typescript": "^5.6.0" } }

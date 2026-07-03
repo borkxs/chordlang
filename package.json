@@ -1,0 +1,14 @@
+{
+  "name": "chordlang",
+  "private": true,
+  "scripts": {
+    "help": "grep -E '^[a-zA-Z_-]+:.*?## .*$' Makefile | awk 'BEGIN{FS=\":.*?## \"}{printf \"  %-16s %s\\n\",$1,$2}'",
+    "grammar": "pnpm --filter @chordlang/parse grammar",
+    "build": "pnpm run grammar && pnpm -r --filter './packages/*' build",
+    "test": "pnpm run grammar && pnpm -r test",
+    "dev": "pnpm run grammar && pnpm --filter @chordlang/playground dev",
+    "lint": "pnpm -r --filter './packages/*' lint",
+    "clean": "rm -rf packages/*/dist packages/parse/src/generated"
+  },
+  "devDependencies": { "typescript": "^5.6.0" }
+}
