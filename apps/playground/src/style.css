@@ -86,33 +86,76 @@ textarea {
   border-bottom: 2.5px solid var(--ink); padding-bottom: 0.35rem; margin-bottom: 0.3rem;
 }
 .chordlang-meta { font-size: 0.75rem; color: #6f6a5e; margin-bottom: 1.4rem; }
-.chordlang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-.chordlang-section {
+.chordlang-grid { display: grid; grid-template-columns: repeat(4, 1fr); row-gap: 0.4rem; align-items: stretch; }
+.chordlang-section-row {
   grid-column: 1 / -1;
-  font-weight: 800; font-size: 0.85rem;
-  border: 2px solid var(--ink); width: 1.7rem; height: 1.7rem;
-  display: flex; align-items: center; justify-content: center;
-  margin: 1rem 0 0.4rem;
+  padding: 0.6rem 0 0.1rem;
+}
+.chordlang-section {
+  font-weight: 800; font-size: 0.7rem;
+  border: 1.5px solid var(--ink); width: 1.3rem; height: 1.3rem;
+  display: inline-flex; align-items: center; justify-content: center;
 }
 .chordlang-bar {
+  position: relative;
   border-left: 1.5px solid var(--ink);
-  padding: 0.7rem 0.5rem 0.9rem 0.75rem;
-  display: flex; gap: 0.6rem; align-items: baseline;
-  min-height: 3.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+  display: flex; align-items: center;
 }
-.chordlang-grid > .chordlang-bar:nth-of-type(4n) { border-right: 1.5px solid var(--ink); }
+.chordlang-bar > * { flex: 1; }
+.chordlang-bar-end { border-right: 1.5px solid var(--ink); }
 .chordlang-symbol {
   font-family: "ChordFont", ui-sans-serif;
   font-feature-settings: "liga" 1, "calt" 1;
-  font-size: 1.6rem; line-height: 1;
+  font-size: 1.65rem; line-height: 1;
 }
 .chordlang-symbol.chordlang-error {
-  font-family: ui-monospace, monospace; font-size: 0.9rem;
+  font-family: ui-monospace, monospace; font-size: 0.85rem;
   color: #b3402a; text-decoration: underline wavy;
 }
-.chordlang-repeat { font-family: "ChordFont", sans-serif; font-size: 1.6rem; color: #6f6a5e; }
+.chordlang-repeat { font-family: "ChordFont", sans-serif; font-size: 1.65rem; color: #6f6a5e; }
+.chordlang-slash {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75em; font-weight: 300;
+  margin: 0 0.02em;
+}
 .chordlang-hold { min-width: 0.8rem; }
 
 @media (prefers-reduced-motion: no-preference) {
   .chip { transition: border-color 120ms, color 120ms; }
+}
+
+/* ------- print: just the engraved chart, nothing else ------- */
+@media print {
+  @page { margin: 1.6cm 1.4cm; }
+
+  body { background: none; color: black; height: auto; display: block; }
+
+  .bar, .pane-source, .tabs, .status { display: none !important; }
+
+  .split { display: block; }
+
+  .pane-out { background: none; }
+  .view { padding: 0; overflow: visible; }
+  .view.active { display: block; }
+  #view-ast, #view-canonical { display: none !important; }
+
+  .page {
+    max-width: none; width: 100%;
+    margin: 0; padding: 0;
+    background: none; color: black;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chordlang-title { border-bottom-color: black; }
+  .chordlang-meta { color: #333; }
+  .chordlang-bar { border-color: black; }
+  .chordlang-section { border-color: black; }
+  .chordlang-bar-end { border-right-color: black; }
+  .chordlang-repeat { color: #333; }
+  .chordlang-symbol.chordlang-error { color: #900; }
+
+  .chordlang-grid { break-inside: avoid; }
+  .chordlang-section { break-after: avoid; }
 }

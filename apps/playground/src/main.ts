@@ -20,6 +20,19 @@ const EXAMPLES: Record<string, string> = {
 | F7 | Bb7 | F7 | Cm7,F7 |
 | Bb7 | % | F7 | Am7b5,D7 |
 | Gm7 | C7 | F7,D7 | Gm7,C7 |`,
+  "D Modal": `{title: D Modal}
+{key: D}
+[A]
+| D | F# | B-11 | E7 |
+| B-11 | A-9,D7 | G | D/F# |
+| Bbø7 | B-11 | E-7 | D/F# |
+| G | Abø | A7 | C# |
+[B]
+| D | A-9,D7 | G^7 | C9# |
+[C]
+| A^7 | A- | Eadd4 | E |
+| E^7b13 | :/: | G# |
+| A^7 |`,
 };
 
 const $ = <T extends HTMLElement>(sel: string) => document.querySelector(sel) as T;
