@@ -185,7 +185,7 @@ def main() -> int:
     fonts: dict[str, TTFont] = {}
     glyphs: dict = {}
     advances: dict = {}
-    digit_recordings: dict = {}
+    sup_recordings: dict = {}
 
     for glyph_name, spec in source_map.items():
         if glyph_name.startswith("_"):
@@ -206,25 +206,22 @@ def main() -> int:
         advance = apply_advance_override(advance, spec)
         glyphs[glyph_name] = glyph
         advances[glyph_name] = advance
-        if glyph_name.startswith("d") and len(glyph_name) == 2 and glyph_name[1].isdigit():
-            digit_recordings[glyph_name] = (recording, total_scale, dx, dy)
+        is_digit = glyph_name.startswith("d") and len(glyph_name) == 2 and glyph_name[1].isdigit()
+        if is_digit or spec.get("derive_sup"):
+            sup_recordings[glyph_name] = (recording, total_scale, dx, dy)
         print(f"  {glyph_name} <- {src_font}:{resolved}")
 
-    # Derive superscript digits from full digits
-    for d in "0123456789":
-        full_name = f"d{d}"
-        sup_name = f"d{d}.sup"
-        if full_name not in glyphs:
-            sys.exit(f"ERROR: cannot derive {sup_name}: missing {full_name}")
+    # Derive superscript variants for digits and flagged glyphs
+    for base_name, (recording, total_scale, dx, dy) in sup_recordings.items():
+        sup_name = f"{base_name}.sup"
         if sup_name in source_map:
             continue
-        recording, total_scale, dx, dy = digit_recordings[full_name]
         sup_glyph, sup_adv = derive_superscript(
-            recording, advances[full_name], total_scale, dx, dy
+            recording, advances[base_name], total_scale, dx, dy
         )
         glyphs[sup_name] = sup_glyph
         advances[sup_name] = sup_adv
-        print(f"  {sup_name} <- derived from {full_name}")
+        print(f"  {sup_name} <- derived from {base_name}")
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     emit_module(glyphs, advances)

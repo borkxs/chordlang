@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help build test clean setup fetch extract install-playground
+.PHONY: help build test clean setup fetch extract install-playground proof
 
 PYTHON := $(if $(wildcard .venv/bin/python3),.venv/bin/python3,python3)
 PYTEST := $(if $(wildcard .venv/bin/pytest),.venv/bin/pytest,pytest)
@@ -8,7 +8,7 @@ PYTEST := $(if $(wildcard .venv/bin/pytest),.venv/bin/pytest,pytest)
 help: ## Show available targets
 	@echo "Usage: make [target]"
 	@echo ""
-	@grep -E '^[a-zA-Z_-]+:.*## ' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*## ' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-16s\033[0m %s\n", $$1, $$2}'
 
 setup: ## Create .venv and install deps (first time)
 	python3 -m venv .venv
@@ -26,6 +26,10 @@ build: extract ## Build dist/ChordProof.ttf and copy to playground
 
 test: build ## Build and run shaping tests
 	$(PYTEST) tests/ -v
+
+proof: build ## Build + tests + proof HTML + metrics table
+	$(PYTEST) tests/ -v --tb=short
+	$(PYTHON) tools/render_proof.py
 
 clean: ## Remove built fonts from dist/
 	rm -rf dist/*.ttf glyphs/extracted_glyphs.py

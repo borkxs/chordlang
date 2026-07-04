@@ -68,18 +68,15 @@ for d in "0123456789":
         if name not in extracted:
             sys.exit(f"ERROR: extracted glyph missing: {name!r}. Run 'make extract'.")
         glyphs[name] = extracted[name]
-glyph_order += ["a", "j", "b", "numbersign", "maj.tri", "flat.root", "flat.alt", "sharp.root", "sharp.alt"]
-for name in (
-    "a",
-    "j",
-    "b",
-    "numbersign",
-    "maj.tri",
-    "flat.root",
-    "flat.alt",
-    "sharp.root",
-    "sharp.alt",
-):
+EXTRA_GLYPHS = [
+    "a", "j", "b", "d.lc", "i", "l", "o", "s", "t", "u",
+    "numbersign", "slash",
+    "maj.tri", "dim.ring",
+    "flat.root", "flat.alt", "sharp.root", "sharp.alt",
+    "a.sup", "l.sup", "t.sup", "slash.sup",
+]
+glyph_order += EXTRA_GLYPHS
+for name in EXTRA_GLYPHS:
     if name not in extracted:
         sys.exit(f"ERROR: extracted glyph missing: {name!r}. Run 'make extract'.")
     glyphs[name] = extracted[name]
@@ -89,10 +86,18 @@ cmap[ord(" ")] = "space"
 cmap[ord("m")] = "m"
 for d in "0123456789":
     cmap[ord(d)] = f"d{d}"
-cmap[ord("b")] = "b"
 cmap[ord("a")] = "a"
+cmap[ord("b")] = "b"
+cmap[ord("d")] = "d.lc"
+cmap[ord("i")] = "i"
 cmap[ord("j")] = "j"
+cmap[ord("l")] = "l"
+cmap[ord("o")] = "o"
+cmap[ord("s")] = "s"
+cmap[ord("t")] = "t"
+cmap[ord("u")] = "u"
 cmap[ord("#")] = "numbersign"
+cmap[ord("/")] = "slash"
 adv = {g: (300 if g == "space" else 520) for g in glyph_order}
 for name, width in extracted_adv.items():
     if name in adv:
@@ -110,7 +115,8 @@ fb.setupPost()
 
 DIGITS = " ".join(f"d{d}" for d in "0123456789")
 DIGITS_SUP = " ".join(f"d{d}.sup" for d in "0123456789")
-ROOTQUAL = " ".join(roots) + " m maj.tri sharp.root sharp.alt flat.root flat.alt"
+QUAL_LETTERS = "m a j b d.lc i l o s t u"
+ROOTQUAL = " ".join(roots) + " " + QUAL_LETTERS + " maj.tri dim.ring sharp.root sharp.alt flat.root flat.alt"
 
 fea = f"""
 @digit = [{DIGITS}];
@@ -118,23 +124,33 @@ fea = f"""
 @rootqual = [{ROOTQUAL}];
 
 feature liga {{
-    sub m a j by maj.tri;            # lowercase 'maj' -> engraved triangle
+    sub m a j by maj.tri;
+    sub d.lc i m by dim.ring;
 }} liga;
 
 feature calt {{
-    sub [A B C D E F G] numbersign' by sharp.root;  # root accidental, tight to letter
+    sub [A B C D E F G] numbersign' by sharp.root;
     sub [A B C D E F G] b' by flat.root;
-    sub b' by flat.alt;              # alteration accidental
+    sub sharp.root o' by dim.ring;
+    sub flat.root o' by dim.ring;
+    sub [A B C D E F G] o' by dim.ring;
+    sub b' by flat.alt;
     sub numbersign' by sharp.alt;
 }} calt;
 
 feature calt {{
-    sub @rootqual @digit' by @digitsup;   # superscript digit after root/quality
+    sub @rootqual @digit' by @digitsup;
     sub flat.alt @digit' by @digitsup;
     sub sharp.alt @digit' by @digitsup;
     sub flat.root @digit' by @digitsup;
     sub sharp.root @digit' by @digitsup;
-    sub @digitsup @digit' by @digitsup;   # chain: both digits of 13 raise
+    sub dim.ring @digit' by @digitsup;
+    sub @digitsup @digit' by @digitsup;
+    sub @digitsup slash' by slash.sup;
+    sub slash.sup @digit' by @digitsup;
+    sub @digitsup a' by a.sup;
+    sub a.sup l' by l.sup;
+    sub l.sup t' by t.sup;
 }} calt;
 """
 addOpenTypeFeaturesFromString(fb.font, fea)

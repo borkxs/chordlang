@@ -22,6 +22,20 @@ CASES = {
     "F#m7": "F sharp.root m d7.sup",
     "G13": "G d1.sup d3.sup",
     "Bb": "B flat.root",
+    "Bm7b5": "B m d7.sup flat.alt d5.sup",
+    "Em7b5": "E m d7.sup flat.alt d5.sup",
+    "Fmaj7": "F maj.tri d7.sup",
+    "Bb7": "B flat.root d7.sup",
+    "Eb7": "E flat.root d7.sup",
+    "F#m7b5": "F sharp.root m d7.sup flat.alt d5.sup",
+    "Dm7/A": "D m d7.sup slash.sup A",
+    "C7alt": "C d7.sup a.sup l.sup t.sup",
+    "F#o7": "F sharp.root dim.ring d7.sup",
+    "C6/9": "C d6.sup slash.sup d9.sup",
+    "Cdim7": "C dim.ring d7.sup",
+    "Csus4": "C s u s d4.sup",
+    "Cadd9": "C a d.lc d.lc d9.sup",
+    "C13b9": "C d1.sup d3.sup flat.alt d9.sup",
 }
 
 
