@@ -23,7 +23,14 @@ function cellHTML(cell: Cell, opts: RenderOptions): string {
   if (cell.kind === "hold") return `<span class="chordlang-hold"></span>`;
   try {
     const c = opts.normalize(cell.symbol);
-    return `<span class="chordlang-symbol" data-harte="${esc(c.render.harte)}">${esc(c.render.ascii)}</span>`;
+    const ascii = c.render.ascii;
+    const slashIdx = c.bass ? ascii.lastIndexOf("/") : -1;
+    if (slashIdx > 0) {
+      const head = ascii.slice(0, slashIdx);
+      const bass = ascii.slice(slashIdx + 1);
+      return `<span class="chordlang-symbol" data-harte="${esc(c.render.harte)}">${esc(head)}<span class="chordlang-slash">/</span>${esc(bass)}</span>`;
+    }
+    return `<span class="chordlang-symbol" data-harte="${esc(c.render.harte)}">${esc(ascii)}</span>`;
   } catch (e) {
     if (opts.lenient) return `<span class="chordlang-symbol chordlang-error">${esc(cell.symbol)}</span>`;
     throw e;
@@ -40,13 +47,26 @@ export function renderChartToHTML(ast: ChartAST, opts: RenderOptions): string {
       `<div class="chordlang-meta">${meta.map((d) => `<span>${esc(d.key)}: ${esc(d.value)}</span>`).join(" · ")}</div>`
     );
   parts.push(`<div class="chordlang-grid">`);
-  for (const item of ast.body) {
-    if (item.type === "section")
-      parts.push(`<div class="chordlang-section">${esc(item.label)}</div>`);
-    else if (item.type === "bar")
+  const { body } = ast;
+  let pendingSection: string | null = null;
+  for (let i = 0; i < body.length; i++) {
+    const item = body[i];
+    if (item.type === "section") {
+      pendingSection = item.label;
+    } else if (item.type === "bar") {
+      if (pendingSection) {
+        parts.push(
+          `<div class="chordlang-section-row"><span class="chordlang-section">${esc(pendingSection)}</span></div>`
+        );
+        pendingSection = null;
+      }
+      const next = body[i + 1];
+      const isEnd = !next || next.type === "barline-end" || next.type === "section";
+      const cls = isEnd ? "chordlang-bar chordlang-bar-end" : "chordlang-bar";
       parts.push(
-        `<div class="chordlang-bar">${item.cells.map((c) => cellHTML(c, opts)).join("")}</div>`
+        `<div class="${cls}">${item.cells.map((c) => cellHTML(c, opts)).join("")}</div>`
       );
+    }
   }
   parts.push(`</div></div>`);
   return parts.join("\n");
