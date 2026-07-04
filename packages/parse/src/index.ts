@@ -21,8 +21,5 @@ export interface ChartAST {
 }
 
 export function parseChart(src: string): ChartAST {
-  const ast = parser.parse(src) as ChartAST;
-  // drop the harmless trailing-barline artifact
-  ast.body = ast.body.filter((b) => b.type !== "barline-end");
-  return ast;
+  return parser.parse(src) as ChartAST;
 }
