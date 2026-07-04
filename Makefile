@@ -23,5 +23,9 @@ dev: ## Launch the live playground (hot-reload preview of current lib code)
 lint: ## Typecheck all packages
 	pnpm run lint
 
+font: ## Build the chord font (Python, packages/font)
+	$(MAKE) -C packages/font build
+
 clean: ## Remove build artifacts and generated parser
 	pnpm run clean
+	$(MAKE) -C packages/font clean

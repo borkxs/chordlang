@@ -1,0 +1,23 @@
+[project]
+name = "chordfont"
+version = "0.1.0"
+description = "OpenType font that renders engraved single-line chord symbols from ASCII via GSUB"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fonttools>=4.0",
+    "uharfbuzz>=0.37",
+    "cu2qu>=0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,17 @@
+dist/
+playground/ChordProof.ttf
+sources/*
+!sources/PINNED_REF.txt
+!sources/petaluma/
+sources/petaluma/*
+!sources/petaluma/OFL.txt
+!sources/smufl/
+sources/smufl/*
+!sources/smufl/glyphnames.json
+glyphs/extracted_glyphs.py
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/

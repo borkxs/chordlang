@@ -1,0 +1,8 @@
+ChordFont glyph outlines
+
+Handwritten jazz glyph outlines in this project are derived from Petaluma
+(Steinberg Media Technologies GmbH), licensed under the SIL Open Font License
+1.1. See sources/petaluma/OFL.txt and DECISIONS.md ADR-005.
+
+Petaluma is a reserved font name; this derivative is named ChordProof/ChordFont
+and is not affiliated with Steinberg or the Petaluma font family.
