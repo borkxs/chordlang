@@ -65,6 +65,39 @@ describe("normalize — the five stress chords", () => {
     expect(c.render.display).toBe("C6/9");
   });
 
+  it("C7b13 -> dominant with flat 13", () => {
+    const c = normalize("C7b13");
+    expect(c.root).toEqual({ letter: "C", accidental: 0 });
+    expect(c.factors).toContainEqual({ degree: 7, semitones: 10 });
+    expect(c.factors).toContainEqual({ degree: 13, semitones: 20 });
+    expect(c.render.display).toBe("C7♭13");
+    expect(c.render.harte).toBe("C:7(b13)");
+    expect(c.render.ascii).toBe("C7b13");
+    expect(c.render.musicxmlKind).toBe("dominant");
+    expect(c.underspecified).toBe(false);
+  });
+
+  it("G7b13 -> same quality, different root", () => {
+    const c = normalize("G7b13");
+    expect(c.root).toEqual({ letter: "G", accidental: 0 });
+    expect(c.render.display).toBe("G7♭13");
+    expect(c.render.harte).toBe("G:7(b13)");
+    expect(c.render.musicxmlKind).toBe("dominant");
+  });
+
+  it("Bm7b13 -> minor 7 with flat 13 (tonal decomposition fallback)", () => {
+    const c = normalize("Bm7b13");
+    expect(c.root).toEqual({ letter: "B", accidental: 0 });
+    expect(c.factors).toContainEqual({ degree: 3, semitones: 3 });
+    expect(c.factors).toContainEqual({ degree: 7, semitones: 10 });
+    expect(c.factors).toContainEqual({ degree: 13, semitones: 20 });
+    expect(c.render.display).toBe("Bm7♭13");
+    expect(c.render.harte).toBe("B:min7(b13)");
+    expect(c.render.ascii).toBe("Bm7b13");
+    expect(c.render.musicxmlKind).toBe("minor-seventh");
+    expect(c.underspecified).toBe(false);
+  });
+
   it("dialect folds: C-7, CΔ7, C^7 all resolve", () => {
     expect(normalize("C-7").render.harte).toBe("C:min7");
     expect(normalize("CΔ7").render.harte).toBe("C:maj7");

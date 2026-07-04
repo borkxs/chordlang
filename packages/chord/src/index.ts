@@ -145,6 +145,9 @@ const NAMES: Record<string, Naming> = {
   "1:0,3:4,5:7,7:10,9:14":    { display: "9",     harte: "9",     kind: "dominant-ninth" },
   "1:0,3:4,5:7,7:11,9:14":    { display: "△9",    harte: "maj9",  kind: "major-ninth" },
   "1:0,3:3,5:7,7:10,9:14":    { display: "m9",    harte: "min9",  kind: "minor-ninth" },
+  "1:0,3:4,5:7,7:10,13:20":   { display: "7♭13",  harte: "7(b13)", kind: "dominant" },
+  "1:0,3:4,7:10,13:20":       { display: "7♭13",  harte: "7(b13)", kind: "dominant" },
+  "1:0,3:3,5:7,7:10,13:20":   { display: "m7♭13", harte: "min7(b13)", kind: "minor-seventh" },
   "1:0,4:5,5:7":              { display: "sus4",  harte: "sus4",  kind: "suspended-fourth" },
   "1:0,2:2,5:7":              { display: "sus2",  harte: "sus2",  kind: "suspended-second" },
 };
@@ -154,6 +157,31 @@ function nameFactors(factors: ChordFactor[], asciiTail: string): Naming {
   if (hit) return hit;
   // Fallback: keep the typed tail for display; harte/kind get best-effort.
   return { display: asciiTail, harte: asciiTail, kind: "other" };
+}
+
+/* ------------------------------------------------------------------ */
+/* extension decomposition — handle suffixes tonal doesn't recognize   */
+/* ------------------------------------------------------------------ */
+
+const EXTENSION_SUFFIXES: Array<{ re: RegExp; factor: ChordFactor }> = [
+  { re: /b13$/, factor: { degree: 13, semitones: 20 } },
+  { re: /#13$/, factor: { degree: 13, semitones: 22 } },
+  { re: /b9$/,  factor: { degree: 9,  semitones: 13 } },
+  { re: /#9$/,  factor: { degree: 9,  semitones: 15 } },
+  { re: /#11$/, factor: { degree: 11, semitones: 18 } },
+  { re: /b11$/, factor: { degree: 11, semitones: 16 } },
+];
+
+function decomposeChord(chordPart: string): { parsed: ReturnType<typeof Chord.get>; extra: ChordFactor | null } {
+  const direct = Chord.get(chordPart);
+  if (!direct.empty && direct.tonic) return { parsed: direct, extra: null };
+  for (const { re, factor } of EXTENSION_SUFFIXES) {
+    if (!re.test(chordPart)) continue;
+    const base = chordPart.replace(re, "");
+    const attempt = Chord.get(base);
+    if (!attempt.empty && attempt.tonic) return { parsed: attempt, extra: factor };
+  }
+  return { parsed: direct, extra: null };
 }
 
 /* ------------------------------------------------------------------ */
@@ -172,13 +200,14 @@ export function normalize(symbol: string): Canonical {
   const chordPart = bassMatch ? bassMatch[1] : folded;
   const bassName = bassMatch ? bassMatch[2] : null;
 
-  const c = Chord.get(chordPart);
+  const { parsed: c, extra } = decomposeChord(chordPart);
   if (c.empty || !c.tonic) {
     throw new Error(`Cannot parse chord symbol: ${JSON.stringify(symbol)} (folded: ${JSON.stringify(folded)})`);
   }
 
   const root = toNoteRef(c.tonic);
   const factors = c.intervals.map(intervalToFactor);
+  if (extra) factors.push(extra);
 
   // bass + role: inversion iff the bass pitch-class is a chord tone
   let bass: NoteRef | null = null;
