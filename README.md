@@ -1,27 +1,23 @@
 # chordlang
 
-**Live demo:** [borkxs.github.io/chordlang](https://borkxs.github.io/chordlang) ·
+**Live demo:** [borkxs.github.io/chordlang](https://borkxs.github.io/chordlang)
+
 [CI](https://github.com/borkxs/chordlang/actions/workflows/ci.yml) ·
 [Pages deploy](https://github.com/borkxs/chordlang/actions/workflows/pages.yml)
 
-A portable, text-authored, properly-engraved **chord-changes** format for
-lead sheets and harmonic graphs. Chart syntax follows familiar fake-book
-conventions (bars, beat subdivisions, section markers); the differentiator
-is rendering — chord symbols are engraved by an OpenType font, not styled
-with CSS superscripts.
+chordlang is three related pieces for properly engraved jazz harmony:
 
-## Quick start
+- **ChordFont** — an OpenType font that shapes ASCII chord symbols via ligatures
+- **Charts** — a text format (`.cfmd`) for lead-sheet chord changes
+- **Graphs** — Graphviz DOT files (`.cfgv`) for harmonic progressions
+
+Plain text in, engraved output out — no CSS superscript hacks.
 
 ```
-make setup     # install (pnpm) + Playwright chromium
-make dev       # live playground — type text, watch it engrave
-make test      # vitest across packages
-make previews  # regenerate docs/assets/ preview images
-make help      # every target, self-documented
+Cmaj7 Dm7b5 F#m7 G13 Bb7
 ```
 
-Preview images are committed PNGs, not live GitHub renders — see
-[`docs/readme-previews.md`](docs/readme-previews.md) for when to re-run and commit.
+![ChordFont engraved symbols](docs/assets/font/readme-symbols.png)
 
 ## Install from npm
 
@@ -41,6 +37,19 @@ import { renderChartToHTML } from "@chordlang/render";
 import "@chordlang/render/chart.css";
 // @font-face ChordFont from @chordlang/font/ChordProof.ttf
 ```
+
+## Quick start
+
+```
+make setup     # install (pnpm) + Playwright chromium
+make dev       # live playground — type text, watch it engrave
+make test      # vitest across packages
+make previews  # regenerate docs/assets/ preview images
+make help      # every target, self-documented
+```
+
+Preview images are committed PNGs, not live GitHub renders — see
+[`docs/readme-previews.md`](docs/readme-previews.md) for when to re-run and commit.
 
 ## ChordFont
 
