@@ -37,7 +37,7 @@ chordlang source (.cfmd / .cfgv)
   | (internal)             | `@chordlang/chord`                 | canonical normalizer; keep or fold into parser |
 
 - [ ] Decide whether `@chordlang/chord` stays separate or merges into `@chordlang/parser` / `@chordlang/analyze`.
-- [ ] Audit copy (README, CODEBASE, playground UI) — lead with **structured notation pipeline**, not “a clever chord font”. *(README improved; playground tagline still font-forward.)*
+- [ ] Audit copy (README, CODEBASE, playground UI) — lead with **structured notation pipeline**, not “a clever chord font”. *(README improved; playground taglines updated.)*
 - [x] Consistent extension story: `.cfmd` (charts), `.cfgv` (graphs); document in spec/README.
 - [ ] Register npm org `@chordlang` (or confirm scoped publish under personal account).
 
@@ -47,9 +47,9 @@ chordlang source (.cfmd / .cfgv)
 
 - [x] Create public GitHub repo `chordlang` — `borkxs/chordlang` on GitHub.
 - [x] Add `LICENSE` at repo root (MIT for JS; separate OFL notice for ChordFont in `packages/font/`).
-- [ ] Add `CONTRIBUTING.md` (dev setup: Node 22 via `.nvmrc`, `make setup`, `make test`).
+- [x] Add `CONTRIBUTING.md` (dev setup: Node 22 via `.nvmrc`, `make setup`, `make test`).
 - [ ] Add issue templates / PR template (optional but helpful once public).
-- [ ] Pin description + topics: `music`, `chord-charts`, `lead-sheet`, `graphviz`, `open-type`, `jazz`.
+- [x] Pin description + topics: `music`, `chord-charts`, `lead-sheet`, `graphviz`, `open-type`, `jazz`.
 - [ ] Enable GitHub Discussions or link to issues for format questions (optional).
 - [x] `.gitignore` audit — `dist/`, `node_modules/`, generated parser, `.DS_Store` covered.
 - [ ] Remove or redact anything that shouldn’t be public (credentials, local paths, WIP notes). *(Quick pass still worthwhile.)*
@@ -98,8 +98,8 @@ All items still open — packages remain `"private": true`; root has `"packageMa
 
 Pages deploy workflow exists; test/lint/preview gates do not.
 
-- [ ] GitHub Actions workflow: `make setup` → `make test` → `make lint` on PR + `main`.
-- [ ] CI job: `make previews` and fail if `docs/assets/` drift (or auto-commit previews bot — pick one policy).
+- [x] GitHub Actions workflow: `make test` → `make lint` on PR + `main` (`.github/workflows/ci.yml`).
+- [x] CI job: `make previews` and fail if `docs/assets/` drift (preview-drift job in `ci.yml`).
 - [ ] CI job: `make font` + font shape tests (`packages/font`) on Python matrix (optional separate workflow).
 - [x] Node version pinned — `.nvmrc` → 22; Pages workflow uses `node-version-file: .nvmrc`.
 - [x] Cache pnpm store in CI — Pages workflow uses `cache: pnpm`.
@@ -135,7 +135,7 @@ Pages deploy workflow exists; test/lint/preview gates do not.
 
 ## Pre-launch smoke test
 
-- [ ] Fresh clone → `make setup` → `make test` → `make dev` (chart + graph demos work).
+- [ ] Fresh clone → `make setup` → `make test` → `make dev` (chart + graph demos work). *(test + lint verified locally; dev not re-checked this pass.)*
 - [ ] Fresh clone → `make previews` → README images match committed `docs/assets/`.
 - [ ] CLI: `chordlang html examples/charts/blues-in-f.cfmd` produces valid HTML with ChordFont classes.
 - [ ] Published npm packages work in a minimal HTML page or StackBlitz repro. *(blocked on npm publish)*
