@@ -1,9 +1,11 @@
 # chordlang
 
-**Live demo:** [borkxs.github.io/chordlang](https://borkxs.github.io/chordlang)
+**Live demo:** [borkxs.github.io/chordlang](https://borkxs.github.io/chordlang) ·
+[npm `@chordlang/*`](https://www.npmjs.com/search?q=%40chordlang)
 
 [CI](https://github.com/borkxs/chordlang/actions/workflows/ci.yml) ·
-[Pages deploy](https://github.com/borkxs/chordlang/actions/workflows/pages.yml)
+[Pages deploy](https://github.com/borkxs/chordlang/actions/workflows/pages.yml) ·
+[Releases](https://github.com/borkxs/chordlang/releases)
 
 chordlang is three related pieces for properly engraved jazz harmony:
 
@@ -21,13 +23,23 @@ Cmaj7 Dm7b5 F#m7 G13 Bb7
 
 ## Install from npm
 
+All packages are published at **0.1.1** under the [`@chordlang`](https://www.npmjs.com/org/chordlang) scope:
+
+| Package | Role |
+|---------|------|
+| [`@chordlang/parser`](https://www.npmjs.com/package/@chordlang/parser) | `.cfmd` chart grammar → AST |
+| [`@chordlang/chord`](https://www.npmjs.com/package/@chordlang/chord) | chord-symbol normalizer |
+| [`@chordlang/render`](https://www.npmjs.com/package/@chordlang/render) | AST → engraved HTML + `chart.css` |
+| [`@chordlang/font`](https://www.npmjs.com/package/@chordlang/font) | ChordFont TTF (OFL) |
+| [`@chordlang/graph`](https://www.npmjs.com/package/@chordlang/graph) | Graphviz DOT → styled SVG |
+| [`@chordlang/cli`](https://www.npmjs.com/package/@chordlang/cli) | `chordlang <mode> file.cfmd` (ast, canonical, html) |
+
 ```bash
 npm install @chordlang/parser @chordlang/chord @chordlang/render @chordlang/font
 # optional: graphs + CLI
 npm install @chordlang/graph @chordlang/cli
 ```
 
-Each package has its own README on npm (`@chordlang/parser`, `@chordlang/render`, …).
 Minimal HTML pipeline:
 
 ```js
@@ -142,8 +154,10 @@ Dev-only: Playwright (README preview screenshots), Vite (playground).
 
 ## Related
 
+- [CHANGELOG.md](CHANGELOG.md) — release history (`v0.1.0`, `v0.1.1`)
 - [DECISIONS.md](DECISIONS.md) — architecture notes (grammar spec, tonal wrapper, rendering split)
 - [CODEBASE.md](CODEBASE.md) — package map and data flow
+- [PUBLISH_CHECKLIST.md](PUBLISH_CHECKLIST.md) — post-launch polish and release housekeeping
 - [docs/readme-previews.md](docs/readme-previews.md) — regenerating README preview PNGs
 - [examples/README.md](examples/README.md) — editing `.cfmd` / `.cfgv` sources
 

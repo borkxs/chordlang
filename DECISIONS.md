@@ -41,4 +41,4 @@ out of v0.1.
 - `@chordlang/graph` — `packages/graph`; Graphviz DOT → styled SVG (extracted from playground).
 - `@chordlang/font` — `packages/font` npm tarball with `ChordProof.ttf` + OFL notice; Python build unchanged.
 
-**Build contract:** published tarballs ship `dist/` only (`files` + `exports`); playground keeps Vite src aliases (ADR-004). `private: true` until `@chordlang` npm org is registered, then flip per package and tag `v0.1.0`.
+**Build contract:** published tarballs ship `dist/` only (`files` + `exports`); playground keeps Vite src aliases (ADR-004). All six packages are public on npm under `@chordlang` (org registered; first release `v0.1.0`, current `v0.1.1`). Publish via `.github/workflows/publish.yml` on version tags.

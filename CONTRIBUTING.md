@@ -54,8 +54,19 @@ each package's role. Architecture decisions are in [`DECISIONS.md`](DECISIONS.md
 3. If preview assets may have changed, run `make previews` and include updated PNGs.
 4. Keep commits focused; link related issues when applicable.
 
-CI must pass before merge. The publish roadmap lives in
-[`PUBLISH_CHECKLIST.md`](PUBLISH_CHECKLIST.md).
+CI must pass before merge.
+
+## Releasing
+
+Packages are published to npm as `@chordlang/*` (currently `0.1.1`). To cut a
+release:
+
+1. Bump version in each affected `packages/*/package.json`.
+2. Add a dated section to [`CHANGELOG.md`](CHANGELOG.md).
+3. Tag (`git tag v0.1.2`) and push — [`.github/workflows/publish.yml`](.github/workflows/publish.yml) publishes on `v*` tags.
+
+Remaining release housekeeping (OIDC trusted publishing, consumer smoke tests,
+semver automation) is tracked in [`PUBLISH_CHECKLIST.md`](PUBLISH_CHECKLIST.md).
 
 ## License
 

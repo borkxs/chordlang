@@ -1,7 +1,7 @@
 # Codebase guide
 
 pnpm monorepo (`pnpm-workspace.yaml` includes `packages/*` and `apps/*`).
-Six library packages, a CLI, and a playground app.
+Six published npm packages (`@chordlang/*` at `0.1.1`), a CLI, and a playground app.
 
 ## Data flow
 
@@ -129,6 +129,18 @@ The chart grid uses `display: grid; grid-template-columns: repeat(4, 1fr)`.
 Section labels span full-width (`grid-column: 1 / -1`).  Barlines are CSS
 borders: every bar gets `border-left`, row-ending bars (`.chordlang-bar-end`)
 get `border-right`.  Rows are spaced with `row-gap`.
+
+## Publishing
+
+Six packages ship on npm under `@chordlang` (see ADR-006). TypeScript packages
+build to `dist/` and declare `"files": ["dist", …]`; the font package ships
+committed `fonts/ChordProof.ttf` + `NOTICE`.
+
+- Bump versions in each `packages/*/package.json`, update `CHANGELOG.md`, tag
+  `v*`, and push — `.github/workflows/publish.yml` runs `make build` then
+  `pnpm publish` in dependency order (parser → chord → render → graph → cli → font).
+- Playground dev still aliases package **source** (ADR-004); consumers get `dist/`.
+- Remaining release polish: [`PUBLISH_CHECKLIST.md`](PUBLISH_CHECKLIST.md).
 
 ## Tests
 
