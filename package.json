@@ -1,6 +1,7 @@
 {
   "name": "chordlang",
   "private": true,
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "help": "grep -E '^[a-zA-Z_-]+:.*?## .*$' Makefile | awk 'BEGIN{FS=\":.*?## \"}{printf \"  %-16s %s\\n\",$1,$2}'",
     "grammar": "pnpm --filter @chordlang/parse grammar",
