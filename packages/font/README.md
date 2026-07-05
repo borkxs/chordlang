@@ -2,6 +2,21 @@
 
 An OpenType font that renders properly-engraved **single-line chord symbols** (`Cmaj7`, `F#m7b5`, `G13`) from plain ASCII input, via GSUB contextual substitution. No JavaScript runtime is required — the font does the work in the shaping engine.
 
+## npm install
+
+```bash
+npm install @chordlang/font
+```
+
+```css
+@font-face {
+  font-family: "ChordFont";
+  src: url("node_modules/@chordlang/font/fonts/ChordProof.ttf") format("truetype");
+}
+```
+
+Exports: `@chordlang/font/ChordProof.ttf`, `@chordlang/font/NOTICE` (OFL).
+
 This is distinct from chord-**diagram** fonts (TabFont et al.): we **compose** symbols from glyph parts, not look up pre-drawn fretboard grids.
 
 ## How it works

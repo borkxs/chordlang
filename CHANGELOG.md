@@ -6,13 +6,14 @@ All notable changes to this project are documented here. Format follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-07-05
+
 ### Added
 
-- GitHub Actions CI (`make test`, `make lint`, preview drift check).
-- npm publish metadata on `@chordlang/*` packages (`files`, `exports`, `prepublishOnly`).
-- `CONTRIBUTING.md`, issue/PR templates, `THIRD_PARTY_NOTICES.md`.
+- Package READMEs on npm for `@chordlang/parser`, `chord`, `render`, `graph`, `cli`, and `font`.
+- Root README "Install from npm" section.
 
-## [0.1.0] - TBD
+## [0.1.0] - 2026-07-05
 
 First public release: structured chord-chart pipeline, ChordFont engraving,
 playground demo, and CLI.
@@ -29,5 +30,6 @@ playground demo, and CLI.
 - **Playground** — live chart editor and graph demo on GitHub Pages.
 - **Examples** — `.cfmd` charts, `.cfgv` Graphviz graphs, committed README preview PNGs.
 
-[Unreleased]: https://github.com/borkxs/chordlang/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/borkxs/chordlang/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/borkxs/chordlang/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/borkxs/chordlang/releases/tag/v0.1.0

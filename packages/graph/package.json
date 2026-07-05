@@ -1,6 +1,6 @@
 {
   "name": "@chordlang/graph",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Graphviz DOT → styled SVG for chordlang (.cfgv) harmonic graphs",
   "type": "module",
   "private": false,
@@ -13,7 +13,7 @@
     },
     "./graph.css": "./graph.css"
   },
-  "files": ["dist", "graph.css"],
+  "files": ["dist", "graph.css", "README.md"],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "pnpm run build",

@@ -23,6 +23,25 @@ make help      # every target, self-documented
 Preview images are committed PNGs, not live GitHub renders — see
 [`docs/readme-previews.md`](docs/readme-previews.md) for when to re-run and commit.
 
+## Install from npm
+
+```bash
+npm install @chordlang/parser @chordlang/chord @chordlang/render @chordlang/font
+# optional: graphs + CLI
+npm install @chordlang/graph @chordlang/cli
+```
+
+Each package has its own README on npm (`@chordlang/parser`, `@chordlang/render`, …).
+Minimal HTML pipeline:
+
+```js
+import { parseChart } from "@chordlang/parser";
+import { normalize } from "@chordlang/chord";
+import { renderChartToHTML } from "@chordlang/render";
+import "@chordlang/render/chart.css";
+// @font-face ChordFont from @chordlang/font/ChordProof.ttf
+```
+
 ## ChordFont
 
 An OpenType font that engraves single-line jazz chord symbols from plain ASCII

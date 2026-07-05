@@ -1,6 +1,6 @@
 {
   "name": "@chordlang/parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Peggy chart-structure parser for chordlang (.cfmd)",
   "type": "module",
   "private": false,
@@ -12,7 +12,7 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "scripts": {
     "grammar": "mkdir -p src/generated && peggy --format es -o src/generated/chart.mjs src/chart.peggy",
     "prebuild": "pnpm run grammar",
