@@ -1,8 +1,13 @@
 /**
  * Render example previews for docs/assets/ (README embeds, publish-ready).
  *
- * Charts: .cfmd → HTML + ChordFont → PNG (Playwright)
- * Graphs: .cfgv → Graphviz SVG (font embedded) → PNG
+ * Pipeline (run via `make previews`):
+ *   Font:   examples/font/<manifest.readme.font>.txt → PNG strip
+ *   Charts: examples/charts/*.cfmd → HTML + chart.css → PNG (Playwright)
+ *   Graphs: examples/graphs/*.cfgv → Graphviz SVG (+ embedded font) → PNG
+ *
+ * Re-run when README sources, manifest, chart.css, ChordFont, or this script change.
+ * See examples/README.md for the full trigger list and commit checklist.
  *
  * ChordFont is inlined as a data-URI — file:// @font-face fails in headless Chromium.
  *
@@ -22,8 +27,10 @@ import { renderChartToHTML } from "../packages/render/src/index.ts";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const FONT = join(ROOT, "apps/playground/public/fonts/ChordProof.ttf");
 const CHART_CSS = join(ROOT, "packages/render/chart.css");
+const FONT_SRC = join(ROOT, "examples/font");
 const CHARTS_SRC = join(ROOT, "examples/charts");
 const GRAPHS_SRC = join(ROOT, "examples/graphs");
+const OUT_FONT = join(ROOT, "docs/assets/font");
 const OUT_CHARTS = join(ROOT, "docs/assets/charts");
 const OUT_GRAPHS = join(ROOT, "docs/assets/graphs");
 
@@ -61,6 +68,22 @@ async function screenshot(browser: Browser, html: string, selector: string, outP
   });
   await page.locator(selector).screenshot({ path: outPath, type: "png" });
   await page.close();
+}
+
+/** README font strip — one engraved row from examples/font/<name>.txt (see manifest.readme.font). */
+async function renderReadmeFont(browser: Browser, fontBase64: string) {
+  const name = manifest.readme.font;
+  const raw = (await readFile(join(FONT_SRC, `${name}.txt`), "utf8")).trim();
+  const symbols = raw.split(/\s+/).filter(Boolean);
+  const spans = symbols.map((s) => `<span class="sym">${s}</span>`).join("");
+  const doc = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+${fontFace(fontBase64)}
+body{margin:0;background:#888}
+.strip{background:#fbf8f1;padding:28px 32px;display:inline-flex;gap:2.2rem;align-items:baseline}
+.sym{font-family:"ChordFont",ui-sans-serif;font-feature-settings:"liga" 1,"calt" 1;font-size:2.4rem;line-height:1;color:#1a1815}
+</style></head><body><div class="strip">${spans}</div></body></html>`;
+  await screenshot(browser, doc, ".strip", join(OUT_FONT, `${name}.png`));
+  console.log(`  font/${name}.png`);
 }
 
 async function renderCharts(browser: Browser, chartCss: string, fontBase64: string) {
@@ -102,6 +125,7 @@ async function main() {
     process.exit(1);
   }
 
+  await mkdir(OUT_FONT, { recursive: true });
   await mkdir(OUT_CHARTS, { recursive: true });
   await mkdir(OUT_GRAPHS, { recursive: true });
 
@@ -113,6 +137,8 @@ async function main() {
   const graphviz = await Graphviz.load();
 
   try {
+    console.log("Rendering README font preview…");
+    await renderReadmeFont(browser, fontBase64);
     console.log("Rendering chart previews…");
     await renderCharts(browser, chartCss, fontBase64);
     console.log("Rendering graph previews…");

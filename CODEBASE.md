@@ -87,14 +87,24 @@ through the same parse → normalize → render pipeline.
 
 ### `examples/` — source examples
 
+- `font/*.txt` — ASCII symbol strips for README font preview.
 - `charts/*.cfmd` — lead-sheet chart sources (playground + README previews).
 - `graphs/*.cfgv` — Graphviz DOT harmonic graphs (standard DOT + ChordFont labels).
-- `manifest.json` — ordered file list and playground chip labels.
+- `manifest.json` — playground chip order; `readme` key names files embedded in root README.
 
 ### `docs/assets/` — published previews
 
-PNG (and graph SVG) outputs from `make previews`. Committed for GitHub README
-embeds; regenerate after editing examples or render styles.
+PNG (and graph SVG) outputs from `make previews`, driven by `scripts/render-previews.ts`.
+Committed for GitHub README embeds — GitHub does not run ChordFont or Graphviz at view time.
+
+Re-run `make previews` and commit `docs/assets/` when any of these change:
+
+- README source files (`manifest.readme`: font strip, `blues-in-f.cfmd`, `ii-v-i-chain.cfgv`)
+- Any other chart/graph in `manifest.json`
+- `packages/render/chart.css` or ChordFont (`make font`)
+- Preview script styling (`scripts/render-previews.ts`)
+
+See `examples/README.md` for the full checklist.
 
 ### `apps/playground` — live preview (Vite)
 
