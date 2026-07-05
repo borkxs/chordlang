@@ -1,7 +1,14 @@
 import { parseChart } from "@chordlang/parse";
 import { normalize } from "@chordlang/chord";
 import { renderChartToHTML } from "@chordlang/render";
-import { CHART_EXAMPLES } from "./examples";
+import {
+  CHART_BY_SLUG,
+  CHART_MANIFEST,
+  DEFAULT_CHART_SLUG,
+  GRAPH_BY_SLUG,
+} from "./examples";
+import { parseRoute, resolveSlug, examplePath } from "./routes";
+import { onRouteChange, wireExampleNav } from "./playground";
 
 const $ = <T extends HTMLElement>(sel: string) => document.querySelector(sel) as T;
 const source = $<HTMLTextAreaElement>("#source");
@@ -9,6 +16,16 @@ const page = $("#page");
 const astView = $("#view-ast");
 const canonView = $("#view-canonical");
 const status = $("#status");
+const nav = $("#examples");
+
+let activeSlug = resolveSlug(parseRoute(location.pathname).slug, CHART_BY_SLUG, DEFAULT_CHART_SLUG);
+
+function syncUrl(slug: string) {
+  const parsed = parseRoute(location.pathname);
+  if (parsed.slug !== slug) {
+    history.replaceState(null, "", examplePath("chart", slug));
+  }
+}
 
 function update() {
   const src = source.value;
@@ -37,17 +54,24 @@ function update() {
   }
 }
 
-// example chips
-const nav = $("#examples");
-for (const name of Object.keys(CHART_EXAMPLES)) {
-  const b = document.createElement("button");
-  b.textContent = name;
-  b.className = "chip";
-  b.onclick = () => { source.value = CHART_EXAMPLES[name]; update(); };
-  nav.appendChild(b);
+function loadSlug(slug: string) {
+  activeSlug = slug;
+  source.value = CHART_BY_SLUG[slug]!.source;
+  document.title = `${CHART_BY_SLUG[slug]!.label} — chordlang`;
+  update();
 }
 
-// tabs
+wireExampleNav({
+  kind: "chart",
+  nav,
+  order: CHART_MANIFEST,
+  bySlug: CHART_BY_SLUG,
+  activeSlug,
+  onSelect: loadSlug,
+  peerKind: "graph",
+  peerBySlug: GRAPH_BY_SLUG,
+});
+
 document.querySelectorAll<HTMLButtonElement>(".tab").forEach((tab) => {
   tab.onclick = () => {
     document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
@@ -58,5 +82,22 @@ document.querySelectorAll<HTMLButtonElement>(".tab").forEach((tab) => {
 });
 
 source.addEventListener("input", update);
-source.value = CHART_EXAMPLES["Walkin Thing"];
-update();
+
+onRouteChange(() => {
+  const slug = resolveSlug(parseRoute(location.pathname).slug, CHART_BY_SLUG, DEFAULT_CHART_SLUG);
+  if (slug === activeSlug) return;
+  loadSlug(slug);
+  wireExampleNav({
+    kind: "chart",
+    nav,
+    order: CHART_MANIFEST,
+    bySlug: CHART_BY_SLUG,
+    activeSlug: slug,
+    onSelect: loadSlug,
+    peerKind: "graph",
+    peerBySlug: GRAPH_BY_SLUG,
+  });
+});
+
+loadSlug(activeSlug);
+syncUrl(activeSlug);

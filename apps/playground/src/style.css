@@ -1,9 +1,9 @@
+@import "../../../packages/render/chart.css";
+
 @font-face {
   font-family: "ChordFont";
   src: url("/fonts/ChordProof.ttf") format("truetype");
 }
-
-@import "../../../packages/render/chart.css";
 
 :root {
   --paper: #fbf8f1;
@@ -42,6 +42,12 @@ body {
   cursor: pointer;
 }
 .chip:hover, .chip:focus-visible { border-color: var(--brass); color: var(--brass); outline: none; }
+.chip.active { border-color: var(--brass); color: var(--brass); background: rgba(168, 130, 60, 0.12); }
+.peer-link {
+  margin-left: 0.5rem; padding-left: 0.75rem; border-left: 1px solid #3a4048;
+  font-size: 0.78rem; color: var(--smoke); text-decoration: none; align-self: center;
+}
+.peer-link:hover { color: var(--brass); }
 
 .split { flex: 1; display: grid; grid-template-columns: minmax(320px, 42%) 1fr; min-height: 0; }
 @media (max-width: 760px) { .split { grid-template-columns: 1fr; grid-template-rows: 40% 1fr; } }

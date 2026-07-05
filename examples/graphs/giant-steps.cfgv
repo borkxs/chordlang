@@ -1,14 +1,31 @@
 digraph {
   rankdir=TB;
-  graph [bgcolor="transparent" pad=0.4];
-  node [shape=plaintext fontname="ChordFont" fontsize=32];
+  graph [bgcolor="transparent" pad=0.55 nodesep=0.75 ranksep=0.85];
+  node [shape=plaintext fontname="ChordFont" fontsize=28];
   edge [color="#6f6a5e" penwidth=1.4 arrowsize=0.7];
 
-  // Coltrane cycle — major-third key centers
-  Bmaj7 -> D7 -> Gmaj7;
-  Gmaj7 -> Bb7 -> Ebmaj7;
-  Ebmaj7 -> "F#7" -> Bmaj7;
+  // Center — Coltrane major-third cycle (B / G / Eb key centers)
+  subgraph cluster_cycle {
+    style=rounded;
+    color="#d9d2c3";
+    penwidth=1.2;
+    label="";
 
-  { rank=same; D7; Bb7; "F#7"; }
-  { rank=same; Gmaj7; Ebmaj7; Bmaj7; }
+    Bmaj7 -> D7 -> Gmaj7;
+    Gmaj7 -> Bb7 -> Ebmaj7;
+    Ebmaj7 -> "F#7" -> Bmaj7;
+
+    { rank=same; D7; Bb7; "F#7"; }
+    { rank=same; Bmaj7; Gmaj7; Ebmaj7; }
+  }
+
+  // Tonicizing ii–V pairs from the tune — ii outside, V shared with cycle
+  Am7 -> D7 [color="#a8823c" style=dashed];
+  Fm7 -> Bb7 [color="#a8823c" style=dashed];
+  "C#m7" -> "F#7" [color="#a8823c" style=dashed];
+
+  // Spread each ii under its dominant (left → G, center → Eb, right → B)
+  D7 -> Am7 [style=invis weight=2];
+  Bb7 -> Fm7 [style=invis weight=2];
+  "F#7" -> "C#m7" [style=invis weight=2];
 }

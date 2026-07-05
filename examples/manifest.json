@@ -8,6 +8,7 @@
     { "file": "walkin-thing", "label": "Walkin Thing" },
     { "file": "stress-test", "label": "Stress test" },
     { "file": "blues-in-f", "label": "Blues in F" },
+    { "file": "giant-steps", "label": "Giant Steps" },
     { "file": "d-modal", "label": "D Modal" }
   ],
   "graphs": [
