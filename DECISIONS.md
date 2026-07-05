@@ -15,7 +15,7 @@ fixes tonal's two known gaps: `7alt` voicing fabrication (we flag
 `underspecified` instead) and half-diminished naming (ø7 ≡ m7b5 by factors).
 
 ## ADR-003: The Peggy grammar IS the format spec
-packages/parse/src/chart.peggy is the source of truth. It parses STRUCTURE
+packages/parser/src/chart.peggy is the source of truth. It parses STRUCTURE
 only; chord tokens are opaque strings handed to @chordlang/chord. Declarative,
 executable, and diffable — the properties a portable format spec needs.
 
@@ -28,3 +28,17 @@ Tradeoff accepted: the playground previews TS source, not the published build.
 with liga+calt on; the font's GSUB does the symbol engraving. Render owns only
 the measure grid / sections / beat cells. No layout tokens in the source format
 (the iReal anti-pattern).
+
+## ADR-006: v0.1 publish scope and package names
+**Scope:** ship the parse → normalize → render pipeline plus graph renderer and
+font tarball. Harmonic analyzer (`@chordlang/analyze`) and corpus tooling stay
+out of v0.1.
+
+**Names (v0.1):**
+- `@chordlang/parser` — `packages/parser` (renamed from `parse` before npm publish).
+- `@chordlang/chord` — publish as its own package; render depends on it. Do not fold into parser/analyze yet.
+- `@chordlang/render`, `@chordlang/cli` — unchanged.
+- `@chordlang/graph` — `packages/graph`; Graphviz DOT → styled SVG (extracted from playground).
+- `@chordlang/font` — `packages/font` npm tarball with `ChordProof.ttf` + OFL notice; Python build unchanged.
+
+**Build contract:** published tarballs ship `dist/` only (`files` + `exports`); playground keeps Vite src aliases (ADR-004). `private: true` until `@chordlang` npm org is registered, then flip per package and tag `v0.1.0`.

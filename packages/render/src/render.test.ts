@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { renderChartToHTML } from "./index";
-import { parseChart } from "@chordlang/parse";
+import { parseChart } from "@chordlang/parser";
 import { normalize } from "@chordlang/chord";
 
 describe("renderChartToHTML", () => {

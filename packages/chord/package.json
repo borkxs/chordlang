@@ -1,13 +1,35 @@
 {
   "name": "@chordlang/chord",
   "version": "0.1.0",
+  "description": "Chord-symbol normalizer (tonal wrapper → canonical struct)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "pnpm run build",
     "test": "vitest run",
     "lint": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borkxs/chordlang.git",
+    "directory": "packages/chord"
+  },
+  "homepage": "https://github.com/borkxs/chordlang#readme",
+  "bugs": "https://github.com/borkxs/chordlang/issues",
+  "license": "MIT",
+  "author": "Erik Michaelson <erik.michaelson@gmail.com>",
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "tonal": "^6.4.0"
@@ -15,9 +37,5 @@
   "devDependencies": {
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
-  },
-  "publishConfig": {
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts"
   }
 }

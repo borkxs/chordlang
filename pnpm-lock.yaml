@@ -23,15 +23,15 @@ importers:
       '@chordlang/chord':
         specifier: workspace:*
         version: link:../../packages/chord
-      '@chordlang/parse':
+      '@chordlang/graph':
         specifier: workspace:*
-        version: link:../../packages/parse
+        version: link:../../packages/graph
+      '@chordlang/parser':
+        specifier: workspace:*
+        version: link:../../packages/parser
       '@chordlang/render':
         specifier: workspace:*
         version: link:../../packages/render
-      '@hpcc-js/wasm':
-        specifier: ^2.22.4
-        version: 2.34.5
     devDependencies:
       typescript:
         specifier: ^5.6.0
@@ -58,9 +58,9 @@ importers:
       '@chordlang/chord':
         specifier: workspace:*
         version: link:../chord
-      '@chordlang/parse':
+      '@chordlang/parser':
         specifier: workspace:*
-        version: link:../parse
+        version: link:../parser
       '@chordlang/render':
         specifier: workspace:*
         version: link:../render
@@ -72,7 +72,22 @@ importers:
         specifier: ^5.6.0
         version: 5.9.3
 
-  packages/parse:
+  packages/font: {}
+
+  packages/graph:
+    dependencies:
+      '@hpcc-js/wasm':
+        specifier: ^2.22.4
+        version: 2.34.5
+    devDependencies:
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.0
+        version: 2.1.9(@types/node@26.1.0)
+
+  packages/parser:
     devDependencies:
       peggy:
         specifier: ^4.0.0
@@ -89,9 +104,9 @@ importers:
       '@chordlang/chord':
         specifier: workspace:*
         version: link:../chord
-      '@chordlang/parse':
+      '@chordlang/parser':
         specifier: workspace:*
-        version: link:../parse
+        version: link:../parser
     devDependencies:
       typescript:
         specifier: ^5.6.0

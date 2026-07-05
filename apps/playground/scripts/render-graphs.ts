@@ -6,17 +6,13 @@
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { Graphviz } from "@hpcc-js/wasm";
+import { loadGraphviz, renderDot } from "@chordlang/graph";
 import manifest from "../../../examples/manifest.json" with { type: "json" };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REPO = join(ROOT, "../..");
 const GRAPHS = join(REPO, "examples/graphs");
 const OUT = join(ROOT, "dist", "graphs");
-
-function styleSvg(svg: string): string {
-  return svg.replace("<svg ", '<svg class="graph-svg" ');
-}
 
 function galleryHTML(entries: { name: string; slug: string; svg: string }[]): string {
   const cards = entries
@@ -92,12 +88,12 @@ ${cards}
 async function main() {
   await mkdir(OUT, { recursive: true });
 
-  const graphviz = await Graphviz.load();
+  const graphviz = await loadGraphviz();
   const entries: { name: string; slug: string; svg: string }[] = [];
 
   for (const { file, label } of manifest.graphs) {
     const dot = (await readFile(join(GRAPHS, `${file}.cfgv`), "utf8")).trimEnd();
-    const svg = styleSvg(graphviz.dot(dot, "svg"));
+    const svg = renderDot(graphviz, dot);
 
     await writeFile(join(OUT, `${file}.dot`), dot, "utf8");
     await writeFile(join(OUT, `${file}.svg`), svg, "utf8");

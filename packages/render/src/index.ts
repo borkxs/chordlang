@@ -5,7 +5,7 @@
  * We therefore emit the chord's *ascii* form and let the font shape it.
  * Consumer supplies @font-face for "ChordFont"; we don't bundle it.
  */
-import type { ChartAST, Cell } from "@chordlang/parse";
+import type { ChartAST, Cell } from "@chordlang/parser";
 import type { Canonical } from "@chordlang/chord";
 
 export interface RenderOptions {

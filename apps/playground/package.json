@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@chordlang/chord": "workspace:*",
-    "@chordlang/parse": "workspace:*",
+    "@chordlang/parser": "workspace:*",
     "@chordlang/render": "workspace:*",
-    "@hpcc-js/wasm": "^2.22.4" },
+    "@chordlang/graph": "workspace:*"
+  },
   "devDependencies": { "vite": "^5.4.0", "typescript": "^5.6.0" } }

@@ -1,6 +1,8 @@
 # chordlang
 
-**Live demo:** [borkxs.github.io/chordlang](https://borkxs.github.io/chordlang)
+**Live demo:** [borkxs.github.io/chordlang](https://borkxs.github.io/chordlang) ·
+[CI](https://github.com/borkxs/chordlang/actions/workflows/ci.yml) ·
+[Pages deploy](https://github.com/borkxs/chordlang/actions/workflows/pages.yml)
 
 A portable, text-authored, properly-engraved **chord-changes** format for
 lead sheets and harmonic graphs. Chart syntax follows familiar fake-book
@@ -41,7 +43,7 @@ Cmaj7 Dm7b5 F#m7 G13 Bb7
 Lead-sheet chord changes in `.cfmd` — a Peggy grammar for structure, ChordFont
 for symbols. Commas subdivide a bar into equal beat-slots; `%` repeats the
 previous bar; `[A]` marks a form section. Grammar IS the spec:
-[`packages/parse/src/chart.peggy`](packages/parse/src/chart.peggy).
+[`packages/parser/src/chart.peggy`](packages/parser/src/chart.peggy).
 
 Source (`examples/charts/blues-in-f.cfmd`):
 
@@ -119,13 +121,18 @@ Dev-only: Playwright (README preview screenshots), Vite (playground).
 
 Topics: `chord-charts`, `lead-sheet`, `jazz`, `chord-symbols`, `open-type`, `graphviz`.
 
+*chordlang* and *ChordFont* are project names for this open-source work. They are
+not affiliated with or endorsed by iReal Pro, Hal Leonard, or other commercial
+chart products cited as design references.
+
 ## Layout
 
 ```
 examples/           .cfmd / .cfgv / .txt sources + manifest
 docs/assets/        committed preview PNGs (make previews)
 packages/chord      normalize(symbol) → canonical struct
-packages/parse      Peggy chart grammar → AST (grammar IS the spec)
+packages/parser     Peggy chart grammar → AST (grammar IS the spec)
+packages/graph      Graphviz DOT → styled SVG for .cfgv graphs
 packages/render     AST + chart.css → engraved HTML
 packages/font       ChordFont OpenType build (Python)
 packages/cli        chordlang <ast|canonical|html> file.cfmd

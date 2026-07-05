@@ -34,5 +34,6 @@ proof: build ## Build + tests + proof HTML + metrics table
 clean: ## Remove built fonts from dist/
 	rm -rf dist/*.ttf glyphs/extracted_glyphs.py
 
-install-playground: ## Copy built font to apps/playground
+install-playground: ## Copy built font to apps/playground and npm fonts/
 	cp dist/ChordProof.ttf ../../apps/playground/public/fonts/ChordProof.ttf
+	cp dist/ChordProof.ttf fonts/ChordProof.ttf

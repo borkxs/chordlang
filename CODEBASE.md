@@ -1,7 +1,7 @@
 # Codebase guide
 
 pnpm monorepo (`pnpm-workspace.yaml` includes `packages/*` and `apps/*`).
-Three library packages, a CLI, and a playground app.
+Six library packages, a CLI, and a playground app.
 
 ## Data flow
 
@@ -23,7 +23,7 @@ engraved chord chart
 
 ## Packages
 
-### `packages/parse` — chart grammar → AST
+### `packages/parser` — chart grammar → AST
 
 - `src/chart.peggy` — **this file IS the format spec** (ADR-003). Parses
   structure only; chord tokens are opaque strings.
@@ -66,7 +66,13 @@ Key grammar rules:
 - Lenient mode renders unparseable tokens with an `chordlang-error` class
   instead of throwing.
 
-### `packages/font` — chord symbol OpenType font (Python)
+### `packages/graph` — Graphviz DOT → styled SVG
+
+- `src/index.ts` — `loadGraphviz()`, `renderDot()`, `renderDotToSvg()`, `styleSvg()`.
+- `graph.css` — consumer styles for ChordFont-labelled SVG text nodes.
+- Used by the playground graph demo and `make graphs` gallery script.
+
+### `packages/font` — chord symbol OpenType font (Python + npm)
 
 - Builds `dist/ChordProof.ttf` — an OpenType font whose GSUB ligatures
   transform ASCII chord text into engraved music-notation glyphs.
@@ -77,7 +83,9 @@ Key grammar rules:
 - `make test` runs HarfBuzz shaping tests (`uharfbuzz`) to verify ligature
   substitution produces correct glyph sequences.
 - `make install-playground` copies the built font to
-  `apps/playground/public/fonts/ChordProof.ttf`.
+  `apps/playground/public/fonts/ChordProof.ttf` and `fonts/ChordProof.ttf`
+  (npm publish path).
+- `package.json` — `@chordlang/font` ships `fonts/ChordProof.ttf` + `NOTICE`.
 - Python deps managed via `pyproject.toml` (fonttools, uharfbuzz, cu2qu).
 
 ### `packages/cli` — command-line tool
@@ -126,5 +134,6 @@ get `border-right`.  Rows are spaced with `row-gap`.
 
 `make test` runs vitest across packages:
 - `packages/chord/src/normalize.test.ts` — normalization cases
-- `packages/parse/src/parse.test.ts` — grammar/AST structure
+- `packages/parser/src/parse.test.ts` — grammar/AST structure
+- `packages/graph/src/graph.test.ts` — SVG styling helper
 - `packages/render/src/render.test.ts` — HTML output assertions

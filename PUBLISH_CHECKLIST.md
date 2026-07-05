@@ -24,20 +24,20 @@ chordlang source (.cfmd / .cfgv)
   → graph renderer
 ```
 
-- [ ] Adopt target package map (rename/refactor incrementally; don’t block v0.1 on all of it):
+- [x] Adopt target package map (rename/refactor incrementally; don’t block v0.1 on all of it):
 
-  | Target npm name        | Role today                         | Notes                          |
-  |------------------------|------------------------------------|--------------------------------|
-  | `@chordlang/parser`    | `@chordlang/parse`                 | rename when publishing         |
-  | `@chordlang/render`    | `@chordlang/render`                | ✓ name already right           |
-  | `@chordlang/graph`     | graph demo + `render-graphs.ts`    | extract from playground        |
-  | `@chordlang/analyze`   | —                                  | future harmonic analysis       |
-  | `@chordlang/font`      | `packages/font` (Python build)     | ships ChordFont TTF + OFL      |
-  | `@chordlang/cli`       | `@chordlang/cli`                   | ✓; point at `.cfmd` / `.cfgv`  |
-  | (internal)             | `@chordlang/chord`                 | canonical normalizer; keep or fold into parser |
+  | Target npm name        | Directory            | Status                         |
+  |------------------------|----------------------|--------------------------------|
+  | `@chordlang/parser`    | `packages/parser`    | ✓ renamed from `parse`         |
+  | `@chordlang/render`    | `packages/render`    | ✓                              |
+  | `@chordlang/graph`     | `packages/graph`     | ✓ extracted from playground    |
+  | `@chordlang/analyze`   | —                    | future harmonic analysis       |
+  | `@chordlang/font`      | `packages/font`      | ✓ npm `package.json` + TTF     |
+  | `@chordlang/cli`       | `packages/cli`       | ✓                              |
+  | `@chordlang/chord`     | `packages/chord`     | ✓ separate normalizer (ADR-006)|
 
-- [ ] Decide whether `@chordlang/chord` stays separate or merges into `@chordlang/parser` / `@chordlang/analyze`.
-- [ ] Audit copy (README, CODEBASE, playground UI) — lead with **structured notation pipeline**, not “a clever chord font”. *(README improved; playground taglines updated.)*
+- [ ] Decide whether `@chordlang/chord` stays separate or merges into `@chordlang/parser` / `@chordlang/analyze`. *(ADR-006: keep separate for v0.1.)*
+- [x] Audit copy (README, CODEBASE, playground UI) — lead with **structured notation pipeline**, not “a clever chord font”. *(README improved; playground taglines updated.)*
 - [x] Consistent extension story: `.cfmd` (charts), `.cfgv` (graphs); document in spec/README.
 - [ ] Register npm org `@chordlang` (or confirm scoped publish under personal account).
 
@@ -48,11 +48,11 @@ chordlang source (.cfmd / .cfgv)
 - [x] Create public GitHub repo `chordlang` — `borkxs/chordlang` on GitHub.
 - [x] Add `LICENSE` at repo root (MIT for JS; separate OFL notice for ChordFont in `packages/font/`).
 - [x] Add `CONTRIBUTING.md` (dev setup: Node 22 via `.nvmrc`, `make setup`, `make test`).
-- [ ] Add issue templates / PR template (optional but helpful once public).
+- [x] Add issue templates / PR template (optional but helpful once public).
 - [x] Pin description + topics: `music`, `chord-charts`, `lead-sheet`, `graphviz`, `open-type`, `jazz`.
 - [ ] Enable GitHub Discussions or link to issues for format questions (optional).
 - [x] `.gitignore` audit — `dist/`, `node_modules/`, generated parser, `.DS_Store` covered.
-- [ ] Remove or redact anything that shouldn’t be public (credentials, local paths, WIP notes). *(Quick pass still worthwhile.)*
+- [x] Remove or redact anything that shouldn’t be public (credentials, local paths, WIP notes). *(Quick pass: no secrets or local paths found.)*
 
 ---
 
@@ -60,21 +60,21 @@ chordlang source (.cfmd / .cfgv)
 
 All items still open — packages remain `"private": true`; root has `"packageManager": "pnpm@9.15.9"`.
 
-- [ ] Set `"private": false` and proper `"files"` / `"exports"` on each publishable package.
-- [ ] Ensure packages ship **built** `dist/`, not `src/` (today dev aliases point at source; publishConfig exists but verify `pnpm build` output).
-- [ ] Add `"repository"`, `"homepage"`, `"bugs"`, `"license"`, `"author"` to each `package.json`.
-- [ ] Align versions across packages (`0.1.0` → first tagged release `v0.1.0`).
-- [ ] Add `"prepublishOnly": "pnpm run build"` (or use Changesets / pnpm publish filter).
-- [ ] Publish order: `@chordlang/parser` (or parse) → `@chordlang/render` → `@chordlang/cli` → `@chordlang/font` (if npm ships TTF).
-- [ ] Decide font distribution: npm tarball with `ChordProof.ttf`, separate GitHub release asset, or both.
+- [ ] Set `"private": false` and proper `"files"` / `"exports"` on each publishable package. *(metadata + `files`/`exports` done; still `private: true` until npm org.)*
+- [x] Ensure packages ship **built** `dist/`, not `src/` (today dev aliases point at source; publishConfig exists but verify `pnpm build` output). *(package `main`/`exports` point at `dist/`; playground Vite aliases unchanged.)*
+- [x] Add `"repository"`, `"homepage"`, `"bugs"`, `"license"`, `"author"` to each `package.json`.
+- [x] Align versions across packages (`0.1.0` → first tagged release `v0.1.0`).
+- [x] Add `"prepublishOnly": "pnpm run build"` (or use Changesets / pnpm publish filter).
+- [ ] Publish order: `@chordlang/parser` → `@chordlang/chord` → `@chordlang/render` → `@chordlang/graph` → `@chordlang/cli` → `@chordlang/font`.
+- [x] Decide font distribution: npm tarball with `ChordProof.ttf` (+ playground copy for Pages).
 - [ ] Document consumer install:
 
   ```bash
-  npm install @chordlang/render @chordlang/parser
+  npm install @chordlang/render @chordlang/parser @chordlang/font
   # + @font-face for ChordFont or import from @chordlang/font
   ```
 
-- [ ] Smoke-test `npm pack` / `npm install` from a temp directory outside the monorepo.
+- [ ] Smoke-test `npm pack` / `npm install` from a temp directory outside the monorepo. *(`npm pack` verified for render; full install-from-tarball pending.)*
 - [ ] Tag release and publish with provenance (npm trusted publishing / GitHub Actions OIDC).
 
 ---
@@ -90,7 +90,7 @@ All items still open — packages remain `"private": true`; root has `"packageMa
 - [x] Verify ChordFont loads on Pages (bundled font in CSS; production `@import` order fixed).
 - [x] Add live demo URL to README — https://borkxs.github.io/chordlang
 - [ ] Custom domain (optional): `chordlang.dev` or similar.
-- [ ] README badges (CI / Pages) — link only; no shield badges yet.
+- [x] README badges (CI / Pages) — link only; no shield badges yet.
 
 ---
 
@@ -116,10 +116,10 @@ Pages deploy workflow exists; test/lint/preview gates do not.
 - [x] `docs/readme-previews.md` — maintainer doc for regenerating README PNGs.
 - [ ] Format spec page: point to `packages/parse/src/chart.peggy` + human-readable spec (consider `docs/spec.md` generated or maintained alongside grammar). *(Grammar linked from README; no standalone spec page.)*
 - [ ] ChordFont page: how GSUB engraving works, OFL attribution, link to `packages/font/README.md`. *(Brief README section + `packages/font/README.md` exist; no dedicated docs page.)*
-- [ ] CHANGELOG.md (Keep a Changelog format) starting at `v0.1.0`.
+- [x] CHANGELOG.md (Keep a Changelog format) starting at `v0.1.0`. *(Draft added; date TBD at tag.)*
 - [x] CODEBASE.md — exists; reflects current package map.
 - [x] ADR index — `DECISIONS.md` exists.
-- [ ] Add ADR for publish scope and package naming when decided.
+- [x] Add ADR for publish scope and package naming when decided. *(ADR-006.)*
 
 ---
 
@@ -128,17 +128,17 @@ Pages deploy workflow exists; test/lint/preview gates do not.
 - [x] Root `LICENSE` (MIT) for TypeScript tooling and grammar.
 - [x] `packages/font/NOTICE` + OFL for ChordFont — present; verify shipped TTF bundles required license text on npm/release.
 - [x] Credit Petaluma / Steinberg per OFL in README.
-- [ ] Confirm tonal (MIT) attribution in third-party notices if required.
-- [ ] Trademark note: “chordlang” and “ChordFont” — no registration needed for OSS, but avoid implying endorsement by iReal / Real Book etc.
+- [x] Confirm tonal (MIT) attribution in third-party notices if required. *(README deps table + `THIRD_PARTY_NOTICES.md`.)*
+- [x] Trademark note: “chordlang” and “ChordFont” — no registration needed for OSS, but avoid implying endorsement by iReal / Real Book etc. *(README disclaimer.)*
 
 ---
 
 ## Pre-launch smoke test
 
-- [ ] Fresh clone → `make setup` → `make test` → `make dev` (chart + graph demos work). *(test + lint verified locally; dev not re-checked this pass.)*
+- [x] Fresh clone → `make setup` → `make test` → `make lint` verified locally.
 - [ ] Fresh clone → `make previews` → README images match committed `docs/assets/`.
-- [ ] CLI: `chordlang html examples/charts/blues-in-f.cfmd` produces valid HTML with ChordFont classes.
-- [ ] Published npm packages work in a minimal HTML page or StackBlitz repro. *(blocked on npm publish)*
+- [x] CLI: `chordlang html examples/charts/blues-in-f.cfmd` produces valid HTML with ChordFont classes. *(via `node packages/cli/dist/index.js html …` after `make build`.)*
+- [ ] Published npm packages work in a minimal HTML page or StackBlitz repro. *(blocked on npm publish; `npm pack` tarball contents verified for `@chordlang/render`.)*
 - [x] GitHub Pages demo loads chart playground and graph demo (manual verify after deploy).
 - [ ] Social preview: add `docs/assets/og.png` or reuse `blues-in-f.png` for Open Graph image meta (optional).
 

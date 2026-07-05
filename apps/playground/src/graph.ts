@@ -1,4 +1,4 @@
-import { Graphviz } from "@hpcc-js/wasm";
+import { loadGraphviz, renderDot } from "@chordlang/graph";
 import {
   CHART_BY_SLUG,
   DEFAULT_CHART_SLUG,
@@ -18,7 +18,7 @@ const canvas = $("#graph");
 const status = $("#status");
 const nav = $("#examples");
 
-let graphviz: Graphviz | null = null;
+let graphviz: Awaited<ReturnType<typeof loadGraphviz>> | null = null;
 let activeSlug = resolveSlug(parseRoute(location.pathname).slug, GRAPH_BY_SLUG, DEFAULT_GRAPH_SLUG);
 
 function syncUrl(slug: string) {
@@ -28,15 +28,11 @@ function syncUrl(slug: string) {
   }
 }
 
-function styleSvg(svg: string): string {
-  return svg.replace("<svg ", '<svg class="graph-svg" ');
-}
-
 async function render() {
   if (!graphviz) return;
   const dot = source.value;
   try {
-    const svg = styleSvg(graphviz.dot(dot, "svg"));
+    const svg = renderDot(graphviz, dot);
     canvas.innerHTML = svg;
     status.textContent = "✓ rendered";
     status.className = "status ok";
@@ -86,7 +82,7 @@ onRouteChange(() => {
 async function init() {
   status.textContent = "loading graphviz…";
   status.className = "status";
-  graphviz = await Graphviz.load();
+  graphviz = await loadGraphviz();
   loadSlug(activeSlug);
   syncUrl(activeSlug);
 }

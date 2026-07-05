@@ -1,0 +1,28 @@
+{
+  "name": "@chordlang/font",
+  "version": "0.1.0",
+  "description": "ChordFont — OpenType engraving font for jazz chord symbols (SIL OFL)",
+  "type": "module",
+  "private": false,
+  "files": ["fonts", "NOTICE"],
+  "exports": {
+    "./ChordProof.ttf": "./fonts/ChordProof.ttf",
+    "./NOTICE": "./NOTICE"
+  },
+  "scripts": {
+    "test": "echo 'font: run make font && pytest in packages/font'",
+    "lint": "echo 'font: no TS lint'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borkxs/chordlang.git",
+    "directory": "packages/font"
+  },
+  "homepage": "https://github.com/borkxs/chordlang#readme",
+  "bugs": "https://github.com/borkxs/chordlang/issues",
+  "license": "OFL-1.1",
+  "author": "Erik Michaelson <erik.michaelson@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}

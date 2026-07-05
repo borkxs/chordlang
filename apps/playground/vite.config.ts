@@ -72,8 +72,9 @@ export default defineConfig(() => {
     resolve: {
       alias: {
         "@chordlang/chord": resolve(ROOT, "../../packages/chord/src/index.ts"),
-        "@chordlang/parse": resolve(ROOT, "../../packages/parse/src/index.ts"),
+        "@chordlang/parser": resolve(ROOT, "../../packages/parser/src/index.ts"),
         "@chordlang/render": resolve(ROOT, "../../packages/render/src/index.ts"),
+        "@chordlang/graph": resolve(ROOT, "../../packages/graph/src/index.ts"),
       },
     },
   };

@@ -30,6 +30,9 @@ previews: grammar ## Render README preview images to docs/assets/ (see docs/read
 lint: ## Typecheck all packages
 	pnpm run lint
 
+cli: build ## Run CLI (usage: make cli CMD='html examples/charts/blues-in-f.cfmd')
+	node packages/cli/dist/index.js $(CMD)
+
 font: ## Build the chord font (Python, packages/font)
 	$(MAKE) -C packages/font build
 

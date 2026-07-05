@@ -1,23 +1,29 @@
 {
-  "name": "@chordlang/cli",
+  "name": "@chordlang/graph",
   "version": "0.1.0",
-  "description": "CLI — parse, normalize, and render .cfmd chart files",
+  "description": "Graphviz DOT → styled SVG for chordlang (.cfgv) harmonic graphs",
   "type": "module",
   "private": false,
-  "bin": {
-    "chordlang": "dist/index.js"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./graph.css": "./graph.css"
   },
-  "files": ["dist"],
+  "files": ["dist", "graph.css"],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "pnpm run build",
-    "test": "echo 'no tests yet'",
+    "test": "vitest run",
     "lint": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/borkxs/chordlang.git",
-    "directory": "packages/cli"
+    "directory": "packages/graph"
   },
   "homepage": "https://github.com/borkxs/chordlang#readme",
   "bugs": "https://github.com/borkxs/chordlang/issues",
@@ -27,12 +33,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@chordlang/chord": "workspace:*",
-    "@chordlang/parser": "workspace:*",
-    "@chordlang/render": "workspace:*"
+    "@hpcc-js/wasm": "^2.22.4"
   },
   "devDependencies": {
-    "@types/node": "^26.1.0",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
   }
 }

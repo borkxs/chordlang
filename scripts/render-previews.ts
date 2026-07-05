@@ -20,7 +20,7 @@ import { fileURLToPath } from "node:url";
 import { chromium, type Browser } from "playwright";
 import { Graphviz } from "@hpcc-js/wasm";
 import manifest from "../examples/manifest.json" with { type: "json" };
-import { parseChart } from "../packages/parse/src/index.ts";
+import { parseChart } from "../packages/parser/src/index.ts";
 import { normalize } from "../packages/chord/src/index.ts";
 import { renderChartToHTML } from "../packages/render/src/index.ts";
 

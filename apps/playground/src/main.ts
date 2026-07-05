@@ -1,4 +1,4 @@
-import { parseChart } from "@chordlang/parse";
+import { parseChart } from "@chordlang/parser";
 import { normalize } from "@chordlang/chord";
 import { renderChartToHTML } from "@chordlang/render";
 import {

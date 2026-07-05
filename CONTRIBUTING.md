@@ -25,7 +25,8 @@ make setup    # pnpm install + Playwright chromium (for preview screenshots)
 | `make test` | Vitest across packages (grammar rebuilt first) |
 | `make lint` | Typecheck all packages |
 | `make build` | Build package `dist/` outputs |
-| `make grammar` | Regenerate Peggy parser from `packages/parse/src/chart.peggy` |
+| `make grammar` | Regenerate Peggy parser from `packages/parser/src/chart.peggy` |
+| `make cli CMD='html examples/charts/blues-in-f.cfmd'` | CLI smoke test (after `make build`) |
 | `make previews` | Regenerate README preview PNGs under `docs/assets/` |
 | `make font` | Rebuild ChordFont TTF (Python, `packages/font/`) |
 | `make help` | List every Makefile target |

@@ -1,0 +1,13 @@
+/**
+ * Consumer styles for @chordlang/graph SVG output.
+ * Supply @font-face for "ChordFont" separately (@chordlang/font or your own).
+ */
+.graph-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.graph-svg text {
+  font-family: "ChordFont", ui-sans-serif !important;
+  font-feature-settings: "liga" 1, "calt" 1;
+}

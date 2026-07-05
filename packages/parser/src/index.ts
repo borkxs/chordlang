@@ -1,5 +1,5 @@
 /**
- * @chordlang/parse — chart-structure parser.
+ * @chordlang/parser — chart-structure parser.
  * The grammar (src/chart.peggy) is the format spec. Generated parser lands in
  * src/generated/ via `make grammar`. Chord tokens are opaque; see @chordlang/chord.
  */

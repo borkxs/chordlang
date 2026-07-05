@@ -4,14 +4,14 @@
   "packageManager": "pnpm@9.15.9",
   "scripts": {
     "help": "grep -E '^[a-zA-Z_-]+:.*?## .*$' Makefile | awk 'BEGIN{FS=\":.*?## \"}{printf \"  %-16s %s\\n\",$1,$2}'",
-    "grammar": "pnpm --filter @chordlang/parse grammar",
+    "grammar": "pnpm --filter @chordlang/parser grammar",
     "build": "pnpm run grammar && pnpm -r --filter './packages/*' build",
     "test": "pnpm run grammar && pnpm -r test",
     "dev": "pnpm run grammar && pnpm --filter @chordlang/playground dev",
     "graphs": "pnpm --filter @chordlang/playground graphs",
     "previews": "pnpm run grammar && node --experimental-strip-types scripts/render-previews.ts",
     "lint": "pnpm -r --filter './packages/*' lint",
-    "clean": "rm -rf packages/*/dist packages/parse/src/generated"
+    "clean": "rm -rf packages/*/dist packages/parser/src/generated"
   },
   "devDependencies": {
     "@hpcc-js/wasm": "^2.22.4",

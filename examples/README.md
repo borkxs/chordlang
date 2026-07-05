@@ -7,7 +7,7 @@ Source-of-truth examples for the playground, CLI, and README previews.
 | Extension | Name | Spec |
 |-----------|------|------|
 | `.txt` | font symbol strip | Plain ASCII chord tokens — README font preview only |
-| `.cfmd` | chord font markdown | `packages/parse/src/chart.peggy` — lead-sheet chart structure |
+| `.cfmd` | chord font markdown | `packages/parser/src/chart.peggy` — lead-sheet chart structure |
 | `.cfgv` | chord font graphviz | Standard [Graphviz DOT](https://graphviz.org/doc/info/lang.html); node labels use `fontname="ChordFont"` |
 
 `manifest.json` has two roles:
