@@ -44,7 +44,7 @@ chordlang source (.cfmd / .cfgv)
 ## GitHub repo
 
 - [ ] Create public GitHub repo `chordlang` (or transfer existing private repo).
-- [ ] Add `LICENSE` at repo root (MIT for JS packages; confirm OFL for ChordFont / Petaluma derivative — may need dual notice or `LICENSE` + `packages/font/OFL`).
+- [x] Add `LICENSE` at repo root (MIT for JS; separate OFL notice for ChordFont in `packages/font/`).
 - [ ] Add `CONTRIBUTING.md` (dev setup: Node 22 via `.nvmrc`, `make setup`, `make test`).
 - [ ] Add issue templates / PR template (optional but helpful once public).
 - [ ] Pin description + topics: `music`, `chord-charts`, `lead-sheet`, `graphviz`, `open-type`, `jazz`.
@@ -116,7 +116,7 @@ chordlang source (.cfmd / .cfgv)
 
 ## Legal & assets
 
-- [ ] Root `LICENSE` (MIT) for TypeScript tooling and grammar.
+- [x] Root `LICENSE` (MIT) for TypeScript tooling and grammar.
 - [ ] `packages/font/NOTICE` + OFL for ChordFont — ✓ partial; ensure shipped TTF includes required license files.
 - [ ] Credit Petaluma / Steinberg per OFL in README and font package.
 - [ ] Confirm tonal (MIT) attribution in third-party notices if required.
