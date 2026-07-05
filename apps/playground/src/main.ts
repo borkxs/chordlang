@@ -10,6 +10,9 @@ import {
 import { parseRoute, resolveSlug, examplePath } from "./routes";
 import { onRouteChange, wireExampleNav } from "./playground";
 
+document.querySelector<HTMLAnchorElement>("#graph-demo")!.href =
+  examplePath("graph", DEFAULT_GRAPH_SLUG);
+
 const $ = <T extends HTMLElement>(sel: string) => document.querySelector(sel) as T;
 const source = $<HTMLTextAreaElement>("#source");
 const page = $("#page");

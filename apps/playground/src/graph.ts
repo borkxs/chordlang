@@ -1,12 +1,16 @@
 import { Graphviz } from "@hpcc-js/wasm";
 import {
   CHART_BY_SLUG,
+  DEFAULT_CHART_SLUG,
   DEFAULT_GRAPH_SLUG,
   GRAPH_BY_SLUG,
   GRAPH_MANIFEST,
 } from "./examples";
 import { parseRoute, resolveSlug, examplePath } from "./routes";
 import { onRouteChange, wireExampleNav } from "./playground";
+
+document.querySelector<HTMLAnchorElement>("#chart-home")!.href =
+  examplePath("chart", DEFAULT_CHART_SLUG);
 
 const $ = <T extends HTMLElement>(sel: string) => document.querySelector(sel) as T;
 const source = $<HTMLTextAreaElement>("#source");

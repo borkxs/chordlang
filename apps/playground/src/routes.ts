@@ -1,8 +1,19 @@
 export type PlaygroundKind = "chart" | "graph";
 
-/** Parse /chart/giant-steps, /graph/ii-v-i-chain, /, /graph.html */
+/** Vite base — `/` locally, `/chordlang/` on GitHub Pages. Always ends with `/`. */
+export const BASE_URL = import.meta.env.BASE_URL;
+
+function stripBase(pathname: string): string {
+  const base = BASE_URL.replace(/\/$/, "");
+  if (base && base !== "/" && pathname.startsWith(base)) {
+    return pathname.slice(base.length) || "/";
+  }
+  return pathname;
+}
+
+/** Parse /chart/giant-steps, /graph/ii-v-i-chain, /, /graph.html (base-aware). */
 export function parseRoute(pathname: string): { kind: PlaygroundKind; slug: string | null } {
-  const path = pathname.replace(/\/+$/, "") || "/";
+  const path = stripBase(pathname).replace(/\/+$/, "") || "/";
   if (path === "/graph.html") return { kind: "graph", slug: null };
   const parts = path.split("/").filter(Boolean);
   if (parts[0] === "chart") return { kind: "chart", slug: parts[1] ?? null };
@@ -11,7 +22,7 @@ export function parseRoute(pathname: string): { kind: PlaygroundKind; slug: stri
 }
 
 export function examplePath(kind: PlaygroundKind, slug: string): string {
-  return `/${kind}/${slug}`;
+  return `${BASE_URL}${kind}/${slug}`;
 }
 
 export function resolveSlug(

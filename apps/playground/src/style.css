@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "ChordFont";
-  src: url("/fonts/ChordProof.ttf") format("truetype");
+  src: url("../public/fonts/ChordProof.ttf") format("truetype");
 }
 
 :root {

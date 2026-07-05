@@ -1,5 +1,7 @@
 # chordlang
 
+**Live demo:** [playground](https://borkxs.github.io/chordlang/chart/walkin-thing) · [Giant Steps chart](https://borkxs.github.io/chordlang/chart/giant-steps) · [Giant Steps graph](https://borkxs.github.io/chordlang/graph/giant-steps)
+
 A portable, text-authored, properly-engraved **chord-changes** format for
 lead sheets and harmonic graphs. Chart syntax follows familiar fake-book
 conventions (bars, beat subdivisions, section markers); the differentiator
