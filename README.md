@@ -1,8 +1,10 @@
 # chordlang
 
-A portable, text-authored, properly-engraved chord-changes format.
-Superset of existing chord-chart conventions; the differentiator is the
-rendering layer (a chord-symbol engraving font, not CSS superscripts).
+A portable, text-authored, properly-engraved **chord-changes** format for
+lead sheets and harmonic graphs. Chart syntax follows familiar fake-book
+conventions (bars, beat subdivisions, section markers); the differentiator
+is rendering — chord symbols are engraved by an OpenType font, not styled
+with CSS superscripts.
 
 ## Quick start
 
@@ -89,6 +91,45 @@ digraph {
 ![ii–V–I chain](docs/assets/graphs/ii-v-i-chain.png)
 
 More graphs in [`examples/graphs/`](examples/graphs/) · HTML gallery with `make graphs`.
+
+## Prior art
+
+“Chord chart” here means **lead-sheet chord changes** — the bar-grid notation
+musicians use in Real Book charts, iReal Pro, ChordPro, and similar tools.
+chordlang borrows **structure conventions** from that world (design references
+only; no code imported — see [ADR-001](DECISIONS.md#adr-001-license-hygiene--conventions-in-code-out)):
+
+| Convention | Familiar from |
+|------------|---------------|
+| `\| bar \| bar \|` grid | lead sheets / fake books |
+| `Cm7,F7` — comma subdivides a bar into equal beats | [QuickChords](https://www.twelvetone.tv/docs/arts-and-education/quickchords/quickchords-markdown-language), [iReal Pro](https://irealpro.com/) |
+| `{title: …}` metadata directives | [ChordPro](https://www.chordpro.org/) |
+| `[A]` form-section labels | iReal Pro |
+| `%` repeats the previous bar | iReal Pro |
+
+What is **not** borrowed: symbol engraving. Most web renderers fake chord
+typography with HTML/CSS; chordlang types ASCII and lets [ChordFont](#chordfont)
+shape it via OpenType ligatures.
+
+## Dependencies
+
+| Component | Role | License |
+|-----------|------|---------|
+| [tonal](https://www.npmjs.com/package/tonal) | chord-symbol parsing / normalization | MIT |
+| [Petaluma](https://github.com/steinbergmedia/petaluma) | glyph outlines for ChordFont | OFL |
+| [Peggy](https://peggyjs.org/) | chart grammar → parser | MIT |
+| [Graphviz](https://graphviz.org/) | `.cfgv` harmonic graph layout | EPL |
+| fonttools, uharfbuzz, cu2qu | ChordFont build + shaping tests | MIT / Apache / MIT |
+
+Dev-only: Playwright (README preview screenshots), Vite (playground).
+
+## Related
+
+- [DECISIONS.md](DECISIONS.md) — architecture notes (grammar spec, tonal wrapper, rendering split)
+- [CODEBASE.md](CODEBASE.md) — package map and data flow
+- [examples/README.md](examples/README.md) — editing `.cfmd` / `.cfgv` sources
+
+Topics: `chord-charts`, `lead-sheet`, `jazz`, `chord-symbols`, `open-type`, `graphviz`.
 
 ## Layout
 
