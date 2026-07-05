@@ -52,9 +52,18 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: make build
 
-      - name: Publish packages (dependency order)
+      - name: Verify npm token secret
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "::error::NPM_TOKEN secret is empty. Re-set it with: gh secret set NPM_TOKEN --repo borkxs/chordlang"
+            echo "::error::Make sure you paste the full npm_… token when prompted (gh secret set succeeded even if paste was blank)."
+            exit 1
+          fi
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+
+      - name: Publish packages (dependency order)
         run: |
           set -euo pipefail
           for pkg in parser chord render graph cli font; do
