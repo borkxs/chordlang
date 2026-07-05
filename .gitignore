@@ -2,3 +2,4 @@ node_modules/
 dist/
 packages/parse/src/generated/
 *.log
+.DS_Store
