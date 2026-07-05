@@ -104,7 +104,7 @@ Re-run `make previews` and commit `docs/assets/` when any of these change:
 - `packages/render/chart.css` or ChordFont (`make font`)
 - Preview script styling (`scripts/render-previews.ts`)
 
-See `examples/README.md` for the full checklist.
+See `docs/readme-previews.md` for the full checklist.
 
 ### `apps/playground` — live preview (Vite)
 

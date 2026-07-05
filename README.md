@@ -12,27 +12,12 @@ with CSS superscripts.
 make setup     # install (pnpm) + Playwright chromium
 make dev       # live playground — type text, watch it engrave
 make test      # vitest across packages
-make previews  # regenerate docs/assets/ preview images (see below)
+make previews  # regenerate docs/assets/ preview images
 make help      # every target, self-documented
 ```
 
-### README preview images
-
-The engraved PNGs in the sections below are **not** rendered live on GitHub — they are
-screenshots committed under `docs/assets/`. Regenerate and commit them whenever the
-visual output would change:
-
-| Re-run `make previews` after… | Why |
-|-------------------------------|-----|
-| Editing a README source file (`examples/font/readme-symbols.txt`, `examples/charts/blues-in-f.cfmd`, `examples/graphs/ii-v-i-chain.cfgv`) | Source text and PNG must stay in sync |
-| Editing any other file listed in `examples/manifest.json` | All manifest charts/graphs get PNG (+ SVG for graphs) |
-| Changing `packages/render/chart.css` | Chart layout and engraving styling |
-| Rebuilding ChordFont (`make font`) | Ligatures / glyph shapes change |
-| Editing `scripts/render-previews.ts` | Screenshot framing, font inlining, graph SVG styling |
-
-Requires Node 22, Playwright chromium (`make setup`), and `apps/playground/public/fonts/ChordProof.ttf`.
-If you change a README source file, update the matching code block in `README.md` too.
-Full workflow: [`examples/README.md`](examples/README.md).
+Preview images are committed PNGs, not live GitHub renders — see
+[`docs/readme-previews.md`](docs/readme-previews.md) for when to re-run and commit.
 
 ## ChordFont
 
@@ -127,6 +112,7 @@ Dev-only: Playwright (README preview screenshots), Vite (playground).
 
 - [DECISIONS.md](DECISIONS.md) — architecture notes (grammar spec, tonal wrapper, rendering split)
 - [CODEBASE.md](CODEBASE.md) — package map and data flow
+- [docs/readme-previews.md](docs/readme-previews.md) — regenerating README preview PNGs
 - [examples/README.md](examples/README.md) — editing `.cfmd` / `.cfgv` sources
 
 Topics: `chord-charts`, `lead-sheet`, `jazz`, `chord-symbols`, `open-type`, `graphviz`.

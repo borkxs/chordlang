@@ -24,7 +24,7 @@ dev: ## Launch the live playground (hot-reload preview of current lib code)
 graphs: ## Render graph demo examples to apps/playground/dist/graphs/
 	pnpm run graphs
 
-previews: grammar ## Render README preview images to docs/assets/ (re-run after example/CSS/font changes; see examples/README.md)
+previews: grammar ## Render README preview images to docs/assets/ (see docs/readme-previews.md)
 	node --experimental-strip-types scripts/render-previews.ts
 
 lint: ## Typecheck all packages
