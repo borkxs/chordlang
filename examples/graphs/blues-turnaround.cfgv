@@ -1,0 +1,15 @@
+digraph {
+  rankdir=TB;
+  graph [bgcolor="transparent" pad=0.4];
+  node [shape=plaintext fontname="ChordFont" fontsize=34];
+  edge [color="#6f6a5e" penwidth=1.4 arrowsize=0.7];
+
+  F7 -> Bb7 -> F7;
+  F7 -> Cm7;
+  Cm7 -> F7;
+  F7 -> Am7b5;
+  Am7b5 -> D7;
+  D7 -> Gm7;
+  Gm7 -> C7;
+  C7 -> F7;
+}

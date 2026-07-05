@@ -1,0 +1,21 @@
+digraph {
+  rankdir=TB;
+  graph [bgcolor="transparent" pad=0.4];
+  node [shape=plaintext fontname="ChordFont" fontsize=30];
+  edge [color="#6f6a5e" penwidth=1.4 arrowsize=0.7];
+
+  subgraph cluster_a {
+    label="A (×2)";
+    style=dashed; color="#a8823c"; fontname="Helvetica"; fontsize=11;
+    Bbmaj7 -> G7 -> Cm7 -> F7 -> Bbmaj7;
+  }
+
+  F7 -> D7 [lhead=cluster_b];
+  subgraph cluster_b {
+    label="B — bridge";
+    style=dashed; color="#a8823c"; fontname="Helvetica"; fontsize=11;
+    D7 -> G7 -> C7 -> F7;
+  }
+
+  F7 -> Bbmaj7 [label="A'"; fontname="Helvetica"; fontsize=10; color="#a8823c"];
+}

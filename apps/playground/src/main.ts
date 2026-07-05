@@ -1,39 +1,7 @@
 import { parseChart } from "@chordlang/parse";
 import { normalize } from "@chordlang/chord";
 import { renderChartToHTML } from "@chordlang/render";
-
-const EXAMPLES: Record<string, string> = {
-  "Walkin Thing": `{title: A Walkin Thing}
-{composer: Benny Carter}
-{key: Dm}
-{time: 4/4}
-[A]
-| Dm7 | Bm7b5,Bb7 | Dm7/A | Em7b5,A7 |
-| Dm7 | Bm7b5,Bb7 | Dm7/A | % |
-[B]
-| Gm7 | C7 | Fmaj7 | Bm7b5,E7 |`,
-  "Stress test": `{title: Normalizer stress test}
-| Cmaj7 | F#m7b5 | C7alt | C/E |
-| C6/9 | C-7 | C^7 | F#o7 |`,
-  "Blues in F": `{title: F Blues}
-{key: F}
-| F7 | Bb7 | F7 | Cm7,F7 |
-| Bb7 | % | F7 | Am7b5,D7 |
-| Gm7 | C7 | F7,D7 | Gm7,C7 |`,
-  "D Modal": `{title: D Modal}
-{key: D}
-[A]
-| D | F# | B-11 | E7 |
-| B-11 | A-9,D7 | G | D/F# |
-| Bbø7 | B-11 | E-7 | D/F# |
-| G | Abø | A7 | C# |
-[B]
-| D | A-9,D7 | G^7 | C9# |
-[C]
-| A^7 | A- | Eadd4 | E |
-| E^7b13 | :/: | G# |
-| A^7 |`,
-};
+import { CHART_EXAMPLES } from "./examples";
 
 const $ = <T extends HTMLElement>(sel: string) => document.querySelector(sel) as T;
 const source = $<HTMLTextAreaElement>("#source");
@@ -71,11 +39,11 @@ function update() {
 
 // example chips
 const nav = $("#examples");
-for (const name of Object.keys(EXAMPLES)) {
+for (const name of Object.keys(CHART_EXAMPLES)) {
   const b = document.createElement("button");
   b.textContent = name;
   b.className = "chip";
-  b.onclick = () => { source.value = EXAMPLES[name]; update(); };
+  b.onclick = () => { source.value = CHART_EXAMPLES[name]; update(); };
   nav.appendChild(b);
 }
 
@@ -90,5 +58,5 @@ document.querySelectorAll<HTMLButtonElement>(".tab").forEach((tab) => {
 });
 
 source.addEventListener("input", update);
-source.value = EXAMPLES["Walkin Thing"];
+source.value = CHART_EXAMPLES["Walkin Thing"];
 update();

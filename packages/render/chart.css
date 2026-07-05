@@ -1,0 +1,152 @@
+/**
+ * Chart engraving layout for @chordlang/render output.
+ * Consumer supplies @font-face for "ChordFont".
+ */
+:root {
+  --paper: #fbf8f1;
+  --ink: #1a1815;
+}
+
+.page {
+  background: var(--paper);
+  color: var(--ink);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.4rem 2.6rem 3rem;
+  border-radius: 3px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.chordlang-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  border-bottom: 2.5px solid var(--ink);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.chordlang-meta {
+  font-size: 0.75rem;
+  color: #6f6a5e;
+  margin-bottom: 1.4rem;
+}
+
+.chordlang-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 0.4rem;
+  align-items: stretch;
+}
+
+.chordlang-section-row {
+  grid-column: 1 / -1;
+  padding: 0.6rem 0 0.1rem;
+}
+
+.chordlang-section {
+  font-weight: 800;
+  font-size: 0.7rem;
+  border: 1.5px solid var(--ink);
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chordlang-bar {
+  position: relative;
+  border-left: 1.5px solid var(--ink);
+  padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.chordlang-bar > * {
+  flex: 1;
+}
+
+.chordlang-bar-end {
+  border-right: 1.5px solid var(--ink);
+}
+
+.chordlang-symbol {
+  font-family: "ChordFont", ui-sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.chordlang-symbol.chordlang-error {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: #b3402a;
+  text-decoration: underline wavy;
+}
+
+.chordlang-repeat {
+  font-family: "ChordFont", sans-serif;
+  font-size: 1.65rem;
+  color: #6f6a5e;
+}
+
+.chordlang-slash {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75em;
+  font-weight: 300;
+  margin: 0 0.02em;
+}
+
+.chordlang-hold {
+  min-width: 0.8rem;
+}
+
+@media print {
+  .page {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: black;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chordlang-title {
+    border-bottom-color: black;
+  }
+
+  .chordlang-meta {
+    color: #333;
+  }
+
+  .chordlang-bar {
+    border-color: black;
+  }
+
+  .chordlang-section {
+    border-color: black;
+  }
+
+  .chordlang-bar-end {
+    border-right-color: black;
+  }
+
+  .chordlang-repeat {
+    color: #333;
+  }
+
+  .chordlang-symbol.chordlang-error {
+    color: #900;
+  }
+
+  .chordlang-grid {
+    break-inside: avoid;
+  }
+
+  .chordlang-section {
+    break-after: avoid;
+  }
+}

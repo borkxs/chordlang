@@ -3,8 +3,9 @@
 help: ## Show this help menu
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-16s\033[0m %s\n",$$1,$$2}'
 
-setup: ## Install all workspace dependencies (pnpm)
+setup: ## Install all workspace dependencies (pnpm) + Playwright chromium
 	pnpm install
+	pnpm exec playwright install chromium
 
 install: setup ## Alias for setup
 
@@ -19,6 +20,12 @@ test: ## Run all package tests (vitest)
 
 dev: ## Launch the live playground (hot-reload preview of current lib code)
 	pnpm run dev
+
+graphs: ## Render graph demo examples to apps/playground/dist/graphs/
+	pnpm run graphs
+
+previews: grammar ## Render README preview images to docs/assets/
+	node --experimental-strip-types scripts/render-previews.ts
 
 lint: ## Typecheck all packages
 	pnpm run lint

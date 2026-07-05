@@ -1,0 +1,11 @@
+digraph {
+  rankdir=LR;
+  graph [bgcolor="transparent" pad=0.4];
+  node [shape=plaintext fontname="ChordFont" fontsize=36];
+  edge [color="#6f6a5e" penwidth=1.4 arrowsize=0.7];
+
+  // Kind of Blue — two Dorian modes alternating (16-bar sections)
+  Dm7 -> Ebm7 -> Dm7 -> Ebm7 -> Dm7;
+  Dm7 -> Ebm7 [style=dashed color="#a8823c"];
+  Ebm7 -> Dm7 [style=dashed color="#a8823c"];
+}

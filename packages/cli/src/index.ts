@@ -7,7 +7,7 @@ import { renderChartToHTML } from "@chordlang/render";
 
 const [, , cmd, file] = process.argv;
 if (!cmd || !file) {
-  console.error("usage: chordlang <ast|canonical|html> <file.chart>");
+  console.error("usage: chordlang <ast|canonical|html> <file.cfmd>");
   process.exit(1);
 }
 const src = readFileSync(file, "utf8");

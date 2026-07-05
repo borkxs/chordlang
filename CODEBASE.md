@@ -55,7 +55,9 @@ Key grammar rules:
 
 ### `packages/render` — AST → engraved HTML
 
-- Single file: `src/index.ts`, exports `renderChartToHTML()`.
+- `src/index.ts` — exports `renderChartToHTML()`.
+- `chart.css` — shared chart grid + ChordFont styling (used by playground and
+  `make previews`).
 - Emits a `<div class="chordlang-grid">` containing section labels and bars.
 - Bars followed by `barline-end` (or a section, or end-of-body) get the
   `chordlang-bar-end` class for the closing barline border.
@@ -80,15 +82,26 @@ Key grammar rules:
 
 ### `packages/cli` — command-line tool
 
-`chordlang <ast|canonical|html> file.chart` — three modes, each piping
+`chordlang <ast|canonical|html> file.cfmd` — three modes, each piping
 through the same parse → normalize → render pipeline.
+
+### `examples/` — source examples
+
+- `charts/*.cfmd` — lead-sheet chart sources (playground + README previews).
+- `graphs/*.cfgv` — Graphviz DOT harmonic graphs (standard DOT + ChordFont labels).
+- `manifest.json` — ordered file list and playground chip labels.
+
+### `docs/assets/` — published previews
+
+PNG (and graph SVG) outputs from `make previews`. Committed for GitHub README
+embeds; regenerate after editing examples or render styles.
 
 ### `apps/playground` — live preview (Vite)
 
 - `src/main.ts` — wires textarea input → parse → render → page, with
   example chips and tabbed views (Engraved / AST / Canonical).
-- `src/style.css` — all layout: app chrome, the fake-book page, and the
-  chart's CSS grid (barlines via borders, chord font, print styles).
+- `src/style.css` — app chrome; imports `packages/render/chart.css` for the
+  fake-book page and chart grid.
 - Vite config aliases `@chordlang/*` to package source so edits hot-reload
   without rebuilding.
 

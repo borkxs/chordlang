@@ -1,0 +1,17 @@
+{
+  "charts": [
+    { "file": "walkin-thing", "label": "Walkin Thing" },
+    { "file": "stress-test", "label": "Stress test" },
+    { "file": "blues-in-f", "label": "Blues in F" },
+    { "file": "d-modal", "label": "D Modal" }
+  ],
+  "graphs": [
+    { "file": "ii-v-i-chain", "label": "ii–V–I chain" },
+    { "file": "so-what", "label": "So What" },
+    { "file": "giant-steps", "label": "Giant Steps" },
+    { "file": "stella-by-starlight", "label": "Stella by Starlight" },
+    { "file": "rhythm-changes", "label": "Rhythm changes" },
+    { "file": "blues-turnaround", "label": "Blues turnaround" },
+    { "file": "autumn-leaves-a", "label": "Autumn Leaves (A)" }
+  ]
+}

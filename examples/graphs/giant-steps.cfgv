@@ -1,0 +1,14 @@
+digraph {
+  rankdir=TB;
+  graph [bgcolor="transparent" pad=0.4];
+  node [shape=plaintext fontname="ChordFont" fontsize=32];
+  edge [color="#6f6a5e" penwidth=1.4 arrowsize=0.7];
+
+  // Coltrane cycle — major-third key centers
+  Bmaj7 -> D7 -> Gmaj7;
+  Gmaj7 -> Bb7 -> Ebmaj7;
+  Ebmaj7 -> "F#7" -> Bmaj7;
+
+  { rank=same; D7; Bb7; "F#7"; }
+  { rank=same; Gmaj7; Ebmaj7; Bmaj7; }
+}

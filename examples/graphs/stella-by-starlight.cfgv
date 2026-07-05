@@ -1,0 +1,12 @@
+digraph {
+  rankdir=TB;
+  graph [bgcolor="transparent" pad=0.4];
+  node [shape=plaintext fontname="ChordFont" fontsize=28];
+  edge [color="#6f6a5e" penwidth=1.4 arrowsize=0.7];
+
+  // A section — chromatic ii–V chains through several key areas
+  Em7b5 -> A7 -> Cm7 -> F7 -> Fm7 -> Bb7 -> Ebmaj7 -> Ab7;
+  Ab7 -> Dbmaj7 -> C7alt -> Fm7 -> Bb7;
+  Bb7 -> Em7b5 -> A7 -> Dm7 -> G7;
+  G7 -> Cm7 -> F7 -> Bbmaj7;
+}
