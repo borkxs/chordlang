@@ -15,7 +15,7 @@ grammar: ## Rebuild the Peggy parser from chart.peggy (the format spec)
 build: ## Build all packages
 	pnpm run build
 
-test: ## Run all package tests (vitest)
+test: build ## Run all package tests (vitest)
 	pnpm run test
 
 dev: ## Launch the live playground (hot-reload preview of current lib code)
