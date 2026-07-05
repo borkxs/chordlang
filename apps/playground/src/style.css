@@ -31,6 +31,8 @@ body {
 }
 .wordmark { font-weight: 700; letter-spacing: 0.02em; }
 .tagline { color: var(--smoke); font-size: 0.8rem; }
+.demo-link { color: inherit; }
+.demo-link:hover { color: var(--brass); }
 .examples { margin-left: auto; display: flex; gap: 0.5rem; }
 .chip {
   background: none; border: 1px solid #3a4048; color: #cfd3d9;

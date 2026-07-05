@@ -5,6 +5,14 @@ import { resolve } from "node:path";
 // playground with no rebuild. (Tradeoff, by design: previews TS source, not
 // the published build.)
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        graph: resolve(__dirname, "graph.html"),
+      },
+    },
+  },
   resolve: {
     alias: {
       "@chordlang/chord": resolve(__dirname, "../../packages/chord/src/index.ts"),

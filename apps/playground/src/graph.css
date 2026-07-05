@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "ChordFont";
+  src: url("/fonts/ChordProof.ttf") format("truetype");
+}
+
+:root {
+  --paper: #fbf8f1;
+  --ink: #1a1815;
+  --slate: #22262b;
+  --slate-deep: #1a1d21;
+  --brass: #a8823c;
+  --smoke: #8a8f96;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: var(--slate-deep);
+  color: #e8e6e1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  display: flex; align-items: baseline; gap: 1rem;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1px solid #2e333a;
+}
+.wordmark {
+  font-weight: 700; letter-spacing: 0.02em;
+  color: inherit; text-decoration: none;
+}
+.wordmark:hover { color: var(--brass); }
+.tagline { color: var(--smoke); font-size: 0.8rem; }
+.examples { margin-left: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; }
+.chip {
+  background: none; border: 1px solid #3a4048; color: #cfd3d9;
+  border-radius: 999px; padding: 0.2rem 0.8rem; font-size: 0.78rem;
+  cursor: pointer;
+}
+.chip:hover, .chip:focus-visible { border-color: var(--brass); color: var(--brass); outline: none; }
+
+.split { flex: 1; display: grid; grid-template-columns: minmax(320px, 42%) 1fr; min-height: 0; }
+@media (max-width: 760px) { .split { grid-template-columns: 1fr; grid-template-rows: 40% 1fr; } }
+
+.pane { display: flex; flex-direction: column; min-height: 0; }
+.pane-label {
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--smoke); padding: 0.6rem 1.2rem 0.2rem;
+}
+.pane-source { border-right: 1px solid #2e333a; background: var(--slate); }
+textarea {
+  flex: 1; resize: none; border: 0; outline: 0;
+  background: transparent; color: #e8e6e1;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9rem; line-height: 1.6; padding: 0.6rem 1.2rem 1.2rem;
+}
+
+.pane-out { background: var(--slate-deep); }
+.graph-canvas {
+  flex: 1; overflow: auto; padding: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 0;
+}
+.graph-canvas .graph-svg {
+  max-width: 100%;
+  height: auto;
+  background: var(--paper);
+  border-radius: 3px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  padding: 1.5rem;
+}
+.graph-canvas text {
+  font-family: "ChordFont", ui-sans-serif !important;
+  font-feature-settings: "liga" 1, "calt" 1;
+  fill: var(--ink);
+}
+
+.status { padding: 0.4rem 1.2rem; font-size: 0.78rem; border-top: 1px solid #2e333a; }
+.status.ok { color: #7fae8b; }
+.status.err { color: #c96f5e; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .chip { transition: border-color 120ms, color 120ms; }
+}
