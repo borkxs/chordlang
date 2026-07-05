@@ -5,6 +5,7 @@ import {
   CHART_BY_SLUG,
   CHART_MANIFEST,
   DEFAULT_CHART_SLUG,
+  DEFAULT_GRAPH_SLUG,
   GRAPH_BY_SLUG,
 } from "./examples";
 import { parseRoute, resolveSlug, examplePath } from "./routes";
