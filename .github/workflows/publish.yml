@@ -1,0 +1,69 @@
+# Publish @chordlang/* to npm on version tags.
+#
+# Bootstrap (first v0.1.0 publish):
+#   1. Create a granular access token at npmjs.com → Access Tokens
+#      - Packages: @chordlang/* (read + write)
+#      - Bypass 2FA: checked (or enable account 2FA instead)
+#   2. Add it as repo secret: Settings → Secrets → NPM_TOKEN
+#   3. git tag v0.1.0 && git push origin v0.1.0
+#
+# Upgrade path (recommended after packages exist on npm):
+#   Configure Trusted Publishing per package at
+#   https://www.npmjs.com/package/@chordlang/PACKAGE/access
+#   Owner: borkxs · Repository: chordlang · Workflow: publish.yml
+#   Then remove NPM_TOKEN secret and switch this workflow to OIDC-only
+#   (see npm docs: https://docs.npmjs.com/trusted-publishers/)
+
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write # for future OIDC trusted publishing
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: npm install -g npm@latest
+
+      - run: pnpm install --frozen-lockfile
+      - run: make build
+
+      - name: Configure npm auth
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "::error::NPM_TOKEN secret is not set. Create a granular npm token and add it under repo Settings → Secrets."
+            exit 1
+          fi
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+
+      - name: Publish packages (dependency order)
+        run: |
+          set -euo pipefail
+          for pkg in parser chord render graph cli font; do
+            echo "::group::@chordlang/${pkg}"
+            pnpm --filter "@chordlang/${pkg}" publish --access public --no-git-checks
+            echo "::endgroup::"
+          done
