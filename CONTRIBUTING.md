@@ -39,9 +39,15 @@ See [`examples/README.md`](examples/README.md) for the manifest, playground rout
 and when to re-run `make previews`.
 
 If you change anything that affects README preview images (source text, `chart.css`,
-ChordFont, or `scripts/render-previews.ts`), run `make previews` and commit
-`docs/assets/` alongside your source changes. See
-[`docs/readme-previews.md`](docs/readme-previews.md).
+ChordFont, or `scripts/render-previews.ts`), regenerate and commit `docs/assets/`:
+
+```bash
+./scripts/docker-previews.sh  # Recommended: matches CI exactly
+# OR
+make previews                  # Alternative: may differ slightly from CI
+```
+
+See [`docs/readme-previews.md`](docs/readme-previews.md) for details.
 
 ## ChordFont iteration
 

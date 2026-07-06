@@ -1,0 +1,58 @@
+# Dockerfile for consistent preview generation across all platforms
+# Ensures byte-for-byte identical PNGs by using a pinned base image
+
+FROM node:22.14.0-bookworm
+
+# Install Playwright dependencies for Chromium
+RUN apt-get update && apt-get install -y \
+    libnss3 \
+    libnspr4 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm2 \
+    libdbus-1-3 \
+    libxkbcommon0 \
+    libatspi2.0-0 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxfixes3 \
+    libxrandr2 \
+    libgbm1 \
+    libpango-1.0-0 \
+    libcairo2 \
+    libasound2 \
+    fonts-liberation \
+    && rm -rf /var/lib/apt/lists/*
+
+# Enable corepack for pnpm
+RUN corepack enable && corepack prepare pnpm@9.15.9 --activate
+
+WORKDIR /workspace
+
+# Copy package files for dependency installation
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .nvmrc ./
+COPY packages/parser/package.json ./packages/parser/
+COPY packages/chord/package.json ./packages/chord/
+COPY packages/render/package.json ./packages/render/
+COPY packages/graph/package.json ./packages/graph/
+COPY packages/cli/package.json ./packages/cli/
+COPY packages/font/package.json ./packages/font/
+
+# Install dependencies
+RUN pnpm install --frozen-lockfile
+
+# Install Playwright Chromium with pinned version
+RUN pnpm exec playwright install chromium --with-deps
+
+# Copy source files
+COPY . .
+
+# Build packages
+RUN pnpm run build
+
+# Set reproducible timestamp for any file operations
+ENV SOURCE_DATE_EPOCH=1609459200
+
+# Default command: generate previews
+CMD ["make", "previews"]

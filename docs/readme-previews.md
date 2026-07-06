@@ -35,29 +35,48 @@ Which files the README embeds is listed under `readme` in
 
 ## Prerequisites
 
-Node 22 (`.nvmrc`), Playwright chromium (`make setup`), and
-`apps/playground/public/fonts/ChordProof.ttf`.
+**Docker (recommended):** For byte-for-byte identical previews matching CI.
 
-## Platform consistency
+**Alternative:** Node 22 (`.nvmrc`), Playwright chromium (`make setup`), and
+`apps/playground/public/fonts/ChordProof.ttf`. Note: Local rendering may differ
+slightly from CI due to environment differences.
 
-**Canonical platform:** Linux (`ubuntu-latest`)  
-**Why:** Font rendering differs across platforms (antialiasing, hinting). We pick
-one as the source of truth.
+## Platform consistency via Docker
 
-The CI runs two checks:
+**Canonical environment:** Docker container with pinned `node:22.14.0-bookworm`  
+**Why:** Font rendering differs across platforms and even Linux distributions.
+Docker ensures byte-for-byte identical PNGs by pinning the base image, system
+libraries, and Chromium version.
 
-1. **`preview-drift`** (Ubuntu) — Fail if committed `docs/assets/` don't match
-   regenerated output. This catches "forgot to run `make previews`" mistakes.
+### Generating previews locally
 
-2. **`preview-cross-platform`** (macOS, Windows) — Regenerate previews and
-   report differences. This catches platform-specific rendering bugs while
-   allowing expected antialiasing differences. Currently informational; future
-   work will add image comparison with tolerance thresholds.
+**Recommended (Docker):**
+```bash
+./scripts/docker-previews.sh
+```
 
-**When regenerating previews locally:** Run on Linux if possible (Docker, WSL, or
-native Linux). If you regenerate on macOS/Windows, the `preview-drift` CI will
-fail due to platform differences, but your visual changes are still valid — just
-regenerate on Linux before merging.
+This builds a Docker image with the exact environment used in CI and generates
+previews. Changes appear in `docs/assets/` and can be committed directly.
+
+**Alternative (native):**
+```bash
+make previews
+```
+
+Works but may produce different pixels than CI. Use Docker before committing to
+ensure CI will pass.
+
+### CI checks
+
+1. **`preview-drift`** (Docker on `ubuntu-latest`) — Fail if committed
+   `docs/assets/` don't match regenerated output. This catches "forgot to run
+   `make previews`" mistakes.
+
+2. **`preview-cross-platform`** (macOS, Windows, native Node) — Regenerate
+   previews and report differences. This catches platform-specific rendering
+   bugs while allowing expected antialiasing differences. Currently
+   informational; future work will add image comparison with tolerance
+   thresholds.
 
 ## Checklist after editing a README example
 

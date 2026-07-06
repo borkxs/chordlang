@@ -1,0 +1,34 @@
+# Don't copy these into Docker build context (speeds up build)
+
+node_modules/
+dist/
+.git/
+.venv/
+__pycache__/
+*.pyc
+
+# Keep docs/assets since we'll mount it as a volume
+# but don't need the current state in the image
+docs/assets/
+
+# Build artifacts
+packages/*/dist/
+packages/parser/src/generated/
+packages/font/dist/
+packages/font/sources/
+packages/font/glyphs/extracted_glyphs.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.log
+.pytest_cache/
+.vitest/

@@ -19,19 +19,25 @@ Source-of-truth examples for the playground, CLI, and README previews.
 
 1. Edit a file under `font/`, `charts/`, or `graphs/`.
 2. `make dev` — playground loads chart/graph examples via Vite glob (live, no screenshot).
-3. If the visual output changed, `make previews` — regenerate `docs/assets/` and commit the PNGs.
+3. If the visual output changed, regenerate `docs/assets/` and commit the PNGs:
+   ```bash
+   ./scripts/docker-previews.sh  # Recommended: matches CI exactly
+   # OR
+   make previews                  # Alternative: may differ from CI
+   ```
    See [`docs/readme-previews.md`](../docs/readme-previews.md) for the full checklist.
 
 **CI checks:**
 
-- **`preview-drift`** (Linux): Ensures committed previews match current code.
-  Catches "forgot to run `make previews`" mistakes.
+- **`preview-drift`** (Docker): Ensures committed previews match current code.
+  Catches "forgot to run preview generation" mistakes. Fails on any difference.
 - **`preview-cross-platform`** (macOS, Windows): Tests rendering consistency.
   Reports platform differences (informational; future work will add threshold).
 
-**Platform:** Regenerate previews on Linux (canonical platform) to avoid CI drift
-failures. Use Docker, WSL, or native Linux. macOS/Windows regeneration works but
-requires re-running on Linux before merge.
+**Docker workflow:** The Docker script builds a container with the exact
+environment used in CI (pinned Node, Debian, system libraries). This guarantees
+byte-for-byte identical PNGs, eliminating false CI failures from environment
+differences.
 
 Each manifest `file` slug is a playground route:
 

@@ -27,6 +27,9 @@ graphs: ## Render graph demo examples to apps/playground/dist/graphs/
 previews: grammar ## Render README preview images to docs/assets/ (see docs/readme-previews.md)
 	node --experimental-strip-types scripts/render-previews.ts
 
+docker-previews: ## Generate previews in Docker (byte-for-byte identical to CI)
+	./scripts/docker-previews.sh
+
 lint: ## Typecheck all packages
 	pnpm run lint
 

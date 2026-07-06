@@ -30,25 +30,35 @@ jobs:
       - run: make lint
 
   preview-drift:
-    # Canonical platform: Linux
+    # Canonical platform: Docker (pinned Node + Debian for reproducibility)
     # Check that committed previews match regenerated output
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.9
+      - name: Build preview Docker image
+        run: docker build -f docker/Dockerfile.previews -t chordlang-previews:latest .
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
+      - name: Generate previews in Docker
+        run: |
+          docker run --rm \
+            -v "$PWD/docs/assets:/workspace/docs/assets" \
+            chordlang-previews:latest
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install chromium --with-deps
-      - run: make previews
-      - run: git diff --exit-code docs/assets/
+      - name: Check for preview drift
+        run: |
+          if git diff --exit-code docs/assets/; then
+            echo "✓ Previews match committed versions"
+          else
+            echo "❌ Preview drift detected"
+            echo ""
+            echo "Previews have changed but were not committed."
+            echo "Run './scripts/docker-previews.sh' locally and commit the changes."
+            echo ""
+            echo "Changed files:"
+            git diff --name-only docs/assets/
+            exit 1
+          fi
 
   preview-cross-platform:
     # Test that macOS and Windows render consistently with Linux
