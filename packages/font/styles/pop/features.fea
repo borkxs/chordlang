@@ -29,6 +29,7 @@ feature calt {{
     sub [A B C D E F G M m] @digit' by @digitsup;
     sub sharp.root @digit' by @digitsup;
     sub flat.root @digit' by @digitsup;
+    sub dim.ring @digit' by @digitsup;
     
     # After alteration accidentals
     sub flat.alt @digit' by @digitsup;
