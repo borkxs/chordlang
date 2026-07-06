@@ -12,11 +12,14 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "grammar": "mkdir -p src/generated && peggy --format es -o src/generated/chart.mjs src/chart.peggy",
+    "grammar": "mkdirp src/generated && peggy --format es -o src/generated/chart.mjs src/chart.peggy",
     "prebuild": "pnpm run grammar",
-    "build": "tsc && cp -r src/generated dist/generated",
+    "build": "tsc && cpy src/generated dist --parents",
     "prepublishOnly": "pnpm run build",
     "test": "vitest run",
     "lint": "tsc --noEmit"
@@ -34,6 +37,8 @@
     "access": "public"
   },
   "devDependencies": {
+    "cpy-cli": "^7.0.0",
+    "mkdirp": "^3.0.1",
     "peggy": "^4.0.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
