@@ -2,6 +2,8 @@
 
 An OpenType font that renders properly-engraved **single-line chord symbols** (`Cmaj7`, `F#m7b5`, `G13`) from plain ASCII input, via GSUB contextual substitution. No JavaScript runtime is required — the font does the work in the shaping engine.
 
+**Current style:** Real Book (modern jazz lead sheet standard). See `styles/realbook/CONVENTIONS.md` for engraving rules and reference materials. Future variants (classical, pop, educational) planned but not yet implemented.
+
 ## npm install
 
 ```bash
@@ -47,6 +49,8 @@ glyphs/source_map.json    # Glyph name → source font/key/scale/dx/dy
 glyphs/extracted_glyphs.py # Generated outline module (make extract)
 tests/shape_test.py       # HarfBuzz shaping assertions — this is the spec
 grammar/INPUT_GRAMMAR.md  # ASCII chord dialect (shared with any future normalizer)
+styles/realbook/          # Real Book engraving style conventions (current default)
+references/               # Visual reference materials from published sources (fair use)
 DECISIONS.md              # Architecture decisions and OSS-vs-build log
 NOTICE                    # Petaluma (OFL) attribution for derived outlines
 dist/                     # Built .ttf output (gitignored)

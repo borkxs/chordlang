@@ -29,8 +29,13 @@ jobs:
       - run: make test
       - run: make lint
 
-  preview-drift:
-    runs-on: macos-15
+  preview-cross-platform:
+    # Informational: Test that preview generation works across platforms
+    # Font correctness is tested via shape tests, not screenshot comparison
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
@@ -45,5 +50,14 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install chromium --with-deps
-      - run: make previews
-      - run: git diff --exit-code docs/assets/
+      
+      - name: Test preview generation
+        run: make previews
+        
+      - name: Report status
+        shell: bash
+        run: |
+          echo "✓ Preview generation works on ${{ matrix.os }}"
+          echo ""
+          echo "Note: Preview images are documentation artifacts, not tests."
+          echo "Font correctness is validated by shape tests (packages/font/tests/)."

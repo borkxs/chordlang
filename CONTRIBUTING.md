@@ -38,9 +38,17 @@ Chart sources live in `examples/charts/*.cfmd`, graphs in `examples/graphs/*.cfg
 See [`examples/README.md`](examples/README.md) for the manifest, playground routes,
 and when to re-run `make previews`.
 
-If you change anything that affects README preview images (source text, `chart.css`,
-ChordFont, or `scripts/render-previews.ts`), run `make previews` and commit
-`docs/assets/` alongside your source changes. See
+If you change anything affecting README preview images (example sources, `chart.css`,
+ChordFont, or rendering scripts), regenerate `docs/assets/` for documentation:
+
+```bash
+./scripts/docker-previews.sh  # Pinned environment
+# OR
+make previews                  # Local environment (faster, may differ)
+```
+
+**Note:** Preview images are documentation artifacts, not tests. Font correctness
+is validated by shape tests in `packages/font/tests/`. See
 [`docs/readme-previews.md`](docs/readme-previews.md).
 
 ## ChordFont iteration

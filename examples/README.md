@@ -19,8 +19,25 @@ Source-of-truth examples for the playground, CLI, and README previews.
 
 1. Edit a file under `font/`, `charts/`, or `graphs/`.
 2. `make dev` — playground loads chart/graph examples via Vite glob (live, no screenshot).
-3. If the visual output changed, `make previews` — regenerate `docs/assets/` and commit the PNGs.
+3. If the visual output changed, regenerate `docs/assets/` and commit the PNGs:
+   ```bash
+   ./scripts/docker-previews.sh  # Recommended: matches CI exactly
+   # OR
+   make previews                  # Alternative: may differ from CI
+   ```
    See [`docs/readme-previews.md`](../docs/readme-previews.md) for the full checklist.
+
+**Preview generation:**
+
+Preview images are **documentation artifacts** for README/publishing, not tests.
+Font correctness is validated by shape tests (`packages/font/tests/`).
+
+- **Local:** `./scripts/docker-previews.sh` (pinned environment)
+- **CI:** `preview-cross-platform` job verifies generation works on all platforms
+- **Manual trigger:** `.github/workflows/generate-previews.yml` for bulk updates
+
+The Docker script ensures consistent rendering across environments, though
+minor pixel differences are acceptable since previews are for documentation.
 
 Each manifest `file` slug is a playground route:
 

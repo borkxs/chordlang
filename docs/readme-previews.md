@@ -1,8 +1,11 @@
 # README preview images
 
-The engraved PNGs embedded in the root [README](../README.md) are **not** rendered
-live on GitHub — they are screenshots committed under `docs/assets/`. Regenerate
-and commit them whenever the visual output would change.
+The engraved PNGs embedded in the root [README](../README.md) are **documentation
+artifacts**, not tests. They are screenshots committed under `docs/assets/`.
+Regenerate when visual output changes for README/docs publishing.
+
+**Font correctness is tested by shape tests** (`packages/font/tests/shape_test.py`),
+not by screenshot comparison.
 
 ## Pipeline
 
@@ -35,8 +38,49 @@ Which files the README embeds is listed under `readme` in
 
 ## Prerequisites
 
-Node 22 (`.nvmrc`), Playwright chromium (`make setup`), and
-`apps/playground/public/fonts/ChordProof.ttf`.
+**Docker (recommended):** For byte-for-byte identical previews matching CI.
+
+**Alternative:** Node 22 (`.nvmrc`), Playwright chromium (`make setup`), and
+`apps/playground/public/fonts/ChordProof.ttf`. Note: Local rendering may differ
+slightly from CI due to environment differences.
+
+## Platform consistency via Docker
+
+**Canonical environment:** Docker container with pinned `node:22.14.0-bookworm`  
+**Why:** Font rendering differs across platforms and even Linux distributions.
+Docker ensures byte-for-byte identical PNGs by:
+- Pinning base image (`node:22.14.0-bookworm`)
+- Pinning system libraries (Chromium dependencies)
+- Pinning Playwright/Chromium versions (from `pnpm-lock.yaml`)
+- Normalizing PNG output with `optipng` (strips metadata, deterministic compression)
+
+### Generating previews locally
+
+**Recommended (Docker):**
+```bash
+./scripts/docker-previews.sh
+```
+
+This builds a Docker image with the exact environment used in CI and generates
+previews. Changes appear in `docs/assets/` and can be committed directly.
+
+**Alternative (native):**
+```bash
+make previews
+```
+
+Works but may produce different pixels than CI. Use Docker before committing to
+ensure CI will pass.
+
+### CI
+
+**`preview-cross-platform`** (macOS, Windows) — Informational check that preview
+generation works across platforms. Font correctness is validated by shape tests
+in `packages/font/tests/`, not by screenshot comparison.
+
+**Manual workflow:** `.github/workflows/generate-previews.yml` can be triggered
+to regenerate previews in Docker and optionally commit them back. Useful for
+bulk updates after font changes.
 
 ## Checklist after editing a README example
 

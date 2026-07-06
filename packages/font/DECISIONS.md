@@ -20,7 +20,29 @@ Log of significant choices. Format: **Decision → Rationale → Alternatives co
 
 **Rationale:** Empirical validation before abstraction. OpenType feature interaction is subtle; assertions catch regressions that visual inspection misses.
 
-**Alternatives:** Manual visual QA only (not repeatable); golden image comparison (heavier, outline-dependent).
+ChordFont does not tokenize chord symbols at render time; it relies on deterministic OpenType contextual substitution for visual accidental binding (`flat.root` / `sharp.root` immediately after A–G; `flat.alt` / `sharp.alt` elsewhere; digits superscripted only after alterations). Semantic parsing may reject or normalize symbols, but glyph binding is specified by GSUB shape tests.
+
+**GSUB is the engraving spec; the normalizer is the harmony spec.** The font API is ASCII → glyphs; the chord API is messy input → canonical ASCII + meaning.
+
+**Alternatives:** Manual visual QA only (not repeatable); golden image comparison (heavier, outline-dependent); JS tokenizer emitting glyph-class spans at render time (runtime cost, duplicates what GSUB already does for 1D symbols).
+
+---
+
+## ADR-007: Style variant system (Real Book as first target)
+
+**Decision:** Build ChordFont as a style-variant system. The Real Book (modern jazz lead sheet) engraving conventions are the first and default style. Future variants (classical, pop, educational, compact) can be added without changing core infrastructure.
+
+**Rationale:** Professional engraving conventions vary by genre and use case. Jazz lead sheets (Real Book), classical analysis (figured bass), pop charts (all-superscript), and educational materials (larger spacing) have different requirements. By treating the current implementation as the "realbook" style variant, we create runway for multiple styles without breaking existing work.
+
+**Implementation:**
+- `styles/realbook/CONVENTIONS.md` documents the target engraving rules
+- `references/` contains visual reference materials from published sources (fair use, development only)
+- Current GSUB rules and tests implement Real Book conventions
+- Future variants will live in `styles/<name>/` with their own conventions docs and test expectations
+
+**Reference:** The New Real Book chord guide (`references/new-real-book-chord-guide.png`) is the gold standard. Our implementation matches their baseline vs. superscript hierarchy.
+
+**Alternatives:** Hard-code one style (not extensible); build all styles up front (premature); runtime JS configuration (defeats font-only goal).
 
 ---
 
