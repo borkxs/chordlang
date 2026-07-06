@@ -1,8 +1,12 @@
 """
-Minimal proof: a chord-symbol font composing engraved single-line symbols from
+Multi-style chord-symbol font builder. Composes engraved single-line symbols from
 ASCII via GSUB only. Outlines are extracted from Petaluma (OFL) via the glyph
 pipeline; the OpenType feature code is the asset.
+
+Supports multiple style variants (realbook, pop, etc.) via --style flag.
 """
+import argparse
+import json
 import os
 import sys
 from pathlib import Path
@@ -47,115 +51,144 @@ def load_extracted():
     return GLYPHS, ADVANCES
 
 
-extracted, extracted_adv = load_extracted()
-
-roots = list("ABCDEFG")
-glyph_order = [".notdef", "space"] + roots + ["m"]
-glyphs = {
-    ".notdef": glyph_from(lambda p: box(p, 0, 0, 400, 600)),
-    "space": glyph_from(lambda p: None),
-}
-for r in roots:
-    if r not in extracted:
-        sys.exit(f"ERROR: extracted glyph missing: {r!r}. Run 'make extract'.")
-    glyphs[r] = extracted[r]
-if "m" not in extracted:
-    sys.exit("ERROR: extracted glyph missing: 'm'. Run 'make extract'.")
-glyphs["m"] = extracted["m"]
-for d in "0123456789":
-    glyph_order += [f"d{d}", f"d{d}.sup"]
-    for name in (f"d{d}", f"d{d}.sup"):
+def build_font(style="realbook"):
+    """Build font for specified style variant."""
+    style_dir = ROOT / "styles" / style
+    config_path = style_dir / "config.json"
+    features_path = style_dir / "features.fea"
+    
+    if not config_path.is_file():
+        sys.exit(f"ERROR: Style config not found: {config_path}")
+    if not features_path.is_file():
+        sys.exit(f"ERROR: Style features not found: {features_path}")
+    
+    with open(config_path) as f:
+        config = json.load(f)
+    
+    extracted, extracted_adv = load_extracted()
+    
+    roots = list("ABCDEFG")
+    glyph_order = [".notdef", "space"] + roots
+    glyphs = {
+        ".notdef": glyph_from(lambda p: box(p, 0, 0, 400, 600)),
+        "space": glyph_from(lambda p: None),
+    }
+    
+    for r in roots:
+        if r not in extracted:
+            sys.exit(f"ERROR: extracted glyph missing: {r!r}. Run 'make extract'.")
+        glyphs[r] = extracted[r]
+    
+    # Style-specific quality glyphs
+    major_glyph = config["glyphs"]["major_quality"]
+    minor_glyph = config["glyphs"]["minor_quality"]
+    
+    # Add quality glyphs based on style
+    if major_glyph == "M":
+        glyph_order.append("M")
+        if "M" not in extracted:
+            sys.exit("ERROR: extracted glyph missing: 'M'. Run 'make extract'.")
+        glyphs["M"] = extracted["M"]
+    
+    glyph_order.append("m")
+    if "m" not in extracted:
+        sys.exit("ERROR: extracted glyph missing: 'm'. Run 'make extract'.")
+    glyphs["m"] = extracted["m"]
+    
+    # Digits
+    for d in "0123456789":
+        glyph_order += [f"d{d}", f"d{d}.sup"]
+        for name in (f"d{d}", f"d{d}.sup"):
+            if name not in extracted:
+                sys.exit(f"ERROR: extracted glyph missing: {name!r}. Run 'make extract'.")
+            glyphs[name] = extracted[name]
+    
+    # Common glyphs needed by all styles
+    EXTRA_GLYPHS = [
+        "a", "j", "b", "d.lc", "i", "l", "n", "o", "s", "t", "u",
+        "numbersign", "slash",
+        "maj.tri", "dim.ring",
+        "flat.root", "flat.alt", "sharp.root", "sharp.alt",
+        "a.sup", "l.sup", "t.sup", "slash.sup",
+    ]
+    glyph_order += EXTRA_GLYPHS
+    for name in EXTRA_GLYPHS:
         if name not in extracted:
             sys.exit(f"ERROR: extracted glyph missing: {name!r}. Run 'make extract'.")
         glyphs[name] = extracted[name]
-EXTRA_GLYPHS = [
-    "a", "j", "b", "d.lc", "i", "l", "o", "s", "t", "u",
-    "numbersign", "slash",
-    "maj.tri", "dim.ring",
-    "flat.root", "flat.alt", "sharp.root", "sharp.alt",
-    "a.sup", "l.sup", "t.sup", "slash.sup",
-]
-glyph_order += EXTRA_GLYPHS
-for name in EXTRA_GLYPHS:
-    if name not in extracted:
-        sys.exit(f"ERROR: extracted glyph missing: {name!r}. Run 'make extract'.")
-    glyphs[name] = extracted[name]
+    
+    # Character map
+    cmap = {ord("A") + i: r for i, r in enumerate(roots)}
+    cmap[ord(" ")] = "space"
+    cmap[ord("M")] = "M" if major_glyph == "M" else "m"
+    cmap[ord("m")] = "m"
+    for d in "0123456789":
+        cmap[ord(d)] = f"d{d}"
+    cmap[ord("a")] = "a"
+    cmap[ord("b")] = "b"
+    cmap[ord("d")] = "d.lc"
+    cmap[ord("i")] = "i"
+    cmap[ord("j")] = "j"
+    cmap[ord("l")] = "l"
+    cmap[ord("n")] = "n"
+    cmap[ord("o")] = "o"
+    cmap[ord("s")] = "s"
+    cmap[ord("t")] = "t"
+    cmap[ord("u")] = "u"
+    cmap[ord("#")] = "numbersign"
+    cmap[ord("/")] = "slash"
+    
+    adv = {g: (300 if g == "space" else 520) for g in glyph_order}
+    for name, width in extracted_adv.items():
+        if name in adv:
+            adv[name] = width
+    
+    # Build font
+    fb = FontBuilder(UPM, isTTF=True)
+    fb.setupGlyphOrder(glyph_order)
+    fb.setupCharacterMap(cmap)
+    fb.setupGlyf(glyphs)
+    fb.setupHorizontalMetrics({g: (adv[g], 50) for g in glyph_order})
+    fb.setupHorizontalHeader(ascent=800, descent=-200)
+    
+    display_name = config["display_name"]
+    fb.setupNameTable({"familyName": f"ChordFont-{display_name}", "styleName": "Regular"})
+    fb.setupOS2(sTypoAscender=800, sTypoDescender=-200)
+    fb.setupPost()
+    
+    # Load and apply features
+    DIGITS = " ".join(f"d{d}" for d in "0123456789")
+    DIGITS_SUP = " ".join(f"d{d}.sup" for d in "0123456789")
+    
+    # Include M only for styles that use it
+    if major_glyph == "M":
+        QUAL_LETTERS = "M m a j b d.lc i l n o s t u"
+    else:
+        QUAL_LETTERS = "m a j b d.lc i l n o s t u"
+    
+    ROOTQUAL = " ".join(roots) + " " + QUAL_LETTERS + " maj.tri dim.ring sharp.root sharp.alt flat.root flat.alt"
+    
+    with open(features_path) as f:
+        fea_template = f.read()
+    
+    fea = fea_template.format(DIGITS=DIGITS, DIGITS_SUP=DIGITS_SUP, ROOTQUAL=ROOTQUAL)
+    addOpenTypeFeaturesFromString(fb.font, fea)
+    
+    # Save
+    os.makedirs("dist", exist_ok=True)
+    output_path = f"dist/ChordFont-{display_name}.ttf"
+    fb.save(output_path)
+    print(f"saved {output_path}")
+    return output_path
 
-cmap = {ord("A") + i: r for i, r in enumerate(roots)}
-cmap[ord(" ")] = "space"
-cmap[ord("m")] = "m"
-for d in "0123456789":
-    cmap[ord(d)] = f"d{d}"
-cmap[ord("a")] = "a"
-cmap[ord("b")] = "b"
-cmap[ord("d")] = "d.lc"
-cmap[ord("i")] = "i"
-cmap[ord("j")] = "j"
-cmap[ord("l")] = "l"
-cmap[ord("o")] = "o"
-cmap[ord("s")] = "s"
-cmap[ord("t")] = "t"
-cmap[ord("u")] = "u"
-cmap[ord("#")] = "numbersign"
-cmap[ord("/")] = "slash"
-adv = {g: (300 if g == "space" else 520) for g in glyph_order}
-for name, width in extracted_adv.items():
-    if name in adv:
-        adv[name] = width
 
-fb = FontBuilder(UPM, isTTF=True)
-fb.setupGlyphOrder(glyph_order)
-fb.setupCharacterMap(cmap)
-fb.setupGlyf(glyphs)
-fb.setupHorizontalMetrics({g: (adv[g], 50) for g in glyph_order})
-fb.setupHorizontalHeader(ascent=800, descent=-200)
-fb.setupNameTable({"familyName": "ChordProof", "styleName": "Regular"})
-fb.setupOS2(sTypoAscender=800, sTypoDescender=-200)
-fb.setupPost()
-
-DIGITS = " ".join(f"d{d}" for d in "0123456789")
-DIGITS_SUP = " ".join(f"d{d}.sup" for d in "0123456789")
-QUAL_LETTERS = "m a j b d.lc i l o s t u"
-ROOTQUAL = " ".join(roots) + " " + QUAL_LETTERS + " maj.tri dim.ring sharp.root sharp.alt flat.root flat.alt"
-
-fea = f"""
-@digit = [{DIGITS}];
-@digitsup = [{DIGITS_SUP}];
-@rootqual = [{ROOTQUAL}];
-
-feature liga {{
-    sub m a j by maj.tri;
-    sub d.lc i m by dim.ring;
-}} liga;
-
-feature calt {{
-    sub [A B C D E F G] numbersign' by sharp.root;
-    sub [A B C D E F G] b' by flat.root;
-    sub sharp.root o' by dim.ring;
-    sub flat.root o' by dim.ring;
-    sub [A B C D E F G] o' by dim.ring;
-    sub b' by flat.alt;
-    sub numbersign' by sharp.alt;
-}} calt;
-
-feature calt {{
-    # Only superscript digits after alteration accidentals (proper jazz engraving)
-    sub flat.alt @digit' by @digitsup;
-    sub sharp.alt @digit' by @digitsup;
-    # Chain superscripts for multi-digit alterations like #11, b13
-    sub @digitsup @digit' by @digitsup;
-    # Slash in 6/9 notation gets superscripted when surrounded by digits
-    sub @digitsup slash' by slash.sup;
-    sub slash.sup @digit' by @digitsup;
-    # Superscript "alt" suffix after digits (7alt, 9alt, etc.)
-    sub @digit a' by a.sup;
-    sub @digitsup a' by a.sup;
-    sub a.sup l' by l.sup;
-    sub l.sup t' by t.sup;
-}} calt;
-"""
-addOpenTypeFeaturesFromString(fb.font, fea)
-
-os.makedirs("dist", exist_ok=True)
-fb.save("dist/ChordProof.ttf")
-print("saved dist/ChordProof.ttf")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Build ChordFont style variant")
+    parser.add_argument(
+        "--style",
+        default="realbook",
+        choices=["realbook", "pop"],
+        help="Font style variant to build (default: realbook)"
+    )
+    args = parser.parse_args()
+    build_font(args.style)

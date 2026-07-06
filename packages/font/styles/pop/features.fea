@@ -1,0 +1,49 @@
+@digit = [{DIGITS}];
+@digitsup = [{DIGITS_SUP}];
+@rootqual = [{ROOTQUAL}];
+
+feature liga {{
+    # Pop style: use "M" for major (not triangle)
+    # "dim" still maps to ring symbol
+    sub d.lc i m by dim.ring;
+}} liga;
+
+feature calt {{
+    # Root accidentals
+    sub [A B C D E F G] numbersign' by sharp.root;
+    sub [A B C D E F G] b' by flat.root;
+    
+    # Diminished after root accidentals
+    sub sharp.root o' by dim.ring;
+    sub flat.root o' by dim.ring;
+    sub [A B C D E F G] o' by dim.ring;
+    
+    # Alteration accidentals (not after root)
+    sub b' by flat.alt;
+    sub numbersign' by sharp.alt;
+}} calt;
+
+feature calt {{
+    # Pop style: superscript ALL digits after root (including base extensions)
+    # This makes C7 → C⁷ (with superscript 7)
+    sub [A B C D E F G M m] @digit' by @digitsup;
+    sub sharp.root @digit' by @digitsup;
+    sub flat.root @digit' by @digitsup;
+    
+    # After alteration accidentals
+    sub flat.alt @digit' by @digitsup;
+    sub sharp.alt @digit' by @digitsup;
+    
+    # Chain superscripts for multi-digit extensions
+    sub @digitsup @digit' by @digitsup;
+    
+    # Slash in 6/9 notation gets superscripted when surrounded by digits
+    sub @digitsup slash' by slash.sup;
+    sub slash.sup @digit' by @digitsup;
+    
+    # Superscript "alt" suffix after digits
+    sub @digit a' by a.sup;
+    sub @digitsup a' by a.sup;
+    sub a.sup l' by l.sup;
+    sub l.sup t' by t.sup;
+}} calt;

@@ -2,7 +2,12 @@
 
 An OpenType font that renders properly-engraved **single-line chord symbols** (`Cmaj7`, `F#m7b5`, `G13`) from plain ASCII input, via GSUB contextual substitution. No JavaScript runtime is required — the font does the work in the shaping engine.
 
-**Current style:** Real Book (modern jazz lead sheet standard). See `styles/realbook/CONVENTIONS.md` for engraving rules and reference materials. Future variants (classical, pop, educational) planned but not yet implemented.
+**Style variants:** ChordFont ships multiple style variants to match different notation conventions:
+
+- **Real Book** (`ChordFont-Real Book.ttf`) — Modern jazz lead sheet standard with △ for major, baseline extensions
+- **Pop** (`ChordFont-Pop.ttf`) — Pop/rock conventions with "M" for major, all extensions superscripted
+
+See `styles/*/CONVENTIONS.md` for engraving rules and reference materials for each style.
 
 ## npm install
 
@@ -11,15 +16,33 @@ npm install @chordlang/font
 ```
 
 ```css
+/* Real Book style (jazz) */
 @font-face {
-  font-family: "ChordFont";
-  src: url("node_modules/@chordlang/font/fonts/ChordProof.ttf") format("truetype");
+  font-family: "ChordFont-RealBook";
+  src: url("node_modules/@chordlang/font/fonts/ChordFont-Real Book.ttf") format("truetype");
+}
+
+/* Pop style */
+@font-face {
+  font-family: "ChordFont-Pop";
+  src: url("node_modules/@chordlang/font/fonts/ChordFont-Pop.ttf") format("truetype");
 }
 ```
 
-Exports: `@chordlang/font/ChordProof.ttf`, `@chordlang/font/NOTICE` (OFL).
+Exports: `@chordlang/font/ChordFont-Real Book.ttf`, `@chordlang/font/ChordFont-Pop.ttf`, `@chordlang/font/NOTICE` (OFL).
+
+Choose the font variant that matches your musical genre and notation conventions.
 
 This is distinct from chord-**diagram** fonts (TabFont et al.): we **compose** symbols from glyph parts, not look up pre-drawn fretboard grids.
+
+## Style Comparison
+
+| Notation | Real Book | Pop |
+|----------|-----------|-----|
+| Major 7th | `Cmaj7` → C△7 | `CM7` → CM⁷ |
+| Extensions | Baseline (C7) | Superscript (C⁷) |
+| Use case | Jazz lead sheets | Pop/rock charts |
+| Examples | Giant Steps, All The Things You Are | Yesterday, God Only Knows |
 
 ## How it works
 
@@ -66,11 +89,13 @@ Three separate concerns (Godot-style data/logic separation):
 ## Quick start
 
 ```bash
-make setup    # create .venv and install deps (first time)
-make fetch    # download pinned Petaluma sources + OFL license
-make extract  # extract outlines → glyphs/extracted_glyphs.py
-make build    # → dist/ChordProof.ttf
-make test     # fetch + extract + build + run shaping assertions
+make setup          # create .venv and install deps (first time)
+make fetch          # download pinned Petaluma sources + OFL license
+make extract        # extract outlines → glyphs/extracted_glyphs.py
+make build          # build all style variants → dist/ChordFont-*.ttf
+make build-realbook # build only Real Book style
+make build-pop      # build only Pop style
+make test           # fetch + extract + build + run shaping assertions
 ```
 
 ## How to play
@@ -85,12 +110,24 @@ Glyphs are handwritten outlines derived from Petaluma (OFL). To nudge alignment,
 
 ## Shaping test cases (current scope)
 
+### Real Book style
+
 | Input | Expected glyph stream |
 |-------|----------------------|
-| `Cmaj7` | `C maj.tri d7.sup` |
+| `Cmaj7` | `C maj.tri d7` (△7 at baseline) |
+| `Dm7b5` | `D m d7 flat.alt d5.sup` |
+| `F#m7` | `F sharp.root m d7` |
+| `G13` | `G d1 d3` (13 at baseline) |
+| `Bb` | `B flat.root` |
+
+### Pop style
+
+| Input | Expected glyph stream |
+|-------|----------------------|
+| `CM7` | `C M d7.sup` (M⁷ with superscript 7) |
 | `Dm7b5` | `D m d7.sup flat.alt d5.sup` |
-| `F#m7` | `F sharp.root m d7.sup` |
-| `G13` | `G d1.sup d3.sup` |
+| `F#m7` | `F sharp.root m d7.sup` (all extensions superscripted) |
+| `G13` | `G d1.sup d3.sup` (¹³ superscripted) |
 | `Bb` | `B flat.root` |
 
 Every new feature must land with a passing assertion in `tests/shape_test.py`. CI fails on any mismatch.
