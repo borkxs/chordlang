@@ -36,6 +36,9 @@ cli: build ## Run CLI (usage: make cli CMD='html examples/charts/blues-in-f.cfmd
 font: ## Build the chord font (Python, packages/font)
 	$(MAKE) -C packages/font build
 
+font-atlas: font ## Render exhaustive ChordFont symbol atlas (HTML + PNG in packages/font/dist/)
+	node --experimental-strip-types tools/font-atlas/render-atlas.ts
+
 clean: ## Remove build artifacts and generated parser
 	pnpm run clean
 	$(MAKE) -C packages/font clean

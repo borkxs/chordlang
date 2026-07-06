@@ -10,6 +10,7 @@
     "dev": "pnpm run grammar && pnpm --filter @chordlang/playground dev",
     "graphs": "pnpm --filter @chordlang/playground graphs",
     "previews": "pnpm run grammar && node --experimental-strip-types scripts/render-previews.ts",
+    "font-atlas": "node --experimental-strip-types tools/font-atlas/render-atlas.ts",
     "lint": "pnpm -r --filter './packages/*' lint",
     "clean": "rm -rf packages/*/dist packages/parser/src/generated"
   },

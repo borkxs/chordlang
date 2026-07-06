@@ -31,6 +31,9 @@ proof: build ## Build + tests + proof HTML + metrics table
 	$(PYTEST) tests/ -v --tb=short
 	$(PYTHON) tools/render_proof.py
 
+atlas: build ## Exhaustive symbol atlas → dist/atlas.html + dist/atlas.png (needs repo root: make font-atlas)
+	cd ../.. && node --experimental-strip-types tools/font-atlas/render-atlas.ts
+
 clean: ## Remove built fonts from dist/
 	rm -rf dist/*.ttf glyphs/extracted_glyphs.py
 
