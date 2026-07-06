@@ -4,10 +4,12 @@ An OpenType font that renders properly-engraved **single-line chord symbols** (`
 
 **Style variants:** ChordFont ships multiple style variants to match different notation conventions:
 
-- **Real Book** (`ChordFont-Real Book.ttf`) — Modern jazz lead sheet standard with △ for major, baseline extensions
-- **Pop** (`ChordFont-Pop.ttf`) — Pop/rock conventions with "M" for major, all extensions superscripted
+- **Real Book** ([`ChordFont-Real Book.ttf`](fonts/ChordFont-Real%20Book.ttf)) — Modern jazz lead sheet standard with △ for major, baseline extensions
+- **Pop** ([`ChordFont-Pop.ttf`](fonts/ChordFont-Pop.ttf)) — Pop/rock conventions with "M" for major, all extensions superscripted
 
 See `styles/*/CONVENTIONS.md` for engraving rules and reference materials for each style.
+
+**Try it live:** [Playground demo](https://borkxs.github.io/chordlang) with style selector
 
 ## npm install
 
@@ -40,9 +42,15 @@ This is distinct from chord-**diagram** fonts (TabFont et al.): we **compose** s
 | Notation | Real Book | Pop |
 |----------|-----------|-----|
 | Major 7th | `Cmaj7` → C△7 | `CM7` → CM⁷ |
-| Extensions | Baseline (C7) | Superscript (C⁷) |
+| Dominant 7th | `C7` → C7 (baseline) | `C7` → C⁷ (superscript) |
+| Extensions | `C13` → C13 (baseline) | `C13` → C¹³ (superscript) |
+| Minor 7th | `Dm7` → Dm7 | `Dm7` → Dm⁷ |
 | Use case | Jazz lead sheets | Pop/rock charts |
-| Examples | Giant Steps, All The Things You Are | Yesterday, God Only Knows |
+| Examples | Giant Steps, All The Things You Are | Yesterday, God Only Knows, Let It Be |
+
+**Download fonts:**
+- [Real Book (19 KB)](fonts/ChordFont-Real%20Book.ttf)
+- [Pop (19 KB)](fonts/ChordFont-Pop.ttf)
 
 ## How it works
 
@@ -110,25 +118,29 @@ Glyphs are handwritten outlines derived from Petaluma (OFL). To nudge alignment,
 
 ## Shaping test cases (current scope)
 
-### Real Book style
+### Real Book style ([download](fonts/ChordFont-Real%20Book.ttf))
 
-| Input | Expected glyph stream |
-|-------|----------------------|
-| `Cmaj7` | `C maj.tri d7` (△7 at baseline) |
-| `Dm7b5` | `D m d7 flat.alt d5.sup` |
-| `F#m7` | `F sharp.root m d7` |
-| `G13` | `G d1 d3` (13 at baseline) |
-| `Bb` | `B flat.root` |
+| Input | Output | Notes |
+|-------|--------|-------|
+| `Cmaj7` | C△7 | Triangle, baseline 7 |
+| `Dm7b5` | Dm7♭⁵ | Alterations superscripted |
+| `F#m7` | F♯m7 | Root sharp, baseline 7 |
+| `G13` | G13 | Extensions at baseline |
+| `Bb7` | B♭7 | Root flat |
 
-### Pop style
+### Pop style ([download](fonts/ChordFont-Pop.ttf))
 
-| Input | Expected glyph stream |
-|-------|----------------------|
-| `CM7` | `C M d7.sup` (M⁷ with superscript 7) |
-| `Dm7b5` | `D m d7.sup flat.alt d5.sup` |
-| `F#m7` | `F sharp.root m d7.sup` (all extensions superscripted) |
-| `G13` | `G d1.sup d3.sup` (¹³ superscripted) |
-| `Bb` | `B flat.root` |
+| Input | Output | Notes |
+|-------|--------|-------|
+| `CM7` | CM⁷ | Uppercase M, superscript 7 |
+| `Dm7` | Dm⁷ | All extensions superscripted |
+| `F#m7` | F♯m⁷ | Root sharp, superscript 7 |
+| `G13` | G¹³ | All extensions superscripted |
+| `Bb7` | B♭⁷ | Root flat, superscript 7 |
+
+**Examples in the wild:**
+- Real Book: [All The Things You Are](../../examples/charts/all-the-things-realbook.cfmd), [Giant Steps](../../examples/charts/giant-steps.cfmd)
+- Pop: [Yesterday](../../examples/charts/yesterday-pop.cfmd), [God Only Knows](../../examples/charts/god-only-knows-pop.cfmd), [Let It Be](../../examples/charts/let-it-be-pop.cfmd)
 
 Every new feature must land with a passing assertion in `tests/shape_test.py`. CI fails on any mismatch.
 
