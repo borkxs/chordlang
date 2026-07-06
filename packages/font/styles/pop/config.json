@@ -1,0 +1,24 @@
+{
+  "name": "pop",
+  "display_name": "Pop",
+  "description": "Pop/rock conventions from classic songs (Beatles, Beach Boys, etc.)",
+  "glyphs": {
+    "major_quality": "M",
+    "minor_quality": "m",
+    "diminished_quality": "dim.ring",
+    "root_accidental_sharp": "sharp.root",
+    "root_accidental_flat": "flat.root",
+    "alt_accidental_sharp": "sharp.alt",
+    "alt_accidental_flat": "flat.alt"
+  },
+  "typography": {
+    "superscript_all_extensions": true,
+    "superscript_alterations": true,
+    "baseline_quality": true
+  },
+  "feature_flags": {
+    "use_triangle_major": false,
+    "use_ring_diminished": true,
+    "spelled_qualities": false
+  }
+}

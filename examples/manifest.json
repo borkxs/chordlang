@@ -9,7 +9,11 @@
     { "file": "stress-test", "label": "Stress test" },
     { "file": "blues-in-f", "label": "Blues in F" },
     { "file": "giant-steps", "label": "Giant Steps" },
-    { "file": "d-modal", "label": "D Modal" }
+    { "file": "all-the-things-realbook", "label": "All The Things (Real Book)" },
+    { "file": "d-modal", "label": "D Modal" },
+    { "file": "yesterday-pop", "label": "Yesterday (Pop)" },
+    { "file": "god-only-knows-pop", "label": "God Only Knows (Pop)" },
+    { "file": "let-it-be-pop", "label": "Let It Be (Pop)" }
   ],
   "graphs": [
     { "file": "ii-v-i-chain", "label": "ii–V–I chain" },

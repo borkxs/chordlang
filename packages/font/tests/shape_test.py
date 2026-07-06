@@ -1,22 +1,27 @@
 import uharfbuzz as hb
 import pytest
 from fontTools.ttLib import TTFont
+from pathlib import Path
 
-FONT = "dist/ChordProof.ttf"
-order = TTFont(FONT).getGlyphOrder()
-_data = open(FONT, "rb").read()
-_font = hb.Font(hb.Face(_data))
+def load_font(font_path):
+    """Load font and return (order, font) for shaping."""
+    order = TTFont(font_path).getGlyphOrder()
+    data = open(font_path, "rb").read()
+    font = hb.Font(hb.Face(data))
+    return order, font
 
 
-def shape(s):
+def shape(s, font_obj, glyph_order):
+    """Shape string with given font and return glyph names."""
     b = hb.Buffer()
     b.add_str(s)
     b.guess_segment_properties()
-    hb.shape(_font, b, {"liga": True, "calt": True})
-    return " ".join(order[i.codepoint] for i in b.glyph_infos)
+    hb.shape(font_obj, b, {"liga": True, "calt": True})
+    return " ".join(glyph_order[i.codepoint] for i in b.glyph_infos)
 
 
-CASES = {
+# Real Book style test cases (jazz lead sheet conventions)
+REALBOOK_CASES = {
     "Cmaj7": "C maj.tri d7",
     "Cmaj7#11": "C maj.tri d7 sharp.alt d1.sup d1.sup",
     "Dm7b5": "D m d7 flat.alt d5.sup",
@@ -43,7 +48,43 @@ CASES = {
     "C13b9": "C d1 d3 flat.alt d9.sup",
 }
 
+# Pop style test cases (all extensions superscripted, M for major)
+POP_CASES = {
+    "CM7": "C M d7.sup",
+    "Dm7": "D m d7.sup",
+    "Dm7b5": "D m d7.sup flat.alt d5.sup",
+    "F#m7": "F sharp.root m d7.sup",
+    "G13": "G d1.sup d3.sup",
+    "Bb": "B flat.root",
+    "Bb7": "B flat.root d7.sup",
+    "FM7": "F M d7.sup",
+    "Em7": "E m d7.sup",
+    "A7": "A d7.sup",
+    "C7": "C d7.sup",
+    "AM7": "A M d7.sup",
+    "Bm6": "B m d6.sup",
+    "Cdim": "C dim.ring",
+    "Cdim7": "C dim.ring d7.sup",
+}
 
-@pytest.mark.parametrize("inp,expected", CASES.items(), ids=list(CASES.keys()))
-def test_shape(inp, expected):
-    assert shape(inp) == expected
+
+@pytest.mark.parametrize("inp,expected", REALBOOK_CASES.items(), ids=list(REALBOOK_CASES.keys()))
+def test_realbook_shape(inp, expected):
+    """Test Real Book style font shaping."""
+    font_path = Path("dist/ChordFont-Real Book.ttf")
+    if not font_path.exists():
+        pytest.skip(f"Font not built: {font_path}")
+    
+    order, font_obj = load_font(font_path)
+    assert shape(inp, font_obj, order) == expected
+
+
+@pytest.mark.parametrize("inp,expected", POP_CASES.items(), ids=list(POP_CASES.keys()))
+def test_pop_shape(inp, expected):
+    """Test Pop style font shaping."""
+    font_path = Path("dist/ChordFont-Pop.ttf")
+    if not font_path.exists():
+        pytest.skip(f"Font not built: {font_path}")
+    
+    order, font_obj = load_font(font_path)
+    assert shape(inp, font_obj, order) == expected
