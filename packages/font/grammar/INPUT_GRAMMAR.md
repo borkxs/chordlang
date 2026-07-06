@@ -23,7 +23,13 @@ F#m7       →  F + # + m + 7
 Dm7b5      →  D + m + 7 + b + 5
 G13        →  G + 13
 Bb         →  B + b
+E7b5       →  E + 7 + b + 5   (not Eb + 7 + 5)
+Eb7b5      →  E + b + 7 + b + 5
 ```
+
+Visual accidental binding is **not** decided here — it is specified by GSUB shape
+tests (`tests/shape_test.py`). This grammar defines the canonical ASCII token order
+that both the normalizer must emit and the font must accept.
 
 ## Open problem: variant normalization
 

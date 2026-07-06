@@ -29,6 +29,14 @@ with liga+calt on; the font's GSUB does the symbol engraving. Render owns only
 the measure grid / sections / beat cells. No layout tokens in the source format
 (the iReal anti-pattern).
 
+ChordFont does not tokenize chord symbols at render time; it relies on
+deterministic OpenType contextual substitution for visual accidental binding.
+Semantic parsing (`@chordlang/chord`) may reject or normalize symbols, but glyph
+binding is specified by GSUB shape tests (`packages/font/tests/shape_test.py`).
+
+**GSUB is the engraving spec; the normalizer is the harmony spec.** The font
+API is ASCII → glyphs; the chord API is messy input → canonical ASCII + meaning.
+
 ## ADR-006: v0.1 publish scope and package names
 **Scope:** ship the parse → normalize → render pipeline plus graph renderer and
 font tarball. Harmonic analyzer (`@chordlang/analyze`) and corpus tooling stay

@@ -20,7 +20,11 @@ Log of significant choices. Format: **Decision → Rationale → Alternatives co
 
 **Rationale:** Empirical validation before abstraction. OpenType feature interaction is subtle; assertions catch regressions that visual inspection misses.
 
-**Alternatives:** Manual visual QA only (not repeatable); golden image comparison (heavier, outline-dependent).
+ChordFont does not tokenize chord symbols at render time; it relies on deterministic OpenType contextual substitution for visual accidental binding (`flat.root` / `sharp.root` immediately after A–G; `flat.alt` / `sharp.alt` elsewhere; digits superscripted only after alterations). Semantic parsing may reject or normalize symbols, but glyph binding is specified by GSUB shape tests.
+
+**GSUB is the engraving spec; the normalizer is the harmony spec.** The font API is ASCII → glyphs; the chord API is messy input → canonical ASCII + meaning.
+
+**Alternatives:** Manual visual QA only (not repeatable); golden image comparison (heavier, outline-dependent); JS tokenizer emitting glyph-class spans at render time (runtime cost, duplicates what GSUB already does for 1D symbols).
 
 ---
 
