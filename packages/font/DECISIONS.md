@@ -28,6 +28,24 @@ ChordFont does not tokenize chord symbols at render time; it relies on determini
 
 ---
 
+## ADR-007: Style variant system (Real Book as first target)
+
+**Decision:** Build ChordFont as a style-variant system. The Real Book (modern jazz lead sheet) engraving conventions are the first and default style. Future variants (classical, pop, educational, compact) can be added without changing core infrastructure.
+
+**Rationale:** Professional engraving conventions vary by genre and use case. Jazz lead sheets (Real Book), classical analysis (figured bass), pop charts (all-superscript), and educational materials (larger spacing) have different requirements. By treating the current implementation as the "realbook" style variant, we create runway for multiple styles without breaking existing work.
+
+**Implementation:**
+- `styles/realbook/CONVENTIONS.md` documents the target engraving rules
+- `references/` contains visual reference materials from published sources (fair use, development only)
+- Current GSUB rules and tests implement Real Book conventions
+- Future variants will live in `styles/<name>/` with their own conventions docs and test expectations
+
+**Reference:** The New Real Book chord guide (`references/new-real-book-chord-guide.png`) is the gold standard. Our implementation matches their baseline vs. superscript hierarchy.
+
+**Alternatives:** Hard-code one style (not extensible); build all styles up front (premature); runtime JS configuration (defeats font-only goal).
+
+---
+
 ## ADR-003: Three-way separation of concerns
 
 **Decision:** Keep glyph outlines, OpenType feature grammar, and input-string grammar in separate modules/docs.
