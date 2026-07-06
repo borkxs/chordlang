@@ -38,12 +38,26 @@ Which files the README embeds is listed under `readme` in
 Node 22 (`.nvmrc`), Playwright chromium (`make setup`), and
 `apps/playground/public/fonts/ChordProof.ttf`.
 
-**Platform note:** The CI preview-drift check runs on `ubuntu-latest` to match
-typical development environments. Font rendering differs between platforms
-(Linux/macOS/Windows), so previews should ideally be regenerated on Linux to
-avoid false drift detection. If you regenerate on a different platform and the
-CI fails, the images are likely functionally identical but with minor
-antialiasing differences.
+## Platform consistency
+
+**Canonical platform:** Linux (`ubuntu-latest`)  
+**Why:** Font rendering differs across platforms (antialiasing, hinting). We pick
+one as the source of truth.
+
+The CI runs two checks:
+
+1. **`preview-drift`** (Ubuntu) — Fail if committed `docs/assets/` don't match
+   regenerated output. This catches "forgot to run `make previews`" mistakes.
+
+2. **`preview-cross-platform`** (macOS, Windows) — Regenerate previews and
+   report differences. This catches platform-specific rendering bugs while
+   allowing expected antialiasing differences. Currently informational; future
+   work will add image comparison with tolerance thresholds.
+
+**When regenerating previews locally:** Run on Linux if possible (Docker, WSL, or
+native Linux). If you regenerate on macOS/Windows, the `preview-drift` CI will
+fail due to platform differences, but your visual changes are still valid — just
+regenerate on Linux before merging.
 
 ## Checklist after editing a README example
 

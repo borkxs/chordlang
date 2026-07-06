@@ -22,9 +22,16 @@ Source-of-truth examples for the playground, CLI, and README previews.
 3. If the visual output changed, `make previews` — regenerate `docs/assets/` and commit the PNGs.
    See [`docs/readme-previews.md`](../docs/readme-previews.md) for the full checklist.
 
-**Note:** The CI `preview-drift` check ensures committed previews stay up-to-date.
-It runs on Linux; regenerating on other platforms may cause false drift warnings
-due to font rendering differences (though the images are functionally identical).
+**CI checks:**
+
+- **`preview-drift`** (Linux): Ensures committed previews match current code.
+  Catches "forgot to run `make previews`" mistakes.
+- **`preview-cross-platform`** (macOS, Windows): Tests rendering consistency.
+  Reports platform differences (informational; future work will add threshold).
+
+**Platform:** Regenerate previews on Linux (canonical platform) to avoid CI drift
+failures. Use Docker, WSL, or native Linux. macOS/Windows regeneration works but
+requires re-running on Linux before merge.
 
 Each manifest `file` slug is a playground route:
 
