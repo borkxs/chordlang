@@ -22,6 +22,10 @@ Source-of-truth examples for the playground, CLI, and README previews.
 3. If the visual output changed, `make previews` — regenerate `docs/assets/` and commit the PNGs.
    See [`docs/readme-previews.md`](../docs/readme-previews.md) for the full checklist.
 
+**Note:** The CI `preview-drift` check ensures committed previews stay up-to-date.
+It runs on Linux; regenerating on other platforms may cause false drift warnings
+due to font rendering differences (though the images are functionally identical).
+
 Each manifest `file` slug is a playground route:
 
 - Charts: `/chart/walkin-thing`, `/chart/giant-steps`, …

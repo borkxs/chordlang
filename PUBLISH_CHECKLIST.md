@@ -97,7 +97,7 @@ Root `"packageManager": "pnpm@9.15.9"`. Publish workflow: `.github/workflows/pub
 `.github/workflows/pages.yml` deploys the playground on push to `main`.
 
 - [x] GitHub Actions workflow: `make test` → `make lint` on PR + `main` (`.github/workflows/ci.yml`).
-- [x] CI job: `make previews` and fail if `docs/assets/` drift (preview-drift job in `ci.yml`).
+- [x] CI job: `make previews` and fail if `docs/assets/` drift (preview-drift job in `ci.yml`; runs on `ubuntu-latest` to match dev environment and avoid platform-specific rendering differences).
 - [ ] CI job: `make font` + font shape tests (`packages/font`) on Python matrix (optional separate workflow).
 - [x] Node version pinned — `.nvmrc` → 22; CI and Pages workflows use `node-version-file: .nvmrc`.
 - [x] Cache pnpm store in CI — `cache: pnpm` in `ci.yml` and `pages.yml`.

@@ -38,6 +38,13 @@ Which files the README embeds is listed under `readme` in
 Node 22 (`.nvmrc`), Playwright chromium (`make setup`), and
 `apps/playground/public/fonts/ChordProof.ttf`.
 
+**Platform note:** The CI preview-drift check runs on `ubuntu-latest` to match
+typical development environments. Font rendering differs between platforms
+(Linux/macOS/Windows), so previews should ideally be regenerated on Linux to
+avoid false drift detection. If you regenerate on a different platform and the
+CI fails, the images are likely functionally identical but with minor
+antialiasing differences.
+
 ## Checklist after editing a README example
 
 1. Edit the source under [`examples/`](../examples/).
