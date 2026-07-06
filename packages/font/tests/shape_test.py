@@ -36,6 +36,10 @@ CASES = {
     "Csus4": "C s u s d4.sup",
     "Cadd9": "C a d.lc d.lc d9.sup",
     "C13b9": "C d1.sup d3.sup flat.alt d9.sup",
+    "E7b5": "E d7.sup flat.alt d5.sup",
+    "E7#5": "E d7.sup sharp.alt d5.sup",
+    "Eb7b5": "E flat.root d7.sup flat.alt d5.sup",
+    "Bbmaj7": "B flat.root maj.tri d7.sup",
 }
 
 

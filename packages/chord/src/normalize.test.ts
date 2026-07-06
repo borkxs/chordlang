@@ -103,4 +103,24 @@ describe("normalize — the five stress chords", () => {
     expect(normalize("CΔ7").render.harte).toBe("C:maj7");
     expect(normalize("C^7").render.harte).toBe("C:maj7");
   });
+
+  it("dominant altered fifths: E7b5, E7#5, E9b5, E9#5, E13b5, E13#5", () => {
+    const cases: Array<[string, number]> = [
+      ["E7b5", 6],
+      ["E7#5", 8],
+      ["E9b5", 6],
+      ["E9#5", 8],
+      ["E13b5", 6],
+      ["E13#5", 8],
+    ];
+    for (const [sym, fifthSemis] of cases) {
+      const c = normalize(sym);
+      expect(c.root).toEqual({ letter: "E", accidental: 0 });
+      const fifths = c.factors.filter((f) => f.degree === 5);
+      expect(fifths).toEqual([{ degree: 5, semitones: fifthSemis }]);
+      expect(c.render.ascii).toBe(sym);
+      expect(c.underspecified).toBe(false);
+    }
+  });
 });
+

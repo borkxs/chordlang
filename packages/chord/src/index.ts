@@ -170,6 +170,8 @@ const EXTENSION_SUFFIXES: Array<{ re: RegExp; factor: ChordFactor }> = [
   { re: /#9$/,  factor: { degree: 9,  semitones: 15 } },
   { re: /#11$/, factor: { degree: 11, semitones: 18 } },
   { re: /b11$/, factor: { degree: 11, semitones: 16 } },
+  { re: /b5$/,  factor: { degree: 5,  semitones: 6 } },
+  { re: /#5$/,  factor: { degree: 5,  semitones: 8 } },
 ];
 
 function decomposeChord(chordPart: string): { parsed: ReturnType<typeof Chord.get>; extra: ChordFactor | null } {
@@ -207,7 +209,11 @@ export function normalize(symbol: string): Canonical {
 
   const root = toNoteRef(c.tonic);
   const factors = c.intervals.map(intervalToFactor);
-  if (extra) factors.push(extra);
+  if (extra) {
+    const idx = factors.findIndex((f) => f.degree === extra.degree);
+    if (idx >= 0) factors[idx] = extra;
+    else factors.push(extra);
+  }
 
   // bass + role: inversion iff the bass pitch-class is a chord tone
   let bass: NoteRef | null = null;
