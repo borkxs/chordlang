@@ -45,8 +45,11 @@ slightly from CI due to environment differences.
 
 **Canonical environment:** Docker container with pinned `node:22.14.0-bookworm`  
 **Why:** Font rendering differs across platforms and even Linux distributions.
-Docker ensures byte-for-byte identical PNGs by pinning the base image, system
-libraries, and Chromium version.
+Docker ensures byte-for-byte identical PNGs by:
+- Pinning base image (`node:22.14.0-bookworm`)
+- Pinning system libraries (Chromium dependencies)
+- Pinning Playwright/Chromium versions (from `pnpm-lock.yaml`)
+- Normalizing PNG output with `optipng` (strips metadata, deterministic compression)
 
 ### Generating previews locally
 

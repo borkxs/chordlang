@@ -39,11 +39,15 @@ COPY packages/graph/package.json ./packages/graph/
 COPY packages/cli/package.json ./packages/cli/
 COPY packages/font/package.json ./packages/font/
 
-# Install dependencies
+# Install dependencies (frozen lockfile ensures exact Playwright version)
 RUN pnpm install --frozen-lockfile
 
-# Install Playwright Chromium with pinned version
+# Install Playwright Chromium with exact version from lockfile
+# The frozen lockfile ensures we get the same Chromium build
 RUN pnpm exec playwright install chromium --with-deps
+
+# Install optipng for PNG normalization (reproducible compression)
+RUN apt-get update && apt-get install -y optipng && rm -rf /var/lib/apt/lists/*
 
 # Copy source files
 COPY . .
@@ -54,5 +58,9 @@ RUN pnpm run build
 # Set reproducible timestamp for any file operations
 ENV SOURCE_DATE_EPOCH=1609459200
 
-# Default command: generate previews
-CMD ["make", "previews"]
+# Disable Playwright telemetry and randomness
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=0
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+
+# Default command: generate previews and normalize PNGs for reproducibility
+CMD ["sh", "-c", "make previews && ./scripts/normalize-pngs.sh docs/assets"]

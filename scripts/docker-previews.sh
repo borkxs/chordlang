@@ -59,7 +59,11 @@ docker run --rm \
   -v "$ROOT_DIR/docs/assets:/workspace/docs/assets" \
   "${IMAGE_NAME}:${IMAGE_TAG}"
 
-echo "✓ Previews generated in docs/assets/"
+echo "✓ Previews generated and normalized in docs/assets/"
+echo ""
+echo "PNG normalization (optipng) ensures reproducible builds by:"
+echo "  - Stripping metadata (timestamps, comments)"
+echo "  - Using deterministic compression"
 echo ""
 echo "Review changes:"
 echo "  git status docs/assets/"
