@@ -27,17 +27,17 @@ Source-of-truth examples for the playground, CLI, and README previews.
    ```
    See [`docs/readme-previews.md`](../docs/readme-previews.md) for the full checklist.
 
-**CI checks:**
+**Preview generation:**
 
-- **`preview-drift`** (Docker): Ensures committed previews match current code.
-  Catches "forgot to run preview generation" mistakes. Fails on any difference.
-- **`preview-cross-platform`** (macOS, Windows): Tests rendering consistency.
-  Reports platform differences (informational; future work will add threshold).
+Preview images are **documentation artifacts** for README/publishing, not tests.
+Font correctness is validated by shape tests (`packages/font/tests/`).
 
-**Docker workflow:** The Docker script builds a container with the exact
-environment used in CI (pinned Node, Debian, system libraries). This guarantees
-byte-for-byte identical PNGs, eliminating false CI failures from environment
-differences.
+- **Local:** `./scripts/docker-previews.sh` (pinned environment)
+- **CI:** `preview-cross-platform` job verifies generation works on all platforms
+- **Manual trigger:** `.github/workflows/generate-previews.yml` for bulk updates
+
+The Docker script ensures consistent rendering across environments, though
+minor pixel differences are acceptable since previews are for documentation.
 
 Each manifest `file` slug is a playground route:
 

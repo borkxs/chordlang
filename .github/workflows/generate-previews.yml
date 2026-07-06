@@ -1,0 +1,53 @@
+name: Generate Preview Images
+
+# Generate preview images for README and documentation
+# These are documentation artifacts, not tests
+# Font correctness is validated by shape tests in CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_back:
+        description: 'Commit generated previews back to the branch'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build preview Docker image
+        run: docker build -f docker/Dockerfile.previews -t chordlang-previews:latest .
+
+      - name: Generate previews
+        run: |
+          docker run --rm \
+            -v "$PWD/docs/assets:/workspace/docs/assets" \
+            chordlang-previews:latest
+
+      - name: Upload preview artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-images
+          path: docs/assets/
+          retention-days: 90
+
+      - name: Commit and push (if requested)
+        if: ${{ inputs.commit_back }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/assets/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: regenerate preview images
+
+Generated via GitHub Actions workflow (Docker)"
+            git push
+          fi

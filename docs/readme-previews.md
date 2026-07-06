@@ -1,8 +1,11 @@
 # README preview images
 
-The engraved PNGs embedded in the root [README](../README.md) are **not** rendered
-live on GitHub — they are screenshots committed under `docs/assets/`. Regenerate
-and commit them whenever the visual output would change.
+The engraved PNGs embedded in the root [README](../README.md) are **documentation
+artifacts**, not tests. They are screenshots committed under `docs/assets/`.
+Regenerate when visual output changes for README/docs publishing.
+
+**Font correctness is tested by shape tests** (`packages/font/tests/shape_test.py`),
+not by screenshot comparison.
 
 ## Pipeline
 
@@ -69,17 +72,15 @@ make previews
 Works but may produce different pixels than CI. Use Docker before committing to
 ensure CI will pass.
 
-### CI checks
+### CI
 
-1. **`preview-drift`** (Docker on `ubuntu-latest`) — Fail if committed
-   `docs/assets/` don't match regenerated output. This catches "forgot to run
-   `make previews`" mistakes.
+**`preview-cross-platform`** (macOS, Windows) — Informational check that preview
+generation works across platforms. Font correctness is validated by shape tests
+in `packages/font/tests/`, not by screenshot comparison.
 
-2. **`preview-cross-platform`** (macOS, Windows, native Node) — Regenerate
-   previews and report differences. This catches platform-specific rendering
-   bugs while allowing expected antialiasing differences. Currently
-   informational; future work will add image comparison with tolerance
-   thresholds.
+**Manual workflow:** `.github/workflows/generate-previews.yml` can be triggered
+to regenerate previews in Docker and optionally commit them back. Useful for
+bulk updates after font changes.
 
 ## Checklist after editing a README example
 

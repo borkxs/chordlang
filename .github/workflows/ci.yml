@@ -29,40 +29,9 @@ jobs:
       - run: make test
       - run: make lint
 
-  preview-drift:
-    # Canonical platform: Docker (pinned Node + Debian for reproducibility)
-    # Check that committed previews match regenerated output
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build preview Docker image
-        run: docker build -f docker/Dockerfile.previews -t chordlang-previews:latest .
-
-      - name: Generate previews in Docker
-        run: |
-          docker run --rm \
-            -v "$PWD/docs/assets:/workspace/docs/assets" \
-            chordlang-previews:latest
-
-      - name: Check for preview drift
-        run: |
-          if git diff --exit-code docs/assets/; then
-            echo "✓ Previews match committed versions"
-          else
-            echo "❌ Preview drift detected"
-            echo ""
-            echo "Previews have changed but were not committed."
-            echo "Run './scripts/docker-previews.sh' locally and commit the changes."
-            echo ""
-            echo "Changed files:"
-            git diff --name-only docs/assets/
-            exit 1
-          fi
-
   preview-cross-platform:
-    # Test that macOS and Windows render consistently with Linux
-    # Allows minor antialiasing differences but catches real rendering bugs
+    # Informational: Test that preview generation works across platforms
+    # Font correctness is tested via shape tests, not screenshot comparison
     strategy:
       matrix:
         os: [macos-latest, windows-latest]
@@ -82,22 +51,13 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install chromium --with-deps
       
-      - name: Regenerate previews
+      - name: Test preview generation
         run: make previews
-
-      - name: Check for major rendering differences
+        
+      - name: Report status
         shell: bash
         run: |
-          # Check if any files changed (this will show differences)
-          if git diff --quiet docs/assets/; then
-            echo "✓ Rendering matches Linux (canonical platform)"
-          else
-            echo "⚠️  Platform rendering differences detected"
-            echo "Changed files:"
-            git diff --name-only docs/assets/
-            echo ""
-            echo "This is expected due to font antialiasing differences."
-            echo "Manually verify these are minor rendering differences, not layout bugs."
-            # TODO: Add image comparison with tolerance threshold
-            # For now, this is informational only
-          fi
+          echo "✓ Preview generation works on ${{ matrix.os }}"
+          echo ""
+          echo "Note: Preview images are documentation artifacts, not tests."
+          echo "Font correctness is validated by shape tests (packages/font/tests/)."

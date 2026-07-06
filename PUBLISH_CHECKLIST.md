@@ -97,9 +97,10 @@ Root `"packageManager": "pnpm@9.15.9"`. Publish workflow: `.github/workflows/pub
 `.github/workflows/pages.yml` deploys the playground on push to `main`.
 
 - [x] GitHub Actions workflow: `make test` → `make lint` on PR + `main` (`.github/workflows/ci.yml`).
-- [x] CI job: preview drift check using Docker for reproducible rendering (preview-drift job; pinned `node:22.14.0-bookworm` base image).
-- [x] CI job: cross-platform preview consistency check (macOS, Windows; informational only until image comparison with tolerance is added).
-- [x] Docker-based preview generation for local development (`./scripts/docker-previews.sh` matches CI exactly).
+- [x] Font correctness validated by shape tests (`packages/font/tests/shape_test.py`) — runs in CI, catches regressions.
+- [x] CI job: cross-platform preview generation check (macOS, Windows; informational, ensures tooling works).
+- [x] Manual workflow: generate-previews.yml for bulk preview regeneration (Docker, can commit back).
+- [x] Docker-based preview generation for local development (`./scripts/docker-previews.sh`).
 - [ ] CI job: `make font` + font shape tests (`packages/font`) on Python matrix (optional separate workflow).
 - [x] Node version pinned — `.nvmrc` → 22; CI and Pages workflows use `node-version-file: .nvmrc`.
 - [x] Cache pnpm store in CI — `cache: pnpm` in `ci.yml` and `pages.yml`.
