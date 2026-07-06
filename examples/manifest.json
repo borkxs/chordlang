@@ -9,7 +9,9 @@
     { "file": "stress-test", "label": "Stress test" },
     { "file": "blues-in-f", "label": "Blues in F" },
     { "file": "giant-steps", "label": "Giant Steps" },
-    { "file": "d-modal", "label": "D Modal" }
+    { "file": "d-modal", "label": "D Modal" },
+    { "file": "yesterday-pop", "label": "Yesterday (Pop)" },
+    { "file": "god-only-knows-pop", "label": "God Only Knows (Pop)" }
   ],
   "graphs": [
     { "file": "ii-v-i-chain", "label": "ii–V–I chain" },

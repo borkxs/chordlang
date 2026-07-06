@@ -1,8 +1,19 @@
 @import "../../../packages/render/chart.css";
 
 @font-face {
+  font-family: "ChordFont-RealBook";
+  src: url("../public/fonts/ChordFont-Real Book.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ChordFont-Pop";
+  src: url("../public/fonts/ChordFont-Pop.ttf") format("truetype");
+}
+
+/* Default to Real Book style */
+@font-face {
   font-family: "ChordFont";
-  src: url("../public/fonts/ChordProof.ttf") format("truetype");
+  src: url("../public/fonts/ChordFont-Real Book.ttf") format("truetype");
 }
 
 :root {
@@ -30,6 +41,21 @@ body {
   display: flex; align-items: baseline; gap: 1rem;
   padding: 0.7rem 1.2rem;
   border-bottom: 1px solid #2e333a;
+}
+.font-style-selector {
+  display: flex; align-items: baseline; gap: 0.4rem;
+  font-size: 0.8rem; color: var(--smoke);
+}
+.font-style-selector label {
+  font-weight: 500;
+}
+.font-style-selector select {
+  background: var(--slate); border: 1px solid #3a4048;
+  color: #e8e6e1; padding: 0.2rem 0.6rem; border-radius: 4px;
+  font-size: 0.78rem; cursor: pointer;
+}
+.font-style-selector select:hover, .font-style-selector select:focus {
+  border-color: var(--brass); outline: none;
 }
 .wordmark { font-weight: 700; letter-spacing: 0.02em; }
 .tagline { color: var(--smoke); font-size: 0.8rem; }
