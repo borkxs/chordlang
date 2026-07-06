@@ -29,6 +29,7 @@ make setup    # pnpm install + Playwright chromium (for preview screenshots)
 | `make cli CMD='html examples/charts/blues-in-f.cfmd'` | CLI smoke test (after `make build`) |
 | `make previews` | Regenerate README preview PNGs under `docs/assets/` |
 | `make font` | Rebuild ChordFont TTF (Python, `packages/font/`) |
+| `make font-atlas` | Exhaustive ChordFont symbol proof sheet (PNG + HTML + JSON) |
 | `make help` | List every Makefile target |
 
 ## Editing examples
@@ -41,6 +42,16 @@ If you change anything that affects README preview images (source text, `chart.c
 ChordFont, or `scripts/render-previews.ts`), run `make previews` and commit
 `docs/assets/` alongside your source changes. See
 [`docs/readme-previews.md`](docs/readme-previews.md).
+
+## ChordFont iteration
+
+When editing glyph outlines or GSUB rules (`packages/font/`), use the atlas
+feedback loop: change sources → `make font-atlas` → inspect or diff
+`packages/font/dist/atlas.png`. Full instructions (including what agents should
+read, how to extend the symbol catalog, and what not to commit) are in
+[`tools/font-atlas/README.md`](tools/font-atlas/README.md).
+
+Shaping regressions are caught by `make -C packages/font test` (`tests/shape_test.py`).
 
 ## Project layout
 
