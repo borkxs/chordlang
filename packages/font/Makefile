@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help build build-all build-realbook build-pop test clean setup fetch extract install-playground proof
+.PHONY: help build test clean setup fetch extract install-playground proof
 
 PYTHON := $(if $(wildcard .venv/bin/python3),.venv/bin/python3,python3)
 PYTEST := $(if $(wildcard .venv/bin/pytest),.venv/bin/pytest,pytest)
@@ -20,15 +20,8 @@ fetch: ## Download pinned Petaluma source fonts and OFL license
 extract: fetch ## Extract glyph outlines from sources into glyphs/extracted_glyphs.py
 	$(PYTHON) tools/extract_glyphs.py
 
-build-realbook: extract ## Build Real Book style variant
-	$(PYTHON) src/build_font.py --style=realbook
-
-build-pop: extract ## Build Pop style variant
-	$(PYTHON) src/build_font.py --style=pop
-
-build-all: build-realbook build-pop ## Build all style variants
-
-build: build-all ## Build all font variants (default: all styles)
+build: extract ## Build dist/ChordProof.ttf and copy to playground
+	$(PYTHON) src/build_font.py
 	$(MAKE) install-playground
 
 test: build ## Build and run shaping tests
@@ -44,9 +37,6 @@ atlas: build ## Exhaustive symbol atlas → dist/atlas.html + dist/atlas.png (ne
 clean: ## Remove built fonts from dist/
 	rm -rf dist/*.ttf glyphs/extracted_glyphs.py
 
-install-playground: ## Copy built fonts to apps/playground and npm fonts/
-	mkdir -p ../../apps/playground/public/fonts
-	mkdir -p fonts
-	cp dist/ChordFont-*.ttf ../../apps/playground/public/fonts/ || true
-	cp dist/ChordFont-*.ttf fonts/ || true
-	@echo "Installed fonts to playground and npm fonts/"
+install-playground: ## Copy built font to apps/playground and npm fonts/
+	cp dist/ChordProof.ttf ../../apps/playground/public/fonts/ChordProof.ttf
+	cp dist/ChordProof.ttf fonts/ChordProof.ttf

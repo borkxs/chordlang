@@ -21,7 +21,6 @@ const astView = $("#view-ast");
 const canonView = $("#view-canonical");
 const status = $("#status");
 const nav = $("#examples");
-const fontStyleSelect = $<HTMLSelectElement>("#font-style");
 
 let activeSlug = resolveSlug(parseRoute(location.pathname).slug, CHART_BY_SLUG, DEFAULT_CHART_SLUG);
 
@@ -87,16 +86,6 @@ document.querySelectorAll<HTMLButtonElement>(".tab").forEach((tab) => {
 });
 
 source.addEventListener("input", update);
-
-// Font style switching
-fontStyleSelect.addEventListener("change", () => {
-  const style = fontStyleSelect.value;
-  if (style === "pop") {
-    page.style.fontFamily = '"ChordFont-Pop", monospace';
-  } else {
-    page.style.fontFamily = '"ChordFont-RealBook", monospace';
-  }
-});
 
 onRouteChange(() => {
   const slug = resolveSlug(parseRoute(location.pathname).slug, CHART_BY_SLUG, DEFAULT_CHART_SLUG);
