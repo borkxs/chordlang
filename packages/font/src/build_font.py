@@ -139,15 +139,16 @@ feature calt {{
 }} calt;
 
 feature calt {{
-    sub @rootqual @digit' by @digitsup;
+    # Only superscript digits after alteration accidentals (proper jazz engraving)
     sub flat.alt @digit' by @digitsup;
     sub sharp.alt @digit' by @digitsup;
-    sub flat.root @digit' by @digitsup;
-    sub sharp.root @digit' by @digitsup;
-    sub dim.ring @digit' by @digitsup;
+    # Chain superscripts for multi-digit alterations like #11, b13
     sub @digitsup @digit' by @digitsup;
+    # Slash in 6/9 notation gets superscripted when surrounded by digits
     sub @digitsup slash' by slash.sup;
     sub slash.sup @digit' by @digitsup;
+    # Superscript "alt" suffix after digits (7alt, 9alt, etc.)
+    sub @digit a' by a.sup;
     sub @digitsup a' by a.sup;
     sub a.sup l' by l.sup;
     sub l.sup t' by t.sup;
