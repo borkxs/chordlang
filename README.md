@@ -114,6 +114,7 @@ digraph {
   edge [color="#6f6a5e" penwidth=1.4 arrowsize=0.7];
 
   Am7 -> D7 -> Gmaj7 -> Cmaj7 -> "F#m7b5" -> B7 -> Em7;
+  Em7 -> Am7 [constraint=false];
 }
 ```
 
