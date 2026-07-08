@@ -17,7 +17,11 @@ in [`examples/integrations/`](../examples/integrations/).
 | **LuaLaTeX** | HarfBuzz (opt in) | [`latex-chords.tex`](../examples/integrations/latex-chords.tex) | Requires `Renderer=Harfbuzz`; the default node shaper misses the `maj`→△ ligature |
 | **Typst** | rustybuzz | [`typst-chords.typ`](../examples/integrations/typst-chords.typ) | Zero config — `text(font: "ChordFont-Real Book")` |
 | **LilyPond** | Pango/HarfBuzz | [`lilypond-chords.ly`](../examples/integrations/lilypond-chords.ly) | Chord symbols above real staves via `\markup` |
-| **Pango CLI** (`pango-view`) | HarfBuzz | one-liner below | Stand-in for every GTK app (Inkscape, GIMP text tool, …) |
+| **LibreOffice Writer** | HarfBuzz | [`libreoffice-chords.fodt`](../examples/integrations/libreoffice-chords.fodt) | Live typing engraves in-app; headless `--convert-to pdf` works too |
+| **Inkscape** | Pango/HarfBuzz | [`inkscape-chords.svg`](../examples/integrations/inkscape-chords.svg) | SVG `font-family` text engraves; CLI `--export-type=png` verified |
+| **GIMP** | Pango/HarfBuzz | comma trick, see gotcha 2 | Text tool + script-fu (`gimp-text-fontname`) |
+| **Qt / QPainter** | HarfBuzz | `QFont("ChordFont-Real Book")` | Any Qt app's text rendering — verified with a 10-line PyQt script |
+| **Pango CLI** (`pango-view`) | HarfBuzz | one-liner below | Stand-in for every GTK app (gedit, file managers, …) |
 | **ffmpeg `drawtext`** | HarfBuzz | one-liner below | Engraved chord overlays on video (practice-along tracks) |
 
 ```bash
@@ -50,19 +54,45 @@ These are real-world consumers' requirements the browser never exercised:
    single-substitution fine but drops the multi-glyph `maj`→△ ligature.
    Always pass `Renderer=Harfbuzz` in `fontspec` options.
 
+## OS-level: the font is the integration
+
+Installing the TTF at the OS level makes ChordFont appear in the font menu of
+**every native app** — nothing chordlang-specific needs to exist in any of
+them. The shaping engine lives in the OS text stack, so a text box in a word
+processor engraves the same symbols as the web playground:
+
+| Platform | Install | Shaper apps inherit |
+|----------|---------|---------------------|
+| Linux | `cp *.ttf ~/.fonts/ && fc-cache -f` | HarfBuzz (Pango/GTK, Qt, LibreOffice) |
+| macOS / iOS | double-click → Font Book; iOS via font-provider apps | CoreText — `liga`/`calt` on by default |
+| Windows | right-click → Install | DirectWrite — `liga` on by default; `calt` varies by app |
+| Android | per-app (font pickers, WebView) | Minikin/HarfBuzz |
+
+Verified here on Linux: typing `Cmaj7` into a **LibreOffice Writer** document
+with ChordFont selected engraves C△7 live, mid-keystroke — the `maj`→△
+ligature forms the moment the `j` lands. The same document converts to PDF
+headlessly. Inkscape, GIMP, and a raw Qt `QPainter` render all engrave from
+the same `~/.fonts` install.
+
 ## Likely-to-work (same shaper, not yet verified)
 
-- **Inkscape / GIMP / any GTK app** — Pango everywhere; `pango-view` above is
-  the smoke test.
-- **LibreOffice** — uses HarfBuzz on all platforms since 5.3.
 - **Pandoc PDF output** — delegates to XeLaTeX/LuaLaTeX (verified above);
   set `mainfont`/`fontfamily` per section.
 - **ImageMagick** — uses Pango when built with it (`magick pango:...`).
 - **Krita, Scribus ≥ 1.5.4, Blender ≥ 3.4 (VSE text)** — HarfBuzz.
-- **macOS/iOS apps** (Pages, Keynote, Final Cut titles) — CoreText applies
-  `liga`/`calt` by default.
+- **Kdenlive / Shotcut title clips** — Qt text rendering (QPainter verified
+  above).
+- **macOS/iOS apps** (Pages, Keynote, Notes, Final Cut titles) — CoreText
+  applies `liga`/`calt` by default.
 - **Windows apps on DirectWrite** (Word, PowerPoint) — `liga` on by default;
   `calt` support varies by app.
+- **Electron apps with font settings** (Obsidian, VS Code markdown preview) —
+  Chromium shaping, same as the playground.
+- **MuseScore** — Qt-based; it has a dedicated "chord symbol font" style
+  setting, but also its own chord-symbol formatter that may pre-transform
+  text before shaping — needs a real test.
+- **OBS Studio** — Pango text source on Linux engraves; the default
+  FreeType 2 source on Windows does not shape, use the Pango plugin.
 
 ## Verified NOT to work
 
@@ -78,4 +108,5 @@ These are real-world consumers' requirements the browser never exercised:
 Every row in the tables above is an integration chordlang never has to build
 or maintain. The font is the API; the OS text stack is the runtime. The same
 `.ttf` that powers the web playground drops into a dissertation (LaTeX), a
-score (LilyPond), a poster (Inkscape), or a slide deck — unchanged.
+score (LilyPond), a poster (Inkscape), a word-processor lead sheet
+(LibreOffice), or a video overlay (ffmpeg) — unchanged.

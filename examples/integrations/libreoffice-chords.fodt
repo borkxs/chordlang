@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+                 xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+                 xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+                 xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
+                 xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"
+                 office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
+  <office:font-face-decls>
+    <style:font-face style:name="ChordFont-Real Book" svg:font-family="'ChordFont-Real Book'"/>
+    <style:font-face style:name="ChordFont-Pop" svg:font-family="'ChordFont-Pop'"/>
+  </office:font-face-decls>
+  <office:automatic-styles>
+    <style:style style:name="ChordRB" style:family="text">
+      <style:text-properties style:font-name="ChordFont-Real Book" fo:font-size="28pt"/>
+    </style:style>
+    <style:style style:name="ChordPop" style:family="text">
+      <style:text-properties style:font-name="ChordFont-Pop" fo:font-size="28pt"/>
+    </style:style>
+  </office:automatic-styles>
+  <office:body>
+    <office:text>
+      <text:p>Real Book: <text:span text:style-name="ChordRB">Cmaj7  Dm7b5  F#m7  G13  Bb7</text:span></text:p>
+      <text:p>Pop: <text:span text:style-name="ChordPop">CM7  Dm7  F#m7  G13  Bb7</text:span></text:p>
+    </office:text>
+  </office:body>
+</office:document>

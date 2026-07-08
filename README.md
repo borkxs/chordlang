@@ -126,8 +126,10 @@ More graphs in [`examples/graphs/`](examples/graphs/) · HTML gallery with `make
 Graphviz needed zero chordlang code: it shapes text with HarfBuzz, so the font
 engraves the symbols itself. The same is true of any tool with a modern text
 stack — verified so far: **XeLaTeX / LuaLaTeX** (`fontspec`), **Typst**,
-**LilyPond** (chord symbols above real staves), **Pango** (Inkscape, GIMP, any
-GTK app), and **ffmpeg `drawtext`** (video overlays). Runnable sources in
+**LilyPond** (chord symbols above real staves), **LibreOffice Writer** (type
+`Cmaj7`, watch it engrave live), **Inkscape**, **GIMP**, **Qt**, **Pango**,
+and **ffmpeg `drawtext`** (video overlays). Install the TTF at the OS level
+and it shows up in every native app's font menu. Runnable sources in
 [`examples/integrations/`](examples/integrations/); recipes and gotchas in
 [`docs/font-integrations.md`](docs/font-integrations.md).
 

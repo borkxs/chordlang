@@ -9,8 +9,9 @@ All notable changes to this project are documented here. Format follows
 ### Added
 
 - `docs/font-integrations.md` — verified free integrations beyond Graphviz
-  (XeLaTeX, LuaLaTeX, Typst, LilyPond, Pango, ffmpeg `drawtext`), with
-  runnable sources in `examples/integrations/`.
+  (XeLaTeX, LuaLaTeX, Typst, LilyPond, LibreOffice Writer, Inkscape, GIMP,
+  Qt, Pango, ffmpeg `drawtext`) plus the OS-level install story for native
+  apps, with runnable sources in `examples/integrations/`.
 
 ### Fixed
 
