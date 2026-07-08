@@ -58,6 +58,11 @@ This is distinct from chord-**diagram** fonts (TabFont et al.): we **compose** s
 2. The shaping engine (HarfBuzz, CoreText, DirectWrite, etc.) applies GSUB rules.
 3. Ligatures and contextual substitutions transform the glyph stream into an engraved symbol.
 
+Because the engraving lives in the shaping engine, tools with a modern text
+stack work with zero integration code — verified in Graphviz, XeLaTeX/LuaLaTeX,
+Typst, LilyPond, Pango, and ffmpeg `drawtext`. See
+[`docs/font-integrations.md`](../../docs/font-integrations.md).
+
 Handwritten glyph outlines are extracted from [Petaluma](https://github.com/steinbergmedia/petaluma) (SIL OFL) via a data-driven pipeline. **The OpenType feature code is the asset**; outlines are swappable without touching GSUB rules (see ADR-003, ADR-005).
 
 ## Difficulty tiers
