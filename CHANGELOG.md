@@ -6,6 +6,19 @@ All notable changes to this project are documented here. Format follows
 
 ## [Unreleased]
 
+### Added
+
+- `docs/font-integrations.md` — verified free integrations beyond Graphviz
+  (XeLaTeX, LuaLaTeX, Typst, LilyPond, LibreOffice Writer, Inkscape, GIMP,
+  Qt, Pango, ffmpeg `drawtext`) plus the OS-level install story for native
+  apps, with runnable sources in `examples/integrations/`.
+
+### Fixed
+
+- ChordFont name table now includes unique ID, full name, version, and
+  PostScript name records (IDs 3–6). Fonts built without them render blank in
+  LilyPond, are undiscoverable in Typst, and crash LuaLaTeX's HarfBuzz loader.
+
 ## [0.1.1] - 2026-07-05
 
 ### Added

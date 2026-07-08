@@ -1,0 +1,27 @@
+% ChordFont in LaTeX — works with XeLaTeX and LuaLaTeX (both ship HarfBuzz).
+%
+%   xelatex latex-chords.tex
+%   lualatex latex-chords.tex
+%
+% Install the TTFs from packages/font/fonts/ system-wide first
+% (e.g. ~/.fonts/ + fc-cache -f; LuaLaTeX may need `luaotfload-tool --update`).
+% LuaLaTeX needs Renderer=Harfbuzz — its default node shaper misses the
+% multi-glyph maj -> triangle ligature.
+\documentclass[border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage{iftex}
+\ifluatex
+  \newcommand{\chordrenderer}{Renderer=Harfbuzz,}
+\else
+  \newcommand{\chordrenderer}{}
+\fi
+\newfontfamily\chordfontrb{ChordFont-Real Book}[
+  \chordrenderer Ligatures=Common, Contextuals=Alternate]
+\newfontfamily\chordfontpop{ChordFont-Pop}[
+  \chordrenderer Ligatures=Common, Contextuals=Alternate]
+\begin{document}
+\begin{tabular}{ll}
+Real Book: & {\chordfontrb\Huge Cmaj7 \quad Dm7b5 \quad F\#m7 \quad G13 \quad Bb7} \\[6pt]
+Pop:       & {\chordfontpop\Huge CM7 \quad Dm7 \quad F\#m7 \quad G13 \quad Bb7} \\
+\end{tabular}
+\end{document}

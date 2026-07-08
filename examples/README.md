@@ -10,6 +10,11 @@ Source-of-truth examples for the playground, CLI, and README previews.
 | `.cfmd` | chord font markdown | `packages/parser/src/chart.peggy` — lead-sheet chart structure |
 | `.cfgv` | chord font graphviz | Standard [Graphviz DOT](https://graphviz.org/doc/info/lang.html); node labels use `fontname="ChordFont"` |
 
+[`integrations/`](integrations/) holds runnable sources for third-party tools
+that engrave ChordFont for free via their shaping engines (LaTeX, Typst,
+LilyPond) — not part of the playground/preview pipeline. See
+[`docs/font-integrations.md`](../docs/font-integrations.md).
+
 `manifest.json` has two roles:
 
 - **`readme`** — which files the root README embeds (source text + PNG must match).

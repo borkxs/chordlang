@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXTRACTED = ROOT / "glyphs" / "extracted_glyphs.py"
 OFL = ROOT / "sources" / "petaluma" / "OFL.txt"
 UPM = 1000
+VERSION = "0.1.1"
 
 
 def box(pen, x0, y0, x1, y1):
@@ -152,7 +153,22 @@ def build_font(style="realbook"):
     fb.setupHorizontalHeader(ascent=800, descent=-200)
     
     display_name = config["display_name"]
-    fb.setupNameTable({"familyName": f"ChordFont-{display_name}", "styleName": "Regular"})
+    family_name = f"ChordFont-{display_name}"
+    # PostScript names cannot contain spaces (e.g. "Real Book" → "RealBook").
+    ps_name = f"{family_name.replace(' ', '')}-Regular"
+    # Full name (ID 4) and PostScript name (ID 6) are required by consumers that
+    # look fonts up outside the browser: LuaLaTeX's HarfBuzz renderer, Typst's
+    # font discovery, and LilyPond's PS backend all fail without them.
+    fb.setupNameTable(
+        {
+            "familyName": family_name,
+            "styleName": "Regular",
+            "uniqueFontIdentifier": f"{VERSION};CHRD;{ps_name}",
+            "fullName": f"{family_name} Regular",
+            "version": f"Version {VERSION}",
+            "psName": ps_name,
+        }
+    )
     fb.setupOS2(sTypoAscender=800, sTypoDescender=-200)
     fb.setupPost()
     
