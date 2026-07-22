@@ -40,6 +40,8 @@ CASES = {
     "E7#5": "E d7.sup sharp.alt d5.sup",
     "Eb7b5": "E flat.root d7.sup flat.alt d5.sup",
     "Bbmaj7": "B flat.root maj.tri d7.sup",
+    "Bb5": "B flat.root d5.sup",
+    "C#5": "C sharp.root d5.sup",
 }
 
 

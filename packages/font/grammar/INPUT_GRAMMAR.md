@@ -97,6 +97,19 @@ Any normalizer must map these → canonical form before the font sees them.
 | `7alt`, `7alt.` | Shorthand for ♭9/#9/♭13/#11 — **TBD** whether font expands or normalizer does |
 | Explicit `C7b9`, `C7#9`, `C7b13` | Preferred; maps to superscript digits |
 
+### Multi-alteration chaining (open)
+
+The normalizer strips **at most one** unrecognized alteration suffix when tonal fails the full string (`E13#5` → `E13` + `#5`). Stacked spellings where the remainder after one strip is still unknown fail:
+
+| Example | Status |
+|---------|--------|
+| `E7b5#9` | Often OK if tonal knows the full form or the remainder after one strip |
+| `E13#5b9` | **Fails today** — strip `b9` → `E13#5`, which tonal also rejects |
+
+**TBD:** loop suffix stripping until tonal accepts, or reject multi-alt ASCII and require parenthesized WALL forms.
+
+Power chords with root accidentals (`Bb5`, `C#5`) are safe because decompose is **parse-first**: tonal accepts them as fifths before `/b5$/` / `/#5$/` ever run.
+
 ## Out of font scope (WALL tier)
 
 These require 2D layout — normalizer should flag them for SVG fallback:

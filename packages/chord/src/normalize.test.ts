@@ -122,5 +122,23 @@ describe("normalize — the five stress chords", () => {
       expect(c.underspecified).toBe(false);
     }
   });
+
+  it("power chords with root accidentals are not altered fifths (Bb5, C#5)", () => {
+    const bb = normalize("Bb5");
+    expect(bb.root).toEqual({ letter: "B", accidental: -1 });
+    expect(bb.factors).toEqual([
+      { degree: 1, semitones: 0 },
+      { degree: 5, semitones: 7 },
+    ]);
+    expect(bb.render.ascii).toBe("Bb5");
+
+    const cs = normalize("C#5");
+    expect(cs.root).toEqual({ letter: "C", accidental: 1 });
+    expect(cs.factors).toEqual([
+      { degree: 1, semitones: 0 },
+      { degree: 5, semitones: 7 },
+    ]);
+    expect(cs.render.ascii).toBe("C#5");
+  });
 });
 

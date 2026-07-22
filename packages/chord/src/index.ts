@@ -163,6 +163,8 @@ function nameFactors(factors: ChordFactor[], asciiTail: string): Naming {
 /* extension decomposition — handle suffixes tonal doesn't recognize   */
 /* ------------------------------------------------------------------ */
 
+// Parse-first: only strip a suffix when tonal fails the full string.
+// That keeps /b5$/ and /#5$/ from eating power chords (Bb5, C#5, …).
 const EXTENSION_SUFFIXES: Array<{ re: RegExp; factor: ChordFactor }> = [
   { re: /b13$/, factor: { degree: 13, semitones: 20 } },
   { re: /#13$/, factor: { degree: 13, semitones: 22 } },
@@ -177,6 +179,8 @@ const EXTENSION_SUFFIXES: Array<{ re: RegExp; factor: ChordFactor }> = [
 function decomposeChord(chordPart: string): { parsed: ReturnType<typeof Chord.get>; extra: ChordFactor | null } {
   const direct = Chord.get(chordPart);
   if (!direct.empty && direct.tonic) return { parsed: direct, extra: null };
+  // Single-suffix only — multi-alteration chains like E13#5b9 are out of scope
+  // until we loop (see packages/font/grammar/INPUT_GRAMMAR.md).
   for (const { re, factor } of EXTENSION_SUFFIXES) {
     if (!re.test(chordPart)) continue;
     const base = chordPart.replace(re, "");
