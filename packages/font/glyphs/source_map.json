@@ -37,7 +37,9 @@
   "sharp.alt": {"source_font": "Petaluma.otf", "source_key": "csymAccidentalSharp", "scale": 0.54, "dx": 4, "dy": 325},
   "slash": {"source_font": "PetalumaScript.otf", "source_key": "/", "scale": 0.68, "dx": 20, "dy": 0, "advance": 300, "derive_sup": true},
   "dim.ring": {"source_font": "Petaluma.otf", "source_key": "csymDiminished", "scale": 0.64, "dx": 10, "dy": 290},
-  "_future_csymHalfDiminished": {"source_font": "Petaluma.otf", "source_key": "csymHalfDiminished", "scale": 0.5, "dx": 80, "dy": -150},
+  "hdim.slash": {"source_font": "Petaluma.otf", "source_key": "csymHalfDiminished", "scale": 0.70, "dx": 8, "dy": 265},
+  "parenleft": {"source_font": "PetalumaScript.otf", "source_key": "(", "scale": 0.68, "dx": 16, "dy": 160, "advance": 220},
+  "parenright": {"source_font": "PetalumaScript.otf", "source_key": ")", "scale": 0.68, "dx": 8, "dy": 160, "advance": 220},
   "_future_csymAugmented": {"source_font": "Petaluma.otf", "source_key": "csymAugmented", "scale": 0.5, "dx": 80, "dy": -150},
   "_future_csymParensLeftTall": {"source_font": "Petaluma.otf", "source_key": "csymParensLeftTall", "scale": 0.5, "dx": 80, "dy": -150},
   "_future_csymParensRightTall": {"source_font": "Petaluma.otf", "source_key": "csymParensRightTall", "scale": 0.5, "dx": 80, "dy": -150}

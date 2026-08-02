@@ -69,7 +69,7 @@ Handwritten glyph outlines are extracted from [Petaluma](https://github.com/stei
 
 | Tier | Mechanism | Status |
 |------|-----------|--------|
-| **EASY** | Single-sequence ligature (`F#` → F♯) | Straightforward `liga` |
+| **EASY** | Single-sequence ligature (`F#` → F♯), `ø` half-dim, linear `G7(b9)` parens | Straightforward `liga` / cmap |
 | **MAYBE / HARD** | Contextual superscripting, chained multi-digit extensions, post-accidental digits | **Proven in HarfBuzz — this is our scope** |
 | **WALL** | 2D vertical stacking of parenthesized tensions (`G7(♯11)(♭13)`) | **Out of scope for the font** |
 

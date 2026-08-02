@@ -30,6 +30,8 @@ REALBOOK_CASES = {
     "Bb": "B flat.root",
     "Bm7b5": "B m d7 flat.alt d5.sup",
     "Em7b5": "E m d7 flat.alt d5.sup",
+    "Bø7": "B hdim.slash d7",
+    "Fø": "F hdim.slash",
     "Fmaj7": "F maj.tri d7",
     "Bb7": "B flat.root d7",
     "Bbmaj7": "B flat.root maj.tri d7",
@@ -46,6 +48,10 @@ REALBOOK_CASES = {
     "Csus4": "C s u s d4",
     "Cadd9": "C a d.lc d.lc d9",
     "C13b9": "C d1 d3 flat.alt d9.sup",
+    # Linear parenthesized tensions (1D) — vertical stacks remain WALL
+    "G7(b9)": "G d7 parenleft flat.alt d9.sup parenright",
+    "C7(#11)": "C d7 parenleft sharp.alt d1.sup d1.sup parenright",
+    "Bm7(b5)": "B m d7 parenleft flat.alt d5.sup parenright",
 }
 
 # Pop style test cases (all extensions superscripted, M for major)
@@ -65,6 +71,9 @@ POP_CASES = {
     "Bm6": "B m d6.sup",
     "Cdim": "C dim.ring",
     "Cdim7": "C dim.ring d7.sup",
+    "Bø7": "B hdim.slash d7.sup",
+    "G7(b9)": "G d7.sup parenleft flat.alt d9.sup parenright",
+    "C7(#11)": "C d7.sup parenleft sharp.alt d1.sup d1.sup parenright",
 }
 
 

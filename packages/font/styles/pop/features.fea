@@ -30,10 +30,12 @@ feature calt {{
     sub sharp.root @digit' by @digitsup;
     sub flat.root @digit' by @digitsup;
     sub dim.ring @digit' by @digitsup;
+    sub hdim.slash @digit' by @digitsup;
     
-    # After alteration accidentals
+    # After alteration accidentals (also inside linear parentheses)
     sub flat.alt @digit' by @digitsup;
     sub sharp.alt @digit' by @digitsup;
+    sub parenleft @digit' by @digitsup;
     
     # Chain superscripts for multi-digit extensions
     sub @digitsup @digit' by @digitsup;

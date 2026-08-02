@@ -22,13 +22,20 @@ and tuning `packages/font/glyphs/source_map.json`.
 | Slash bass felt gappy (`Dm7/G`) | `slash`: tighter scale + smaller advance |
 | Ours column too small vs reference crops | Look book CSS: `3.25rem` symbol size, taller cells |
 
-## Still open (not this pass)
+## Follow-up pass (same PR)
 
-1. Half-diminished **ø** glyph (`_future_csymHalfDiminished`) — look book has
-   many halfdim cards; still spelled `m7b5` only.
-2. Parenthesized tension towers — WALL tier (out of font scope).
-3. Printed △ / ø / dash-minor crops — see `GAP_REPORT.md` / `sources.json → wanted_next`.
-4. Outline weight vs LilyJAZZ — needs redraw, not metrics.
+1. **ø half-diminished** — `hdim.slash` from Petaluma `csymHalfDiminished`; type
+   Unicode `ø` / `Bø7`. Spelled `Bm7b5` unchanged. Do not use ASCII `o`.
+2. **Linear parentheses** — PetalumaScript `(` / `)`; `G7(b9)`, `C7(#11)`,
+   `Bm7(b5)` shape in 1D. Vertical multi-tier stacks remain WALL.
+3. **Stroke weight** — extract emboldens via `skia-pathops` (`DEFAULT_EMBOLDEN=16`).
+   Not a full LilyJAZZ redraw (ADR-005), but closes the lookbook weight gap.
+
+## Still open
+
+1. Printed △ / ø / dash-minor crops — see `GAP_REPORT.md` / `sources.json → wanted_next`.
+2. True outline redraw for a sellable face (ADR-005).
+3. Tall SMuFL paren glyphs for stacked towers (WALL → SVG).
 
 ## Loop
 
