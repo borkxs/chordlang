@@ -39,6 +39,9 @@ font: ## Build the chord font (Python, packages/font)
 font-atlas: font ## Render exhaustive ChordFont symbol atlas (HTML + PNG in packages/font/dist/)
 	node --experimental-strip-types tools/font-atlas/render-atlas.ts
 
+lookbook: font ## Build ChordFont look book (reference vs live font → tools/lookbook/lookbook.html)
+	node --experimental-strip-types tools/lookbook/render-lookbook.ts
+
 clean: ## Remove build artifacts and generated parser
 	pnpm run clean
 	$(MAKE) -C packages/font clean

@@ -45,11 +45,15 @@ ChordFont, or `scripts/render-previews.ts`), run `make previews` and commit
 
 ## ChordFont iteration
 
-When editing glyph outlines or GSUB rules (`packages/font/`), use the atlas
-feedback loop: change sources → `make font-atlas` → inspect or diff
-`packages/font/dist/atlas.png`. Full instructions (including what agents should
-read, how to extend the symbol catalog, and what not to commit) are in
-[`tools/font-atlas/README.md`](tools/font-atlas/README.md).
+When editing glyph outlines or GSUB rules (`packages/font/`), use the visual
+feedback loops:
+
+1. **Look book** — real printed crops / tool engravings next to live ChordFont:
+   change sources → `make lookbook` → open `tools/lookbook/lookbook.html`.
+   See [`tools/lookbook/README.md`](tools/lookbook/README.md).
+2. **Atlas** — exhaustive roots × suffixes matrix: `make font-atlas` → inspect
+   or diff `packages/font/dist/atlas.png`
+   ([`tools/font-atlas/README.md`](tools/font-atlas/README.md)).
 
 Shaping regressions are caught by `make -C packages/font test` (`tests/shape_test.py`).
 

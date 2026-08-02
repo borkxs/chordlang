@@ -91,18 +91,25 @@ Glyphs are handwritten outlines derived from Petaluma (OFL). To nudge alignment,
 
 Every new feature must land with a passing assertion in `tests/shape_test.py`. CI fails on any mismatch.
 
-## Visual atlas (feedback loop)
+## Visual feedback loops
 
-For exhaustive proofing across all roots and suffix patterns — especially when
-iterating with an agent — run from the **repo root**:
+**Look book** — reference prints/engravings next to live ChordFont (best for
+tuning look against real charts):
+
+```bash
+make lookbook   # → tools/lookbook/lookbook.html
+```
+
+See [`tools/lookbook/README.md`](../../tools/lookbook/README.md).
+
+**Atlas** — exhaustive roots × suffix matrix for regression diffs:
 
 ```bash
 make font-atlas
 ```
 
 Writes `dist/atlas.png`, `dist/atlas.html`, and `dist/atlas-symbols.json`
-(gitignored). Step-by-step loop, CLI flags, and how to extend the symbol matrix:
-[`tools/font-atlas/README.md`](../../tools/font-atlas/README.md).
+(gitignored). Details: [`tools/font-atlas/README.md`](../../tools/font-atlas/README.md).
 
 ## Roadmap
 
