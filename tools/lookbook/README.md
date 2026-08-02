@@ -13,8 +13,9 @@ make lookbook          # builds font + tools/lookbook/lookbook.html
 open tools/lookbook/lookbook.html
 ```
 
-Requires Node 22 (`.nvmrc`) and built style TTFs (`make font`). Defaults to
-**Real Book** (`ChordFont-Real Book.ttf`); use `--style pop` for Pop.
+Requires **Node 22+** (`.nvmrc` — `nvm use`) and built style TTFs (`make font`).
+Defaults to **Real Book** (`ChordFont-Real Book.ttf`); use `--style pop` for Pop.
+Older Node fails with `bad option: --experimental-strip-types`.
 
 ## Feedback loop
 

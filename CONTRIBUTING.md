@@ -6,6 +6,8 @@ packages, a Python font build, and a Vite playground.
 ## Prerequisites
 
 - **Node.js 22** — use [nvm](https://github.com/nvm-sh/nvm) with the repo `.nvmrc`
+  (`nvm install` / `nvm use`). Needed for `make lookbook`, `make font-atlas`, and
+  `make previews` (`node --experimental-strip-types`).
 - **pnpm 9** — enabled via Corepack (`corepack enable`) or install from npm
 - **Python 3.11+** — only if you rebuild ChordFont (`make font`)
 
