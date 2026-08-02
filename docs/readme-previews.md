@@ -41,8 +41,9 @@ Which files the README embeds is listed under `readme` in
 **Docker (recommended):** For byte-for-byte identical previews matching CI.
 
 **Alternative:** Node 22 (`.nvmrc`), Playwright chromium (`make setup`), and
-`apps/playground/public/fonts/ChordProof.ttf`. Note: Local rendering may differ
-slightly from CI due to environment differences.
+`apps/playground/public/fonts/ChordFont-Real Book.ttf` (and Pop for `*-pop`
+charts). Note: Local rendering may differ slightly from CI due to environment
+differences.
 
 ## Platform consistency via Docker
 
