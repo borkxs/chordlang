@@ -93,6 +93,65 @@ ChordFont does not tokenize chord symbols at render time; it relies on determini
 
 ---
 
+## ADR-008: Alterations are inline; parentheses are typed opt-in only
+
+**Decision:** Real Book ChordFont does **not** auto-parenthesize alterations. Canonical ASCII is always bare:
+
+| Typed input | Engraved form |
+|-------------|-----------------|
+| `G7b9`, `C7#11`, `A13b9`, `G7#5b9` | Inline (`G7♭⁹`, `C7♯¹¹`, …) |
+| `G7(b9)`, `C7(#11)`, `Bm7(b5)` | Explicit linear parens only when `(` / `)` are typed |
+
+Multi-alteration runs (`G7#5b9`, `B7b5b9b11b13`) stay bare inline. Vertical / multi-tier parenthesized stacks remain WALL (ADR-006).
+
+**Rationale:** Apparent “non-determinism” in the lookbook was not GSUB drift — lookbook `shape_ascii` had been set to LilyJAZZ parenthesized forms for some cards while others stayed inline. That leaked reference house style into the “ours” column. One rule, documented here and locked by shape tests for both branches, is the release gate.
+
+**Lookbook rule:** `shape_ascii` must be the canonical ChordFont input (inline). Reference crops may still show parentheses; the observe checklist notes the house-style difference.
+
+**Shape tests:** `G7b9` / `C7#11` / `A13b9` (inline) and `G7(b9)` / `C7(#11)` (explicit) in `tests/shape_test.py`.
+
+**Alternatives:** Auto-paren 9/11-family after bare `7` (reference-style mimicry — non-obvious, hard to teach); per-ligature paren tuning (exactly the drift this ADR forbids).
+
+---
+
+## ADR-009: Slash-bass metrics — roomy slash, full-size bass
+
+**Decision:**
+1. Slash glyph sidebearings are intentionally generous (`slash` advance ≈ 560, positive left padding via `dx`) so `Cmaj7/E` and `Ab9/C` do not collide in the PDF text layer or at display size.
+2. Bass notes after `/` render at **full root size** (OpenBook / Real Book), not a shrunk “bass diminutive.” House styles that shrink bass are a future stylistic-set / style-variant concern, not v1 default.
+
+**Rationale:** Negative/tight slash sidebearings made slash+bass extract as a ligature-like blob (`C△7Æ`). References disagree on bass scale; we pick the Real Book / OpenBook full-size reading for v1 and document it.
+
+**Alternatives:** Shrink bass via a dedicated `bass.root` class (publisher preset later); keep tight slash for denser charts (fails extractability / readability).
+
+---
+
+## ADR-010: v1 house style is Real Book; publisher presets via stylistic sets (planned)
+
+**Decision:** v1 ChordFont Real Book ships one documented house style:
+
+| Axis | v1 engraving | Common reference spellings we do **not** chase |
+|------|----------------|--------------------------------------------------|
+| Major 7 | `maj` → △7 | `^M7`, bare △, spelled `maj7` |
+| Diminished | `dim` / `o` → ° (ring) | Spelled-out `Bdim` |
+| Minor | `m` | Dash-minor `D-7` |
+| Half-dim | Unicode `ø` → ø; ASCII `m7b5` stays spelled | Publisher choice ø vs m7♭5 |
+
+Shipping one house style (“ChordFont is Real Book style”) is legitimate for v1. Cross-publisher axes become **OpenType stylistic sets** (same GSUB tree, different terminal ligatures) — not more ad-hoc lookbook `shape_ascii` opinions:
+
+| Feature | Planned meaning |
+|---------|-----------------|
+| `ss01` | Spelled `maj7` (no △) |
+| `ss02` | Spelled `dim` (no ° ring) |
+| `ss03` | Minus-for-minor (`-` → dash-minor) |
+| `ss04` | Prefer ø vs force `m7♭5` presentation |
+
+**Status:** Documented intent only for release. Implementation is post-v1; separate style TTFs (ADR-007 / Pop) remain for large layout differences (all-superscript, etc.). See also `STYLE_VARIANTS.md` and lookbook entry `ext-dorico-presets`.
+
+**Alternatives:** Encode every publisher spelling as default (impossible single face); runtime JS rewriting only (works, but loses the “publisher presets as font features” productization path).
+
+---
+
 ## OSS dependency log
 
 | Dependency | Purpose | Build or use? |

@@ -76,6 +76,9 @@ interface LookEntry {
   as_printed: string;
   display_note: string;
   label_status: string;
+  /** Release-tracker: unreviewed | accepted | needs-fix */
+  review_status?: string;
+  review_note?: string;
   house_style: string;
   observe: string[];
   priority: string;
@@ -210,6 +213,15 @@ main {
 .badge.method {
   background: #3d4a3a;
 }
+.badge.review-accepted { background: #2f5d3a }
+.badge.review-needs-fix { background: #8a1f11 }
+.badge.review-unreviewed { background: #6f6a5e }
+.release-gate {
+  margin-top: 8px; font-size: 12.5px; color: var(--dim);
+}
+.release-gate strong { color: var(--ink) }
+.release-gate.ok strong { color: #2f5d3a }
+.release-gate.blocked strong { color: var(--accent) }
 .cols {
   display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px;
 }
@@ -264,6 +276,7 @@ footer {
     Exhaustive matrix remains <code>make font-atlas</code>.
   </p>
   <p class="meta">${escapeHtml(fontLabel)} · ${entries.length} entries · liga + calt on</p>
+  <p class="release-gate" id="release-gate"></p>
 </header>
 <nav id="nav"></nav>
 <main id="grid"></main>
@@ -271,16 +284,22 @@ footer {
   Provenance in <b>sources.json</b>. Regenerate HTML with
   <code>make lookbook</code>. Merge corpora with
   <code>python3 tools/lookbook/merge_corpora.py</code> when refreshing harvested/rendered.
-  Gaps: <b>GAP_REPORT.md</b>.
+  Gaps: <b>GAP_REPORT.md</b>. Review status is the release tracker:
+  releasable ⇒ every P0 <b>accepted</b>, zero P0 confirm-labels, zero image-missing.
 </footer>
 <script>
 const FAMS = ${famOrderJson};
 const LBL = ${famLabelJson};
 const MLBL = ${methodLabelJson};
 const DATA = ${dataJson};
-let fam = "all", method = "all", hideConfirm = false;
+let fam = "all", method = "all", review = "all", hideConfirm = false;
 const nav = document.getElementById("nav");
 const grid = document.getElementById("grid");
+const REVIEW_LBL = {
+  accepted: "accepted",
+  "needs-fix": "needs-fix",
+  unreviewed: "unreviewed",
+};
 
 function nb(label, key, val) {
   const b = document.createElement("button");
@@ -290,6 +309,7 @@ function nb(label, key, val) {
   b.onclick = () => {
     if (key === "fam") fam = val;
     else if (key === "method") method = val;
+    else if (key === "review") review = val;
     render();
   };
   return b;
@@ -316,6 +336,17 @@ function buildNav() {
     if (DATA.some((e) => e.method === m)) nav.appendChild(nb(MLBL[m] || m, "method", m));
   });
 
+  const revLab = document.createElement("span");
+  revLab.className = "group-label";
+  revLab.style.marginLeft = "10px";
+  revLab.textContent = "Review";
+  nav.appendChild(revLab);
+  nav.appendChild(nb("All", "review", "all"));
+  ["accepted", "needs-fix", "unreviewed"].forEach((r) => {
+    if (DATA.some((e) => (e.review_status || "unreviewed") === r))
+      nav.appendChild(nb(REVIEW_LBL[r], "review", r));
+  });
+
   const spacer = document.createElement("span");
   spacer.className = "spacer";
   nav.appendChild(spacer);
@@ -324,6 +355,22 @@ function buildNav() {
   ct.id = "conf-toggle";
   ct.onclick = () => { hideConfirm = !hideConfirm; render(); };
   nav.appendChild(ct);
+}
+
+function releaseGate() {
+  const p0 = DATA.filter((e) => e.priority === "P0");
+  const accepted = p0.filter((e) => (e.review_status || "unreviewed") === "accepted").length;
+  const needsFix = p0.filter((e) => (e.review_status || "unreviewed") === "needs-fix").length;
+  const unreviewed = p0.filter((e) => (e.review_status || "unreviewed") === "unreviewed").length;
+  const confirm = p0.filter((e) => e.label_status !== "verified").length;
+  const missing = p0.filter((e) => (e.review_note || "").includes("image-missing")).length;
+  const ok = needsFix === 0 && unreviewed === 0 && confirm === 0 && missing === 0;
+  const el = document.getElementById("release-gate");
+  if (!el) return;
+  el.className = "release-gate " + (ok ? "ok" : "blocked");
+  el.innerHTML = ok
+    ? \`Release gate: <strong>PASS</strong> — all \${p0.length} P0 accepted, zero confirm-labels / image-missing.\`
+    : \`Release gate: <strong>BLOCKED</strong> — P0 accepted \${accepted}/\${p0.length} · needs-fix \${needsFix} · unreviewed \${unreviewed} · confirm-label \${confirm} · image-missing \${missing}.\`;
 }
 
 function esc(s) {
@@ -343,22 +390,36 @@ function oursCell(e) {
     <span class="na">not a ChordFont input<br>(glyph / chart specimen)</span></div>\`;
 }
 
+function reviewBadge(e) {
+  const rs = e.review_status || "unreviewed";
+  const cls =
+    rs === "accepted"
+      ? "review-accepted"
+      : rs === "needs-fix"
+        ? "review-needs-fix"
+        : "review-unreviewed";
+  return \`<span class="badge \${cls}">\${esc(REVIEW_LBL[rs] || rs)}</span>\`;
+}
+
 function render() {
   nav.querySelectorAll("button").forEach((b) => {
     const on =
       (b.dataset.key === "fam" && b.dataset.v === fam) ||
       (b.dataset.key === "method" && b.dataset.v === method) ||
+      (b.dataset.key === "review" && b.dataset.v === review) ||
       (b.id === "conf-toggle" && hideConfirm);
     b.classList.toggle("on", !!on);
   });
   const ct = document.getElementById("conf-toggle");
   if (ct) ct.textContent = hideConfirm ? "showing verified only" : "hide unconfirmed";
+  releaseGate();
 
   grid.innerHTML = "";
   DATA.filter(
     (e) =>
       (fam === "all" || e.family === fam) &&
       (method === "all" || e.method === method) &&
+      (review === "all" || (e.review_status || "unreviewed") === review) &&
       (!hideConfirm || e.label_status === "verified"),
   ).forEach((e) => {
     const r = e.reference;
@@ -368,6 +429,7 @@ function render() {
     card.className = "card";
     card.innerHTML = \`
       <h3>\${esc(e.id)}
+        \${reviewBadge(e)}
         \${e.label_status !== "verified" ? '<span class="badge">confirm label</span>' : ""}
         <span class="badge method">\${esc(MLBL[e.method] || e.method)}</span>
       </h3>
@@ -379,9 +441,10 @@ function render() {
         </div>
         \${oursCell(e)}
       </div>
-      <div class="ascii">\${esc(e.canonical_ascii)}</div>
+      <div class="ascii">\${esc(e.shape_ascii || e.canonical_ascii)}</div>
       <div class="printed">as printed: \${esc(e.as_printed || "—")}</div>
       <div class="note">\${esc(e.display_note || "")}</div>
+      \${e.review_note ? \`<div class="note"><b>review:</b> \${esc(e.review_note)}</div>\` : ""}
       <details><summary>observe</summary><ul>\${(e.observe || []).map((o) => "<li>" + esc(o) + "</li>").join("")}</ul></details>
       <div class="prov">\${esc(r.source_title || "")} · \${esc((r.license_or_use_basis || "").split("—")[0].split(";")[0])} · \${esc(r.captured_at || "")}</div>\`;
     grid.appendChild(card);

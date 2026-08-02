@@ -19,17 +19,23 @@ and tuning `packages/font/glyphs/source_map.json`.
 | Root ♭/♯ read as superscripts (too high, too small vs `ps-bb-root` / triads) | `flat.root` / `sharp.root`: larger scale, much lower `dy`, wider advance |
 | △ / ○ quality markers floated high and felt light vs letter height | `maj.tri` / `dim.ring`: slightly larger, lower |
 | Alteration accidentals slightly light vs `.sup` digits | `flat.alt` / `sharp.alt`: scale/dy aligned to superscript band (~325–700) |
-| Slash bass felt gappy (`Dm7/G`) | `slash`: tighter scale + smaller advance |
+| Slash + bass collided / PDF extract blob (`C△7Æ`) | `slash`: roomier advance (560) + padding (`dx` 55); bass stays full root size (ADR-009) |
 | Ours column too small vs reference crops | Look book CSS: `3.25rem` symbol size, taller cells |
+| “Non-deterministic” parens in ours column | Not GSUB — lookbook `shape_ascii` had leaked LilyJAZZ parens. Reverted to inline; ADR-008 + shape tests for both branches |
+| Variant spellings (dim/maj7/dash-minor) | v1 = Real Book house style; publisher presets planned as `ss01`–`ss04` (ADR-010) — not implemented yet |
+| Broken / missing refs | Tagged `review_status: needs-fix` (Clyd `#11` refs, incontext image-missing, bad OpenBook crops). Release gate = zero P0 needs-fix / confirm-label / image-missing |
 
 ## Follow-up pass (same PR)
 
 1. **ø half-diminished** — `hdim.slash` from Petaluma `csymHalfDiminished`; type
    Unicode `ø` / `Bø7`. Spelled `Bm7b5` unchanged. Do not use ASCII `o`.
-2. **Linear parentheses** — PetalumaScript `(` / `)`; `G7(b9)`, `C7(#11)`,
-   `Bm7(b5)` shape in 1D. Vertical multi-tier stacks remain WALL.
+2. **Linear parentheses** — PetalumaScript `(` / `)`; typed `G7(b9)` etc. shape
+   in 1D. Canonical Real Book is **inline** (`G7b9`) — parens are opt-in only
+   (ADR-008). Vertical multi-tier stacks remain WALL.
 3. **Stroke weight** — extract emboldens via `skia-pathops` (`DEFAULT_EMBOLDEN=16`).
    Not a full LilyJAZZ redraw (ADR-005), but closes the lookbook weight gap.
+4. **Review status UI** — `review_status` / `review_note` on entries + filter chips
+   + release-gate banner in `lookbook.html`.
 
 ## Measure repeat (`%`)
 
@@ -42,6 +48,11 @@ no printed crop; wired Petaluma SMuFL `repeat1Bar` (slash + dots) to `%` as
 1. Printed △ / ø / dash-minor / `%` crops — see `GAP_REPORT.md` / `sources.json → wanted_next`.
 2. True outline redraw for a sellable face (ADR-005).
 3. Tall SMuFL paren glyphs for stacked towers (WALL → SVG).
+4. Regenerate `cmaj7sharp11--*` refs (currently render as “Clyd” — failed Lily markup).
+5. Localize missing incontext / external refs; re-crop bad OpenBook windows
+   (`ob-am7-p67`, `ob-ab9`, `ob-e7s5-p103`, `ob-g7s5b9`, `ob-g7b9`).
+6. Implement ADR-010 stylistic sets (`ss01`–`ss04`) — documented, not coded.
+7. Drive P0 `review_status` to all-`accepted` for the release gate.
 
 ## Loop
 

@@ -27,7 +27,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "a13b9--lilypond-classical",
@@ -54,21 +56,24 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "c7sharp11--lilyjazz",
       "method": "tool-engraving",
       "family": "alterations",
       "canonical_ascii": "C7#11",
-      "shape_ascii": "C7(#11)",
+      "shape_ascii": "C7#11",
       "as_printed": "C7#11",
       "display_note": "Sharp eleven. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
       "label_status": "verified",
       "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
       "observe": [
         "#11 digit pair with accidental",
-        "accidental-to-digit kerning"
+        "accidental-to-digit kerning",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -81,21 +86,24 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "c7sharp11--lilypond-classical",
       "method": "tool-engraving",
       "family": "alterations",
       "canonical_ascii": "C7#11",
-      "shape_ascii": "C7(#11)",
+      "shape_ascii": "C7#11",
       "as_printed": "C7#11",
       "display_note": "Sharp eleven. Engraved by LilyPond default (Emmentaler, classical engraving).",
       "label_status": "verified",
       "house_style": "LilyPond default (Emmentaler, classical engraving)",
       "observe": [
         "#11 digit pair with accidental",
-        "accidental-to-digit kerning"
+        "accidental-to-digit kerning",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -108,7 +116,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7b13--lilyjazz",
@@ -134,7 +144,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7b13--lilypond-classical",
@@ -160,7 +172,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7b5--lilyjazz",
@@ -186,7 +200,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7b5--lilypond-classical",
@@ -212,14 +228,16 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7b9--lilyjazz",
       "method": "tool-engraving",
       "family": "alterations",
       "canonical_ascii": "G7b9",
-      "shape_ascii": "G7(b9)",
+      "shape_ascii": "G7b9",
       "as_printed": "G7b9",
       "display_note": "Flat nine. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
       "label_status": "verified",
@@ -227,7 +245,8 @@
       "observe": [
         "alteration order 7-then-b9",
         "flat glyph size in alteration",
-        "parentheses usage"
+        "parentheses usage",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -240,14 +259,16 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7b9--lilypond-classical",
       "method": "tool-engraving",
       "family": "alterations",
       "canonical_ascii": "G7b9",
-      "shape_ascii": "G7(b9)",
+      "shape_ascii": "G7b9",
       "as_printed": "G7b9",
       "display_note": "Flat nine. Engraved by LilyPond default (Emmentaler, classical engraving).",
       "label_status": "verified",
@@ -255,7 +276,8 @@
       "observe": [
         "alteration order 7-then-b9",
         "flat glyph size in alteration",
-        "parentheses usage"
+        "parentheses usage",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -268,21 +290,24 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7sharp9--lilyjazz",
       "method": "tool-engraving",
       "family": "alterations",
       "canonical_ascii": "G7#9",
-      "shape_ascii": "G7(#9)",
+      "shape_ascii": "G7#9",
       "as_printed": "G7#9",
       "display_note": "Sharp nine. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
       "label_status": "verified",
       "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
       "observe": [
         "sharp glyph size in alteration",
-        "stacking vs inline"
+        "stacking vs inline",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -295,21 +320,24 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "g7sharp9--lilypond-classical",
       "method": "tool-engraving",
       "family": "alterations",
       "canonical_ascii": "G7#9",
-      "shape_ascii": "G7(#9)",
+      "shape_ascii": "G7#9",
       "as_printed": "G7#9",
       "display_note": "Sharp nine. Engraved by LilyPond default (Emmentaler, classical engraving).",
       "label_status": "verified",
       "house_style": "LilyPond default (Emmentaler, classical engraving)",
       "observe": [
         "sharp glyph size in alteration",
-        "stacking vs inline"
+        "stacking vs inline",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -322,7 +350,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-b7-full-alt",
@@ -347,7 +377,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "source b:7.3-.5-.9-.11-.13- — WALL-tier width torture test; 500 Miles High p5"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-c7s5-or-g",
@@ -371,7 +403,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "All The Things You Are p18 — confirm root from crop"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-e7s5-p103",
@@ -395,7 +429,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Lost In The Stars p103"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop appears to show wrong system (Bb) — re-verify page/window."
     },
     {
       "id": "ob-e7s9",
@@ -420,7 +456,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "only E chord in tune vocab; 500 Miles High p5"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-g7b5",
@@ -444,7 +482,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Desafinado p56 (the famous second chord)"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-g7b9",
@@ -454,7 +494,7 @@
       "shape_ascii": "G7b9",
       "as_printed": "G7♭9",
       "display_note": "A Fine Romance p8",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
       "observe": [
         "flat-9 pair as unit",
@@ -469,7 +509,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Fine Romance p8"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop shows bare G7 — missing b9; re-crop or confirm label."
     },
     {
       "id": "ob-g7s5b9",
@@ -495,7 +537,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "double alteration in sequence; Cry Me A River p53"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop shows bare G7 — missing #5b9 alterations; re-crop."
     },
     {
       "id": "pm-csym-aug",
@@ -520,7 +564,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-13b9",
@@ -546,7 +592,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-7alt",
@@ -572,7 +620,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-7b9",
@@ -598,7 +648,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-7s11",
@@ -624,7 +676,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-7s9",
@@ -650,7 +704,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cdim7--lilyjazz",
@@ -677,7 +733,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "cdim7--lilypond-classical",
@@ -704,7 +762,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ob-bdim",
@@ -729,7 +789,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "'dim' SPELLED OUT (no °) — text layer confirms letters; A Cup Of Coffee p6"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-gdim",
@@ -753,7 +815,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Fine Romance p8"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "pm-csym-dim",
@@ -778,7 +842,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ps-c9",
@@ -804,7 +870,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-f13",
@@ -830,7 +898,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "bm7b5--lilyjazz",
@@ -859,7 +929,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "bm7b5--lilypond-classical",
@@ -887,7 +959,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ext-halfdim-variants",
@@ -897,7 +971,7 @@
       "shape_ascii": "Bø7",
       "as_printed": "Bø7 / Bø / Bm7(♭5)",
       "display_note": "Documents the slashed-circle ø half-diminished variants as printed equivalents of m7b5. No good freely-licensed ø chord-symbol crop found yet — see GAP_REPORT.",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "Wikipedia — Half-diminished seventh chord",
       "observe": [
         "ø ring diameter vs cap height",
@@ -916,7 +990,9 @@
         "crop_description": "external reference — open in browser; no image committed",
         "engraving_source_id": "ext-halfdim-variants",
         "kind": "external-hotlink"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "No local reference image (external hotlink / GAP)."
     },
     {
       "id": "ob-am7b5",
@@ -940,7 +1016,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Night In Tunisia p10"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ob-bm7b5",
@@ -966,7 +1044,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "spelled-out m7b5 house style (no ø); 500 Miles High p5"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ob-dm7b5",
@@ -990,7 +1070,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Blue Bossa p32"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "pm-csym-halfdim",
@@ -1015,7 +1097,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ps-halfdim",
@@ -1041,7 +1125,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ps-m7b5",
@@ -1067,21 +1153,24 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "incontext-a7alt",
       "method": "crop",
       "family": "in-context",
       "canonical_ascii": "A7#5",
-      "shape_ascii": "A7(#5)",
+      "shape_ascii": "A7#5",
       "as_printed": "A7(♯5) (parenthesized tension)",
       "display_note": "Sharp-five tension in parentheses — common house alternative to inline #5. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
       "observe": [
         "paren height vs tension height",
-        "sharp size inside parens"
+        "sharp size inside parens",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -1094,21 +1183,24 @@
         "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
         "engraving_source_id": "lilyjazz-allofme",
         "kind": "in-context-crop"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-a7alt--lilyjazz-allofme.png"
     },
     {
       "id": "incontext-a7paren",
       "method": "crop",
       "family": "in-context",
       "canonical_ascii": "A7b9",
-      "shape_ascii": "A7(b9)",
+      "shape_ascii": "A7b9",
       "as_printed": "A7(♭9) (parenthesized tension)",
       "display_note": "Flat-nine tension in parentheses. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
       "observe": [
         "paren-to-digit spacing",
-        "flat size inside parens"
+        "flat size inside parens",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
       ],
       "priority": "P0",
       "reference": {
@@ -1121,7 +1213,9 @@
         "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
         "engraving_source_id": "lilyjazz-allofme",
         "kind": "in-context-crop"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-a7paren--lilyjazz-allofme.png"
     },
     {
       "id": "incontext-c6",
@@ -1131,7 +1225,7 @@
       "shape_ascii": "C6",
       "as_printed": "C6",
       "display_note": "Sixth chord as it sits above a bar. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
       "observe": [
         "6 size at lead-sheet scale",
@@ -1148,7 +1242,9 @@
         "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
         "engraving_source_id": "lilyjazz-allofme",
         "kind": "in-context-crop"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-c6--lilyjazz-allofme.png"
     },
     {
       "id": "incontext-dminus7",
@@ -1158,7 +1254,7 @@
       "shape_ascii": "Dm7",
       "as_printed": "D-7 (Real Book minus-minor)",
       "display_note": "Minor seventh printed with '-' — the Real Book convention ChordLang normalizes to 'm'. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
       "observe": [
         "dash length and vertical position",
@@ -1176,7 +1272,9 @@
         "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
         "engraving_source_id": "lilyjazz-allofme",
         "kind": "in-context-crop"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-dminus7--lilyjazz-allofme.png"
     },
     {
       "id": "incontext-e7",
@@ -1186,7 +1284,7 @@
       "shape_ascii": "E7",
       "as_printed": "E7",
       "display_note": "Dominant seventh at lead-sheet scale. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
       "observe": [
         "7 raise in running context vs isolated proof"
@@ -1202,7 +1300,9 @@
         "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
         "engraving_source_id": "lilyjazz-allofme",
         "kind": "in-context-crop"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-e7--lilyjazz-allofme.png"
     },
     {
       "id": "cm7--lilyjazz",
@@ -1229,7 +1329,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "cm7--lilypond-classical",
@@ -1256,7 +1358,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "dm--lilyjazz",
@@ -1283,7 +1387,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "dm--lilypond-classical",
@@ -1310,7 +1416,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-ab-root",
@@ -1334,7 +1442,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "bare flat root; A Fine Romance p8"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-eb-root-p10",
@@ -1358,7 +1468,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Night In Tunisia p10"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-fs-or-b-root",
@@ -1382,7 +1494,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "accidental root check; A Fine Romance p8"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-bb-root",
@@ -1408,7 +1522,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ps-eb-root",
@@ -1434,7 +1550,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ps-fs-root",
@@ -1460,7 +1578,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "c11--lilyjazz",
@@ -1486,7 +1606,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "c11--lilypond-classical",
@@ -1512,7 +1634,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "c9--lilyjazz",
@@ -1538,7 +1662,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "c9--lilypond-classical",
@@ -1564,7 +1690,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cmaj7--lilyjazz",
@@ -1592,7 +1720,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "cmaj7--lilypond-classical",
@@ -1620,7 +1750,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cmaj7--lilypond-spelled",
@@ -1648,7 +1780,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "f13--lilyjazz",
@@ -1675,7 +1809,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "f13--lilypond-classical",
@@ -1702,7 +1838,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "g7--lilyjazz",
@@ -1729,7 +1867,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "g7--lilypond-classical",
@@ -1756,7 +1896,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ob-abmaj7-p18",
@@ -1780,7 +1922,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "All The Things You Are p18"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-bbmaj7",
@@ -1805,7 +1949,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "flat root + spelled maj7; 500 Miles High p5"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-cmaj7-p67",
@@ -1829,7 +1975,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Fly Me To The Moon p67"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-d7",
@@ -1853,7 +2001,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Cup Of Coffee p6"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-dm-maj7",
@@ -1878,7 +2028,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "minor-major 7 (d:m7+); A Night In Tunisia p10"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-f7-p24",
@@ -1902,7 +2054,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Au Privave p24 (blues head)"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-g7",
@@ -1926,7 +2080,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Cup Of Coffee p6"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "pm-csym-maj7-triangle",
@@ -1951,7 +2107,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ps-cmaj7",
@@ -1977,7 +2135,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-g7",
@@ -2003,7 +2163,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-69",
@@ -2029,7 +2191,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "cmaj7-slash-e--lilyjazz",
@@ -2057,7 +2221,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cmaj7-slash-e--lilypond-classical",
@@ -2085,7 +2251,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cmaj7-slash-e--lilypond-spelled",
@@ -2113,7 +2281,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "dm7-slash-g--lilyjazz",
@@ -2140,7 +2310,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "dm7-slash-g--lilypond-classical",
@@ -2167,7 +2339,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-ab9-slash-c",
@@ -2192,7 +2366,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "accidental ROOT + extension + slash; Angel Eyes p22"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-cm-slash-bb",
@@ -2216,7 +2392,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "bare minor over bass; Angel Eyes p22"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-cm6-slash-eb",
@@ -2241,7 +2419,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "m6 + accidental bass; Cry Me A River p53"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-dm7-slash-g",
@@ -2267,7 +2447,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "P0 spec example verbatim; Fly Me To The Moon p67"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-fdim7-slash-c",
@@ -2292,7 +2474,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "dim spelled out as letters + slash bass; Fly Me p67"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-fm7-slash-bb",
@@ -2317,7 +2501,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "slash bass WITH accidental; Cry Me A River p53"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-g-slash-b-p103",
@@ -2341,7 +2527,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "triad over 3rd; Lost In The Stars p103"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-g7-slash-f",
@@ -2366,7 +2554,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Fly Me To The Moon p67"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-slash",
@@ -2392,7 +2582,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ext-dorico-presets",
@@ -2402,7 +2594,7 @@
       "shape_ascii": null,
       "as_printed": "(house-style presets)",
       "display_note": "Dorico ships chord-symbol appearance presets replicating common publisher conventions (default avoids Δ/°/ø symbols; other presets use them). Good publisher-grade reference for how the same harmony is engraved differently across house styles.",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "Steinberg Dorico documentation — Chord symbol appearance presets",
       "observe": [
         "compare preset choices for maj7 / dim / half-dim symbols"
@@ -2419,7 +2611,9 @@
         "crop_description": "external reference — open in browser; no image committed",
         "engraving_source_id": "ext-dorico-presets",
         "kind": "external-hotlink"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "No local reference image (external docs hotlink)."
     },
     {
       "id": "ext-symbol-survey",
@@ -2429,7 +2623,7 @@
       "shape_ascii": null,
       "as_printed": "(variant tables)",
       "display_note": "Survey of printed chord-symbol conventions: '-' for minor, Δ for maj7, °/ø, parenthesized tensions. Useful cross-check when deciding which printed variants normalize to which canonical ASCII.",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "Wikipedia — Chord names and symbols (popular music)",
       "observe": [
         "variant-to-canonical mapping notes for INPUT_GRAMMAR.md"
@@ -2446,7 +2640,9 @@
         "crop_description": "external reference — open in browser; no image committed",
         "engraving_source_id": "ext-symbol-survey",
         "kind": "external-hotlink"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "No local reference image (external docs hotlink)."
     },
     {
       "id": "c9sus4--lilyjazz",
@@ -2472,7 +2668,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "c9sus4--lilypond-classical",
@@ -2498,7 +2696,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "g7sus4--lilyjazz",
@@ -2525,7 +2725,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "g7sus4--lilypond-classical",
@@ -2552,7 +2754,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ob-dsus4",
@@ -2577,7 +2781,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Cry Me A River p53"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ps-9sus4",
@@ -2603,7 +2809,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "bb-triad--lilyjazz",
@@ -2631,7 +2839,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "bb-triad--lilypond-classical",
@@ -2659,7 +2869,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "eb-triad--lilyjazz",
@@ -2686,7 +2898,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "eb-triad--lilypond-classical",
@@ -2713,7 +2927,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "fsharp-triad--lilyjazz",
@@ -2741,7 +2957,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "fsharp-triad--lilypond-classical",
@@ -2769,7 +2987,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "pm-csym-minor",
@@ -2794,7 +3014,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ps-dm7",
@@ -2820,7 +3042,9 @@
         "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
         "captured_at": "2026-08-02",
         "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "e7b5--lilyjazz",
@@ -2846,7 +3070,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "e7b5--lilypond-classical",
@@ -2872,7 +3098,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "eb7--lilyjazz",
@@ -2899,7 +3127,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "eb7--lilypond-classical",
@@ -2926,7 +3156,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "eb7b5--lilyjazz",
@@ -2953,7 +3185,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "eb7b5--lilypond-classical",
@@ -2980,7 +3214,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "cmaj7sharp11--lilyjazz",
@@ -2990,7 +3226,7 @@
       "shape_ascii": "Cmaj7#11",
       "as_printed": "Cmaj7#11",
       "display_note": "Major seventh sharp eleven. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
       "observe": [
         "triangle/maj7 followed by #11",
@@ -3007,7 +3243,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Reference renders as 'Clyd' (failed LilyPond/LilyJAZZ markup). Regenerate."
     },
     {
       "id": "cmaj7sharp11--lilypond-classical",
@@ -3017,7 +3255,7 @@
       "shape_ascii": "Cmaj7#11",
       "as_printed": "Cmaj7#11",
       "display_note": "Major seventh sharp eleven. Engraved by LilyPond default (Emmentaler, classical engraving).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "LilyPond default (Emmentaler, classical engraving)",
       "observe": [
         "triangle/maj7 followed by #11",
@@ -3034,7 +3272,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Reference renders as 'Clyd' (failed LilyPond markup). Regenerate."
     },
     {
       "id": "cmaj7sharp11--lilypond-spelled",
@@ -3044,7 +3284,7 @@
       "shape_ascii": "Cmaj7#11",
       "as_printed": "Cmaj7#11",
       "display_note": "Major seventh sharp eleven. Engraved by LilyPond default with spelled maj7 (Hal Leonard-ish).",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
       "observe": [
         "triangle/maj7 followed by #11",
@@ -3061,7 +3301,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Reference renders as 'Clyd' (failed LilyPond markup). Regenerate."
     },
     {
       "id": "cdim--lilyjazz",
@@ -3087,7 +3329,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "cdim--lilypond-classical",
@@ -3113,7 +3357,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "ob-ab9",
@@ -3137,7 +3383,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Angel Eyes p22"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop includes boxed rehearsal letter — re-crop symbol only."
     },
     {
       "id": "ob-eb7b9",
@@ -3161,7 +3409,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "flat root + flat 9 — double-flat disambiguation; Angel Eyes p22"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cmmaj7--lilyjazz",
@@ -3187,7 +3437,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cmmaj7--lilypond-classical",
@@ -3213,7 +3465,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cmmaj7--lilypond-spelled",
@@ -3239,7 +3493,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "lp-chord-name-chart",
@@ -3249,7 +3505,7 @@
       "shape_ascii": null,
       "as_printed": "(multi-symbol chart)",
       "display_note": "LilyPond's full chord-name chart — one image covering triads through 13ths in the same engraving as the OpenBook crops",
-      "label_status": "verified",
+      "label_status": "needs_confirm",
       "house_style": "LilyPond default (Ignatzek)",
       "observe": [
         "systematic naming across the whole matrix"
@@ -3264,7 +3520,9 @@
         "license_or_use_basis": "GNU FDL (LilyPond documentation)",
         "captured_at": "2026-08-02",
         "crop_description": "full chart image; hotlinked until fetch-remote.sh localizes it"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing locally; remote hotlink only — run fetch-remote.sh"
     },
     {
       "id": "c6--lilyjazz",
@@ -3290,7 +3548,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "c6--lilypond-classical",
@@ -3316,7 +3576,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "c69--lilyjazz",
@@ -3343,7 +3605,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "c69--lilypond-classical",
@@ -3370,7 +3634,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     },
     {
       "id": "cm6--lilyjazz",
@@ -3396,7 +3662,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilyjazz",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "cm6--lilypond-classical",
@@ -3422,7 +3690,9 @@
         "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
         "engraving_source_id": "lilypond",
         "kind": "tool-engraving"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-c6",
@@ -3446,7 +3716,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Fine Romance p8"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-am7-p67",
@@ -3470,7 +3742,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Fly Me To The Moon p67"
-      }
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop window includes Allegro tempo marking — re-crop symbol only."
     },
     {
       "id": "ob-cm",
@@ -3494,7 +3768,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Angel Eyes p22"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-cm7-p5",
@@ -3518,7 +3794,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "500 Miles High p5"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-fm",
@@ -3542,7 +3820,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "A Cup Of Coffee p6"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-g-p103",
@@ -3566,7 +3846,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Lost In The Stars p103"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "ob-gm-p56",
@@ -3590,7 +3872,9 @@
         "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
         "captured_at": "2026-08-02",
         "crop_description": "Desafinado p56"
-      }
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
     },
     {
       "id": "pm-repeat1bar",
@@ -3614,7 +3898,9 @@
         "source_title": "Petaluma (SMuFL) repeat1Bar",
         "license_or_use_basis": "SIL OFL 1.1, rendered locally",
         "captured_at": "2026-08-02"
-      }
+      },
+      "review_status": "accepted",
+      "review_note": ""
     }
   ]
 }

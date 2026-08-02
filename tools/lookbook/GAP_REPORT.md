@@ -38,14 +38,22 @@ web-hosted references (Wikimedia, IMSLP, publisher previews) could not be downlo
 `sources.json → wanted_next` lists the exact targets and why; `fetch-remote.sh` localizes
 the one hotlinked GFDL chart.
 
-## Companion look book (parallel session)
-A second look book exists at `tools/lookbook/` in this workspace, built by a parallel
-agent session with a different (complementary) method: it renders each corpus chord
-locally through LilyPond in three house styles — classical/Emmentaler, a "spelled"
-variant, and LilyJAZZ handwritten — including #11/b13/alt/6-9 and in-context All Of Me
-crops that this harvested corpus lacks. Together the two cover: real published crops
-(this package) + systematic multi-style renders (that one) + Petaluma glyph DNA (this
-package). Merge candidate: one entries.json with a `method` field. NOTE: that package's
-README.md was accidentally deleted during this session and could not be restored (its
-refs/entries/sources/html were fully regenerated from its pipeline in
-/home/claude/lookbook-work/).
+## Companion look book (merged)
+
+Corpus + UI live at `tools/lookbook/` with `method`, `shape_ascii`, and
+`review_status` fields. Release gate: every P0 `accepted`, zero confirm-labels,
+zero image-missing (see lookbook README).
+
+### Known broken / missing references (tagged `needs-fix`)
+
+| Issue | Entries |
+|-------|---------|
+| LilyPond/LilyJAZZ markup failed → renders “Clyd” | `cmaj7sharp11--lilyjazz`, `--lilypond-classical`, `--lilypond-spelled` — regenerate (no in-repo Lily renderer; use external corpus + `merge_corpora.py`) |
+| image-missing local PNG | five `incontext-*` All-of-Me crops; `lp-chord-name-chart`; `ext-halfdim-variants`; `ext-dorico-presets`; `ext-symbol-survey` |
+| Wrong crop window | `ob-am7-p67` (Allegro), `ob-ab9` (rehearsal letter), `ob-e7s5-p103` (wrong system), `ob-g7s5b9` / `ob-g7b9` (bare G7) |
+
+### House-style axes (not gaps in the font)
+
+LilyJAZZ parenthesizes some alterations; ChordFont Real Book does not
+(ADR-008). Spelled `maj7` / `dim` / dash-minor vs △ / ° / `m` are v1 house-style
+choices with planned stylistic-set presets (ADR-010), not shaping bugs.

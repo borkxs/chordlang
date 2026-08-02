@@ -35,7 +35,7 @@
   "flat.alt": {"source_font": "Petaluma.otf", "source_key": "csymAccidentalFlat", "scale": 0.58, "dx": 4, "dy": 325},
   "sharp.root": {"source_font": "Petaluma.otf", "source_key": "csymAccidentalSharp", "scale": 0.74, "dx": 6, "dy": 25, "advance": 245},
   "sharp.alt": {"source_font": "Petaluma.otf", "source_key": "csymAccidentalSharp", "scale": 0.54, "dx": 4, "dy": 325},
-  "slash": {"source_font": "PetalumaScript.otf", "source_key": "/", "scale": 0.68, "dx": 20, "dy": 0, "advance": 300, "derive_sup": true},
+  "slash": {"source_font": "PetalumaScript.otf", "source_key": "/", "scale": 0.62, "dx": 55, "dy": 0, "advance": 560, "derive_sup": true},
   "dim.ring": {"source_font": "Petaluma.otf", "source_key": "csymDiminished", "scale": 0.64, "dx": 10, "dy": 290},
   "hdim.slash": {"source_font": "Petaluma.otf", "source_key": "csymHalfDiminished", "scale": 0.70, "dx": 8, "dy": 265},
   "parenleft": {"source_font": "PetalumaScript.otf", "source_key": "(", "scale": 0.68, "dx": 16, "dy": 160, "advance": 220},

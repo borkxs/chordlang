@@ -103,9 +103,21 @@ Spelled `Bm7b5` and engraved `Bø7` are both supported inputs; the normalizer ma
 | `7alt`, `7alt.` | Shorthand for ♭9/#9/♭13/#11 — **TBD** whether font expands or normalizer does |
 | Explicit `C7b9`, `C7#9`, `C7b13` | Preferred; maps to superscript digits |
 
-### Linear parentheses (in scope — 1D)
+### Alterations — inline by default (ADR-008)
 
-Single parenthesized tension runs are supported as typed ASCII:
+Canonical Real Book ASCII is **bare**. The font never inserts parentheses:
+
+| Input | Engraved stream |
+|-------|-----------------|
+| `G7b9` | `G` `7` `♭` `⁹` |
+| `C7#11` | `C` `7` `♯` `¹¹` |
+| `A13b9` | `A` `1` `3` `♭` `⁹` |
+| `G7#5b9` | `G` `7` `♯` `⁵` `♭` `⁹` |
+
+### Linear parentheses (opt-in — 1D)
+
+Parentheses appear only when typed. Use them to match a publisher that
+parenthesizes tensions; they are not required for correct Real Book engraving:
 
 | Input | Engraved stream |
 |-------|-----------------|

@@ -2,6 +2,22 @@
 
 Two approaches for supporting multiple chord notation conventions (triangle △ vs "maj." vs "M", etc.) within ChordFont.
 
+**Current decision (ADR-007 + ADR-010):** v1 ships separate style TTFs (Real Book
+default, Pop) with one hardcoded Real Book house style. Publisher-preset axes
+inside Real Book are planned as cheap OpenType stylistic sets — **not yet
+implemented**:
+
+| Feature | Planned meaning (post-v1) |
+|---------|---------------------------|
+| `ss01` | Spelled `maj7` (no △) |
+| `ss02` | Spelled `dim` (no ° ring) |
+| `ss03` | Minus-for-minor |
+| `ss04` | ø vs `m7♭5` presentation |
+
+The Option A / Option B sections below are the longer design exploration; where
+they conflict with ADR-010’s `ss01`–`ss04` table, ADR-010 wins for the publisher-
+preset roadmap. Large layout differences (all-superscript Pop) stay separate TTFs.
+
 ---
 
 ## Background
