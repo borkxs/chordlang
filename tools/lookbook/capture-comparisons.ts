@@ -23,6 +23,7 @@ const FOCUS_IDS = [
   "g7b5--lilyjazz",
   "bm7b5--lilyjazz",
   "pm-csym-halfdim",
+  "pm-repeat1bar",
   "ext-halfdim-variants",
   "ps-halfdim",
   "incontext-a7paren",

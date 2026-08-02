@@ -24,7 +24,10 @@ Petaluma △ ø ° + − glyph shapes.
 6. **9sus4 in print** (only Dsus4 captured).
 7. **Parenthesized tension towers** `G7(#11)(b13)` — wall-tier; note-only for now
    (font_scope: "wall"). The ob-b7-full-alt monster shows the *linear* extreme.
-8. **Cross-publisher diversity.** All engraved crops are one house style (LilyPond
+8. **Measure-repeat `%` in print.** Font now maps `%` → Petaluma `repeat1Bar`
+   (`pm-repeat1bar` specimen). Still want a Real Book / OpenBook crop of the
+   slash-with-dots in a bar cell next to surrounding chords.
+9. **Cross-publisher diversity.** All engraved crops are one house style (LilyPond
    Ignatzek). Wanted: Hal Leonard Real Book 6th, New Real Book (Sher), older bootleg Real
    Book, MuseJazz (MuseScore), and a European house (e.g. Advance Music) for the same
    harmonies. Each is 10 minutes with a phone camera + a library copy.

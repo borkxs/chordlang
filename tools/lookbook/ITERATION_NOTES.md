@@ -31,9 +31,15 @@ and tuning `packages/font/glyphs/source_map.json`.
 3. **Stroke weight** — extract emboldens via `skia-pathops` (`DEFAULT_EMBOLDEN=16`).
    Not a full LilyJAZZ redraw (ADR-005), but closes the lookbook weight gap.
 
+## Measure repeat (`%`)
+
+Chart cells use `%` for “same as previous bar” (iReal / Real Book). Look book had
+no printed crop; wired Petaluma SMuFL `repeat1Bar` (slash + dots) to `%` as
+`repeat.bar` — not PetalumaScript’s percent sign. Specimen: `pm-repeat1bar`.
+
 ## Still open
 
-1. Printed △ / ø / dash-minor crops — see `GAP_REPORT.md` / `sources.json → wanted_next`.
+1. Printed △ / ø / dash-minor / `%` crops — see `GAP_REPORT.md` / `sources.json → wanted_next`.
 2. True outline redraw for a sellable face (ADR-005).
 3. Tall SMuFL paren glyphs for stacked towers (WALL → SVG).
 

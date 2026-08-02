@@ -3591,6 +3591,30 @@
         "captured_at": "2026-08-02",
         "crop_description": "Desafinado p56"
       }
+    },
+    {
+      "id": "pm-repeat1bar",
+      "method": "glyph-specimen",
+      "family": "overview",
+      "canonical_ascii": "%",
+      "shape_ascii": "%",
+      "as_printed": "% → measure repeat (repeat1Bar U+E500)",
+      "display_note": "Chart cell '%' means repeat previous bar (iReal / Real Book). Petaluma SMuFL repeat1Bar — slash with dots — not a percent sign. No printed crop in corpus yet; this specimen is the glyph DNA.",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL",
+      "observe": [
+        "slash angle and weight vs surrounding chord letters",
+        "dot size and placement above/below slash",
+        "vertical centering in a bar cell next to Cmaj7 / F7",
+        "do not use PetalumaScript percent glyph for this meaning"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-repeat1bar.png",
+        "source_title": "Petaluma (SMuFL) repeat1Bar",
+        "license_or_use_basis": "SIL OFL 1.1, rendered locally",
+        "captured_at": "2026-08-02"
+      }
     }
   ]
 }

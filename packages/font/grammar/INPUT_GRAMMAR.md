@@ -14,6 +14,9 @@ The font's GSUB rules operate on a **normalized ASCII string** where:
 - Extensions: bare digits (`7`, `9`, `11`, `13`) — superscripting handled by GSUB
 - Alterations: `b5`, `#11`, etc. — digit superscripting after accidental substitution
 - Slash bass: `/` + pitch class (`Cmaj7/E`)
+- Measure repeat: `%` — chart-level cell meaning “same as previous bar”
+  (iReal / Real Book). The font maps `%` to Petaluma `repeat1Bar` (slash +
+  dots), **not** a percent sign.
 
 Example canonical strings (current proof scope):
 

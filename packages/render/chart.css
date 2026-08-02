@@ -86,9 +86,11 @@
 }
 
 .chordlang-repeat {
-  font-family: "ChordFont", sans-serif;
+  font-family: "ChordFont", ui-sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
   font-size: 1.65rem;
-  color: #6f6a5e;
+  line-height: 1;
+  color: var(--ink);
 }
 
 .chordlang-slash {

@@ -52,6 +52,7 @@ REALBOOK_CASES = {
     "G7(b9)": "G d7 parenleft flat.alt d9.sup parenright",
     "C7(#11)": "C d7 parenleft sharp.alt d1.sup d1.sup parenright",
     "Bm7(b5)": "B m d7 parenleft flat.alt d5.sup parenright",
+    "%": "repeat.bar",
 }
 
 # Pop style test cases (all extensions superscripted, M for major)
@@ -74,6 +75,7 @@ POP_CASES = {
     "Bø7": "B hdim.slash d7.sup",
     "G7(b9)": "G d7.sup parenleft flat.alt d9.sup parenright",
     "C7(#11)": "C d7.sup parenleft sharp.alt d1.sup d1.sup parenright",
+    "%": "repeat.bar",
 }
 
 

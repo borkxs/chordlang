@@ -109,7 +109,7 @@ def build_font(style="realbook"):
         "a", "j", "b", "d.lc", "i", "l", "n", "o", "s", "t", "u",
         "numbersign", "slash",
         "maj.tri", "dim.ring", "hdim.slash",
-        "parenleft", "parenright",
+        "parenleft", "parenright", "repeat.bar",
         "flat.root", "flat.alt", "sharp.root", "sharp.alt",
         "a.sup", "l.sup", "t.sup", "slash.sup",
     ]
@@ -145,6 +145,8 @@ def build_font(style="realbook"):
     cmap[0x00D8] = "hdim.slash"  # Ø
     cmap[ord("(")] = "parenleft"
     cmap[ord(")")] = "parenright"
+    # Measure-repeat (iReal / Real Book "%") — Petaluma repeat1Bar, not a percent sign
+    cmap[ord("%")] = "repeat.bar"
     
     adv = {g: (300 if g == "space" else 520) for g in glyph_order}
     for name, width in extracted_adv.items():
