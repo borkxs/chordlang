@@ -117,7 +117,7 @@ Multi-alteration runs (`G7#5b9`, `B7b5b9b11b13`) stay bare inline. Vertical / mu
 ## ADR-009: Slash-bass metrics — roomy slash, full-size bass
 
 **Decision:**
-1. Slash glyph sidebearings are intentionally generous (`slash` advance ≈ 560, positive left padding via `dx`) so `Cmaj7/E` and `Ab9/C` do not collide in the PDF text layer or at display size.
+1. Slash glyph sidebearings are intentionally generous (`slash` advance ≈ 720, left pad via `dx` ≈ 180 so ink clears the preceding digit’s negative RSB) so `Cmaj7/E` and `Ab9/C` do not collide in the PDF text layer or at display size. Note: `build_font.py` currently hardcodes hmtx LSB=50 for every glyph, so left padding must come from `dx` shifting the outline, not from an LSB override.
 2. Bass notes after `/` render at **full root size** (OpenBook / Real Book), not a shrunk “bass diminutive.” House styles that shrink bass are a future stylistic-set / style-variant concern, not v1 default.
 
 **Rationale:** Negative/tight slash sidebearings made slash+bass extract as a ligature-like blob (`C△7Æ`). References disagree on bass scale; we pick the Real Book / OpenBook full-size reading for v1 and document it.
