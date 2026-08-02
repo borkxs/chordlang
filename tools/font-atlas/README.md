@@ -64,7 +64,7 @@ monospace label underneath.
 pnpm font-atlas
 
 node --experimental-strip-types tools/font-atlas/render-atlas.ts \
-  --font packages/font/dist/ChordProof.ttf \
+  --font "packages/font/dist/ChordFont-Real Book.ttf" \
   --out /tmp/atlas
 
 node --experimental-strip-types tools/font-atlas/render-atlas.ts --html-only
@@ -78,6 +78,7 @@ From `packages/font/`, `make atlas` delegates to the repo-root script (after
 
 | Tool | When to use |
 |------|-------------|
+| `make lookbook` | Reference crops / tool engravings vs live ChordFont (side-by-side) |
 | `make -C packages/font proof` | Small curated set + HarfBuzz metrics table (`dist/proof.html`) |
 | `make -C packages/font test` | CI shaping spec — must pass on every font change |
 | `make previews` | README chart/graph PNGs — different pipeline, not symbol exhaustive |

@@ -30,6 +30,7 @@ make setup    # pnpm install + Playwright chromium (for preview screenshots)
 | `make previews` | Regenerate README preview PNGs under `docs/assets/` |
 | `make font` | Rebuild ChordFont TTF (Python, `packages/font/`) |
 | `make font-atlas` | Exhaustive ChordFont symbol proof sheet (PNG + HTML + JSON) |
+| `make lookbook` | Reference-vs-live ChordFont look book (`tools/lookbook/`) |
 | `make help` | List every Makefile target |
 
 ## Editing examples
@@ -53,11 +54,14 @@ is validated by shape tests in `packages/font/tests/`. See
 
 ## ChordFont iteration
 
-When editing glyph outlines or GSUB rules (`packages/font/`), use the atlas
-feedback loop: change sources → `make font-atlas` → inspect or diff
-`packages/font/dist/atlas.png`. Full instructions (including what agents should
-read, how to extend the symbol catalog, and what not to commit) are in
-[`tools/font-atlas/README.md`](tools/font-atlas/README.md).
+When editing glyph outlines or GSUB rules (`packages/font/`), use both visual
+feedback loops:
+
+1. **Look book** — side-by-side reference crops / LilyPond / LilyJAZZ / Petaluma
+   vs live ChordFont: change sources → `make lookbook` → open
+   `tools/lookbook/lookbook.html`. See [`tools/lookbook/README.md`](tools/lookbook/README.md).
+2. **Atlas** — exhaustive roots × suffixes matrix: `make font-atlas` → inspect
+   `packages/font/dist/atlas.png`. See [`tools/font-atlas/README.md`](tools/font-atlas/README.md).
 
 Shaping regressions are caught by `make -C packages/font test` (`tests/shape_test.py`).
 
