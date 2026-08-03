@@ -14,6 +14,9 @@ The font's GSUB rules operate on a **normalized ASCII string** where:
 - Extensions: bare digits (`7`, `9`, `11`, `13`) — superscripting handled by GSUB
 - Alterations: `b5`, `#11`, etc. — digit superscripting after accidental substitution
 - Slash bass: `/` + pitch class (`Cmaj7/E`)
+- Measure repeat: `%` — chart-level cell meaning “same as previous bar”
+  (iReal / Real Book). The font maps `%` to Petaluma `repeat1Bar` (slash +
+  dots), **not** a percent sign.
 
 Example canonical strings (current proof scope):
 
@@ -60,9 +63,12 @@ Any normalizer must map these → canonical form before the font sees them.
 
 ### Half-diminished
 
-| Variants seen | Canonical |
-|---------------|-----------|
-| `m7b5`, `ø`, `hdim`, `min7b5` | `m7b5` |
+| Variants seen | Canonical / font input |
+|---------------|------------------------|
+| `m7b5`, `min7b5`, `hdim` | Canonical harmony: `m7b5` (spelled; GSUB → `m` `7` `b5`) |
+| `ø`, `ø7`, `Bø7` | **Font engraved form** — type Unicode `ø` (U+00F8); maps to `hdim.slash` (Petaluma `csymHalfDiminished`). Do **not** use ASCII `o` (that is full-diminished). |
+
+Spelled `Bm7b5` and engraved `Bø7` are both supported inputs; the normalizer may fold `ø` → `m7b5` for analysis while the font keeps `ø` for Real Book–style engraving.
 
 ### Augmented
 
@@ -97,14 +103,38 @@ Any normalizer must map these → canonical form before the font sees them.
 | `7alt`, `7alt.` | Shorthand for ♭9/#9/♭13/#11 — **TBD** whether font expands or normalizer does |
 | Explicit `C7b9`, `C7#9`, `C7b13` | Preferred; maps to superscript digits |
 
+### Alterations — inline by default (ADR-008)
+
+Canonical Real Book ASCII is **bare**. The font never inserts parentheses:
+
+| Input | Engraved stream |
+|-------|-----------------|
+| `G7b9` | `G` `7` `♭` `⁹` |
+| `C7#11` | `C` `7` `♯` `¹¹` |
+| `A13b9` | `A` `1` `3` `♭` `⁹` |
+| `G7#5b9` | `G` `7` `♯` `⁵` `♭` `⁹` |
+
+### Linear parentheses (opt-in — 1D)
+
+Parentheses appear only when typed. Use them to match a publisher that
+parenthesizes tensions; they are not required for correct Real Book engraving:
+
+| Input | Engraved stream |
+|-------|-----------------|
+| `G7(b9)` | `G` `7` `(` `♭` `⁹` `)` |
+| `C7(#11)` | `C` `7` `(` `♯` `¹¹` `)` |
+| `Bm7(b5)` | `B` `m` `7` `(` `♭` `⁵` `)` |
+
 ## Out of font scope (WALL tier)
 
 These require 2D layout — normalizer should flag them for SVG fallback:
 
 ```
-G7(♯11)(♭13)     # parenthesized vertical tension stacks
-C7(♭9♯11)        # multi-alteration parentheses
+G7(♯11)(♭13)     # stacked / multi-tier parenthesized tension towers
+C7(♭9♯11)        # multi-alteration content inside one paren pair needing stack
 ```
+
+Linear sideways `G7(#11)(b13)` may shape, but is not Real Book stacking.
 
 ## Next steps
 

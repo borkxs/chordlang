@@ -47,7 +47,7 @@ export const SYMBOL_GROUPS: readonly SymbolGroup[] = [
   },
   {
     name: "Sevenths",
-    suffixes: ["maj7", "m7", "7", "m7b5", "dim7", "o7"],
+    suffixes: ["maj7", "m7", "7", "m7b5", "ø7", "dim7", "o7"],
   },
   {
     name: "Sixths",
@@ -59,7 +59,20 @@ export const SYMBOL_GROUPS: readonly SymbolGroup[] = [
   },
   {
     name: "Dominant alterations",
-    suffixes: ["7b9", "7#9", "7b13", "7#13", "7#11", "7b11", "7b5", "7#5", "7alt"],
+    suffixes: [
+      "7b9",
+      "7#9",
+      "7b13",
+      "7#13",
+      "7#11",
+      "7b11",
+      "7b5",
+      "7#5",
+      "7alt",
+      "7(b9)",
+      "7(#11)",
+      "m7(b5)",
+    ],
   },
   {
     name: "Sus & add dominants",

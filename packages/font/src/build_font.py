@@ -108,7 +108,8 @@ def build_font(style="realbook"):
     EXTRA_GLYPHS = [
         "a", "j", "b", "d.lc", "i", "l", "n", "o", "s", "t", "u",
         "numbersign", "slash",
-        "maj.tri", "dim.ring",
+        "maj.tri", "dim.ring", "hdim.slash",
+        "parenleft", "parenright", "repeat.bar",
         "flat.root", "flat.alt", "sharp.root", "sharp.alt",
         "a.sup", "l.sup", "t.sup", "slash.sup",
     ]
@@ -138,6 +139,14 @@ def build_font(style="realbook"):
     cmap[ord("u")] = "u"
     cmap[ord("#")] = "numbersign"
     cmap[ord("/")] = "slash"
+    # Half-diminished quality (ø) — engraved form; spelled m7b5 remains canonical
+    # for the normalizer. Do not map ASCII `o` here (that is full-dim via calt).
+    cmap[0x00F8] = "hdim.slash"  # ø
+    cmap[0x00D8] = "hdim.slash"  # Ø
+    cmap[ord("(")] = "parenleft"
+    cmap[ord(")")] = "parenright"
+    # Measure-repeat (iReal / Real Book "%") — Petaluma repeat1Bar, not a percent sign
+    cmap[ord("%")] = "repeat.bar"
     
     adv = {g: (300 if g == "space" else 520) for g in glyph_order}
     for name, width in extracted_adv.items():
@@ -182,7 +191,13 @@ def build_font(style="realbook"):
     else:
         QUAL_LETTERS = "m a j b d.lc i l n o s t u"
     
-    ROOTQUAL = " ".join(roots) + " " + QUAL_LETTERS + " maj.tri dim.ring sharp.root sharp.alt flat.root flat.alt"
+    ROOTQUAL = (
+        " ".join(roots)
+        + " "
+        + QUAL_LETTERS
+        + " maj.tri dim.ring hdim.slash parenleft parenright"
+        + " sharp.root sharp.alt flat.root flat.alt"
+    )
     
     with open(features_path) as f:
         fea_template = f.read()

@@ -34,7 +34,7 @@ function galleryHTML(entries: { name: string; slug: string; svg: string }[]): st
 <style>
 @font-face {
   font-family: "ChordFont";
-  src: url("../../public/fonts/ChordProof.ttf") format("truetype");
+  src: url("../../public/fonts/ChordFont-Real Book.ttf") format("truetype");
 }
 * { box-sizing: border-box; margin: 0; }
 body {

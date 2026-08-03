@@ -1,0 +1,3998 @@
+{
+  "generated": "2026-08-02",
+  "count": 142,
+  "entries": [
+    {
+      "id": "a13b9--lilyjazz",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "A13b9",
+      "shape_ascii": "A13b9",
+      "as_printed": "A13b9",
+      "display_note": "Thirteen flat nine — stacked tensions in some styles. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "13 vs b9 ordering/stacking",
+        "two alterations in sequence"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/a13b9--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "a13b9--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "A13b9",
+      "shape_ascii": "A13b9",
+      "as_printed": "A13b9",
+      "display_note": "Thirteen flat nine — stacked tensions in some styles. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "13 vs b9 ordering/stacking",
+        "two alterations in sequence"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/a13b9--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "c7sharp11--lilyjazz",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "C7#11",
+      "shape_ascii": "C7#11",
+      "as_printed": "C7#11",
+      "display_note": "Sharp eleven. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "#11 digit pair with accidental",
+        "accidental-to-digit kerning",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c7sharp11--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "c7sharp11--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "C7#11",
+      "shape_ascii": "C7#11",
+      "as_printed": "C7#11",
+      "display_note": "Sharp eleven. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "#11 digit pair with accidental",
+        "accidental-to-digit kerning",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c7sharp11--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7b13--lilyjazz",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7b13",
+      "shape_ascii": "G7b13",
+      "as_printed": "G7b13",
+      "display_note": "Flat thirteen. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "b13 multi-digit alteration"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7b13--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7b13--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7b13",
+      "shape_ascii": "G7b13",
+      "as_printed": "G7b13",
+      "display_note": "Flat thirteen. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "b13 multi-digit alteration"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7b13--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7b5--lilyjazz",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7b5",
+      "shape_ascii": "G7b5",
+      "as_printed": "G7b5",
+      "display_note": "Dominant flat five. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "b5 vs parenthesized (b5)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7b5--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7b5--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7b5",
+      "shape_ascii": "G7b5",
+      "as_printed": "G7b5",
+      "display_note": "Dominant flat five. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "b5 vs parenthesized (b5)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7b5--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7b9--lilyjazz",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7b9",
+      "shape_ascii": "G7b9",
+      "as_printed": "G7b9",
+      "display_note": "Flat nine. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "alteration order 7-then-b9",
+        "flat glyph size in alteration",
+        "parentheses usage",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7b9--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7b9--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7b9",
+      "shape_ascii": "G7b9",
+      "as_printed": "G7b9",
+      "display_note": "Flat nine. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "alteration order 7-then-b9",
+        "flat glyph size in alteration",
+        "parentheses usage",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7b9--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7sharp9--lilyjazz",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7#9",
+      "shape_ascii": "G7#9",
+      "as_printed": "G7#9",
+      "display_note": "Sharp nine. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "sharp glyph size in alteration",
+        "stacking vs inline",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7sharp9--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "g7sharp9--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "G7#9",
+      "shape_ascii": "G7#9",
+      "as_printed": "G7#9",
+      "display_note": "Sharp nine. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "sharp glyph size in alteration",
+        "stacking vs inline",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7sharp9--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-b7-full-alt",
+      "method": "crop",
+      "family": "alterations",
+      "canonical_ascii": "B7b5b9b11b13",
+      "shape_ascii": "B7b5b9b11b13",
+      "as_printed": "B7 + ♭5♭9♭11♭13 stack (as engraved)",
+      "display_note": "source b:7.3-.5-.9-.11-.13- — WALL-tier width torture test; 500 Miles High p5",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "how far can a linear alteration run go before it must stack",
+        "per-pair spacing"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-b7-full-alt.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "source b:7.3-.5-.9-.11-.13- — WALL-tier width torture test; 500 Miles High p5"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-c7s5-or-g",
+      "method": "crop",
+      "family": "alterations",
+      "canonical_ascii": "C7#5",
+      "shape_ascii": "C7#5",
+      "as_printed": "C7♯5 (root per crop)",
+      "display_note": "All The Things You Are p18 — confirm root from crop",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "#5 raise height"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-c7s5-or-g.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "All The Things You Are p18 — confirm root from crop"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-e7s5-p103",
+      "method": "crop",
+      "family": "alterations",
+      "canonical_ascii": "E7#5",
+      "shape_ascii": "E7#5",
+      "as_printed": "E7♯5 (root per crop)",
+      "display_note": "Lost In The Stars p103",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "#5 pair"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-e7s5-p103.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Lost In The Stars p103"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop appears to show wrong system (Bb) — re-verify page/window."
+    },
+    {
+      "id": "ob-e7s9",
+      "method": "crop",
+      "family": "alterations",
+      "canonical_ascii": "E7#9",
+      "shape_ascii": "E7#9",
+      "as_printed": "E7♯9",
+      "display_note": "only E chord in tune vocab; 500 Miles High p5",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "sharp-9 superscript size & raise",
+        "sharp vs flat visual weight"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-e7s9.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "only E chord in tune vocab; 500 Miles High p5"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-g7b5",
+      "method": "crop",
+      "family": "alterations",
+      "canonical_ascii": "G7b5",
+      "shape_ascii": "G7b5",
+      "as_printed": "G7♭5",
+      "display_note": "Desafinado p56 (the famous second chord)",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "b5 vs b9 disambiguation at small size"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-g7b5.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Desafinado p56 (the famous second chord)"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-g7b9",
+      "method": "crop",
+      "family": "alterations",
+      "canonical_ascii": "G7b9",
+      "shape_ascii": "G7b9",
+      "as_printed": "G7♭9",
+      "display_note": "A Fine Romance p8",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "flat-9 pair as unit",
+        "7 vs b9 baseline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-g7b9.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Fine Romance p8"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop shows bare G7 — missing b9; re-crop or confirm label."
+    },
+    {
+      "id": "ob-g7s5b9",
+      "method": "crop",
+      "family": "alterations",
+      "canonical_ascii": "G7#5b9",
+      "shape_ascii": "G7#5b9",
+      "as_printed": "G7♯5♭9",
+      "display_note": "double alteration in sequence; Cry Me A River p53",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "order of alterations",
+        "accidental+digit pair spacing",
+        "total width"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-g7s5b9.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "double alteration in sequence; Cry Me A River p53"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop shows bare G7 — missing #5b9 alterations; re-crop."
+    },
+    {
+      "id": "pm-csym-aug",
+      "method": "glyph-specimen",
+      "family": "alterations",
+      "canonical_ascii": "aug",
+      "shape_ascii": null,
+      "as_printed": "+ (csymAugmented U+E872)",
+      "display_note": "SMuFL chord-symbol glyph from Petaluma music font",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL — canonical triangle/ø/°/+/- shapes to match",
+      "observe": [
+        "shape proportions vs cap height (compare against a root letter at same size)",
+        "stroke weight match with Script letters"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-csym-aug.png",
+        "source_title": "Petaluma (SMuFL) chord symbol glyphs",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-13b9",
+      "method": "glyph-specimen",
+      "family": "alterations",
+      "canonical_ascii": "G13b9",
+      "shape_ascii": "G13b9",
+      "as_printed": "G13♭9",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-13b9.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-7alt",
+      "method": "glyph-specimen",
+      "family": "alterations",
+      "canonical_ascii": "G7alt",
+      "shape_ascii": "G7alt",
+      "as_printed": "G7alt",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-7alt.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-7b9",
+      "method": "glyph-specimen",
+      "family": "alterations",
+      "canonical_ascii": "G7b9",
+      "shape_ascii": "G7b9",
+      "as_printed": "G7♭9",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-7b9.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-7s11",
+      "method": "glyph-specimen",
+      "family": "alterations",
+      "canonical_ascii": "F7#11",
+      "shape_ascii": "F7#11",
+      "as_printed": "F7♯11",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-7s11.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-7s9",
+      "method": "glyph-specimen",
+      "family": "alterations",
+      "canonical_ascii": "E7#9",
+      "shape_ascii": "E7#9",
+      "as_printed": "E7♯9",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-7s9.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cdim7--lilyjazz",
+      "method": "tool-engraving",
+      "family": "dim",
+      "canonical_ascii": "Cdim7",
+      "shape_ascii": "Cdim7",
+      "as_printed": "C^7dim (superscript '7dim' — idiosyncratic)",
+      "display_note": "Diminished seventh — o/dim/deg variants. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "dim marker form (o vs dim)",
+        "marker raise vs root"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cdim7--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "cdim7--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "dim",
+      "canonical_ascii": "Cdim7",
+      "shape_ascii": "Cdim7",
+      "as_printed": "C°7 (ring + 7)",
+      "display_note": "Diminished seventh — o/dim/deg variants. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "dim marker form (o vs dim)",
+        "marker raise vs root"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cdim7--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ob-bdim",
+      "method": "crop",
+      "family": "dim",
+      "canonical_ascii": "Bdim",
+      "shape_ascii": "Bdim",
+      "as_printed": "Bdim",
+      "display_note": "'dim' SPELLED OUT (no °) — text layer confirms letters; A Cup Of Coffee p6",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "dim letters at root size or reduced?",
+        "no superscript treatment"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-bdim.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "'dim' SPELLED OUT (no °) — text layer confirms letters; A Cup Of Coffee p6"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-gdim",
+      "method": "crop",
+      "family": "dim",
+      "canonical_ascii": "C#dim",
+      "shape_ascii": "C#dim",
+      "as_printed": "Gdim (root per crop: C♯/D♯dim also on page)",
+      "display_note": "A Fine Romance p8",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "dim after accidental root"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-gdim.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Fine Romance p8"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "pm-csym-dim",
+      "method": "glyph-specimen",
+      "family": "dim",
+      "canonical_ascii": "dim (° variant)",
+      "shape_ascii": null,
+      "as_printed": "° (csymDiminished U+E870)",
+      "display_note": "SMuFL chord-symbol glyph from Petaluma music font",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL — canonical triangle/ø/°/+/- shapes to match",
+      "observe": [
+        "shape proportions vs cap height (compare against a root letter at same size)",
+        "stroke weight match with Script letters"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-csym-dim.png",
+        "source_title": "Petaluma (SMuFL) chord symbol glyphs",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ps-c9",
+      "method": "glyph-specimen",
+      "family": "extensions",
+      "canonical_ascii": "C9",
+      "shape_ascii": "C9",
+      "as_printed": "C9",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-c9.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-f13",
+      "method": "glyph-specimen",
+      "family": "extensions",
+      "canonical_ascii": "F13",
+      "shape_ascii": "F13",
+      "as_printed": "F13",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-f13.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "bm7b5--lilyjazz",
+      "method": "tool-engraving",
+      "family": "halfdim",
+      "canonical_ascii": "Bm7b5",
+      "shape_ascii": "Bm7b5",
+      "as_printed": "Bm7(♭5) (parenthesized)",
+      "display_note": "Half-diminished — spelled m7b5 vs slashed-circle variants. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "b5 stacking or inline",
+        "flat size inside alteration",
+        "parenthesization",
+        "also try Bø7 engraved form"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/bm7b5--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "bm7b5--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "halfdim",
+      "canonical_ascii": "Bm7b5",
+      "shape_ascii": "Bm7b5",
+      "as_printed": "Bm7♭5 (inline)",
+      "display_note": "Half-diminished — spelled m7b5 vs slashed-circle variants. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "b5 stacking or inline",
+        "flat size inside alteration",
+        "parenthesization"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/bm7b5--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ext-halfdim-variants",
+      "method": "external",
+      "family": "halfdim",
+      "canonical_ascii": "Bm7b5",
+      "shape_ascii": "Bø7",
+      "as_printed": "Bø7 / Bø / Bm7(♭5)",
+      "display_note": "Documents the slashed-circle ø half-diminished variants as printed equivalents of m7b5. No good freely-licensed ø chord-symbol crop found yet — see GAP_REPORT.",
+      "label_status": "needs_confirm",
+      "house_style": "Wikipedia — Half-diminished seventh chord",
+      "observe": [
+        "ø ring diameter vs cap height",
+        "slash angle through ring",
+        "ø alone vs ø7"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": null,
+        "hotlink_url": "https://en.wikipedia.org/wiki/Half-diminished_seventh_chord",
+        "source_title": "Wikipedia — Half-diminished seventh chord",
+        "source_url": "https://en.wikipedia.org/wiki/Half-diminished_seventh_chord",
+        "publisher_or_author": "Wikipedia contributors",
+        "license_or_use_basis": "CC BY-SA text; hotlink only",
+        "captured_at": "2026-08-02",
+        "crop_description": "external reference — open in browser; no image committed",
+        "engraving_source_id": "ext-halfdim-variants",
+        "kind": "external-hotlink"
+      },
+      "review_status": "needs-fix",
+      "review_note": "No local reference image (external hotlink / GAP)."
+    },
+    {
+      "id": "ob-am7b5",
+      "method": "crop",
+      "family": "halfdim",
+      "canonical_ascii": "Am7b5",
+      "shape_ascii": "Am7b5",
+      "as_printed": "Am7♭5",
+      "display_note": "A Night In Tunisia p10",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "b5 alignment"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-am7b5.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Night In Tunisia p10"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ob-bm7b5",
+      "method": "crop",
+      "family": "halfdim",
+      "canonical_ascii": "Bm7b5",
+      "shape_ascii": "Bm7b5",
+      "as_printed": "Bm7♭5",
+      "display_note": "spelled-out m7b5 house style (no ø); 500 Miles High p5",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "m + 7 + b5 as three zones",
+        "b5 superscript pair",
+        "overall width"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-bm7b5.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "spelled-out m7b5 house style (no ø); 500 Miles High p5"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ob-dm7b5",
+      "method": "crop",
+      "family": "halfdim",
+      "canonical_ascii": "Dm7b5",
+      "shape_ascii": "Dm7b5",
+      "as_printed": "Dm7♭5",
+      "display_note": "Blue Bossa p32",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "same as ob-bm7b5, second instance for consistency"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-dm7b5.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Blue Bossa p32"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "pm-csym-halfdim",
+      "method": "glyph-specimen",
+      "family": "halfdim",
+      "canonical_ascii": "m7b5 (ø variant)",
+      "shape_ascii": "ø",
+      "as_printed": "ø (csymHalfDiminished U+E871)",
+      "display_note": "SMuFL chord-symbol glyph from Petaluma music font",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL — canonical triangle/ø/°/+/- shapes to match",
+      "observe": [
+        "shape proportions vs cap height (compare against a root letter at same size)",
+        "stroke weight match with Script letters"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-csym-halfdim.png",
+        "source_title": "Petaluma (SMuFL) chord symbol glyphs",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ps-halfdim",
+      "method": "glyph-specimen",
+      "family": "halfdim",
+      "canonical_ascii": "m7b5 (ø variant)",
+      "shape_ascii": "ø7",
+      "as_printed": "ø7",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-halfdim.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ps-m7b5",
+      "method": "glyph-specimen",
+      "family": "halfdim",
+      "canonical_ascii": "Cm7b5",
+      "shape_ascii": "Cm7b5",
+      "as_printed": "Cm7♭5",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-m7b5.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "incontext-a7alt",
+      "method": "crop",
+      "family": "in-context",
+      "canonical_ascii": "A7#5",
+      "shape_ascii": "A7#5",
+      "as_printed": "A7(♯5) (parenthesized tension)",
+      "display_note": "Sharp-five tension in parentheses — common house alternative to inline #5. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
+      "label_status": "needs_confirm",
+      "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+      "observe": [
+        "paren height vs tension height",
+        "sharp size inside parens",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/incontext-a7alt--lilyjazz-allofme.png",
+        "source_title": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz/blob/master/examples/AllOfMe.ly",
+        "publisher_or_author": "Engraving: Abraham Lee (LilyJAZZ examples); composition: Simons & Marks (1931)",
+        "license_or_use_basis": "fair-use educational crop — chord symbol only, no melody; engraving source distributed in OFL font repo",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
+        "engraving_source_id": "lilyjazz-allofme",
+        "kind": "in-context-crop"
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-a7alt--lilyjazz-allofme.png"
+    },
+    {
+      "id": "incontext-a7paren",
+      "method": "crop",
+      "family": "in-context",
+      "canonical_ascii": "A7b9",
+      "shape_ascii": "A7b9",
+      "as_printed": "A7(♭9) (parenthesized tension)",
+      "display_note": "Flat-nine tension in parentheses. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
+      "label_status": "needs_confirm",
+      "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+      "observe": [
+        "paren-to-digit spacing",
+        "flat size inside parens",
+        "ours is inline Real Book (type G7(b9) only if you want explicit parens)"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/incontext-a7paren--lilyjazz-allofme.png",
+        "source_title": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz/blob/master/examples/AllOfMe.ly",
+        "publisher_or_author": "Engraving: Abraham Lee (LilyJAZZ examples); composition: Simons & Marks (1931)",
+        "license_or_use_basis": "fair-use educational crop — chord symbol only, no melody; engraving source distributed in OFL font repo",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
+        "engraving_source_id": "lilyjazz-allofme",
+        "kind": "in-context-crop"
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-a7paren--lilyjazz-allofme.png"
+    },
+    {
+      "id": "incontext-c6",
+      "method": "crop",
+      "family": "in-context",
+      "canonical_ascii": "C6",
+      "shape_ascii": "C6",
+      "as_printed": "C6",
+      "display_note": "Sixth chord as it sits above a bar. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
+      "label_status": "needs_confirm",
+      "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+      "observe": [
+        "6 size at lead-sheet scale",
+        "clearance above staff"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/incontext-c6--lilyjazz-allofme.png",
+        "source_title": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz/blob/master/examples/AllOfMe.ly",
+        "publisher_or_author": "Engraving: Abraham Lee (LilyJAZZ examples); composition: Simons & Marks (1931)",
+        "license_or_use_basis": "fair-use educational crop — chord symbol only, no melody; engraving source distributed in OFL font repo",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
+        "engraving_source_id": "lilyjazz-allofme",
+        "kind": "in-context-crop"
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-c6--lilyjazz-allofme.png"
+    },
+    {
+      "id": "incontext-dminus7",
+      "method": "crop",
+      "family": "in-context",
+      "canonical_ascii": "Dm7",
+      "shape_ascii": "Dm7",
+      "as_printed": "D-7 (Real Book minus-minor)",
+      "display_note": "Minor seventh printed with '-' — the Real Book convention ChordLang normalizes to 'm'. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
+      "label_status": "needs_confirm",
+      "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+      "observe": [
+        "dash length and vertical position",
+        "dash weight vs letter strokes",
+        "7 raise after dash"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/incontext-dminus7--lilyjazz-allofme.png",
+        "source_title": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz/blob/master/examples/AllOfMe.ly",
+        "publisher_or_author": "Engraving: Abraham Lee (LilyJAZZ examples); composition: Simons & Marks (1931)",
+        "license_or_use_basis": "fair-use educational crop — chord symbol only, no melody; engraving source distributed in OFL font repo",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
+        "engraving_source_id": "lilyjazz-allofme",
+        "kind": "in-context-crop"
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-dminus7--lilyjazz-allofme.png"
+    },
+    {
+      "id": "incontext-e7",
+      "method": "crop",
+      "family": "in-context",
+      "canonical_ascii": "E7",
+      "shape_ascii": "E7",
+      "as_printed": "E7",
+      "display_note": "Dominant seventh at lead-sheet scale. In-context crop from the LilyJAZZ example engraving of 'All of Me' (chord symbol above staff, as on a printed lead sheet).",
+      "label_status": "needs_confirm",
+      "house_style": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+      "observe": [
+        "7 raise in running context vs isolated proof"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/incontext-e7--lilyjazz-allofme.png",
+        "source_title": "All of Me — LilyJAZZ example lead sheet (symbol-only crop)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz/blob/master/examples/AllOfMe.ly",
+        "publisher_or_author": "Engraving: Abraham Lee (LilyJAZZ examples); composition: Simons & Marks (1931)",
+        "license_or_use_basis": "fair-use educational crop — chord symbol only, no melody; engraving source distributed in OFL font repo",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol above one bar, cropped to exclude all melodic content",
+        "engraving_source_id": "lilyjazz-allofme",
+        "kind": "in-context-crop"
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing: refs/incontext-e7--lilyjazz-allofme.png"
+    },
+    {
+      "id": "cm7--lilyjazz",
+      "method": "tool-engraving",
+      "family": "minor",
+      "canonical_ascii": "Cm7",
+      "shape_ascii": "Cm7",
+      "as_printed": "Cm7",
+      "display_note": "Minor seventh. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "m + 7 grouping",
+        "7 superscript or inline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cm7--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "cm7--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "minor",
+      "canonical_ascii": "Cm7",
+      "shape_ascii": "Cm7",
+      "as_printed": "Cm7",
+      "display_note": "Minor seventh. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "m + 7 grouping",
+        "7 superscript or inline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cm7--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "dm--lilyjazz",
+      "method": "tool-engraving",
+      "family": "minor",
+      "canonical_ascii": "Dm",
+      "shape_ascii": "Dm",
+      "as_printed": "Dm",
+      "display_note": "Minor triad; note '-' variant in some house styles. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "minor marker form (m vs -)",
+        "m size relative to root"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/dm--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "dm--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "minor",
+      "canonical_ascii": "Dm",
+      "shape_ascii": "Dm",
+      "as_printed": "Dm",
+      "display_note": "Minor triad; note '-' variant in some house styles. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "minor marker form (m vs -)",
+        "m size relative to root"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/dm--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "pm-repeat1bar",
+      "method": "glyph-specimen",
+      "family": "overview",
+      "canonical_ascii": "%",
+      "shape_ascii": "%",
+      "as_printed": "% → measure repeat (repeat1Bar U+E500)",
+      "display_note": "Chart cell '%' means repeat previous bar (iReal / Real Book). Petaluma SMuFL repeat1Bar — slash with dots — not a percent sign. No printed crop in corpus yet; this specimen is the glyph DNA.",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL",
+      "observe": [
+        "slash angle and weight vs surrounding chord letters",
+        "dot size and placement above/below slash",
+        "vertical centering in a bar cell next to Cmaj7 / F7",
+        "do not use PetalumaScript percent glyph for this meaning"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-repeat1bar.png",
+        "source_title": "Petaluma (SMuFL) repeat1Bar",
+        "license_or_use_basis": "SIL OFL 1.1, rendered locally",
+        "captured_at": "2026-08-02"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ob-ab-root",
+      "method": "crop",
+      "family": "roots",
+      "canonical_ascii": "Ab",
+      "shape_ascii": "Ab",
+      "as_printed": "A♭ (quality per crop)",
+      "display_note": "bare flat root; A Fine Romance p8",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "flat size, raise, distance from letter"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-ab-root.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "bare flat root; A Fine Romance p8"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-eb-root-p10",
+      "method": "crop",
+      "family": "roots",
+      "canonical_ascii": "Eb",
+      "shape_ascii": "Eb",
+      "as_printed": "E♭ (root per crop)",
+      "display_note": "A Night In Tunisia p10",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "flat root before nothing"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-eb-root-p10.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Night In Tunisia p10"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-fs-or-b-root",
+      "method": "crop",
+      "family": "roots",
+      "canonical_ascii": "F#",
+      "shape_ascii": "F#",
+      "as_printed": "F♯ or B (per crop)",
+      "display_note": "accidental root check; A Fine Romance p8",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "sharp binding tightness"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-fs-or-b-root.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "accidental root check; A Fine Romance p8"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-bb-root",
+      "method": "glyph-specimen",
+      "family": "roots",
+      "canonical_ascii": "Bb",
+      "shape_ascii": "Bb",
+      "as_printed": "B♭",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-bb-root.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ps-eb-root",
+      "method": "glyph-specimen",
+      "family": "roots",
+      "canonical_ascii": "Eb",
+      "shape_ascii": "Eb",
+      "as_printed": "E♭",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-eb-root.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ps-fs-root",
+      "method": "glyph-specimen",
+      "family": "roots",
+      "canonical_ascii": "F#",
+      "shape_ascii": "F#",
+      "as_printed": "F♯",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-fs-root.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "c11--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "C11",
+      "shape_ascii": "C11",
+      "as_printed": "C11",
+      "display_note": "Eleventh — multi-digit superscript. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "11 digit pair spacing"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c11--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "c11--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "C11",
+      "shape_ascii": "C11",
+      "as_printed": "C11",
+      "display_note": "Eleventh — multi-digit superscript. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "11 digit pair spacing"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c11--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "c9--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "C9",
+      "shape_ascii": "C9",
+      "as_printed": "C9",
+      "display_note": "Dominant ninth. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "single-digit extension size"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c9--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "c9--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "C9",
+      "shape_ascii": "C9",
+      "as_printed": "C9",
+      "display_note": "Dominant ninth. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "single-digit extension size"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c9--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cmaj7--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "Cmaj7",
+      "shape_ascii": "Cmaj7",
+      "as_printed": "C^M7 (superscript M7)",
+      "display_note": "Major seventh — triangle vs spelled variants across styles. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "triangle height vs root cap height",
+        "7 presence/absence next to triangle",
+        "superscript baseline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cmaj7--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "cmaj7--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "Cmaj7",
+      "shape_ascii": "Cmaj7",
+      "as_printed": "C△ (triangle only, no 7)",
+      "display_note": "Major seventh — triangle vs spelled variants across styles. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "triangle height vs root cap height",
+        "7 presence/absence next to triangle",
+        "superscript baseline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cmaj7--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cmaj7--lilypond-spelled",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "Cmaj7",
+      "shape_ascii": "Cmaj7",
+      "as_printed": "Cmaj7 (spelled, superscript)",
+      "display_note": "Major seventh — triangle vs spelled variants across styles. Engraved by LilyPond default with spelled maj7 (Hal Leonard-ish).",
+      "label_status": "verified",
+      "house_style": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+      "observe": [
+        "triangle height vs root cap height",
+        "7 presence/absence next to triangle",
+        "superscript baseline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cmaj7--lilypond-spelled.png",
+        "source_title": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "f13--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "F13",
+      "shape_ascii": "F13",
+      "as_printed": "F13",
+      "display_note": "Dominant thirteenth — multi-digit superscript. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "two-digit width and tracking",
+        "digit baseline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/f13--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "f13--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "F13",
+      "shape_ascii": "F13",
+      "as_printed": "F13",
+      "display_note": "Dominant thirteenth — multi-digit superscript. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "two-digit width and tracking",
+        "digit baseline"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/f13--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "g7--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "G7",
+      "shape_ascii": "G7",
+      "as_printed": "G7",
+      "display_note": "Dominant seventh. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "7 size and raise",
+        "gap root-to-7"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "g7--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sevenths",
+      "canonical_ascii": "G7",
+      "shape_ascii": "G7",
+      "as_printed": "G7",
+      "display_note": "Dominant seventh. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "7 size and raise",
+        "gap root-to-7"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ob-abmaj7-p18",
+      "method": "crop",
+      "family": "sevenths",
+      "canonical_ascii": "Abmaj7",
+      "shape_ascii": "Abmaj7",
+      "as_printed": "A♭maj7 (root per crop)",
+      "display_note": "All The Things You Are p18",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "maj7 after flat root"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-abmaj7-p18.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "All The Things You Are p18"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-bbmaj7",
+      "method": "crop",
+      "family": "sevenths",
+      "canonical_ascii": "Bbmaj7",
+      "shape_ascii": "Bbmaj7",
+      "as_printed": "B♭maj7",
+      "display_note": "flat root + spelled maj7; 500 Miles High p5",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "maj7 letters+digit sizing",
+        "flat binding on root before quality"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-bbmaj7.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "flat root + spelled maj7; 500 Miles High p5"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-cmaj7-p67",
+      "method": "crop",
+      "family": "sevenths",
+      "canonical_ascii": "Cmaj7",
+      "shape_ascii": "Cmaj7",
+      "as_printed": "Cmaj7 (root per crop)",
+      "display_note": "Fly Me To The Moon p67",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "maj7 spelled, natural root"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-cmaj7-p67.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Fly Me To The Moon p67"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-d7",
+      "method": "crop",
+      "family": "sevenths",
+      "canonical_ascii": "D7",
+      "shape_ascii": "D7",
+      "as_printed": "D7",
+      "display_note": "A Cup Of Coffee p6",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "7 size & baseline vs root — THE calibration pair"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-d7.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Cup Of Coffee p6"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-dm-maj7",
+      "method": "crop",
+      "family": "sevenths",
+      "canonical_ascii": "Dmmaj7",
+      "shape_ascii": "Dmmaj7",
+      "as_printed": "Dm(maj7) as engraved",
+      "display_note": "minor-major 7 (d:m7+); A Night In Tunisia p10",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "how m and maj7 coexist",
+        "parens or not"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-dm-maj7.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "minor-major 7 (d:m7+); A Night In Tunisia p10"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-f7-p24",
+      "method": "crop",
+      "family": "sevenths",
+      "canonical_ascii": "F7",
+      "shape_ascii": "F7",
+      "as_printed": "F7 (root per crop)",
+      "display_note": "Au Privave p24 (blues head)",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "dominant 7 plain"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-f7-p24.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Au Privave p24 (blues head)"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-g7",
+      "method": "crop",
+      "family": "sevenths",
+      "canonical_ascii": "G7",
+      "shape_ascii": "G7",
+      "as_printed": "G7",
+      "display_note": "A Cup Of Coffee p6",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "same, different root shape"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-g7.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Cup Of Coffee p6"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "pm-csym-maj7-triangle",
+      "method": "glyph-specimen",
+      "family": "sevenths",
+      "canonical_ascii": "maj7 (triangle variant)",
+      "shape_ascii": null,
+      "as_printed": "△ (csymMajorSeventh U+E873)",
+      "display_note": "SMuFL chord-symbol glyph from Petaluma music font",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL — canonical triangle/ø/°/+/- shapes to match",
+      "observe": [
+        "shape proportions vs cap height (compare against a root letter at same size)",
+        "stroke weight match with Script letters"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-csym-maj7-triangle.png",
+        "source_title": "Petaluma (SMuFL) chord symbol glyphs",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ps-cmaj7",
+      "method": "glyph-specimen",
+      "family": "sevenths",
+      "canonical_ascii": "Cmaj7",
+      "shape_ascii": "Cmaj7",
+      "as_printed": "Cmaj7",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-cmaj7.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-g7",
+      "method": "glyph-specimen",
+      "family": "sevenths",
+      "canonical_ascii": "G7",
+      "shape_ascii": "G7",
+      "as_printed": "G7",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-g7.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-69",
+      "method": "glyph-specimen",
+      "family": "sixths",
+      "canonical_ascii": "C6/9",
+      "shape_ascii": "C6/9",
+      "as_printed": "C6/9",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-69.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "cmaj7-slash-e--lilyjazz",
+      "method": "tool-engraving",
+      "family": "slash",
+      "canonical_ascii": "Cmaj7/E",
+      "shape_ascii": "Cmaj7/E",
+      "as_printed": "Cmaj7/E",
+      "display_note": "Slash bass under maj7. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "slash angle and weight",
+        "bass letter size vs root",
+        "vertical offset of bass"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cmaj7-slash-e--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cmaj7-slash-e--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "slash",
+      "canonical_ascii": "Cmaj7/E",
+      "shape_ascii": "Cmaj7/E",
+      "as_printed": "Cmaj7/E",
+      "display_note": "Slash bass under maj7. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "slash angle and weight",
+        "bass letter size vs root",
+        "vertical offset of bass"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cmaj7-slash-e--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cmaj7-slash-e--lilypond-spelled",
+      "method": "tool-engraving",
+      "family": "slash",
+      "canonical_ascii": "Cmaj7/E",
+      "shape_ascii": "Cmaj7/E",
+      "as_printed": "Cmaj7/E",
+      "display_note": "Slash bass under maj7. Engraved by LilyPond default with spelled maj7 (Hal Leonard-ish).",
+      "label_status": "verified",
+      "house_style": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+      "observe": [
+        "slash angle and weight",
+        "bass letter size vs root",
+        "vertical offset of bass"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/cmaj7-slash-e--lilypond-spelled.png",
+        "source_title": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "dm7-slash-g--lilyjazz",
+      "method": "tool-engraving",
+      "family": "slash",
+      "canonical_ascii": "Dm7/G",
+      "shape_ascii": "Dm7/G",
+      "as_printed": "Dm7/G",
+      "display_note": "Slash bass under m7. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "slash spacing",
+        "bass alignment"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/dm7-slash-g--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "dm7-slash-g--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "slash",
+      "canonical_ascii": "Dm7/G",
+      "shape_ascii": "Dm7/G",
+      "as_printed": "Dm7/G",
+      "display_note": "Slash bass under m7. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "slash spacing",
+        "bass alignment"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/dm7-slash-g--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-ab9-slash-c",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "Ab9/C",
+      "shape_ascii": "Ab9/C",
+      "as_printed": "A♭9/C",
+      "display_note": "accidental ROOT + extension + slash; Angel Eyes p22",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "root flat binding with 9 following",
+        "9 superscript before slash"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-ab9-slash-c.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "accidental ROOT + extension + slash; Angel Eyes p22"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-cm-slash-bb",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "Cm/Bb",
+      "shape_ascii": "Cm/Bb",
+      "as_printed": "Cm/B♭",
+      "display_note": "bare minor over bass; Angel Eyes p22",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "minimal symbol + slash spacing"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-cm-slash-bb.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "bare minor over bass; Angel Eyes p22"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-cm6-slash-eb",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "Cm6/Eb",
+      "shape_ascii": "Cm6/Eb",
+      "as_printed": "Cm6/E♭",
+      "display_note": "m6 + accidental bass; Cry Me A River p53",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "6 size after m",
+        "bass accidental placement"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-cm6-slash-eb.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "m6 + accidental bass; Cry Me A River p53"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-dm7-slash-g",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "Dm7/G",
+      "shape_ascii": "Dm7/G",
+      "as_printed": "Dm7/G",
+      "display_note": "P0 spec example verbatim; Fly Me To The Moon p67",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "slash angle & length vs cap height",
+        "bass letter size = root size?",
+        "gap either side of slash"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-dm7-slash-g.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "P0 spec example verbatim; Fly Me To The Moon p67"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-fdim7-slash-c",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "Fdim7/C",
+      "shape_ascii": "Fdim7/C",
+      "as_printed": "Fdim7/C",
+      "display_note": "dim spelled out as letters + slash bass; Fly Me p67",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "'dim' letter size vs root",
+        "slash after multi-char quality"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-fdim7-slash-c.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "dim spelled out as letters + slash bass; Fly Me p67"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-fm7-slash-bb",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "Fm7/Bb",
+      "shape_ascii": "Fm7/Bb",
+      "as_printed": "Fm7/B♭",
+      "display_note": "slash bass WITH accidental; Cry Me A River p53",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "flat binding on bass note",
+        "flat size below the slash"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-fm7-slash-bb.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "slash bass WITH accidental; Cry Me A River p53"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-g-slash-b-p103",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "G/B",
+      "shape_ascii": "G/B",
+      "as_printed": "G/B (per crop — G, Gm also on page)",
+      "display_note": "triad over 3rd; Lost In The Stars p103",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "triad + slash, no quality"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-g-slash-b-p103.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "triad over 3rd; Lost In The Stars p103"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-g7-slash-f",
+      "method": "crop",
+      "family": "slash",
+      "canonical_ascii": "G7/F",
+      "shape_ascii": "G7/F",
+      "as_printed": "G7/F",
+      "display_note": "Fly Me To The Moon p67",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "7 position relative to slash",
+        "baseline of bass note"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-g7-slash-f.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Fly Me To The Moon p67"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-slash",
+      "method": "glyph-specimen",
+      "family": "slash",
+      "canonical_ascii": "Cmaj7/E",
+      "shape_ascii": "Cmaj7/E",
+      "as_printed": "Cmaj7/E",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-slash.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ext-dorico-presets",
+      "method": "external",
+      "family": "survey",
+      "canonical_ascii": "(various)",
+      "shape_ascii": null,
+      "as_printed": "(house-style presets)",
+      "display_note": "Dorico ships chord-symbol appearance presets replicating common publisher conventions (default avoids Δ/°/ø symbols; other presets use them). Good publisher-grade reference for how the same harmony is engraved differently across house styles.",
+      "label_status": "needs_confirm",
+      "house_style": "Steinberg Dorico documentation — Chord symbol appearance presets",
+      "observe": [
+        "compare preset choices for maj7 / dim / half-dim symbols"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": null,
+        "hotlink_url": "https://steinberg.help/dorico/v4/en/dorico/topics/notation_reference/notation_reference_chord_symbols/notation_reference_chord_symbols_appearance_presets_r.html",
+        "source_title": "Steinberg Dorico documentation — Chord symbol appearance presets",
+        "source_url": "https://steinberg.help/dorico/v4/en/dorico/topics/notation_reference/notation_reference_chord_symbols/notation_reference_chord_symbols_appearance_presets_r.html",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "publisher documentation; hotlink only",
+        "captured_at": "2026-08-02",
+        "crop_description": "external reference — open in browser; no image committed",
+        "engraving_source_id": "ext-dorico-presets",
+        "kind": "external-hotlink"
+      },
+      "review_status": "needs-fix",
+      "review_note": "No local reference image (external docs hotlink)."
+    },
+    {
+      "id": "ext-symbol-survey",
+      "method": "external",
+      "family": "survey",
+      "canonical_ascii": "(various)",
+      "shape_ascii": null,
+      "as_printed": "(variant tables)",
+      "display_note": "Survey of printed chord-symbol conventions: '-' for minor, Δ for maj7, °/ø, parenthesized tensions. Useful cross-check when deciding which printed variants normalize to which canonical ASCII.",
+      "label_status": "needs_confirm",
+      "house_style": "Wikipedia — Chord names and symbols (popular music)",
+      "observe": [
+        "variant-to-canonical mapping notes for INPUT_GRAMMAR.md"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": null,
+        "hotlink_url": "https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music)",
+        "source_title": "Wikipedia — Chord names and symbols (popular music)",
+        "source_url": "https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music)",
+        "publisher_or_author": "Wikipedia contributors",
+        "license_or_use_basis": "CC BY-SA text; hotlink only",
+        "captured_at": "2026-08-02",
+        "crop_description": "external reference — open in browser; no image committed",
+        "engraving_source_id": "ext-symbol-survey",
+        "kind": "external-hotlink"
+      },
+      "review_status": "needs-fix",
+      "review_note": "No local reference image (external docs hotlink)."
+    },
+    {
+      "id": "c9sus4--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sus",
+      "canonical_ascii": "C9sus4",
+      "shape_ascii": "C9sus4",
+      "as_printed": "C9sus4",
+      "display_note": "Nine sus four. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "9sus grouping"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c9sus4--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "c9sus4--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sus",
+      "canonical_ascii": "C9sus4",
+      "shape_ascii": "C9sus4",
+      "as_printed": "C9sus4",
+      "display_note": "Nine sus four. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "9sus grouping"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/c9sus4--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "g7sus4--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sus",
+      "canonical_ascii": "G7sus4",
+      "shape_ascii": "G7sus4",
+      "as_printed": "G7sus4",
+      "display_note": "Seven sus four. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "sus4 as word+digit cluster",
+        "whether 4 is superscript"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7sus4--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "g7sus4--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sus",
+      "canonical_ascii": "G7sus4",
+      "shape_ascii": "G7sus4",
+      "as_printed": "G7sus4",
+      "display_note": "Seven sus four. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "sus4 as word+digit cluster",
+        "whether 4 is superscript"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/g7sus4--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ob-dsus4",
+      "method": "crop",
+      "family": "sus",
+      "canonical_ascii": "Dsus4",
+      "shape_ascii": "Dsus4",
+      "as_printed": "Dsus4 (window incl. next chord)",
+      "display_note": "Cry Me A River p53",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "sus4 letters size",
+        "4 as text not superscript?"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ob-dsus4.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Cry Me A River p53"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ps-9sus4",
+      "method": "glyph-specimen",
+      "family": "sus",
+      "canonical_ascii": "C9sus4",
+      "shape_ascii": "C9sus4",
+      "as_printed": "C9sus4",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-9sus4.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "bb-triad--lilyjazz",
+      "method": "tool-engraving",
+      "family": "triads",
+      "canonical_ascii": "Bb",
+      "shape_ascii": "Bb",
+      "as_printed": "B♭ (handwritten flat via chord font)",
+      "display_note": "Bare major triad, flat root. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "flat size vs cap height",
+        "flat baseline alignment",
+        "kerning B-to-flat"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/bb-triad--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "bb-triad--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "triads",
+      "canonical_ascii": "Bb",
+      "shape_ascii": "Bb",
+      "as_printed": "Bb",
+      "display_note": "Bare major triad, flat root. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "flat size vs cap height",
+        "flat baseline alignment",
+        "kerning B-to-flat"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/bb-triad--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "eb-triad--lilyjazz",
+      "method": "tool-engraving",
+      "family": "triads",
+      "canonical_ascii": "Eb",
+      "shape_ascii": "Eb",
+      "as_printed": "Eb",
+      "display_note": "Bare major triad, flat root. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "flat size and raise",
+        "E-to-flat gap"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/eb-triad--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "eb-triad--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "triads",
+      "canonical_ascii": "Eb",
+      "shape_ascii": "Eb",
+      "as_printed": "Eb",
+      "display_note": "Bare major triad, flat root. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "flat size and raise",
+        "E-to-flat gap"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/eb-triad--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "fsharp-triad--lilyjazz",
+      "method": "tool-engraving",
+      "family": "triads",
+      "canonical_ascii": "F#",
+      "shape_ascii": "F#",
+      "as_printed": "F♯ (handwritten sharp via chord font)",
+      "display_note": "Bare major triad, sharp root. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "sharp size vs cap height",
+        "sharp vertical centering",
+        "kerning F-to-sharp"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/fsharp-triad--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "fsharp-triad--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "triads",
+      "canonical_ascii": "F#",
+      "shape_ascii": "F#",
+      "as_printed": "F#",
+      "display_note": "Bare major triad, sharp root. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "sharp size vs cap height",
+        "sharp vertical centering",
+        "kerning F-to-sharp"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/fsharp-triad--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "pm-csym-minor",
+      "method": "glyph-specimen",
+      "family": "triads",
+      "canonical_ascii": "m (Real Book dash variant)",
+      "shape_ascii": null,
+      "as_printed": "- (csymMinor U+E874)",
+      "display_note": "SMuFL chord-symbol glyph from Petaluma music font",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL — canonical triangle/ø/°/+/- shapes to match",
+      "observe": [
+        "shape proportions vs cap height (compare against a root letter at same size)",
+        "stroke weight match with Script letters"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-csym-minor.png",
+        "source_title": "Petaluma (SMuFL) chord symbol glyphs",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/Petaluma.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma (SMuFL music font, Steinberg), OFL. Single SMuFL chord-symbol glyph rendered locally."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ps-dm7",
+      "method": "glyph-specimen",
+      "family": "triads",
+      "canonical_ascii": "Dm7",
+      "shape_ascii": "Dm7",
+      "as_printed": "Dm7",
+      "display_note": "Raw Petaluma Script string — glyph DNA only, no engraving layout",
+      "label_status": "verified",
+      "house_style": "Petaluma handwritten (ChordFont's upstream aesthetic) — raw font, no superscripting",
+      "observe": [
+        "stroke weight & handwriting irregularity",
+        "accidental glyph shapes at text size",
+        "letterform joins"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/ps-dm7.png",
+        "source_title": "Petaluma Script (Steinberg / SMuFL)",
+        "source_url": "https://github.com/steinbergmedia/petaluma",
+        "publisher_or_author": "Steinberg Media Technologies",
+        "license_or_use_basis": "SIL OFL 1.1 — rendered locally from redist/otf/PetalumaScript.otf",
+        "captured_at": "2026-08-02",
+        "crop_description": "Petaluma Script (text companion of SMuFL Petaluma, Steinberg), OFL. Raw string rendered locally at 110px via PIL — shows glyph outlines/weight ONLY, no engraving-engine layout (no superscripting, no kerning tweaks)."
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "e7b5--lilyjazz",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "E7b5",
+      "shape_ascii": "E7b5",
+      "as_printed": "E7b5",
+      "display_note": "Natural root, flat-5 alteration (flat binds to 5). Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "alteration-flat size vs root-flat"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/e7b5--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "e7b5--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "E7b5",
+      "shape_ascii": "E7b5",
+      "as_printed": "E7b5",
+      "display_note": "Natural root, flat-5 alteration (flat binds to 5). Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "alteration-flat size vs root-flat"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/e7b5--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "eb7--lilyjazz",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "Eb7",
+      "shape_ascii": "Eb7",
+      "as_printed": "Eb7",
+      "display_note": "Flat root + dominant 7 (accidental binds to root). Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "root-flat vs alteration-flat sizes",
+        "flat placement before 7"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/eb7--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "eb7--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "Eb7",
+      "shape_ascii": "Eb7",
+      "as_printed": "Eb7",
+      "display_note": "Flat root + dominant 7 (accidental binds to root). Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "root-flat vs alteration-flat sizes",
+        "flat placement before 7"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/eb7--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "eb7b5--lilyjazz",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "Eb7b5",
+      "shape_ascii": "Eb7b5",
+      "as_printed": "Eb7b5",
+      "display_note": "Flat root AND flat-5 — both accidental roles in one symbol. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "two flat glyphs: same size or differentiated?",
+        "root flat vs tension flat raise"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/eb7b5--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "eb7b5--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "Eb7b5",
+      "shape_ascii": "Eb7b5",
+      "as_printed": "Eb7b5",
+      "display_note": "Flat root AND flat-5 — both accidental roles in one symbol. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "two flat glyphs: same size or differentiated?",
+        "root flat vs tension flat raise"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/eb7b5--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "paren-bm7b5",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "Bm7(b5)",
+      "shape_ascii": "Bm7(b5)",
+      "as_printed": "Bm7(♭5) — typed paren pass-through (ADR-008)",
+      "display_note": "Deliberate P1 coverage for typed parentheses after m7. Canonical spelled form remains Bm7b5 (sibling cards); this card types Bm7(b5). Reference reuses LilyJAZZ Bm7b5 cell (may be inline — compare house style).",
+      "label_status": "verified",
+      "house_style": "ChordFont opt-in parens (ADR-008) vs LilyJAZZ reference",
+      "observe": [
+        "parens after baseline m7",
+        "b5 pair inside parens at superscript scale",
+        "not ø — this exercises spelled m7 + paren alteration"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/bm7b5--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "reused lilyjazz Bm7b5 cell; may be inline — ours is explicit Bm7(b5)",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": "ADR-008 coverage card"
+    },
+    {
+      "id": "paren-c7sharp11",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "C7(#11)",
+      "shape_ascii": "C7(#11)",
+      "as_printed": "C7(♯11) — typed paren pass-through (ADR-008)",
+      "display_note": "Deliberate P1 coverage for typed parentheses with multi-digit alteration. Sibling bare card is C7#11. Reference reuses LilyJAZZ C7(#11) engraving.",
+      "label_status": "verified",
+      "house_style": "ChordFont opt-in parens (ADR-008) vs LilyJAZZ reference",
+      "observe": [
+        "paren wraps sharp.alt + d1.sup d1.sup chain",
+        "11 stays superscript inside parens",
+        "compare to bare C7#11 sibling (no parens)",
+        "round-trip: text layer must show C7(#11)"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/c7sharp11--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "reused lilyjazz C7(#11) cell as visual target for typed-paren pass-through",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": "ADR-008 coverage card — accept once paren metrics look right vs reference"
+    },
+    {
+      "id": "paren-g7b9",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "G7(b9)",
+      "shape_ascii": "G7(b9)",
+      "as_printed": "G7(♭9) — typed paren pass-through (ADR-008)",
+      "display_note": "Deliberate P1 coverage for typed parentheses. Canonical Real Book is bare G7b9 (sibling cards); this card feeds G7(b9) so parenleft/parenright + inner alteration shaping stay exercised. Reference reuses the LilyJAZZ parenthesized G7(b9) engraving.",
+      "label_status": "verified",
+      "house_style": "ChordFont opt-in parens (ADR-008) vs LilyJAZZ reference",
+      "observe": [
+        "paren height vs ♭9 superscript band",
+        "inner flat.alt + d9.sup (not baseline 9)",
+        "no auto-parens on sibling bare G7b9 cards",
+        "round-trip: text layer must show G7(b9) not G7b9"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/g7b9--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "reused lilyjazz G7(b9) cell as visual target for typed-paren pass-through",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": "ADR-008 coverage card — accept once paren metrics look right vs reference"
+    },
+    {
+      "id": "cmaj7sharp11--lilyjazz",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "Cmaj7#11",
+      "shape_ascii": "Cmaj7#11",
+      "as_printed": "Cmaj7#11",
+      "display_note": "Major seventh sharp eleven. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "needs_confirm",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "triangle/maj7 followed by #11",
+        "alteration after quality"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cmaj7sharp11--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Reference renders as 'Clyd' (failed LilyPond/LilyJAZZ markup). Regenerate."
+    },
+    {
+      "id": "cmaj7sharp11--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "Cmaj7#11",
+      "shape_ascii": "Cmaj7#11",
+      "as_printed": "Cmaj7#11",
+      "display_note": "Major seventh sharp eleven. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "triangle/maj7 followed by #11",
+        "alteration after quality"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cmaj7sharp11--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Reference renders as 'Clyd' (failed LilyPond markup). Regenerate."
+    },
+    {
+      "id": "cmaj7sharp11--lilypond-spelled",
+      "method": "tool-engraving",
+      "family": "alterations",
+      "canonical_ascii": "Cmaj7#11",
+      "shape_ascii": "Cmaj7#11",
+      "as_printed": "Cmaj7#11",
+      "display_note": "Major seventh sharp eleven. Engraved by LilyPond default with spelled maj7 (Hal Leonard-ish).",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+      "observe": [
+        "triangle/maj7 followed by #11",
+        "alteration after quality"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cmaj7sharp11--lilypond-spelled.png",
+        "source_title": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Reference renders as 'Clyd' (failed LilyPond markup). Regenerate."
+    },
+    {
+      "id": "cdim--lilyjazz",
+      "method": "tool-engraving",
+      "family": "dim",
+      "canonical_ascii": "Cdim",
+      "shape_ascii": "Cdim",
+      "as_printed": "Cdim",
+      "display_note": "Diminished triad. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "dim marker form"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cdim--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "cdim--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "dim",
+      "canonical_ascii": "Cdim",
+      "shape_ascii": "Cdim",
+      "as_printed": "C°",
+      "display_note": "Diminished triad. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "dim marker form"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cdim--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "ob-ab9",
+      "method": "crop",
+      "family": "extensions",
+      "canonical_ascii": "Ab9",
+      "shape_ascii": "Ab9",
+      "as_printed": "A♭9 (or A♭maj7 — confirm)",
+      "display_note": "Angel Eyes p22",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "9 at same superscript size as 7?"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-ab9.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Angel Eyes p22"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop includes boxed rehearsal letter — re-crop symbol only."
+    },
+    {
+      "id": "ob-eb7b9",
+      "method": "crop",
+      "family": "extensions",
+      "canonical_ascii": "Eb7b9",
+      "shape_ascii": "Eb7b9",
+      "as_printed": "E♭7♭9",
+      "display_note": "flat root + flat 9 — double-flat disambiguation; Angel Eyes p22",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "root flat vs alteration flat size difference"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-eb7b9.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "flat root + flat 9 — double-flat disambiguation; Angel Eyes p22"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cmmaj7--lilyjazz",
+      "method": "tool-engraving",
+      "family": "minor",
+      "canonical_ascii": "CmMaj7",
+      "shape_ascii": "CmMaj7",
+      "as_printed": "CmMaj7",
+      "display_note": "Minor with major seventh. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "how maj7 is marked inside minor (M7 / maj7 / natural-7)"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cmmaj7--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cmmaj7--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "minor",
+      "canonical_ascii": "CmMaj7",
+      "shape_ascii": "CmMaj7",
+      "as_printed": "CmMaj7",
+      "display_note": "Minor with major seventh. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "how maj7 is marked inside minor (M7 / maj7 / natural-7)"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cmmaj7--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cmmaj7--lilypond-spelled",
+      "method": "tool-engraving",
+      "family": "minor",
+      "canonical_ascii": "CmMaj7",
+      "shape_ascii": "CmMaj7",
+      "as_printed": "CmMaj7",
+      "display_note": "Minor with major seventh. Engraved by LilyPond default with spelled maj7 (Hal Leonard-ish).",
+      "label_status": "verified",
+      "house_style": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+      "observe": [
+        "how maj7 is marked inside minor (M7 / maj7 / natural-7)"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cmmaj7--lilypond-spelled.png",
+        "source_title": "LilyPond default with spelled maj7 (Hal Leonard-ish)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "lp-chord-name-chart",
+      "method": "external",
+      "family": "overview",
+      "canonical_ascii": "(chart: full Ignatzek naming table)",
+      "shape_ascii": null,
+      "as_printed": "(multi-symbol chart)",
+      "display_note": "LilyPond's full chord-name chart — one image covering triads through 13ths in the same engraving as the OpenBook crops",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek)",
+      "observe": [
+        "systematic naming across the whole matrix"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/lp-chord-name-chart.png",
+        "remote_url": "https://lilypond.org/doc/v2.25/Documentation/17/lily-3ed4d53a.png",
+        "source_title": "LilyPond Notation Reference B.1 Chord name chart",
+        "source_url": "https://lilypond.org/doc/v2.25/Documentation/notation/chord-name-chart",
+        "publisher_or_author": "LilyPond project",
+        "license_or_use_basis": "GNU FDL (LilyPond documentation)",
+        "captured_at": "2026-08-02",
+        "crop_description": "full chart image; hotlinked until fetch-remote.sh localizes it"
+      },
+      "review_status": "needs-fix",
+      "review_note": "image-missing locally; remote hotlink only — run fetch-remote.sh"
+    },
+    {
+      "id": "c6--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sixths",
+      "canonical_ascii": "C6",
+      "shape_ascii": "C6",
+      "as_printed": "C6",
+      "display_note": "Sixth chord. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "6 raise and size"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/c6--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "c6--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sixths",
+      "canonical_ascii": "C6",
+      "shape_ascii": "C6",
+      "as_printed": "C6",
+      "display_note": "Sixth chord. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "6 raise and size"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/c6--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "c69--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sixths",
+      "canonical_ascii": "C6/9",
+      "shape_ascii": "C6/9",
+      "as_printed": "C6/9 (slashed)",
+      "display_note": "Six-nine — stacked or slashed 6/9. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "6/9 slash vs stack",
+        "digit sizes"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/c69--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "c69--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sixths",
+      "canonical_ascii": "C6/9",
+      "shape_ascii": "C6/9",
+      "as_printed": "C6/9",
+      "display_note": "Six-nine — stacked or slashed 6/9. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "6/9 slash vs stack",
+        "digit sizes"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/c69--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "accepted",
+      "review_note": ""
+    },
+    {
+      "id": "cm6--lilyjazz",
+      "method": "tool-engraving",
+      "family": "sixths",
+      "canonical_ascii": "Cm6",
+      "shape_ascii": "Cm6",
+      "as_printed": "Cm6",
+      "display_note": "Minor sixth. Engraved by LilyJAZZ (handwritten, Real Book adjacent).",
+      "label_status": "verified",
+      "house_style": "LilyJAZZ (handwritten, Real Book adjacent)",
+      "observe": [
+        "m6 grouping"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cm6--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "cm6--lilypond-classical",
+      "method": "tool-engraving",
+      "family": "sixths",
+      "canonical_ascii": "Cm6",
+      "shape_ascii": "Cm6",
+      "as_printed": "Cm6",
+      "display_note": "Minor sixth. Engraved by LilyPond default (Emmentaler, classical engraving).",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Emmentaler, classical engraving)",
+      "observe": [
+        "m6 grouping"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/cm6--lilypond-classical.png",
+        "source_title": "LilyPond default (Emmentaler, classical engraving)",
+        "source_url": "https://lilypond.org",
+        "publisher_or_author": "lilypond",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "single chord symbol, auto-cropped from ChordNames render at 300dpi",
+        "engraving_source_id": "lilypond",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-c6",
+      "method": "crop",
+      "family": "sixths",
+      "canonical_ascii": "C6",
+      "shape_ascii": "C6",
+      "as_printed": "C6 (or C — confirm)",
+      "display_note": "A Fine Romance p8",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "6 same treatment as 7?"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-c6.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Fine Romance p8"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-am7-p67",
+      "method": "crop",
+      "family": "triads",
+      "canonical_ascii": "Am7",
+      "shape_ascii": "Am7",
+      "as_printed": "Am7 (per crop)",
+      "display_note": "Fly Me To The Moon p67",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "m7"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-am7-p67.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Fly Me To The Moon p67"
+      },
+      "review_status": "needs-fix",
+      "review_note": "Crop window includes Allegro tempo marking — re-crop symbol only."
+    },
+    {
+      "id": "ob-cm",
+      "method": "crop",
+      "family": "triads",
+      "canonical_ascii": "Cm",
+      "shape_ascii": "Cm",
+      "as_printed": "Cm",
+      "display_note": "Angel Eyes p22",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "bare minor"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-cm.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Angel Eyes p22"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-cm7-p5",
+      "method": "crop",
+      "family": "triads",
+      "canonical_ascii": "Cm7",
+      "shape_ascii": "Cm7",
+      "as_printed": "Cm7 (or Cm — confirm)",
+      "display_note": "500 Miles High p5",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "m7 pair"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-cm7-p5.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "500 Miles High p5"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-fm",
+      "method": "crop",
+      "family": "triads",
+      "canonical_ascii": "Fm",
+      "shape_ascii": "Fm",
+      "as_printed": "Fm",
+      "display_note": "A Cup Of Coffee p6",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "bare minor, F shape"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-fm.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "A Cup Of Coffee p6"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-g-p103",
+      "method": "crop",
+      "family": "triads",
+      "canonical_ascii": "G",
+      "shape_ascii": "G",
+      "as_printed": "G (per crop)",
+      "display_note": "Lost In The Stars p103",
+      "label_status": "needs_confirm",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "bare major root"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-g-p103.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Lost In The Stars p103"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "ob-gm-p56",
+      "method": "crop",
+      "family": "triads",
+      "canonical_ascii": "Gm",
+      "shape_ascii": "Gm",
+      "as_printed": "Gm",
+      "display_note": "Desafinado p56",
+      "label_status": "verified",
+      "house_style": "LilyPond default (Ignatzek) engraving — clean engraved, NOT handwritten",
+      "observe": [
+        "m height/joins vs root"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/ob-gm-p56.png",
+        "source_title": "OpenBook — an open source Jazz real book",
+        "source_url": "https://github.com/veltzer/openbook",
+        "publisher_or_author": "Mark Veltzer (typesetting); LilyPond 2.24.4 default Ignatzek chord names",
+        "license_or_use_basis": "GPL typesetting; minimal single-symbol crop for internal font QA",
+        "captured_at": "2026-08-02",
+        "crop_description": "Desafinado p56"
+      },
+      "review_status": "unreviewed",
+      "review_note": ""
+    }
+  ]
+}

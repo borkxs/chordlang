@@ -1,0 +1,139 @@
+{
+  "sources": [
+    {
+      "key": "openbook",
+      "title": "OpenBook — an open source Jazz real book",
+      "url": "https://github.com/veltzer/openbook",
+      "artifact": "docs/output/openbook.pdf (master, build 2025-10-22, LilyPond 2.24.4)",
+      "publisher_or_author": "Mark Veltzer (typesetting); tune copyrights belong to their respective holders",
+      "license_or_use_basis": "Typesetting is GPL. We commit only minimal single-chord-symbol crops (a few glyphs each) for internal font QA — chord symbols themselves are not protectable expression; no melodies, no full systems, no full pages are committed.",
+      "house_style": "LilyPond default Ignatzek chord naming, engraved (Emmentaler/serif text). Notable house choices observed: 'dim' spelled out (no degree sign), m7b5 spelled out (no oslash), maj7 spelled out (no triangle).",
+      "entries_prefix": "ob-",
+      "reproduce": "git clone https://github.com/veltzer/openbook && open docs/output/openbook.pdf at the page recorded in each entry's display_note"
+    },
+    {
+      "key": "petaluma-script",
+      "title": "Petaluma Script (text companion font of SMuFL Petaluma)",
+      "url": "https://github.com/steinbergmedia/petaluma",
+      "artifact": "redist/otf/PetalumaScript.otf",
+      "publisher_or_author": "Steinberg Media Technologies",
+      "license_or_use_basis": "SIL Open Font License 1.1. Rendered locally (PIL, 110px). These are raw strings — no engraving engine, so NO superscripting/stacking; they show glyph outlines, stroke weight, and accidental shapes only.",
+      "house_style": "Handwritten jazz (Dorico's jazz look; ChordFont's upstream glyph source)",
+      "entries_prefix": "ps-",
+      "reproduce": "tools/lookbook/render_specimens.py regenerates all ps-*/pm-* refs from the OTFs"
+    },
+    {
+      "key": "petaluma-smufl",
+      "title": "Petaluma (SMuFL music font) chord-symbol glyphs",
+      "url": "https://github.com/steinbergmedia/petaluma",
+      "artifact": "redist/otf/Petaluma.otf — csymDiminished U+E870, csymHalfDiminished U+E871, csymAugmented U+E872, csymMajorSeventh U+E873, csymMinor U+E874",
+      "publisher_or_author": "Steinberg Media Technologies",
+      "license_or_use_basis": "SIL OFL 1.1, rendered locally",
+      "house_style": "Canonical Petaluma triangle / degree / oslash / plus / dash shapes",
+      "entries_prefix": "pm-"
+    },
+    {
+      "key": "lilypond-docs",
+      "title": "LilyPond Notation Reference — chord name chart & Common chord modifiers",
+      "url": "https://lilypond.org/doc/v2.25/Documentation/notation/chord-name-chart",
+      "artifact": "https://lilypond.org/doc/v2.25/Documentation/17/lily-3ed4d53a.png (hotlinked; run fetch-remote.sh to localize)",
+      "publisher_or_author": "LilyPond project",
+      "license_or_use_basis": "GNU Free Documentation License (LilyPond docs)",
+      "entries_prefix": "lp-"
+    },
+    {
+      "key": "lilypond",
+      "title": "GNU LilyPond 2.24.3 default engraving (Emmentaler)",
+      "url": "https://lilypond.org",
+      "publisher_or_author": "LilyPond developers",
+      "license_or_use_basis": "engraving generated locally from our own .ly input; LilyPond is GPL, its output is ours to use",
+      "kind": "tool-engraving",
+      "notes": "Two variants: stock ignatzek chord names ('lilypond-classical') and majorSevenSymbol=maj7 ('lilypond-spelled')."
+    },
+    {
+      "key": "lilyjazz",
+      "title": "LilyJAZZ handwritten music font + jazzchords stylesheet",
+      "url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+      "publisher_or_author": "Abraham Lee, Torsten Hämmerle (SIL OFL 1.1)",
+      "license_or_use_basis": "SIL OFL 1.1 fonts; engraving generated locally; Real Book-adjacent handwritten style",
+      "kind": "tool-engraving",
+      "notes": "Chord names use the lilyjazz-chord text font; root accidentals map through that font."
+    },
+    {
+      "key": "lilyjazz-allofme",
+      "title": "All of Me — LilyJAZZ repo example lead sheet",
+      "url": "https://github.com/OpenLilyPondFonts/lilyjazz/blob/master/examples/AllOfMe.ly",
+      "publisher_or_author": "Engraving: LilyJAZZ examples; composition: Seymour Simons & Gerald Marks (1931)",
+      "license_or_use_basis": "fair-use educational crops — single chord symbols only, no melodic content committed; composition enters US public domain 2027-01-01",
+      "kind": "in-context-crop",
+      "notes": "Crops taken from a local 300dpi render of the repo's own .ly source."
+    },
+    {
+      "key": "ext-halfdim-variants",
+      "title": "Wikipedia — Half-diminished seventh chord",
+      "url": "https://en.wikipedia.org/wiki/Half-diminished_seventh_chord",
+      "publisher_or_author": "Wikipedia contributors",
+      "license_or_use_basis": "CC BY-SA; hotlink only",
+      "kind": "external-hotlink",
+      "notes": ""
+    },
+    {
+      "key": "ext-symbol-survey",
+      "title": "Wikipedia — Chord names and symbols (popular music)",
+      "url": "https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music)",
+      "publisher_or_author": "Wikipedia contributors",
+      "license_or_use_basis": "CC BY-SA; hotlink only",
+      "kind": "external-hotlink",
+      "notes": ""
+    },
+    {
+      "key": "ext-dorico-presets",
+      "title": "Steinberg Dorico docs — Chord symbol appearance presets",
+      "url": "https://steinberg.help/dorico/v4/en/dorico/topics/notation_reference/notation_reference_chord_symbols/notation_reference_chord_symbols_appearance_presets_r.html",
+      "publisher_or_author": "Steinberg Media Technologies",
+      "license_or_use_basis": "publisher documentation; hotlink only",
+      "kind": "external-hotlink",
+      "notes": ""
+    }
+  ],
+  "wanted_next": [
+    {
+      "what": "Genuine handwritten Real Book scans (Hal Leonard 6th ed. or older editions)",
+      "why": "the primary aesthetic target; only obtainable as personal photographs/scans of owned copies — photograph single chord symbols, add as fair-use educational crops",
+      "families": [
+        "all P0, esp. triangle maj7, dash-minor, oslash half-dim"
+      ]
+    },
+    {
+      "what": "New Real Book (Sher Music) sample pages",
+      "why": "cleanest modern engraved-jazz house style; Sher publishes preview pages",
+      "families": [
+        "alterations",
+        "parenthesized tensions (wall-tier)"
+      ]
+    },
+    {
+      "what": "MuseScore MuseJazz rendering",
+      "why": "second handwritten-style engraving engine for style triangulation; render a test chart in MuseScore 4 and crop",
+      "families": [
+        "all"
+      ]
+    },
+    {
+      "what": "Dorico + Petaluma chord symbols",
+      "why": "THE reference for how Petaluma glyphs are composed by a real engraving engine (superscript sizes, accidental raises) — Steinberg docs 'Chord symbols appearance' pages, or a Dorico SE (free) render",
+      "families": [
+        "all P0"
+      ]
+    },
+    {
+      "what": "IMSLP/Wikimedia public-domain lead sheets with chord symbols",
+      "why": "period hand-engraving diversity",
+      "families": [
+        "triads",
+        "sevenths",
+        "dim"
+      ]
+    }
+  ]
+}

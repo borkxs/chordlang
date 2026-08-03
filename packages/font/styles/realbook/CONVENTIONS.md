@@ -26,7 +26,13 @@ The canonical modern jazz lead sheet standard, as established by The New Real Bo
 
 3. **Slash notation:**
    - Slash separator in compound chords (6/9)
-   - Bass note indicators (C/E)
+   - Bass note indicators (`C/E`) at **full root size** (not shrunk)
+   - Slash sidebearings stay roomy so bass does not collide (ADR-009)
+
+4. **Alterations — no auto-parentheses (ADR-008):**
+   - Canonical form is inline: `C7♭9`, `C7♯11`, `G7♯5♭9`
+   - Typed `G7(b9)` keeps linear parens; the font never inserts them
+   - Multi-tier parenthesized stacks are WALL (ADR-006)
 
 ### Specific Examples (from Real Book guide)
 
@@ -45,10 +51,12 @@ Csus2      →  Csus2      (all baseline)
 
 C9         →  C9         (all baseline)
 C13        →  C13        (all baseline)
-C7♭9       →  C7♭⁹       (7 baseline, ♭9 superscript)
-C7#9       →  C7#⁹       (7 baseline, #9 superscript)
-C7♯11      →  C7#¹¹      (7 baseline, #11 superscript)
+C7♭9       →  C7♭⁹       (7 baseline, ♭9 superscript; inline, not parenthesized)
+C7#9       →  C7#⁹       (7 baseline, #9 superscript; inline)
+C7♯11      →  C7#¹¹      (7 baseline, #11 superscript; inline)
+G7(b9)     →  G7(♭⁹)     (parens only when typed — ADR-008)
 C7alt      →  C7ᵃˡᵗ      (7 baseline, alt superscript)
+Cmaj7/E    →  C△7/E      (slash + full-size bass — ADR-009)
 
 Cmaj7#11   →  C△7#¹¹     (△7 baseline, #11 superscript)
 Cmaj9      →  C△9        (all baseline)
@@ -58,8 +66,10 @@ Cmaj9      →  C△9        (all baseline)
 
 ### Contextual Superscripting
 
-**Current implementation:** Digits are superscripted **only** when they appear after
-an alteration accidental (`flat.alt` or `sharp.alt`).
+**Current implementation (ADR-011):** Digits are superscripted **only** when they
+appear after an alteration accidental (`flat.alt` or `sharp.alt`), or immediately
+inside typed linear parentheses. Primary extensions (`7`, `9`, `11`, `13`) stay
+on the baseline — chosen Real Book hierarchy, not an accident.
 
 ```
 # Baseline context (no superscript)

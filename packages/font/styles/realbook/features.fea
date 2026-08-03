@@ -21,6 +21,8 @@ feature calt {{
     # Only superscript digits after alteration accidentals (proper jazz engraving)
     sub flat.alt @digit' by @digitsup;
     sub sharp.alt @digit' by @digitsup;
+    # Digits immediately inside linear parentheses: G7(9) / G7(13)
+    sub parenleft @digit' by @digitsup;
     # Chain superscripts for multi-digit alterations like #11, b13
     sub @digitsup @digit' by @digitsup;
     # Slash in 6/9 notation gets superscripted when surrounded by digits

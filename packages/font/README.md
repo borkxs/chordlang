@@ -69,7 +69,7 @@ Handwritten glyph outlines are extracted from [Petaluma](https://github.com/stei
 
 | Tier | Mechanism | Status |
 |------|-----------|--------|
-| **EASY** | Single-sequence ligature (`F#` → F♯) | Straightforward `liga` |
+| **EASY** | Single-sequence ligature (`F#` → F♯), `ø` half-dim, linear `G7(b9)` parens | Straightforward `liga` / cmap |
 | **MAYBE / HARD** | Contextual superscripting, chained multi-digit extensions, post-accidental digits | **Proven in HarfBuzz — this is our scope** |
 | **WALL** | 2D vertical stacking of parenthesized tensions (`G7(♯11)(♭13)`) | **Out of scope for the font** |
 
@@ -149,17 +149,23 @@ Glyphs are handwritten outlines derived from Petaluma (OFL). To nudge alignment,
 
 Every new feature must land with a passing assertion in `tests/shape_test.py`. CI fails on any mismatch.
 
-## Visual atlas (feedback loop)
+## Visual feedback loops
 
-For exhaustive proofing across all roots and suffix patterns — especially when
-iterating with an agent — run from the **repo root**:
+**Look book** — side-by-side printed crops, LilyPond/LilyJAZZ, and Petaluma
+specimens vs live ChordFont (best for tuning against real engraving):
+
+```bash
+make lookbook   # → tools/lookbook/lookbook.html
+```
+
+**Atlas** — exhaustive roots × suffix matrix:
 
 ```bash
 make font-atlas
 ```
 
 Writes `dist/atlas.png`, `dist/atlas.html`, and `dist/atlas-symbols.json`
-(gitignored). Step-by-step loop, CLI flags, and how to extend the symbol matrix:
+(gitignored). See [`tools/lookbook/README.md`](../../tools/lookbook/README.md) and
 [`tools/font-atlas/README.md`](../../tools/font-atlas/README.md).
 
 ## Roadmap

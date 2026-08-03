@@ -11,7 +11,7 @@
  *
  * ChordFont is inlined as a data-URI — file:// @font-face fails in headless Chromium.
  *
- * Usage: make previews   (requires Node 22+, ChordProof.ttf, Playwright chromium)
+ * Usage: make previews   (requires Node 22+, ChordFont TTFs, Playwright chromium)
  */
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { constants } from "node:fs";
@@ -25,7 +25,9 @@ import { normalize } from "../packages/chord/src/index.ts";
 import { renderChartToHTML } from "../packages/render/src/index.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const FONT = join(ROOT, "apps/playground/public/fonts/ChordProof.ttf");
+const FONTS_DIR = join(ROOT, "apps/playground/public/fonts");
+const FONT_REALBOOK = join(FONTS_DIR, "ChordFont-Real Book.ttf");
+const FONT_POP = join(FONTS_DIR, "ChordFont-Pop.ttf");
 const CHART_CSS = join(ROOT, "packages/render/chart.css");
 const FONT_SRC = join(ROOT, "examples/font");
 const CHARTS_SRC = join(ROOT, "examples/charts");
@@ -86,10 +88,15 @@ body{margin:0;background:#888}
   console.log(`  font/${name}.png`);
 }
 
-async function renderCharts(browser: Browser, chartCss: string, fontBase64: string) {
+async function renderCharts(
+  browser: Browser,
+  chartCss: string,
+  fonts: { realbook: string; pop: string },
+) {
   for (const { file } of manifest.charts) {
     const src = await readFile(join(CHARTS_SRC, `${file}.cfmd`), "utf8");
     const html = renderChartToHTML(parseChart(src), { normalize, lenient: true });
+    const fontBase64 = file.endsWith("-pop") ? fonts.pop : fonts.realbook;
     const doc = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 ${fontFace(fontBase64)}
 body{margin:0;background:#888}
@@ -120,29 +127,32 @@ body{margin:0;background:#888}
 }
 
 async function main() {
-  if (!(await exists(FONT))) {
-    console.error(`Missing ${FONT} — run 'make font' first.`);
-    process.exit(1);
+  for (const fontPath of [FONT_REALBOOK, FONT_POP]) {
+    if (!(await exists(fontPath))) {
+      console.error(`Missing ${fontPath} — run 'make font' first.`);
+      process.exit(1);
+    }
   }
 
   await mkdir(OUT_FONT, { recursive: true });
   await mkdir(OUT_CHARTS, { recursive: true });
   await mkdir(OUT_GRAPHS, { recursive: true });
 
-  const [chartCss, fontBase64] = await Promise.all([
+  const [chartCss, realbook, pop] = await Promise.all([
     readFile(CHART_CSS, "utf8"),
-    readFile(FONT).then((buf) => buf.toString("base64")),
+    readFile(FONT_REALBOOK).then((buf) => buf.toString("base64")),
+    readFile(FONT_POP).then((buf) => buf.toString("base64")),
   ]);
   const browser = await chromium.launch();
   const graphviz = await Graphviz.load();
 
   try {
     console.log("Rendering README font preview…");
-    await renderReadmeFont(browser, fontBase64);
+    await renderReadmeFont(browser, realbook);
     console.log("Rendering chart previews…");
-    await renderCharts(browser, chartCss, fontBase64);
+    await renderCharts(browser, chartCss, { realbook, pop });
     console.log("Rendering graph previews…");
-    await renderGraphs(browser, graphviz, fontBase64);
+    await renderGraphs(browser, graphviz, realbook);
   } finally {
     await browser.close();
   }

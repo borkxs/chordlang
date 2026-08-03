@@ -11,7 +11,7 @@
  *   node --experimental-strip-types tools/font-atlas/render-atlas.ts
  *   node --experimental-strip-types tools/font-atlas/render-atlas.ts --out /tmp/atlas
  *
- * Requires: Node 22+, ChordProof.ttf, Playwright chromium (`make setup`).
+ * Requires: Node 22+, ChordFont Real Book TTF, Playwright chromium (`make setup`).
  */
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { constants } from "node:fs";
@@ -21,7 +21,7 @@ import { chromium } from "playwright";
 import { SYMBOL_GROUPS, ROOTS, buildAtlasEntries, buildUniqueSymbols, type AtlasEntry } from "./catalog.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
-const DEFAULT_FONT = join(ROOT, "packages/font/dist/ChordProof.ttf");
+const DEFAULT_FONT = join(ROOT, "packages/font/dist/ChordFont-Real Book.ttf");
 const DEFAULT_OUT = join(ROOT, "packages/font/dist");
 
 function parseArgs(argv: string[]) {

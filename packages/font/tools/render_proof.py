@@ -17,7 +17,7 @@ import uharfbuzz as hb
 from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parents[1]
-FONT_PATH = ROOT / "dist" / "ChordProof.ttf"
+FONT_PATH = ROOT / "dist" / "ChordFont-Real Book.ttf"
 
 DEFAULT_CHORDS = [
     "Cmaj7", "Fmaj7", "Dm7b5", "Bm7b5", "Em7b5", "F#m7b5",
@@ -84,11 +84,11 @@ def generate_proof_html(chords):
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>ChordProof — GSUB Proof Sheet</title>
+<title>ChordFont — GSUB Proof Sheet</title>
 <style>
 @font-face {{
-  font-family: "ChordProof";
-  src: url("ChordProof.ttf?v={int(FONT_PATH.stat().st_mtime)}") format("truetype");
+  font-family: "ChordFont";
+  src: url("{FONT_PATH.name}?v={int(FONT_PATH.stat().st_mtime)}") format("truetype");
 }}
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
 body {{
@@ -112,7 +112,8 @@ p.meta {{ font-size: .8rem; color: #888; margin-bottom: 1rem; }}
   text-align: center;
 }}
 .chord {{
-  font-family: "ChordProof", serif;
+  font-family: "ChordFont", serif;
+  font-feature-settings: "liga" 1, "calt" 1;
   font-size: 2.2rem;
   line-height: 1.4;
   letter-spacing: 0;
@@ -126,8 +127,8 @@ p.meta {{ font-size: .8rem; color: #888; margin-bottom: 1rem; }}
 </style>
 </head>
 <body>
-<h1>ChordProof — GSUB Proof Sheet</h1>
-<p class="meta">Font: ChordProof.ttf &middot; {len(chords)} chords</p>
+<h1>ChordFont — GSUB Proof Sheet</h1>
+<p class="meta">Font: {FONT_PATH.name} &middot; {len(chords)} chords</p>
 <div class="proof-grid">
 {cards}
 </div>
