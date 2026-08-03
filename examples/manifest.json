@@ -5,23 +5,23 @@
     "graph": "ii-v-i-chain"
   },
   "charts": [
-    { "file": "walkin-thing", "label": "Walkin Thing" },
-    { "file": "stress-test", "label": "Stress test" },
-    { "file": "blues-in-f", "label": "Blues in F" },
-    { "file": "giant-steps", "label": "Giant Steps" },
-    { "file": "all-the-things-realbook", "label": "All The Things (Real Book)" },
-    { "file": "d-modal", "label": "D Modal" },
-    { "file": "yesterday-pop", "label": "Yesterday (Pop)" },
-    { "file": "god-only-knows-pop", "label": "God Only Knows (Pop)" },
-    { "file": "let-it-be-pop", "label": "Let It Be (Pop)" }
+    { "file": "walkin-thing", "label": "Walkin Thing", "group": "Jazz" },
+    { "file": "blues-in-f", "label": "Blues in F", "group": "Jazz" },
+    { "file": "giant-steps", "label": "Giant Steps", "group": "Jazz" },
+    { "file": "all-the-things-realbook", "label": "All The Things (Real Book)", "group": "Jazz" },
+    { "file": "d-modal", "label": "D Modal", "group": "Jazz" },
+    { "file": "yesterday-pop", "label": "Yesterday (Pop)", "group": "Pop" },
+    { "file": "god-only-knows-pop", "label": "God Only Knows (Pop)", "group": "Pop" },
+    { "file": "let-it-be-pop", "label": "Let It Be (Pop)", "group": "Pop" },
+    { "file": "stress-test", "label": "Stress test", "group": "Fixtures" }
   ],
   "graphs": [
-    { "file": "ii-v-i-chain", "label": "ii–V–I chain" },
-    { "file": "so-what", "label": "So What" },
-    { "file": "giant-steps", "label": "Giant Steps" },
-    { "file": "stella-by-starlight", "label": "Stella by Starlight" },
-    { "file": "rhythm-changes", "label": "Rhythm changes" },
-    { "file": "blues-turnaround", "label": "Blues turnaround" },
-    { "file": "autumn-leaves-a", "label": "Autumn Leaves (A)" }
+    { "file": "ii-v-i-chain", "label": "ii–V–I chain", "group": "Graphs" },
+    { "file": "so-what", "label": "So What", "group": "Graphs" },
+    { "file": "giant-steps", "label": "Giant Steps", "group": "Graphs" },
+    { "file": "stella-by-starlight", "label": "Stella by Starlight", "group": "Graphs" },
+    { "file": "rhythm-changes", "label": "Rhythm changes", "group": "Graphs" },
+    { "file": "blues-turnaround", "label": "Blues turnaround", "group": "Graphs" },
+    { "file": "autumn-leaves-a", "label": "Autumn Leaves (A)", "group": "Graphs" }
   ]
 }

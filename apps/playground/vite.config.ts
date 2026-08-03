@@ -23,10 +23,9 @@ function exampleRoutesPlugin(pagesBase: string): Plugin {
         const graph = routePrefix
           ? new RegExp(`^${routePrefix}/graph(/[^/?#]+)?/?$`)
           : /^\/graph(\/[^/?#]+)?\/?$/;
-        if (chart.test(path)) {
+        // Unified SPA: both chart and graph routes serve index.html
+        if (chart.test(path) || graph.test(path)) {
           req.url = `${pagesBase}index.html${qs}`.replace(/\/+/g, "/");
-        } else if (graph.test(path)) {
-          req.url = `${pagesBase}graph.html${qs}`.replace(/\/+/g, "/");
         }
         next();
       });
@@ -45,7 +44,7 @@ function exampleRoutesPlugin(pagesBase: string): Plugin {
       for (const { file } of graphs) {
         const dir = join(dist, "graph", file);
         mkdirSync(dir, { recursive: true });
-        cpSync(join(dist, "graph.html"), join(dir, "index.html"));
+        cpSync(join(dist, "index.html"), join(dir, "index.html"));
       }
     },
   };
@@ -65,6 +64,7 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: resolve(ROOT, "index.html"),
+          // Legacy entry: redirects into the unified SPA at /graph/:slug
           graph: resolve(ROOT, "graph.html"),
         },
       },

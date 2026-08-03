@@ -18,7 +18,8 @@ LilyPond) — not part of the playground/preview pipeline. See
 `manifest.json` has two roles:
 
 - **`readme`** — which files the root README embeds (source text + PNG must match).
-- **`charts` / `graphs`** — playground chip order and full preview output list.
+- **`charts` / `graphs`** — playground example order (optional `group` for the
+  picker sections) and full preview output list.
 
 ## Edit workflow
 
@@ -49,7 +50,9 @@ Each manifest `file` slug is a playground route:
 - Charts: `/chart/walkin-thing`, `/chart/giant-steps`, …
 - Graphs: `/graph/ii-v-i-chain`, `/graph/giant-steps`, …
 
-When a slug exists in both lists (e.g. `giant-steps`), the nav shows a **chart →** / **graph →** link to the matching peer.
+Charts and graphs share one playground; pick either kind from the grouped
+example dropdown (Jazz / Pop / Fixtures / Graphs). Routes stay
+`/chart/:slug` and `/graph/:slug` so examples remain deep-linkable.
 
 Graph DOT is passed straight to Graphviz; chordlang only post-styles the SVG
 (ChordFont on `<text>`). Charts go through parse → normalize → render → screenshot.

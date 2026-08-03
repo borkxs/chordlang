@@ -7,35 +7,96 @@
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
-  <header class="bar">
+  <!-- 1 ── identity bar: brand + links only -->
+  <header class="idbar">
     <span class="wordmark">chordlang</span>
-    <span class="tagline">lead-sheet charts · engraved output · <a class="demo-link" id="graph-demo" href="#">graph demo</a></span>
-    <div class="font-style-selector">
-      <label for="font-style">Style:</label>
-      <select id="font-style">
-        <option value="realbook">Real Book (jazz)</option>
-        <option value="pop">Pop</option>
-      </select>
-    </div>
-    <nav class="examples" id="examples"></nav>
+    <span class="tagline">lead-sheet charts · engraved output</span>
+    <span class="spacer"></span>
+    <a href="https://github.com/borkxs/chordlang#readme">docs</a>
+    <a href="https://github.com/borkxs/chordlang">github</a>
   </header>
-  <main class="split">
-    <section class="pane pane-source">
-      <label class="pane-label" for="source">source</label>
+
+  <!-- 2 ── workspace toolbar: everything that changes the demo -->
+  <div class="toolbar">
+    <div class="ctl ctl-example" id="example-ctl" title="Previous / next example ([ ])">
+      <div class="ctl-picker" id="example-btn" role="button" tabindex="0" aria-haspopup="listbox">
+        <div class="ctl-copy">
+          <span class="lbl">Example</span>
+          <span class="val">
+            <span id="example-name">…</span>
+            <span class="badge" id="example-badge">md</span>
+          </span>
+        </div>
+        <span class="chev" aria-hidden="true"></span>
+      </div>
+      <button type="button" class="ctl-step" id="prev-ex" aria-label="Previous example">‹</button>
+      <button type="button" class="ctl-step" id="next-ex" aria-label="Next example">›</button>
+      <div class="menu" id="example-menu" role="listbox"></div>
+    </div>
+
+    <label class="ctl ctl-select" for="font-style">
+      <div class="ctl-copy">
+        <span class="lbl">Style</span>
+        <span class="val">
+          <select id="font-style">
+            <option value="realbook">Real Book (jazz)</option>
+            <option value="pop">Pop</option>
+          </select>
+        </span>
+      </div>
+      <span class="chev" aria-hidden="true"></span>
+    </label>
+
+    <div class="ctl" id="build-btn" style="min-width:210px" role="button" tabindex="0" aria-haspopup="listbox">
+      <div class="ctl-copy">
+        <span class="lbl">Font build</span>
+        <span class="val">
+          <span id="build-name">Real Book · full</span>
+        </span>
+      </div>
+      <span class="chev" aria-hidden="true"></span>
+      <div class="menu" id="build-menu" role="listbox"></div>
+    </div>
+
+    <div class="flags" id="flag-strip"></div>
+
+    <span class="push"></span>
+    <button type="button" class="sharebtn" id="copy-link">Copy link</button>
+  </div>
+
+  <!-- 3 ── panes -->
+  <main class="work">
+    <section class="pane pane-src">
+      <div class="panehead">
+        <span class="filetab" id="src-file">…</span>
+        <span class="right">
+          <button type="button" id="copy-source" title="Copy source">copy</button>
+          <button type="button" id="reset-source" title="Reset to example">reset</button>
+        </span>
+      </div>
       <textarea id="source" spellcheck="false" autocomplete="off"></textarea>
     </section>
+
     <section class="pane pane-out">
-      <div class="tabs" role="tablist">
-        <button class="tab active" data-view="chart">Chart</button>
-        <button class="tab" data-view="ast">AST</button>
-        <button class="tab" data-view="canonical">Canonical</button>
+      <div class="panehead">
+        <nav class="tabs" id="out-tabs" role="tablist"></nav>
       </div>
       <div id="view-chart" class="view active"><div id="page" class="page"></div></div>
+      <div id="view-graph" class="view"><div id="graph" class="graph-canvas"></div></div>
       <pre id="view-ast" class="view json"></pre>
       <pre id="view-canonical" class="view json"></pre>
-      <div id="status" class="status"></div>
+      <pre id="view-dot" class="view json"></pre>
     </section>
   </main>
+
+  <!-- 4 ── status bar -->
+  <div class="status" id="status">
+    <span class="msg" id="stat-msg">…</span>
+    <span><span class="k">build</span> <span id="stat-build">…</span></span>
+    <span><span class="k">features</span> <span id="stat-feat">…</span></span>
+    <span class="hint"><span class="k">‹ ›</span> cycle examples</span>
+  </div>
+
   <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
