@@ -12,6 +12,7 @@
     "previews": "pnpm run grammar && node --experimental-strip-types scripts/render-previews.ts",
     "font-atlas": "node --experimental-strip-types tools/font-atlas/render-atlas.ts",
     "lookbook": "node --experimental-strip-types tools/lookbook/render-lookbook.ts",
+    "lookbook-pdf": "node --experimental-strip-types tools/lookbook/export-pdf.ts",
     "lint": "pnpm -r --filter './packages/*' lint",
     "clean": "rm -rf packages/*/dist packages/parser/src/generated"
   },

@@ -1,6 +1,6 @@
 {
   "generated": "2026-08-02",
-  "count": 138,
+  "count": 142,
   "entries": [
     {
       "id": "a13b9--lilyjazz",
@@ -1418,6 +1418,32 @@
         "kind": "tool-engraving"
       },
       "review_status": "unreviewed",
+      "review_note": ""
+    },
+    {
+      "id": "pm-repeat1bar",
+      "method": "glyph-specimen",
+      "family": "overview",
+      "canonical_ascii": "%",
+      "shape_ascii": "%",
+      "as_printed": "% → measure repeat (repeat1Bar U+E500)",
+      "display_note": "Chart cell '%' means repeat previous bar (iReal / Real Book). Petaluma SMuFL repeat1Bar — slash with dots — not a percent sign. No printed crop in corpus yet; this specimen is the glyph DNA.",
+      "label_status": "verified",
+      "house_style": "Petaluma SMuFL",
+      "observe": [
+        "slash angle and weight vs surrounding chord letters",
+        "dot size and placement above/below slash",
+        "vertical centering in a bar cell next to Cmaj7 / F7",
+        "do not use PetalumaScript percent glyph for this meaning"
+      ],
+      "priority": "P0",
+      "reference": {
+        "file": "refs/pm-repeat1bar.png",
+        "source_title": "Petaluma (SMuFL) repeat1Bar",
+        "license_or_use_basis": "SIL OFL 1.1, rendered locally",
+        "captured_at": "2026-08-02"
+      },
+      "review_status": "accepted",
       "review_note": ""
     },
     {
@@ -3219,6 +3245,98 @@
       "review_note": ""
     },
     {
+      "id": "paren-bm7b5",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "Bm7(b5)",
+      "shape_ascii": "Bm7(b5)",
+      "as_printed": "Bm7(♭5) — typed paren pass-through (ADR-008)",
+      "display_note": "Deliberate P1 coverage for typed parentheses after m7. Canonical spelled form remains Bm7b5 (sibling cards); this card types Bm7(b5). Reference reuses LilyJAZZ Bm7b5 cell (may be inline — compare house style).",
+      "label_status": "verified",
+      "house_style": "ChordFont opt-in parens (ADR-008) vs LilyJAZZ reference",
+      "observe": [
+        "parens after baseline m7",
+        "b5 pair inside parens at superscript scale",
+        "not ø — this exercises spelled m7 + paren alteration"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/bm7b5--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "reused lilyjazz Bm7b5 cell; may be inline — ours is explicit Bm7(b5)",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": "ADR-008 coverage card"
+    },
+    {
+      "id": "paren-c7sharp11",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "C7(#11)",
+      "shape_ascii": "C7(#11)",
+      "as_printed": "C7(♯11) — typed paren pass-through (ADR-008)",
+      "display_note": "Deliberate P1 coverage for typed parentheses with multi-digit alteration. Sibling bare card is C7#11. Reference reuses LilyJAZZ C7(#11) engraving.",
+      "label_status": "verified",
+      "house_style": "ChordFont opt-in parens (ADR-008) vs LilyJAZZ reference",
+      "observe": [
+        "paren wraps sharp.alt + d1.sup d1.sup chain",
+        "11 stays superscript inside parens",
+        "compare to bare C7#11 sibling (no parens)",
+        "round-trip: text layer must show C7(#11)"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/c7sharp11--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "reused lilyjazz C7(#11) cell as visual target for typed-paren pass-through",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": "ADR-008 coverage card — accept once paren metrics look right vs reference"
+    },
+    {
+      "id": "paren-g7b9",
+      "method": "tool-engraving",
+      "family": "accidental-binding",
+      "canonical_ascii": "G7(b9)",
+      "shape_ascii": "G7(b9)",
+      "as_printed": "G7(♭9) — typed paren pass-through (ADR-008)",
+      "display_note": "Deliberate P1 coverage for typed parentheses. Canonical Real Book is bare G7b9 (sibling cards); this card feeds G7(b9) so parenleft/parenright + inner alteration shaping stay exercised. Reference reuses the LilyJAZZ parenthesized G7(b9) engraving.",
+      "label_status": "verified",
+      "house_style": "ChordFont opt-in parens (ADR-008) vs LilyJAZZ reference",
+      "observe": [
+        "paren height vs ♭9 superscript band",
+        "inner flat.alt + d9.sup (not baseline 9)",
+        "no auto-parens on sibling bare G7b9 cards",
+        "round-trip: text layer must show G7(b9) not G7b9"
+      ],
+      "priority": "P1",
+      "reference": {
+        "file": "refs/g7b9--lilyjazz.png",
+        "source_title": "LilyJAZZ (handwritten, Real Book adjacent)",
+        "source_url": "https://github.com/OpenLilyPondFonts/lilyjazz",
+        "publisher_or_author": "lilyjazz",
+        "license_or_use_basis": "generated-engraving (see sources.json)",
+        "captured_at": "2026-08-02",
+        "crop_description": "reused lilyjazz G7(b9) cell as visual target for typed-paren pass-through",
+        "engraving_source_id": "lilyjazz",
+        "kind": "tool-engraving"
+      },
+      "review_status": "unreviewed",
+      "review_note": "ADR-008 coverage card — accept once paren metrics look right vs reference"
+    },
+    {
       "id": "cmaj7sharp11--lilyjazz",
       "method": "tool-engraving",
       "family": "alterations",
@@ -3874,32 +3992,6 @@
         "crop_description": "Desafinado p56"
       },
       "review_status": "unreviewed",
-      "review_note": ""
-    },
-    {
-      "id": "pm-repeat1bar",
-      "method": "glyph-specimen",
-      "family": "overview",
-      "canonical_ascii": "%",
-      "shape_ascii": "%",
-      "as_printed": "% → measure repeat (repeat1Bar U+E500)",
-      "display_note": "Chart cell '%' means repeat previous bar (iReal / Real Book). Petaluma SMuFL repeat1Bar — slash with dots — not a percent sign. No printed crop in corpus yet; this specimen is the glyph DNA.",
-      "label_status": "verified",
-      "house_style": "Petaluma SMuFL",
-      "observe": [
-        "slash angle and weight vs surrounding chord letters",
-        "dot size and placement above/below slash",
-        "vertical centering in a bar cell next to Cmaj7 / F7",
-        "do not use PetalumaScript percent glyph for this meaning"
-      ],
-      "priority": "P0",
-      "reference": {
-        "file": "refs/pm-repeat1bar.png",
-        "source_title": "Petaluma (SMuFL) repeat1Bar",
-        "license_or_use_basis": "SIL OFL 1.1, rendered locally",
-        "captured_at": "2026-08-02"
-      },
-      "review_status": "accepted",
       "review_note": ""
     }
   ]

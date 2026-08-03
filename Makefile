@@ -55,6 +55,9 @@ font-atlas: node22 font ## Render exhaustive ChordFont symbol atlas (HTML + PNG 
 lookbook: node22 font ## Build ChordFont look book (reference vs live font → tools/lookbook/lookbook.html)
 	node --experimental-strip-types tools/lookbook/render-lookbook.ts
 
+lookbook-pdf: lookbook ## Export lookbook.html → tools/lookbook/lookbook.pdf (waits for fonts/images)
+	node --experimental-strip-types tools/lookbook/export-pdf.ts
+
 clean: ## Remove build artifacts and generated parser
 	pnpm run clean
 	$(MAKE) -C packages/font clean

@@ -43,6 +43,14 @@ Chart cells use `%` for “same as previous bar” (iReal / Real Book). Look boo
 no printed crop; wired Petaluma SMuFL `repeat1Bar` (slash + dots) to `%` as
 `repeat.bar` — not PetalumaScript’s percent sign. Specimen: `pm-repeat1bar`.
 
+## Decisions locked this round
+
+| Topic | ADR | Lookbook / tests |
+|-------|-----|------------------|
+| Parens = typed opt-in only | ADR-008 | `paren-g7b9`, `paren-c7sharp11`, `paren-bm7b5` + shape tests |
+| Slash = one `source_map` knob, roomy | ADR-009 | `slash` `dx:180` / `advance:640` |
+| Real Book: baseline primary extensions | ADR-011 | `A13b9` → `d1 d3` + `d9.sup` (not all-sup) |
+
 ## Still open
 
 1. Printed △ / ø / dash-minor / `%` crops — see `GAP_REPORT.md` / `sources.json → wanted_next`.
@@ -53,12 +61,14 @@ no printed crop; wired Petaluma SMuFL `repeat1Bar` (slash + dots) to `%` as
    (`ob-am7-p67`, `ob-ab9`, `ob-e7s5-p103`, `ob-g7s5b9`, `ob-g7b9`).
 6. Implement ADR-010 stylistic sets (`ss01`–`ss04`) — documented, not coded.
 7. Drive P0 `review_status` to all-`accepted` for the release gate.
+8. Freeze the 139+ shape strings as a diffenator2 wordlist once the banner flips.
 
 ## Loop
 
 ```bash
 # edit source_map.json → rebuild → compare
 make lookbook
+make lookbook-pdf   # waits for ChordFont + images; do not bare-goto PDF
 node --experimental-strip-types tools/lookbook/capture-comparisons.ts
 make -C packages/font test
 ```

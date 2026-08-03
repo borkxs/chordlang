@@ -66,8 +66,10 @@ Cmaj9      →  C△9        (all baseline)
 
 ### Contextual Superscripting
 
-**Current implementation:** Digits are superscripted **only** when they appear after
-an alteration accidental (`flat.alt` or `sharp.alt`).
+**Current implementation (ADR-011):** Digits are superscripted **only** when they
+appear after an alteration accidental (`flat.alt` or `sharp.alt`), or immediately
+inside typed linear parentheses. Primary extensions (`7`, `9`, `11`, `13`) stay
+on the baseline — chosen Real Book hierarchy, not an accident.
 
 ```
 # Baseline context (no superscript)

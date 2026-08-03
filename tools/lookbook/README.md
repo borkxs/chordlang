@@ -11,11 +11,17 @@ Pair with the exhaustive render-only atlas (`make font-atlas`). HarfBuzz tests
 ```bash
 make lookbook          # builds font + tools/lookbook/lookbook.html
 open tools/lookbook/lookbook.html
+
+make lookbook-pdf      # Playwright PDF — waits for ChordFont + every image
 ```
 
 Requires **Node 22+** (`.nvmrc` — `nvm use`) and built style TTFs (`make font`).
 Defaults to **Real Book** (`ChordFont-Real Book.ttf`); use `--style pop` for Pop.
 Older Node fails with `bad option: --experimental-strip-types`.
+
+Do **not** capture the PDF with a bare `page.goto` + `page.pdf` — cards render
+after `document.fonts.ready` and images are lazy. Use `make lookbook-pdf`
+(`export-pdf.ts`).
 
 ## Release gate (mechanical)
 
@@ -29,10 +35,12 @@ P0 `image-missing` notes.
 Do not mark cards `accepted` while the reference is broken (e.g. LilyPond
 “Clyd”), missing, or a wrong crop — keep `needs-fix` until regenerated.
 
-**Ours column rule (ADR-008):** `shape_ascii` is always canonical ChordFont
-input — inline alterations (`G7b9`, not `G7(b9)`). Parentheses in the
-reference are a house-style difference, not something “ours” should mimic
-unless the user typed them.
+**Ours column rule (ADR-008 / ADR-011):** the live cell shapes **canonical ASCII**
+when it is ChordFont input. Default cards use bare forms (`G7b9`, `A13b9`).
+Typed parentheses are opt-in and covered only by deliberate
+`accidental-binding` cards (`paren-g7b9`, `paren-c7sharp11`, `paren-bm7b5`).
+Primary extension digits stay baseline in Real Book; only alteration digits
+(and digits inside typed parens) are superscript — see ADR-011.
 
 ## Feedback loop
 
@@ -63,7 +71,9 @@ not to overfit when comparing house styles.
 | `sources.json` | Source licenses + `wanted_next` targets |
 | `refs/*.png` | Reference crops / engravings |
 | `lookbook.html` | Generated UI (gitignored — run `make lookbook`) |
+| `lookbook.pdf` | Generated PDF (gitignored — run `make lookbook-pdf`) |
 | `render-lookbook.ts` | HTML builder (inlines ChordFont style TTF) |
+| `export-pdf.ts` | Headless PDF export with font/image settle waits |
 | `capture-comparisons.ts` | Headless card screenshots → `captures/` |
 | `ITERATION_NOTES.md` | Latest glyph-tuning findings from comparisons |
 | `merge_corpora.py` | Import agent drops from `harvested/` + `rendered/` |

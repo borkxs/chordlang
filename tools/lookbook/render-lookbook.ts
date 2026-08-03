@@ -381,10 +381,18 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
+/** Feed the shaper only from canonical when it is ChordFont ASCII; else shape_ascii (ø / glyph specimens). */
+function oursText(e) {
+  const canon = e.canonical_ascii || "";
+  if (/^[A-G][#b]?[A-Za-z0-9#b+/()]*$/.test(canon)) return canon;
+  return e.shape_ascii || "";
+}
+
 function oursCell(e) {
-  if (e.shape_ascii) {
+  const text = oursText(e);
+  if (text) {
     return \`<div class="cell ours"><span class="tag">ours</span>
-      <span class="sym">\${esc(e.shape_ascii)}</span></div>\`;
+      <span class="sym" data-shape="\${esc(text)}">\${esc(text)}</span></div>\`;
   }
   return \`<div class="cell ours"><span class="tag">ours</span>
     <span class="na">not a ChordFont input<br>(glyph / chart specimen)</span></div>\`;
@@ -441,7 +449,7 @@ function render() {
         </div>
         \${oursCell(e)}
       </div>
-      <div class="ascii">\${esc(e.shape_ascii || e.canonical_ascii)}</div>
+      <div class="ascii">\${esc(oursText(e) || e.canonical_ascii)}</div>
       <div class="printed">as printed: \${esc(e.as_printed || "—")}</div>
       <div class="note">\${esc(e.display_note || "")}</div>
       \${e.review_note ? \`<div class="note"><b>review:</b> \${esc(e.review_note)}</div>\` : ""}
