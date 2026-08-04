@@ -46,8 +46,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: regenerate preview images
-
-Generated via GitHub Actions workflow (Docker)"
+            git commit \
+              -m "chore: regenerate preview images" \
+              -m "Generated via GitHub Actions workflow (Docker)"
             git push
           fi
