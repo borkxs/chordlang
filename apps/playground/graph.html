@@ -3,26 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>chordlang — graph demo</title>
-  <link rel="stylesheet" href="/src/graph.css" />
+  <title>chordlang — redirecting…</title>
+  <script>
+    // Legacy /graph.html → unified SPA (keep /graph/:slug bookmarks working).
+    location.replace(new URL("graph/ii-v-i-chain", document.baseURI).href);
+  </script>
 </head>
 <body>
-  <header class="bar">
-    <a class="wordmark" id="chart-home" href="#">chordlang</a>
-    <span class="tagline">harmonic graphs · engraved node labels</span>
-    <nav class="examples" id="examples"></nav>
-  </header>
-  <main class="split">
-    <section class="pane pane-source">
-      <label class="pane-label" for="source">dot source</label>
-      <textarea id="source" spellcheck="false" autocomplete="off"></textarea>
-    </section>
-    <section class="pane pane-out">
-      <div class="pane-label">rendered graph</div>
-      <div id="graph" class="graph-canvas"></div>
-      <div id="status" class="status"></div>
-    </section>
-  </main>
-  <script type="module" src="/src/graph.ts"></script>
+  <p style="font:14px system-ui;padding:2rem;color:#8b909c">
+    Redirecting to the playground…
+    <a href="./graph/ii-v-i-chain">continue</a>
+  </p>
 </body>
 </html>
