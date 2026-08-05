@@ -83,6 +83,7 @@ Root `"packageManager": "pnpm@9.15.9"`. Publish workflow: `.github/workflows/pub
 - [x] Build pipeline — grammar + playground build; font ships as committed snapshot in `apps/playground/public/fonts/` (no Python in CI).
 - [x] Include graph demo and link from chart page (header link + routable `/graph/:slug`).
 - [x] Routable examples — `/chart/:slug` and `/graph/:slug` from `manifest.json`; peer links when slug exists in both lists.
+- [x] Publish ChordFont lookbook under Pages at `/lookbook/` (built in `pages.yml` from committed playground TTF + `tools/lookbook/refs/`; not linked from playground UI).
 - [ ] Optionally publish `examples/` gallery page or static graph index from `make graphs` output.
 - [x] Verify ChordFont loads on Pages (bundled font in CSS; production `@import` order fixed).
 - [x] Add live demo URL to README — https://borkxs.github.io/chordlang
