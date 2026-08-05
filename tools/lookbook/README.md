@@ -19,6 +19,11 @@ Requires **Node 22+** (`.nvmrc` — `nvm use`) and built style TTFs (`make font`
 Defaults to **Real Book** (`ChordFont-Real Book.ttf`); use `--style pop` for Pop.
 Older Node fails with `bad option: --experimental-strip-types`.
 
+On GitHub Pages the Real Book lookbook is also published (unlinked from the
+playground UI) at
+[borkxs.github.io/chordlang/lookbook/](https://borkxs.github.io/chordlang/lookbook/)
+via `.github/workflows/pages.yml`.
+
 Do **not** capture the PDF with a bare `page.goto` + `page.pdf` — cards render
 after `document.fonts.ready` and images are lazy. Use `make lookbook-pdf`
 (`export-pdf.ts`).

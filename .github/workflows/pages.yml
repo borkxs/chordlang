@@ -35,6 +35,16 @@ jobs:
         env:
           NODE_ENV: production
 
+      # ChordFont lookbook — static QA page, not linked from the playground UI.
+      # Served at /chordlang/lookbook/ using the committed playground TTF snapshot.
+      - name: Build lookbook into Pages artifact
+        run: |
+          node --experimental-strip-types tools/lookbook/render-lookbook.ts \
+            --font "apps/playground/public/fonts/ChordFont-Real Book.ttf"
+          mkdir -p apps/playground/dist/lookbook
+          cp tools/lookbook/lookbook.html apps/playground/dist/lookbook/index.html
+          cp -R tools/lookbook/refs apps/playground/dist/lookbook/
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/playground/dist
