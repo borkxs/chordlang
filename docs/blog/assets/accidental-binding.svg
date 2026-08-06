@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 320" role="img" aria-labelledby="title desc">
+  <title id="title">Accidental binding for Eb7b5</title>
+  <desc id="desc">Contextual substitution binds the first b as a root flat and the second as an alteration flat with a superscripted 5.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f0e6"/>
+      <stop offset="100%" stop-color="#e8e1d0"/>
+    </linearGradient>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.5 L9 5 L0 8.5 Z" fill="#3d4a3c"/>
+    </marker>
+    <style>
+      .h { font: 700 16px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+      .p { font: 500 12px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #4a5648; }
+      .mono { font: 600 13px "IBM Plex Mono", ui-monospace, monospace; fill: #1c241c; }
+      .mono-sm { font: 500 11px "IBM Plex Mono", ui-monospace, monospace; fill: #4a5648; }
+      .chip { fill: #fffdf8; stroke: #3d4a3c; stroke-width: 1.4; }
+      .chip-root { fill: #d8e8dc; stroke: #3d4a3c; stroke-width: 1.4; }
+      .chip-alt { fill: #f0e0c8; stroke: #3d4a3c; stroke-width: 1.4; }
+      .chip-sup { fill: #e8dcc8; stroke: #3d4a3c; stroke-width: 1.4; }
+      .rule { font: 500 11px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #5a6558; }
+    </style>
+  </defs>
+  <rect width="860" height="320" rx="12" fill="url(#bg2)"/>
+
+  <text x="32" y="36" class="h">Why Eb7b5 does not become &quot;Eb&quot; + &quot;75&quot;</text>
+  <text x="32" y="58" class="p">OpenType has no chord tokenizer. Contextual GSUB decides which b is a root flat and which is an alteration.</text>
+
+  <text x="32" y="96" class="mono-sm">typed</text>
+  <g transform="translate(32,108)">
+    <rect class="chip" width="44" height="40" rx="8"/><text x="22" y="26" text-anchor="middle" class="mono">E</text>
+    <rect class="chip" x="52" width="44" height="40" rx="8"/><text x="74" y="26" text-anchor="middle" class="mono">b</text>
+    <rect class="chip" x="104" width="44" height="40" rx="8"/><text x="126" y="26" text-anchor="middle" class="mono">7</text>
+    <rect class="chip" x="156" width="44" height="40" rx="8"/><text x="178" y="26" text-anchor="middle" class="mono">b</text>
+    <rect class="chip" x="208" width="44" height="40" rx="8"/><text x="230" y="26" text-anchor="middle" class="mono">5</text>
+  </g>
+
+  <line x1="160" y1="160" x2="160" y2="188" stroke="#3d4a3c" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <text x="32" y="212" class="mono-sm">after calt (accidentals)</text>
+  <g transform="translate(32,224)">
+    <rect class="chip" width="44" height="40" rx="8"/><text x="22" y="26" text-anchor="middle" class="mono">E</text>
+    <rect class="chip-root" x="52" width="88" height="40" rx="8"/><text x="96" y="26" text-anchor="middle" class="mono">flat.root</text>
+    <rect class="chip" x="148" width="44" height="40" rx="8"/><text x="170" y="26" text-anchor="middle" class="mono">d7</text>
+    <rect class="chip-alt" x="200" width="78" height="40" rx="8"/><text x="239" y="26" text-anchor="middle" class="mono">flat.alt</text>
+    <rect class="chip" x="286" width="44" height="40" rx="8"/><text x="308" y="26" text-anchor="middle" class="mono">d5</text>
+  </g>
+
+  <line x1="340" y1="160" x2="340" y2="188" stroke="#3d4a3c" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <text x="400" y="212" class="mono-sm">after calt (superscript)</text>
+  <g transform="translate(400,224)">
+    <rect class="chip" width="36" height="40" rx="8"/><text x="18" y="26" text-anchor="middle" class="mono">E</text>
+    <rect class="chip-root" x="44" width="78" height="40" rx="8"/><text x="83" y="26" text-anchor="middle" class="mono">flat.root</text>
+    <rect class="chip" x="130" width="36" height="40" rx="8"/><text x="148" y="26" text-anchor="middle" class="mono">7</text>
+    <rect class="chip-alt" x="174" width="68" height="40" rx="8"/><text x="208" y="26" text-anchor="middle" class="mono">flat.alt</text>
+    <rect class="chip-sup" x="250" width="68" height="40" rx="8"/><text x="284" y="26" text-anchor="middle" class="mono">d5.sup</text>
+  </g>
+
+  <rect x="400" y="100" width="428" height="72" rx="10" fill="#fffdf8" stroke="#3d4a3c" stroke-width="1.25"/>
+  <text x="420" y="124" class="rule">Rule 1 - after A-G: b / # become flat.root / sharp.root</text>
+  <text x="420" y="146" class="rule">Rule 2 - elsewhere: b / # become flat.alt / sharp.alt</text>
+  <text x="420" y="168" class="rule">Rule 3 - digit after .alt becomes digit.sup</text>
+</svg>
