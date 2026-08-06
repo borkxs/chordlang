@@ -9,6 +9,7 @@ sources/petaluma/*
 sources/smufl/*
 !sources/smufl/glyphnames.json
 glyphs/extracted_glyphs.py
+glyphs/stack_glyphs.py
 __pycache__/
 *.py[cod]
 .pytest_cache/

@@ -17,6 +17,7 @@ from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTRACTED = ROOT / "glyphs" / "extracted_glyphs.py"
+STACK_GLYPHS = ROOT / "glyphs" / "stack_glyphs.py"
 OFL = ROOT / "sources" / "petaluma" / "OFL.txt"
 UPM = 1000
 VERSION = "0.1.1"
@@ -52,6 +53,19 @@ def load_extracted():
     return GLYPHS, ADVANCES
 
 
+def load_stack_glyphs():
+    """Optional Path B precomposed stack composites (make stacks)."""
+    if not STACK_GLYPHS.is_file():
+        return {}, {}
+    sys.path.insert(0, str(ROOT / "glyphs"))
+    # Fresh load — module name is stack_glyphs
+    import importlib
+
+    mod = importlib.import_module("stack_glyphs")
+    importlib.reload(mod)
+    return mod.GLYPHS, mod.ADVANCES
+
+
 def build_font(style="realbook"):
     """Build font for specified style variant."""
     style_dir = ROOT / "styles" / style
@@ -67,6 +81,7 @@ def build_font(style="realbook"):
         config = json.load(f)
     
     extracted, extracted_adv = load_extracted()
+    stack_glyphs, stack_adv = load_stack_glyphs()
     
     roots = list("ABCDEFG")
     glyph_order = [".notdef", "space"] + roots
@@ -118,6 +133,14 @@ def build_font(style="realbook"):
         if name not in extracted:
             sys.exit(f"ERROR: extracted glyph missing: {name!r}. Run 'make extract'.")
         glyphs[name] = extracted[name]
+
+    # Path B precomposed stacks (optional — realbook liga consumes them)
+    for name, glyph in sorted(stack_glyphs.items()):
+        if name.startswith("paren") and name.endswith(".tall"):
+            # Tall paren atoms available for future experiments; not required in cmap.
+            pass
+        glyph_order.append(name)
+        glyphs[name] = glyph
     
     # Character map
     cmap = {ord("A") + i: r for i, r in enumerate(roots)}
@@ -150,6 +173,9 @@ def build_font(style="realbook"):
     
     adv = {g: (300 if g == "space" else 520) for g in glyph_order}
     for name, width in extracted_adv.items():
+        if name in adv:
+            adv[name] = width
+    for name, width in stack_adv.items():
         if name in adv:
             adv[name] = width
     

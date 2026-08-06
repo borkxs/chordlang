@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 240" role="img" aria-labelledby="title desc">
+  <title id="title">Path A full-string liga vs Path B modular stack tail</title>
+  <desc id="desc">Path A ligates the entire chord string to one glyph; Path B shapes the base chord normally and ligates only the parenthesized stack tail.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f3efe4"/>
+      <stop offset="100%" stop-color="#e6dfd0"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 14px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+      .p { font: 500 12px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #4a5648; }
+      .mono { font: 600 12px "IBM Plex Mono", ui-monospace, monospace; fill: #1c241c; }
+      .panel { fill: #fffdf8; stroke: #3d4a3c; stroke-width: 1.5; }
+      .hi { fill: #dfece0; stroke: #3d4a3c; stroke-width: 1.5; }
+      .tag { font: 700 12px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+    </style>
+  </defs>
+  <rect width="860" height="240" rx="12" fill="url(#bg)"/>
+
+  <rect x="28" y="28" width="390" height="184" rx="12" class="panel"/>
+  <text x="48" y="56" class="tag">Path A - full-string liga</text>
+  <text x="48" y="88" class="mono">G7(#11/b9)</text>
+  <text x="48" y="114" class="p">-&gt; one composite for this exact string</text>
+  <text x="48" y="148" class="p">Multiplies by root x accidental x quality.</text>
+  <text x="48" y="172" class="p">Estimate: hundreds of glyphs.</text>
+  <text x="48" y="196" class="p">Rejected for v1 inventory.</text>
+
+  <rect x="442" y="28" width="390" height="184" rx="12" class="hi"/>
+  <text x="462" y="56" class="tag">Path B - modular stack tail</text>
+  <text x="462" y="88" class="mono">G7 + (#11/b9)</text>
+  <text x="462" y="114" class="p">-&gt; G d7 stack.sharp11.flat9</text>
+  <text x="462" y="148" class="p">Base chord uses existing GSUB.</text>
+  <text x="462" y="172" class="p">Stack tails: about 5-15 composites.</text>
+  <text x="462" y="196" class="p">Chosen prototype.</text>
+</svg>
