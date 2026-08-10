@@ -103,4 +103,23 @@ describe("normalize — the five stress chords", () => {
     expect(normalize("CΔ7").render.harte).toBe("C:maj7");
     expect(normalize("C^7").render.harte).toBe("C:maj7");
   });
+
+  it("Eadd4 / Cadd11 — major add4/add11 (tonal gap; keep 3rd)", () => {
+    const add4 = normalize("Eadd4");
+    expect(add4.root).toEqual({ letter: "E", accidental: 0 });
+    expect(add4.factors).toEqual([
+      { degree: 1, semitones: 0 },
+      { degree: 3, semitones: 4 },
+      { degree: 5, semitones: 7 },
+      { degree: 4, semitones: 5 },
+    ]);
+    expect(add4.render.display).toBe("Eadd4");
+    expect(add4.render.harte).toBe("E:add4");
+    expect(add4.render.ascii).toBe("Eadd4");
+
+    const add11 = normalize("Cadd11");
+    expect(add11.factors).toContainEqual({ degree: 11, semitones: 17 });
+    expect(add11.factors).toContainEqual({ degree: 3, semitones: 4 });
+    expect(add11.render.harte).toBe("C:add11");
+  });
 });
