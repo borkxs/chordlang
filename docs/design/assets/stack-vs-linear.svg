@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" role="img" aria-labelledby="title desc">
+  <title id="title">Stacked tower vs linear multi-paren</title>
+  <desc id="desc">Real Book stacking uses one tall paren with two alteration rows; sequential parentheses stay linear sideways.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f1e7"/>
+      <stop offset="100%" stop-color="#e8e1d0"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 14px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+      .p { font: 500 12px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #4a5648; }
+      .mono { font: 600 12px "IBM Plex Mono", ui-monospace, monospace; fill: #4a5648; }
+      .big { font: 700 40px "IBM Plex Serif", Georgia, serif; fill: #1c241c; }
+      .mid { font: 700 26px "IBM Plex Serif", Georgia, serif; fill: #1c241c; }
+      .sup { font: 700 16px "IBM Plex Serif", Georgia, serif; fill: #1c241c; }
+      .panel { fill: #fffdf8; stroke: #3d4a3c; stroke-width: 1.5; }
+      .tag { fill: #dfece0; stroke: #3d4a3c; stroke-width: 1.2; }
+      .tag-bad { fill: #f0e0c8; stroke: #3d4a3c; stroke-width: 1.2; }
+      .tag-t { font: 700 11px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+      .paren { fill: none; stroke: #1c241c; stroke-width: 3; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect width="860" height="300" rx="12" fill="url(#bg)"/>
+
+  <!-- Target: stacked -->
+  <rect x="28" y="24" width="390" height="252" rx="12" class="panel"/>
+  <rect x="48" y="44" width="132" height="24" rx="6" class="tag"/>
+  <text x="114" y="60" text-anchor="middle" class="tag-t">TARGET (Real Book)</text>
+  <text x="48" y="96" class="mono">ASCII: G7(#11/b9)</text>
+
+  <text x="56" y="175" class="big">G</text>
+  <text x="100" y="175" class="mid">7</text>
+  <!-- tall paren mock -->
+  <path class="paren" d="M160 100 q-28 40 -28 75 q0 35 28 75"/>
+  <text x="175" y="130" class="sup">#11</text>
+  <text x="175" y="168" class="sup">b9</text>
+  <path class="paren" d="M230 100 q28 40 28 75 q0 35 -28 75"/>
+
+  <text x="48" y="230" class="p">One tall paren pair.</text>
+  <text x="48" y="250" class="p">Higher degree on top.</text>
+
+  <!-- Not the target: linear -->
+  <rect x="442" y="24" width="390" height="252" rx="12" class="panel"/>
+  <rect x="462" y="44" width="168" height="24" rx="6" class="tag-bad"/>
+  <text x="546" y="60" text-anchor="middle" class="tag-t">NOT STACK (1D linear)</text>
+  <text x="462" y="96" class="mono">ASCII: G7(#11)(b9)</text>
+
+  <text x="470" y="175" class="big">G</text>
+  <text x="514" y="175" class="mid">7</text>
+  <text x="548" y="148" class="sup">(#11)</text>
+  <text x="610" y="148" class="sup">(b9)</text>
+
+  <text x="462" y="230" class="p">Two short paren groups,</text>
+  <text x="462" y="250" class="p">sideways  -  already shapes today.</text>
+</svg>

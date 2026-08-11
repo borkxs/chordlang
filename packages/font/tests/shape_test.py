@@ -70,6 +70,10 @@ REALBOOK_CASES = {
     "G7(b9)": "G d7 parenleft flat.alt d9.sup parenright",
     "C7(#11)": "C d7 parenleft sharp.alt d1.sup d1.sup parenright",
     "Bm7(b5)": "B m d7 parenleft flat.alt d5.sup parenright",
+    # Path B stack prototype (ADR-012): slash-inside-one-paren → composite
+    "G7(#11/b9)": "G d7 stack.sharp11.flat9",
+    "C7(#11/b9)": "C d7 stack.sharp11.flat9",
+    "F#7(#11/b9)": "F sharp.root d7 stack.sharp11.flat9",
     "%": "repeat.bar",
 }
 

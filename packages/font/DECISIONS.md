@@ -85,11 +85,35 @@ ChordFont does not tokenize chord symbols at render time; it relies on determini
 
 ## ADR-006: WALL-tier symbols → JS/SVG fallback
 
-**Decision:** Parenthesized tension stacks (`G7(♯11)(♭13)`) are out of font scope.
+**Decision (amended by ADR-012):** *Open-ended* 2D tension layout stays out of font scope. A **closed allowlist** of 2-high stack tails may ship as precomposed ligatures (Path B).
 
-**Rationale:** GSUB is 1D. True 2D vertical stacking of nested parentheses exceeds OpenType layout capabilities.
+**Original rationale (still true for the open set):** GSUB cannot do general 2D layout. Verbal add/omit stacks, depth ≥ 3, and free-form towers need SVG (or more composites).
 
-**Alternatives:** Fake it with pre-drawn composite ligatures (combinatorial explosion); abandon those symbols entirely (too limiting for jazz lead sheets).
+**Historical note:** The example `G7(♯11)(♭13)` encoded a Real Book *stack* as sequential parentheses. That ASCII is linear sideways if shaped; the Real Book visual is one tall paren with two rows. Canonical stack ASCII is slash-inside-one-paren (`G7(#11/b13)`). See ADR-012.
+
+**Alternatives:** Pre-drawn composites for a closed set (now ADR-012); abandon towers; SVG for everything 2D.
+
+---
+
+## ADR-012: Closed stack-tail ligatures (Path B) before general SVG
+
+**Decision:** Ship **precomposed stack-tail** glyphs for a corpus-backed allowlist of 2-high Real Book towers. Base chord shapes with existing GSUB; only the `(#top/#bottom)` tail ligates to one composite. Prefer this **before** building a general SVG fallback.
+
+**Canonical ASCII:** `Root + quality/ext + '(' + atom + '/' + atom + ')'`  
+Example: `G7(#11/b9)` → `G d7 stack.sharp11.flat9`.  
+Atoms: `b5 | #5 | b9 | #9 | #11 | b13`. Depth exactly 2. Allowlist in `stacks/allowlist.json`.
+
+**Normalizer contract:** Emit slash-inside-one-paren for allowlisted stacks. May accept `G7(#11)(b13)` / Unicode accidentals as input and rewrite. Flag non-allowlist stacks for SVG.
+
+**Corpus evidence:** New Real Book guide has **5** printed tension stacks; lookbook/OpenBook/charts have **0** true stacks. Path A (full-string liga) ≈ 10³ glyphs; Path B ≈ 5–15.
+
+**Prototype:** `make stacks` + realbook `liga` for `(#11/b9)`; shape tests for `G7(#11/b9)`, `C7(#11/b9)`, `F#7(#11/b9)`.
+
+**Rationale:** The printed stack space is tiny and closed. Precompose keeps the font-as-API property for those forms without pretending GSUB does general 2D.
+
+**Alternatives:** WALL+SVG only (delays common NRB towers); Path A full-string liga (inventory explosion); runtime 2D in every consumer (defeats font-as-API).
+
+**Design note:** [`docs/design/stack-ligatures.md`](../../docs/design/stack-ligatures.md).
 
 ---
 

@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "description": "Closed allowlist of Real Book 2-high parenthesized tension stacks for Path B precomposed ligatures.",
+  "canonical_encoding": "slash-inside-one-paren",
+  "canonical_encoding_note": "G7(#11/b9) means one tall paren pair with #11 stacked over b9. Sequential G7(#11)(b9) is NOT the Real Book visual (that is linear sideways).",
+  "stack_depth": 2,
+  "alteration_atoms": ["b5", "#5", "b9", "#9", "#11", "b13"],
+  "atom_order_top_to_bottom": "higher degree on top; when degrees equal, sharp above flat; otherwise follow allowlist order below",
+  "corpus_sources": [
+    {
+      "id": "nrb-guide",
+      "path": "packages/font/references/new-real-book-chord-guide.png",
+      "role": "gold-standard Real Book visual — only printed true stacks in repo"
+    },
+    {
+      "id": "lookbook",
+      "path": "tools/lookbook/entries.json",
+      "role": "142 QA cards — zero true stacks; linear/inline only"
+    },
+    {
+      "id": "openbook",
+      "path": "tools/lookbook/harvest_openbook.py",
+      "role": "155-tune Ignatzek house style — prints b5/#5, never #11/b13 stacks"
+    },
+    {
+      "id": "charts",
+      "path": "examples/charts/",
+      "role": "lead-sheet examples — no multi-paren or stacked towers"
+    }
+  ],
+  "stacks": [
+    {
+      "id": "sharp11.flat9",
+      "canonical_tail": "(#11/b9)",
+      "top": "#11",
+      "bottom": "b9",
+      "glyph": "stack.sharp11.flat9",
+      "nrb_guide": true,
+      "prototype": true,
+      "notes": "New Real Book guide C7(#11/b9)"
+    },
+    {
+      "id": "sharp11.sharp9",
+      "canonical_tail": "(#11/#9)",
+      "top": "#11",
+      "bottom": "#9",
+      "glyph": "stack.sharp11.sharp9",
+      "nrb_guide": true,
+      "prototype": false,
+      "notes": "New Real Book guide C7(#11/#9)"
+    },
+    {
+      "id": "flat9.flat5",
+      "canonical_tail": "(b9/b5)",
+      "top": "b9",
+      "bottom": "b5",
+      "glyph": "stack.flat9.flat5",
+      "nrb_guide": true,
+      "prototype": false,
+      "notes": "New Real Book guide C7(b9/b5)"
+    },
+    {
+      "id": "sharp9.sharp5",
+      "canonical_tail": "(#9/#5)",
+      "top": "#9",
+      "bottom": "#5",
+      "glyph": "stack.sharp9.sharp5",
+      "nrb_guide": true,
+      "prototype": false,
+      "notes": "New Real Book guide C7(#9/#5)"
+    },
+    {
+      "id": "flat9.sharp5",
+      "canonical_tail": "(b9/#5)",
+      "top": "b9",
+      "bottom": "#5",
+      "glyph": "stack.flat9.sharp5",
+      "nrb_guide": true,
+      "prototype": false,
+      "notes": "New Real Book guide C7(b9/#5)"
+    },
+    {
+      "id": "sharp11.flat13",
+      "canonical_tail": "(#11/b13)",
+      "top": "#11",
+      "bottom": "b13",
+      "glyph": "stack.sharp11.flat13",
+      "nrb_guide": false,
+      "prototype": false,
+      "notes": "Common jazz dominant tower; used as WALL doc example (was miswritten as sequential ()()). Not on NRB guide page but natural closed-set extension."
+    }
+  ],
+  "out_of_allowlist": [
+    {
+      "form": "add/omit verbal stacks",
+      "example": "Bb(add b13/add 9)",
+      "disposition": "SVG or later allowlist — word glyphs not in ChordFont v1"
+    },
+    {
+      "form": "3-high stacks",
+      "example": "C7(#11/#9/b13)",
+      "disposition": "WALL / SVG — depth > 2"
+    },
+    {
+      "form": "linear multi-paren",
+      "example": "G7(#11)(b13)",
+      "disposition": "shapes as 1D today; not Real Book stack. Normalizer may rewrite to (#11/b13) when stack intent is known."
+    },
+    {
+      "form": "linear bare multi-alt",
+      "example": "G7#5b9 / B7b5b9b11b13",
+      "disposition": "IN FONT already (1D inline) — not a stack"
+    }
+  ]
+}

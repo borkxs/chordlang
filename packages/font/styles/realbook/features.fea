@@ -5,6 +5,10 @@
 feature liga {{
     sub m a j by maj.tri;
     sub d.lc i m by dim.ring;
+    # Path B stack prototype (ADR-012): slash-inside-one-paren = 2-high tower.
+    # Matches BEFORE calt so # / b stay as numbersign / b.
+    # Canonical: G7(#11/b9) → G d7 stack.sharp11.flat9
+    sub parenleft numbersign d1 d1 slash b d9 parenright by stack.sharp11.flat9;
 }} liga;
 
 feature calt {{

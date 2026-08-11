@@ -71,9 +71,13 @@ Handwritten glyph outlines are extracted from [Petaluma](https://github.com/stei
 |------|-----------|--------|
 | **EASY** | Single-sequence ligature (`F#` → F♯), `ø` half-dim, linear `G7(b9)` parens | Straightforward `liga` / cmap |
 | **MAYBE / HARD** | Contextual superscripting, chained multi-digit extensions, post-accidental digits | **Proven in HarfBuzz — this is our scope** |
-| **WALL** | 2D vertical stacking of parenthesized tensions (`G7(♯11)(♭13)`) | **Out of scope for the font** |
+| **WALL** | Open-ended 2D towers (depth ≥ 3, verbal add/omit, free-form) | **Out of scope** — SVG later |
+| **STACK (ADR-012)** | Closed 2-high allowlist via Path B composites (`G7(#11/b9)`) | **Prototype in-font** |
 
-The wall is real: OpenType GSUB operates on a 1D glyph stream. Parenthesized tension stacks require 2D layout that a shaping engine cannot provide. For those symbols, fall back to a JS/SVG renderer (see Roadmap).
+OpenType GSUB cannot do *general* 2D layout. A corpus-backed allowlist of stack
+*tails* can still ship as precomposed ligatures — see
+[`docs/design/stack-ligatures.md`](../../docs/design/stack-ligatures.md) and
+[`stacks/`](stacks/).
 
 ## Project structure
 

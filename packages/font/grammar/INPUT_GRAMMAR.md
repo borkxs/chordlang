@@ -126,16 +126,31 @@ parenthesizes tensions; they are not required for correct Real Book engraving:
 | `C7(#11)` | `C` `7` `(` `♯` `¹¹` `)` |
 | `Bm7(b5)` | `B` `m` `7` `(` `♭` `⁵` `)` |
 
+## Stacked tensions (closed allowlist — ADR-012)
+
+Real Book **stacks** use one tall paren with two alteration rows (higher degree on
+top). Canonical ASCII is **slash-inside-one-paren**, not sequential `()()`:
+
+| Input | Glyph stream (abbrev.) | Visual |
+|-------|------------------------|--------|
+| `G7(#11/b9)` | `G d7 stack.sharp11.flat9` | Tall paren, #11 over b9 |
+| `C7(#11/b9)` | same stack tail (root-agnostic) | |
+
+Allowlist + atoms: [`stacks/allowlist.json`](../stacks/allowlist.json).  
+Design note: [`docs/design/stack-ligatures.md`](../../../docs/design/stack-ligatures.md).
+
+Sequential `G7(#11)(b9)` shapes as **linear** 1D (two short paren groups) — not a
+stack. Normalizer may rewrite stack-intent input to slash-inside-one-paren.
+
 ## Out of font scope (WALL tier)
 
-These require 2D layout — normalizer should flag them for SVG fallback:
+Open-ended 2D — normalizer should flag for SVG (or future allowlist entries):
 
 ```
-G7(♯11)(♭13)     # stacked / multi-tier parenthesized tension towers
-C7(♭9♯11)        # multi-alteration content inside one paren pair needing stack
+C7(♭9♯11)              # multi-alt in one paren without slash encoding / not allowlisted
+G7(#11/#9/b13)         # depth > 2
+Bb(add b13/add 9)      # verbal add/omit stacks (word glyphs)
 ```
-
-Linear sideways `G7(#11)(b13)` may shape, but is not Real Book stacking.
 
 ## Next steps
 

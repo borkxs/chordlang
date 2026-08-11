@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help build build-all build-realbook build-pop test clean setup fetch extract install-playground proof
+.PHONY: help build build-all build-realbook build-pop test clean setup fetch extract stacks install-playground proof
 
 PYTHON := $(if $(wildcard .venv/bin/python3),.venv/bin/python3,python3)
 PYTEST := $(if $(wildcard .venv/bin/pytest),.venv/bin/pytest,pytest)
@@ -20,10 +20,13 @@ fetch: ## Download pinned Petaluma source fonts and OFL license
 extract: fetch ## Extract glyph outlines from sources into glyphs/extracted_glyphs.py
 	$(PYTHON) tools/extract_glyphs.py
 
-build-realbook: extract ## Build Real Book style variant
+stacks: extract ## Compose Path B stack ligature glyphs → glyphs/stack_glyphs.py
+	$(PYTHON) tools/compose_stacks.py
+
+build-realbook: stacks ## Build Real Book style variant
 	$(PYTHON) src/build_font.py --style=realbook
 
-build-pop: extract ## Build Pop style variant
+build-pop: stacks ## Build Pop style variant
 	$(PYTHON) src/build_font.py --style=pop
 
 build-all: build-realbook build-pop ## Build all style variants
@@ -42,7 +45,7 @@ atlas: build ## Exhaustive symbol atlas → dist/atlas.html + dist/atlas.png (ne
 	cd ../.. && node --experimental-strip-types tools/font-atlas/render-atlas.ts
 
 clean: ## Remove built fonts from dist/
-	rm -rf dist/*.ttf glyphs/extracted_glyphs.py
+	rm -rf dist/*.ttf glyphs/extracted_glyphs.py glyphs/stack_glyphs.py
 
 install-playground: ## Copy built fonts to apps/playground and npm fonts/
 	mkdir -p ../../apps/playground/public/fonts

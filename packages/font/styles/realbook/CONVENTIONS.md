@@ -32,7 +32,8 @@ The canonical modern jazz lead sheet standard, as established by The New Real Bo
 4. **Alterations — no auto-parentheses (ADR-008):**
    - Canonical form is inline: `C7♭9`, `C7♯11`, `G7♯5♭9`
    - Typed `G7(b9)` keeps linear parens; the font never inserts them
-   - Multi-tier parenthesized stacks are WALL (ADR-006)
+   - Closed 2-high stacks use slash-inside-one-paren: `G7(#11/b9)` (ADR-012)
+   - Open-ended / depth≥3 / verbal add-omit towers remain WALL (ADR-006)
 
 ### Specific Examples (from Real Book guide)
 
