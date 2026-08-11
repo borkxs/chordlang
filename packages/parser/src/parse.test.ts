@@ -26,14 +26,15 @@ describe("parseChart", () => {
     expect(bars[2].cells[0]).toEqual({ kind: "chord", symbol: "Dm7/A" });
   });
 
-  it("supports % repeat and . hold cells", () => {
-    const ast = parseChart("| Cmaj7 | % | Cmaj7,. |");
+  it("supports % / :/: repeat and . hold cells", () => {
+    const ast = parseChart("| Cmaj7 | % | Cmaj7,. | :/: |");
     const bars = ast.body.filter((b) => b.type === "bar");
     expect(bars[1].cells).toEqual([{ kind: "repeat" }]);
     expect(bars[2].cells).toEqual([
       { kind: "chord", symbol: "Cmaj7" },
       { kind: "hold" },
     ]);
+    expect(bars[3].cells).toEqual([{ kind: "repeat" }]);
   });
 
   it("chord tokens stay opaque (grammar never interprets symbols)", () => {

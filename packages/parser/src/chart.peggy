@@ -39,9 +39,11 @@ CellList
     { return [first, ...rest]; }
 
 // A cell is one beat-slot in the bar. Equal division by default.
-// "%" = repeat previous bar's chord (iReal convention). "." = hold/empty slot.
+// "%" / ":/:" = repeat previous bar's chord (iReal / lead-sheet convention).
+// "." = hold/empty slot.
 Cell
   = "%" _ { return { kind: "repeat" }; }
+  / ":/:" _ { return { kind: "repeat" }; }
   / "." _ { return { kind: "hold" }; }
   / c:ChordToken _ { return { kind: "chord", symbol: c }; }
 

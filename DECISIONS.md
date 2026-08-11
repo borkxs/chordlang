@@ -4,9 +4,9 @@
 We re-implement the chart grammar to spec and import NO code from QuickChords,
 iReal Pro, markdown-it-chords, or ChordPro. Conventions borrowed as design
 references (not copyrightable): comma bar-subdivision (QuickChords/iReal),
-`{key: value}` directives (ChordPro), `%` bar-repeat and `[A]` section markers
-(iReal). Licenses actually taken on: tonal (MIT), chordfont (OFL — see the
-chordfont repo's ADR-005 for the Petaluma derivation).
+`{key: value}` directives (ChordPro), `%` / `:/:` bar-repeat and `[A]` section
+markers (iReal / lead-sheet ASCII). Licenses actually taken on: tonal (MIT),
+chordfont (OFL — see the chordfont repo's ADR-005 for the Petaluma derivation).
 
 ## ADR-002: Wrap tonal; never write a chord-symbol parser
 @tonaljs (via the `tonal` facade) parses symbols. @chordlang/chord is a thin

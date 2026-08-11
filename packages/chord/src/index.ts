@@ -8,6 +8,8 @@
  *   - `7alt` : tonal silently fabricates a specific voicing (7#5#9). We flag
  *     underspecified instead and keep only the certain dominant core.
  *   - half-diminished naming: `ø7` and `m7b5` must normalize identically.
+ *   - major `add4` / `add11`: tonal only ships `madd4` / `m7add4`; we keep the
+ *     major third and add P4 / P11.
  */
 import { Chord } from "tonal";
 
@@ -150,6 +152,8 @@ const NAMES: Record<string, Naming> = {
   "1:0,3:3,5:7,7:10,13:20":   { display: "m7♭13", harte: "min7(b13)", kind: "minor-seventh" },
   "1:0,4:5,5:7":              { display: "sus4",  harte: "sus4",  kind: "suspended-fourth" },
   "1:0,2:2,5:7":              { display: "sus2",  harte: "sus2",  kind: "suspended-second" },
+  "1:0,3:4,4:5,5:7":          { display: "add4",  harte: "add4",  kind: "other" },
+  "1:0,3:4,5:7,11:17":        { display: "add11", harte: "add11", kind: "other" },
 };
 
 function nameFactors(factors: ChordFactor[], asciiTail: string): Naming {
@@ -170,6 +174,9 @@ const EXTENSION_SUFFIXES: Array<{ re: RegExp; factor: ChordFactor }> = [
   { re: /#9$/,  factor: { degree: 9,  semitones: 15 } },
   { re: /#11$/, factor: { degree: 11, semitones: 18 } },
   { re: /b11$/, factor: { degree: 11, semitones: 16 } },
+  // tonal knows madd4 / m7add4 but not major add4 / add11 (keep 3rd, add P4/P11)
+  { re: /add11$/, factor: { degree: 11, semitones: 17 } },
+  { re: /add4$/, factor: { degree: 4, semitones: 5 } },
 ];
 
 function decomposeChord(chordPart: string): { parsed: ReturnType<typeof Chord.get>; extra: ChordFactor | null } {

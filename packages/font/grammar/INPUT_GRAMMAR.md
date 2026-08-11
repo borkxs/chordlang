@@ -93,8 +93,9 @@ Spelled `Bm7b5` and engraved `Bø7` are both supported inputs; the normalizer ma
 
 | Variants seen | Notes |
 |---------------|-------|
-| `Csus4`, `C7sus4`, `Cadd9`, `C6/9` | Order matters for GSUB lookahead |
+| `Csus4`, `C7sus4`, `Cadd9`, `Cadd4`, `C6/9` | Order matters for GSUB lookahead |
 | `C9sus4` vs `Csus4(9)` | **TBD** — define canonical token order |
+| `add4` / `add11` | Keep the 3rd and add P4/P11 (≠ `sus4`) |
 
 ### Altered dominants (`7alt`)
 
