@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 280" role="img" aria-labelledby="title desc">
+  <title id="title">Real Book vs Pop vertical hierarchy</title>
+  <desc id="desc">Real Book keeps primary extensions on the baseline and superscripts alterations; Pop superscripts all digits after the root.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6f2e8"/>
+      <stop offset="100%" stop-color="#ebe3d4"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 15px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+      .p { font: 500 12px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #4a5648; }
+      .mono { font: 600 12px "IBM Plex Mono", ui-monospace, monospace; fill: #4a5648; }
+      .big { font: 700 42px "IBM Plex Serif", Georgia, serif; fill: #1c241c; }
+      .mid { font: 700 28px "IBM Plex Serif", Georgia, serif; fill: #1c241c; }
+      .sup { font: 700 18px "IBM Plex Serif", Georgia, serif; fill: #1c241c; }
+      .panel { fill: #fffdf8; stroke: #3d4a3c; stroke-width: 1.5; }
+      .tag { fill: #dfece0; stroke: #3d4a3c; stroke-width: 1.2; }
+      .tag-t { font: 700 12px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+    </style>
+  </defs>
+  <rect width="860" height="280" rx="12" fill="url(#bg3)"/>
+
+  <rect x="28" y="28" width="390" height="224" rx="12" class="panel"/>
+  <rect x="48" y="48" width="96" height="26" rx="6" class="tag"/>
+  <text x="96" y="66" text-anchor="middle" class="tag-t">Real Book</text>
+  <text x="48" y="108" class="mono">type: G7b9</text>
+
+  <text x="48" y="175" class="big">G</text>
+  <text x="92" y="175" class="mid">7</text>
+  <text x="126" y="152" class="sup">b9</text>
+  <line x1="48" y1="184" x2="168" y2="184" stroke="#b8c4b6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="176" y="188" class="mono">baseline</text>
+
+  <text x="48" y="220" class="p">Primary extension stays large.</text>
+  <text x="48" y="238" class="p">Only alterations rise.</text>
+
+  <rect x="442" y="28" width="390" height="224" rx="12" class="panel"/>
+  <rect x="462" y="48" width="64" height="26" rx="6" class="tag"/>
+  <text x="494" y="66" text-anchor="middle" class="tag-t">Pop</text>
+  <text x="462" y="108" class="mono">type: G13</text>
+
+  <text x="462" y="175" class="big">G</text>
+  <text x="506" y="148" class="sup">13</text>
+  <line x1="462" y1="184" x2="582" y2="184" stroke="#b8c4b6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="590" y="188" class="mono">baseline</text>
+
+  <text x="462" y="220" class="p">Every digit after the root</text>
+  <text x="462" y="238" class="p">is superscripted.</text>
+</svg>

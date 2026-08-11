@@ -11,6 +11,8 @@ See `styles/*/CONVENTIONS.md` for engraving rules and reference materials for ea
 
 **Try it live:** [Playground demo](https://borkxs.github.io/chordlang) with style selector
 
+**How it works (blog):** [How ChordFont works](../../docs/blog/how-chordfont-works.md) — GSUB pipeline, accidental binding, Real Book vs Pop, with SVG diagrams
+
 ## npm install
 
 ```bash

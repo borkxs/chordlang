@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 210" role="img" aria-labelledby="title desc">
+  <title id="title">Three concerns in ChordFont</title>
+  <desc id="desc">Glyph outlines, OpenType feature grammar, and ASCII input grammar are kept as separate layers.</desc>
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f1e7"/>
+      <stop offset="100%" stop-color="#e9e2d3"/>
+    </linearGradient>
+    <style>
+      .card { fill: #fffdf8; stroke: #3d4a3c; stroke-width: 1.5; }
+      .n { font: 700 28px "IBM Plex Serif", Georgia, serif; fill: #2f4a36; }
+      .h { font: 700 15px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #1c241c; }
+      .p { font: 500 12px "IBM Plex Sans", "Segoe UI", sans-serif; fill: #4a5648; }
+      .f { font: 500 11px "IBM Plex Mono", ui-monospace, monospace; fill: #5a6558; }
+    </style>
+  </defs>
+  <rect width="860" height="210" rx="12" fill="url(#bg5)"/>
+
+  <rect x="28" y="36" width="250" height="140" rx="12" class="card"/>
+  <text x="48" y="72" class="n">01</text>
+  <text x="48" y="104" class="h">Glyph outlines</text>
+  <text x="48" y="126" class="p">What each part looks like</text>
+  <text x="48" y="152" class="f">source_map.json</text>
+
+  <rect x="305" y="36" width="250" height="140" rx="12" class="card"/>
+  <text x="325" y="72" class="n">02</text>
+  <text x="325" y="104" class="h">Feature grammar</text>
+  <text x="325" y="126" class="p">How parts compose (GSUB)</text>
+  <text x="325" y="152" class="f">styles/*/features.fea</text>
+
+  <rect x="582" y="36" width="250" height="140" rx="12" class="card"/>
+  <text x="602" y="72" class="n">03</text>
+  <text x="602" y="104" class="h">Input grammar</text>
+  <text x="602" y="126" class="p">What users are allowed to type</text>
+  <text x="602" y="152" class="f">INPUT_GRAMMAR.md</text>
+</svg>

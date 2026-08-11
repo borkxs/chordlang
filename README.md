@@ -68,7 +68,8 @@ Preview images are committed PNGs, not live GitHub renders — see
 An OpenType font that engraves single-line jazz chord symbols from plain ASCII
 via GSUB ligatures — the shaping engine does the work, no JavaScript at render
 time. Outlines derived from [Petaluma](https://github.com/steinbergmedia/petaluma)
-(OFL). Build and spec: [`packages/font/`](packages/font/).
+(OFL). Build and spec: [`packages/font/`](packages/font/). Deep dive with SVG
+diagrams: [How ChordFont works](docs/blog/how-chordfont-works.md).
 
 Source (`examples/font/readme-symbols.txt`):
 
