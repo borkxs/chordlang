@@ -216,6 +216,28 @@ def apply_advance_override(advance: int, spec: dict) -> int:
     return advance
 
 
+def apply_sidebearings(glyph, advance: int, spec: dict) -> int:
+    """Fit a glyph to its ink: optional "lsb" / "rsb" keys in source_map.
+
+    "lsb" shifts the outline so its left edge sits at that x; "rsb" sets the
+    advance to the right ink edge plus that value (negative = overhang).
+    Measured after emboldening, so spacing stays put when weight changes.
+    An explicit "advance" wins over "rsb".
+    """
+    lsb, rsb = spec.get("lsb"), spec.get("rsb")
+    if lsb is None and rsb is None:
+        return advance
+    xs = [x for x, _ in glyph.coordinates]
+    if not xs:
+        return advance
+    if lsb is not None:
+        glyph.coordinates.translate((int(lsb) - min(xs), 0))
+        xs = [x for x, _ in glyph.coordinates]
+    if rsb is not None and spec.get("advance") is None:
+        advance = int(max(xs) + int(rsb))
+    return advance
+
+
 def derive_superscript(
     recording,
     full_advance: int,
@@ -291,6 +313,7 @@ def main() -> int:
             embolden=embolden,
         )
         advance = apply_advance_override(advance, spec)
+        advance = apply_sidebearings(glyph, advance, spec)
         glyphs[glyph_name] = glyph
         advances[glyph_name] = advance
         is_digit = glyph_name.startswith("d") and len(glyph_name) == 2 and glyph_name[1].isdigit()

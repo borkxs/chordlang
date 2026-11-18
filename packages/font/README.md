@@ -119,7 +119,7 @@ make play     # build font, copy to playground/, serve at http://localhost:8000
 
 Open the printed URL in a browser. Type chord strings in the large input or click the example chips (`Cmaj7`, `Dm7b5`, `F#m7`, `G13`, `Bb`). Toggle **features off** to A/B the raw glyph stream against the shaped result (composed symbol with `liga` + `calt` on).
 
-Glyphs are handwritten outlines derived from Petaluma (OFL). To nudge alignment, edit per-glyph `scale`, `dx`, and `dy` in `glyphs/source_map.json`, then `make build && make play`.
+Glyphs are handwritten outlines derived from Petaluma (OFL). To nudge alignment, edit per-glyph `scale`, `dx`, and `dy` in `glyphs/source_map.json`; set spacing with `lsb` / `rsb` (sidebearings measured from the emboldened ink) and weight with `embolden`, then `make build && make play`.
 
 ## Shaping test cases (current scope)
 
