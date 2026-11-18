@@ -6,6 +6,13 @@ All notable changes to this project are documented here. Format follows
 
 ## [Unreleased]
 
+### Added
+
+- `apps/chartbook` — local song catalog with a live `.cfmd` editor,
+  ChordFont-engraved preview, Compare view with spelled transposition to a
+  common key, roman-numeral notation and multi-page books (`---`). Run with
+  `pnpm chartbook`.
+
 ## [0.1.2] - 2026-11-18
 
 ### Added

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@chordlang/chord": ["../../packages/chord/src/index.ts"],
+      "@chordlang/parser": ["../../packages/parser/src/index.ts"],
+      "@chordlang/render": ["../../packages/render/src/index.ts"]
+    }
+  },
+  "include": ["src", "server", "vite.config.ts"]
+}

@@ -1,0 +1,539 @@
+@font-face {
+  font-family: "ChordFont";
+  src: url("/fonts/ChordFont-RealBook.ttf") format("truetype");
+  font-display: block;
+}
+
+:root {
+  --bg: #141210;
+  --panel: #1e1b18;
+  --panel-2: #26221e;
+  --line: #3a342c;
+  --ink: #f2ebe0;
+  --muted: #9a9184;
+  --accent: #d4a85a;
+  --danger: #c45b4a;
+  --paper: #fbf8f1;
+  --paper-ink: #1a1815;
+  --sans: "Avenir Next", "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  min-height: 0;
+}
+
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1rem 0.75rem;
+}
+
+.brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.search {
+  margin: 0 1rem 0.75rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel-2);
+  color: var(--ink);
+  font: inherit;
+}
+
+.search:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.song-list {
+  flex: 1;
+  overflow: auto;
+  padding: 0.25rem 0.5rem 1rem;
+}
+
+.song-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 0.55rem 0.65rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.song-item:hover {
+  background: var(--panel-2);
+}
+
+.song-item.active {
+  background: #322c24;
+  color: var(--accent);
+}
+
+.song-item .meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.sidebar-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.path-hint {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  opacity: 0.8;
+}
+
+.workspace {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  margin: auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty .hint {
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.editor-pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.editor-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.title-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.title-input:focus {
+  outline: none;
+}
+
+.key-input {
+  width: 7rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel-2);
+  color: var(--ink);
+  padding: 0.4rem 0.55rem;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.key-input:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.bar-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.split {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.source-pane,
+.preview-pane {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+}
+
+.preview-pane {
+  border-right: 0;
+}
+
+.pane-label {
+  padding: 0.55rem 1rem 0.35rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+#source {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  resize: none;
+  padding: 0.4rem 1rem 1rem;
+  background: #100e0c;
+  color: #e8dfd0;
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+#source:focus {
+  outline: none;
+}
+
+.paper-wrap {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem 1.1rem 1.4rem;
+  background:
+    radial-gradient(800px 400px at 80% 0%, #2a241c, transparent),
+    var(--bg);
+}
+
+/* a book renders as a stack of pages; the gap between pages is the grouping signal */
+.pages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.page {
+  background: var(--paper);
+  color: var(--paper-ink);
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 2.2rem 2.4rem;
+  border-radius: 2px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  min-height: 12rem;
+}
+
+.parse-msg {
+  padding: 0.45rem 1rem 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  min-height: 1.8rem;
+}
+
+.parse-msg.err {
+  color: #ffb4a2;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 0.4rem 0.7rem;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: #5a5044;
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a140c;
+  font-weight: 650;
+}
+
+.btn.ghost {
+  background: transparent;
+}
+
+.btn.danger {
+  color: #ffb4a2;
+  border-color: #5a3530;
+}
+
+.btn.danger:hover {
+  background: #3a221f;
+}
+
+@media (max-width: 900px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .sidebar {
+    max-height: 36vh;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .source-pane {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* ---- topbar: view + notation (P3 chrome) ---- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.seg {
+  display: inline-flex;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.seg-btn {
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.seg-btn + .seg-btn {
+  border-left: 1px solid var(--line);
+}
+
+.seg-btn[aria-pressed="true"] {
+  background: var(--panel-2);
+  color: var(--ink);
+}
+
+.seg-btn .count:not(:empty)::before {
+  content: "· ";
+}
+
+/* ---- sidebar rows with compare pin ---- */
+.song-row {
+  display: flex;
+  align-items: stretch;
+  min-height: 2.75rem;
+  border-radius: 4px;
+}
+
+.song-row .song-item {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-row:hover {
+  background: var(--panel-2);
+}
+
+.song-row.active {
+  background: #322c24;
+}
+
+.song-row.active .song-item {
+  color: var(--accent);
+}
+
+.song-row .song-item:hover {
+  background: transparent;
+}
+
+.cmp-toggle {
+  width: 2.75rem;
+  flex: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.song-row:hover .cmp-toggle,
+.cmp-toggle[aria-pressed="true"] {
+  opacity: 1;
+}
+
+.cmp-toggle[aria-pressed="true"] {
+  color: var(--ink);
+}
+
+/* ---- compare view: pages side by side (P1 = each chart grid) ---- */
+.compare-pane {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 1rem 1rem 1.5rem;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.compare-page {
+  max-width: none;
+  margin: 0;
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.compare-page .chordlang-title {
+  font-size: 1.25rem;
+}
+
+.compare-page .chordlang-symbol,
+.compare-page .chordlang-repeat {
+  font-size: 1.25rem;
+}
+
+.compare-page .chordlang-bar {
+  padding: 0.5rem 0.25rem 0.5rem 0.5rem;
+}
+
+.empty-note {
+  margin: 2rem auto;
+  max-width: 28rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* ---- roman numeral notation (set in the UI sans; ChordFont has no roman style yet) ---- */
+.chordlang-symbol.chordlang-roman {
+  font-family: var(--sans);
+  font-feature-settings: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.compare-page .chordlang-symbol.chordlang-roman {
+  font-size: 1.125rem;
+}
+
+.chordlang-roman-q {
+  font-weight: 500;
+  font-size: 0.7em;
+  vertical-align: 0.3em;
+  margin-left: 0.04em;
+}
+
+.chordlang-roman-b {
+  font-weight: 500;
+  font-size: 0.8em;
+}
+
+.chordlang-warn {
+  color: #8a5a2a;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    overflow-x: auto;
+  }
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .compare-pane {
+    padding: 0.75rem 1rem 1rem;
+  }
+  .compare-page {
+    padding: 1rem 1rem 1.25rem;
+  }
+}
+
+/* chart.css sets --ink for the paper, but this file's :root --ink (the dark UI ink) wins;
+   scope the engraving ink back to the page so barlines and symbols print dark on paper. */
+.page {
+  --ink: var(--paper-ink);
+}
+
+/* ---- multi-chord bars: symbols keep their own width and a gap, instead of equal slots
+   that overflow once a bar holds four or five chords (Fortunate Son walkdown) ---- */
+.chordlang-bar {
+  gap: 0.4rem;
+}
+
+.chordlang-bar > .chordlang-symbol {
+  flex: 1 1 auto;
+  white-space: nowrap;
+}

@@ -18,6 +18,28 @@ importers:
         specifier: ^5.6.0
         version: 5.9.3
 
+  apps/chartbook:
+    dependencies:
+      '@chordlang/chord':
+        specifier: workspace:*
+        version: link:../../packages/chord
+      '@chordlang/parser':
+        specifier: workspace:*
+        version: link:../../packages/parser
+      '@chordlang/render':
+        specifier: workspace:*
+        version: link:../../packages/render
+    devDependencies:
+      '@types/node':
+        specifier: ^26.1.0
+        version: 26.1.0
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.4.0
+        version: 5.4.21(@types/node@26.1.0)
+
   apps/playground:
     dependencies:
       '@chordlang/chord':

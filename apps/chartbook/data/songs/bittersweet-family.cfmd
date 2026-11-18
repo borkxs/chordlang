@@ -1,0 +1,54 @@
+{book: Bittersweet family}
+{title: Wish You Were Here}
+{composer: David Gilmour, Roger Waters}
+{key: G}
+{source: verse from wish-you-were-here.cfmd, checked against analyse.py on the stems 2026-11-05}
+[Verse]
+| C | D | Am | G |
+| D | C | Am | G |
+
+
+---
+{title: Cone Off}
+{composer: Medium Build}
+{key: F}
+{source: hook from cone-off.cfmd; Gm vs Dm in bar 3 still to check by ear}
+[Hook]
+| F | C/G | Gm | Am, Bb |
+| F | C/G | Gm | Am, Bb |
+
+
+---
+{title: One Headlight}
+{composer: Jakob Dylan}
+{key: Bm}
+{source: guitar chord sheets (guitartabsexplorer, cifraclub, e-chords, guitarnoise) 2026-11-06; no bar lengths given, so one chord per bar is a guess. Keyed as B minor: the F# (some sheets F#7) is its V and every phrase lands on Bm, so the verse reads VI III V i; Musicnotes publishes it in the relative major D}
+[Verse]
+| G | D | F# | Bm |
+| G | D | F# | Bm |
+[Chorus]
+| G | D | Em | A |
+| G | D | Em | A |
+
+
+---
+{title: Mr. Jones}
+{composer: Adam Duritz, David Bryson}
+{key: C}
+{source: chord sheet (uchords) 2026-11-06, no bar lines; the sheet writes the verse as Am F Dm G then Am F G, so the held G in bar 8 is a guess}
+[Verse]
+| Am | F | Dm | G |
+| Am | F | G | % |
+[Chorus]
+| C | F | G | % |
+
+
+---
+{title: Fortunate Son}
+{composer: Bruce Hornsby}
+{key: Db}
+{time: 4/4}
+{tempo: 60 on the sheet (123 on the grid)}
+{source: Musicnotes page-1 preview (MN0028414, Db major) read 2026-11-06: the first two sheet bars of the verse, written as four grid bars. Key and tempo agree with analyse.py on the YouTube audio (mashups/work/fortunate_son.json). The preview stops after sheet bar 2, so the rest of the verse and the chorus are unread; the detector is too noisy on this piano track to fill them in}
+[Verse]
+| Ebm11 | Ab/C, Gb/Bb, Fm/Ab, Db/F, Gb | Ebm11 | Ab/C, Db, Ebm11 |

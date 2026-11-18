@@ -50,11 +50,20 @@ import "@chordlang/render/chart.css";
 // @font-face ChordFont from @chordlang/font/ChordProof.ttf
 ```
 
+## Chartbook
+
+[`apps/chartbook`](apps/chartbook/README.md) puts the packages together: a local
+song catalog of `.cfmd` charts with a live ChordFont-engraved editor, a Compare view
+that transposes pinned charts into a common key, and roman-numeral notation.
+
+![chartbook Edit view](docs/assets/chartbook/edit.png)
+
 ## Quick start
 
 ```
 make setup     # install (pnpm) + Playwright chromium
 make dev       # live playground — type text, watch it engrave
+pnpm chartbook # song catalog + live editor (apps/chartbook)
 make test      # vitest across packages
 make previews  # regenerate docs/assets/ preview images
 make help      # every target, self-documented
@@ -191,5 +200,6 @@ packages/render     AST + chart.css → engraved HTML
 packages/font       ChordFont OpenType build (Python)
 packages/cli        chordlang <ast|canonical|html> file.cfmd
 apps/playground     live preview (src-aliased packages)
+apps/chartbook      song catalog + live .cfmd editor, Compare view, transposition
 tools/corpus        stub: McGill/Weimar frequency mining (future)
 ```
