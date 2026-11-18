@@ -1,6 +1,6 @@
 {
   "name": "@chordlang/font",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ChordFont — OpenType engraving font for jazz chord symbols (SIL OFL)",
   "type": "module",
   "private": false,

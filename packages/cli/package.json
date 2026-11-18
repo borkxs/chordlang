@@ -1,6 +1,6 @@
 {
   "name": "@chordlang/cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CLI — parse, normalize, and render .cfmd chart files",
   "type": "module",
   "private": false,
