@@ -42,6 +42,9 @@ COPY packages/font/package.json ./packages/font/
 # Install dependencies (frozen lockfile ensures exact Playwright version)
 RUN pnpm install --frozen-lockfile
 
+# Set before the install so the browser lands where the runtime looks for it.
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+
 # Install Playwright Chromium with exact version from lockfile
 # The frozen lockfile ensures we get the same Chromium build
 RUN pnpm exec playwright install chromium --with-deps
@@ -60,7 +63,6 @@ ENV SOURCE_DATE_EPOCH=1609459200
 
 # Disable Playwright telemetry and randomness
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=0
-ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
 # Default command: generate previews and normalize PNGs for reproducibility
 CMD ["sh", "-c", "make previews && ./scripts/normalize-pngs.sh docs/assets"]
