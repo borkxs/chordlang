@@ -8,6 +8,7 @@
     "build": "pnpm run grammar && pnpm -r --filter './packages/*' build",
     "test": "pnpm run grammar && pnpm -r test",
     "dev": "pnpm run grammar && pnpm --filter @chordlang/playground dev",
+    "chartbook": "pnpm run grammar && pnpm --filter @chordlang/chartbook dev",
     "graphs": "pnpm --filter @chordlang/playground graphs",
     "previews": "pnpm run grammar && node --experimental-strip-types scripts/render-previews.ts",
     "font-atlas": "node --experimental-strip-types tools/font-atlas/render-atlas.ts",

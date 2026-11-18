@@ -1,0 +1,22 @@
+{title: Wish You Were Here}
+{composer: David Gilmour, Roger Waters}
+{key: G}
+{time: 4/4}
+{tempo: ~60}
+{source: standard chart; verse checked against analyse.py on the stems 2026-11-05}
+[Intro]
+| Em7 | G | Em7 | G |
+| Em7 | A7sus4 | Em7 | A7sus4 |
+| G | % |
+[Solo]
+| Em7 | G | Em7 | G |
+| Em7 | A7sus4 | Em7 | A7sus4 |
+| G | % |
+[Verse]
+| C | D | Am | G |
+| D | C | Am | G |
+| C | D | Am | G |
+| D | C | Am | G |
+[Chorus]
+| C | D | Am | G |
+| D | C | Am | G |

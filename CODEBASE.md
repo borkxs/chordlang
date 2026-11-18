@@ -123,6 +123,16 @@ See `docs/readme-previews.md` for the full checklist.
 - Vite config aliases `@chordlang/*` to package source so edits hot-reload
   without rebuilding.
 
+### `apps/chartbook` — song catalog + editor (Vite)
+
+- `server/catalog.ts` + `server/vite-plugin.ts` — dev-server REST API that
+  lists, reads and writes `data/songs/*.cfmd`.
+- `src/main.ts` — song list, Edit view (source → engraved pages, autosave) and
+  Compare view (pinned charts side by side, Original / Common key).
+- `src/transpose.ts` (spelled transposition), `src/roman.ts` (roman
+  numerals from `{key}`), `src/book.ts` (`---` page breaks, `{book}`).
+- Aliases `@chordlang/*` to package source, like the playground.
+
 ## Layout model (CSS)
 
 The chart grid uses `display: grid; grid-template-columns: repeat(4, 1fr)`.

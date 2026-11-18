@@ -1,0 +1,103 @@
+{book: My songs}
+{title: AZ Flaubert variations}
+{key: Dm}
+{source: triad-only reading of AZ Flaubert variations.mid (Logic MIDI export), bars 4-11 of 15; the four-bar loop from bar 4 occurs 3x. Machine read (major/minor triads only), check by ear}
+[Loop]
+| A | D | A | D |
+| A | D | A | D |
+
+---
+{title: Colorado 0.4 log}
+{key: E}
+{source: triad-only reading of Colorado 0.4 log.mid (Logic MIDI export), bars 2-9 of 19; no four-bar loop repeats exactly, so this is the first eight bars that move. Machine read (major/minor triads only), check by ear}
+[Loop]
+| C#m | A | E | % |
+| C#m | A, E | E | % |
+
+---
+{title: Forgiven 1.1}
+{key: Am}
+{source: triad-only reading of Forgiven 1.1.mid (Logic MIDI export), bars 10-17 of 30; the four-bar loop from bar 10 occurs 2x. Machine read (major/minor triads only), check by ear}
+[Loop]
+| C | Am | C#m | C |
+| % | Am | C#m | C |
+
+---
+{title: Ghost 0.4}
+{key: C}
+{source: triad-only reading of Ghost 0.4.mid (Logic MIDI export), bars 2-9 of 44; the four-bar loop from bar 2 occurs 3x. Machine read (major/minor triads only), check by ear}
+[Loop]
+| C | G | % | C |
+| % | G | % | C |
+
+---
+{title: Here I Go 0.0.1}
+{key: A}
+{source: triad-only reading of Here I Go 0.0.1.mid (Logic MIDI export), bars 1-8 of 15; no four-bar loop repeats exactly, so this is the first eight bars that move. Machine read (major/minor triads only), check by ear}
+[Loop]
+| C#m | E | F# | A |
+| % | E | F# | Am |
+
+---
+{title: open your eyes}
+{key: Ab}
+{source: triad-only reading of open your eyes.mid (Logic MIDI export), bars 14-21 of 49; no four-bar loop repeats exactly, so this is the first eight bars that move. Machine read (major/minor triads only), check by ear}
+[Loop]
+| Eb | Cm | Bbm | Cm |
+| Dm | Cm | Eb | Cm |
+
+---
+{title: 08 c u there}
+{key: Am}
+{source: triad-only reading of 08 c u there.mid (Logic MIDI export), bars 2-9 of 9; no four-bar loop repeats exactly, so this is the first eight bars that move. Machine read (major/minor triads only), check by ear}
+[Loop]
+| G, D | Em | C | Am |
+| C#m | Bm | Em | D |
+
+---
+{title: 09 Last Of Us 0.0.1}
+{key: C}
+{source: triad-only reading of 09 Last Of Us 0.0.1.mid (Logic MIDI export), bars 2-6 of 6; no four-bar loop repeats exactly, so this is the first eight bars that move. Machine read (major/minor triads only), check by ear}
+[Loop]
+| Bb | Gm | A, Em | Em |
+| % |
+
+---
+{title: 13 blackbird}
+{key: C}
+{source: triad-only reading of 13 blackbird.mid (Logic MIDI export), bars 6-13 of 33; the four-bar loop from bar 6 occurs 2x. Machine read (major/minor triads only), check by ear}
+[Loop]
+| G | % | C | G |
+| % | C | G | Am |
+
+---
+{title: A1 scramble}
+{key: E}
+{source: triad-only reading of A1 scramble.mid (Logic MIDI export), bars 3-10 of 27; no four-bar loop repeats exactly, so this is the first eight bars that move. Machine read (major/minor triads only), check by ear}
+[Loop]
+| F#m | F# | B | C |
+| F# | Bm | G# | E |
+
+---
+{title: a beuatiful lie - synth version}
+{key: D}
+{source: triad-only reading of a beuatiful lie - synth version.mid (Logic MIDI export), bars 2-9 of 17; the four-bar loop from bar 2 occurs 2x. Machine read (major/minor triads only), check by ear}
+[Loop]
+| D | % | G | % |
+| D | % | G | % |
+
+---
+{title: 17 v2}
+{key: Bbm}
+{source: triad-only reading of 17 v2.mid (Logic MIDI export), bars 1-8 of 48; no four-bar loop repeats exactly, so this is the first eight bars that move. Machine read (major/minor triads only), check by ear}
+[Loop]
+| Db | % | Bbm | % |
+| % | % | % | % |
+
+---
+{title: iowa 1.3.1 log}
+{key: Am}
+{source: triad-only reading of iowa 1.3.1 log.mid (Logic MIDI export), bars 2-9 of 36; the four-bar loop from bar 2 occurs 2x. Machine read (major/minor triads only), check by ear}
+[Loop]
+| Am | C#m | C, E | C#m |
+| Am | C#m | C, E | C#m |

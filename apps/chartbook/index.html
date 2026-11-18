@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>chartbook</title>
+    <link rel="stylesheet" href="/chart.css" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <header class="sidebar-head">
+          <div class="brand">chartbook</div>
+          <button type="button" id="btn-new" class="btn primary">New</button>
+        </header>
+        <input
+          id="search"
+          class="search"
+          type="search"
+          placeholder="Search songs…"
+          autocomplete="off"
+        />
+        <nav id="song-list" class="song-list" aria-label="Songs"></nav>
+        <footer class="sidebar-foot">
+          <span id="save-status">—</span>
+          <code class="path-hint">data/songs/*.cfmd · --- splits pages</code>
+        </footer>
+      </aside>
+
+      <main class="workspace">
+        <header id="topbar" class="topbar">
+          <div class="seg" aria-label="View">
+            <button type="button" class="seg-btn" data-view="edit" aria-pressed="true">Edit</button>
+            <button type="button" class="seg-btn" data-view="compare" aria-pressed="false">
+              Compare <span id="cmp-count" class="count"></span>
+            </button>
+          </div>
+          <div class="seg" aria-label="Notation">
+            <button type="button" class="seg-btn" data-notation="chords" aria-pressed="true">Chords</button>
+            <button type="button" class="seg-btn" data-notation="roman" aria-pressed="false">Roman</button>
+          </div>
+          <div id="key-seg" class="seg hidden" aria-label="Keys" title="Compare: each chart in its own key, or all moved to the first pinned chart's key">
+            <button type="button" class="seg-btn" data-keys="original" aria-pressed="true">Original keys</button>
+            <button type="button" class="seg-btn" data-keys="common" aria-pressed="false">Common key</button>
+          </div>
+        </header>
+
+        <div id="empty" class="empty">
+          <p>No song selected.</p>
+          <p class="hint">Create one or pick from the catalog.</p>
+        </div>
+
+        <div id="editor-pane" class="editor-pane hidden">
+          <header class="editor-bar">
+            <input id="title" class="title-input" type="text" spellcheck="false" />
+            <input id="key" class="key-input" type="text" placeholder="key" spellcheck="false" />
+            <div class="bar-actions">
+              <button type="button" id="btn-delete" class="btn danger ghost">Delete</button>
+            </div>
+          </header>
+          <div class="split">
+            <section class="source-pane">
+              <label class="pane-label" for="source">chordlang source</label>
+              <textarea id="source" spellcheck="false"></textarea>
+            </section>
+            <section class="preview-pane">
+              <div class="pane-label">engraved</div>
+              <div class="paper-wrap">
+                <div id="preview" class="pages"></div>
+              </div>
+              <div id="parse-msg" class="parse-msg"></div>
+            </section>
+          </div>
+        </div>
+
+        <section id="compare-pane" class="compare-pane hidden" aria-label="Compare">
+          <p id="compare-empty" class="empty-note">Pin songs with <b>+</b> in the list to see them side by side.</p>
+          <div id="compare-grid" class="compare-grid"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
