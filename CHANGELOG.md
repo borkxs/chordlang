@@ -6,6 +6,8 @@ All notable changes to this project are documented here. Format follows
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-18
+
 ### Added
 
 - `docs/font-integrations.md` — verified free integrations beyond Graphviz
@@ -52,6 +54,7 @@ playground demo, and CLI.
 - **Playground** — live chart editor and graph demo on GitHub Pages.
 - **Examples** — `.cfmd` charts, `.cfgv` Graphviz graphs, committed README preview PNGs.
 
-[Unreleased]: https://github.com/borkxs/chordlang/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/borkxs/chordlang/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/borkxs/chordlang/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/borkxs/chordlang/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/borkxs/chordlang/releases/tag/v0.1.0

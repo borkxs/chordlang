@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXTRACTED = ROOT / "glyphs" / "extracted_glyphs.py"
 OFL = ROOT / "sources" / "petaluma" / "OFL.txt"
 UPM = 1000
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 
 def box(pen, x0, y0, x1, y1):

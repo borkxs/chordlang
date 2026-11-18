@@ -1,6 +1,6 @@
 {
   "name": "@chordlang/render",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Chart layout renderer — AST to engraved HTML (ChordFont consumer CSS included)",
   "type": "module",
   "private": false,

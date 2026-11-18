@@ -1,6 +1,6 @@
 {
   "name": "@chordlang/chord",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Chord-symbol normalizer (tonal wrapper → canonical struct)",
   "type": "module",
   "private": false,
