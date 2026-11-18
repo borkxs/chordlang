@@ -18,6 +18,10 @@ All notable changes to this project are documented here. Format follows
 
 ### Fixed
 
+- ChordFont accidentals no longer clog or collide: `sharp.root` / `sharp.alt`
+  keep an open counter (lighter embolden, larger scale), root and alteration
+  accidentals get real sidebearings (`F#m7`, `Bb7`, `Dm7b5`), and the △ / ° / ø
+  quality marks match the letter weight. `source_map.json` gains `lsb` / `rsb`.
 - ChordFont name table now includes unique ID, full name, version, and
   PostScript name records (IDs 3–6). Fonts built without them render blank in
   LilyPond, are undiscoverable in Typst, and crash LuaLaTeX's HarfBuzz loader.
